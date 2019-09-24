@@ -18,8 +18,16 @@ int main(int argc,char* argv[])
 {
     Exemple exemple;
     exemple.setX(53);
-
-    cout << "It works !" << endl;
-
+    
+    cout << "Slt ";
+    
+	for(int i=1; i<argc; i++)
+	{
+		 cout << argv[i] << " ";
+	}
+	
+	cout << endl;
+	
+	
     return 0;
 }
