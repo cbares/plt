@@ -838,7 +838,7 @@
                 <dia:string>#ressources#</dia:string>
               </dia:attribute>
               <dia:attribute name="type">
-                <dia:string>#Ressources#</dia:string>
+                <dia:string>#std::shared_ptr&lt;Ressources&gt;#</dia:string>
               </dia:attribute>
               <dia:attribute name="value">
                 <dia:string>##</dia:string>
@@ -886,7 +886,7 @@
                 <dia:string>#ressources#</dia:string>
               </dia:attribute>
               <dia:attribute name="type">
-                <dia:string>#Ressources#</dia:string>
+                <dia:string>#std::shared_ptr&lt;Ressources&gt;#</dia:string>
               </dia:attribute>
               <dia:attribute name="value">
                 <dia:string>##</dia:string>
@@ -934,7 +934,7 @@
                 <dia:string>#ressources#</dia:string>
               </dia:attribute>
               <dia:attribute name="type">
-                <dia:string>#Ressources#</dia:string>
+                <dia:string>#std::shared_ptr&lt;Ressources&gt;#</dia:string>
               </dia:attribute>
               <dia:attribute name="value">
                 <dia:string>##</dia:string>
