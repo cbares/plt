@@ -90,7 +90,7 @@
         <dia:point val="-12,0"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="-12.05,-1.05;95.05,47.05"/>
+        <dia:rectangle val="-12.05,-1.05;95.05,48.05"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
@@ -102,7 +102,7 @@
         <dia:real val="107"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
-        <dia:real val="47"/>
+        <dia:real val="48"/>
       </dia:attribute>
       <dia:attribute name="name">
         <dia:string>#state#</dia:string>
@@ -1155,7 +1155,7 @@
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>##</dia:string>
+            <dia:string>#void#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
