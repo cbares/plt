@@ -2513,13 +2513,13 @@
         <dia:point val="75,2"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="74.95,1.95;94.03,6.25"/>
+        <dia:rectangle val="74.95,1.95;95.955,6.25"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
         <dia:point val="75,2"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="18.98"/>
+        <dia:real val="20.905000000000001"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
         <dia:real val="4.2000000000000002"/>
@@ -2674,7 +2674,7 @@
                 <dia:string>#observer#</dia:string>
               </dia:attribute>
               <dia:attribute name="type">
-                <dia:string>#shared_ptr&lt;Observer&gt;#</dia:string>
+                <dia:string>#std::shared_ptr&lt;Observer&gt;#</dia:string>
               </dia:attribute>
               <dia:attribute name="value">
                 <dia:string>##</dia:string>
@@ -2727,17 +2727,17 @@
     </dia:object>
     <dia:object type="UML - Generalization" version="1" id="O19">
       <dia:attribute name="obj_pos">
-        <dia:point val="84.49,6.2"/>
+        <dia:point val="85.4525,6.2"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="79.055,6.15;85.34,19.05"/>
+        <dia:rectangle val="79.055,6.15;86.3025,19.05"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="84.49,6.2"/>
-        <dia:point val="84.49,11"/>
+        <dia:point val="85.4525,6.2"/>
+        <dia:point val="85.4525,11"/>
         <dia:point val="79.105,11"/>
         <dia:point val="79.105,19"/>
       </dia:attribute>
