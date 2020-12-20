@@ -13,6 +13,11 @@ Ressources::Ressources(int stone, int stoneIncome, int water, int waterIncome, i
     this->victoryPointIncome = victoryPointIncome;
 }
 
+Ressources::Ressources(Json::Value value){
+    this->unserialize(value);
+}
+
+
 void Ressources::add (std::shared_ptr<Ressources> ressources){
     this->stone += ressources->stone;
     this->stoneIncome += ressources->stoneIncome;

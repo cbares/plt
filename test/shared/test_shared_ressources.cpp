@@ -84,4 +84,19 @@ BOOST_AUTO_TEST_CASE(Ressources_serialization){
     BOOST_TEST(ressources2->victoryPointIncome == 8);
 }
 
+BOOST_AUTO_TEST_CASE(Ressources_serialization_constructor){
+    shared_ptr<Ressources> ressources1 = make_shared<Ressources>(1,2,3,4,5,6,7,8);
+    Json::Value value = ressources1->serialize();
+    shared_ptr<Ressources> ressources2 = make_shared<Ressources>(value);
+
+    BOOST_TEST(ressources2->stone == 1);
+    BOOST_TEST(ressources2->stoneIncome == 2);
+    BOOST_TEST(ressources2->water == 3);
+    BOOST_TEST(ressources2->waterIncome == 4);
+    BOOST_TEST(ressources2->wood == 5);
+    BOOST_TEST(ressources2->woodIncome == 6);
+    BOOST_TEST(ressources2->victoryPoint == 7);
+    BOOST_TEST(ressources2->victoryPointIncome == 8);
+}
+
 BOOST_AUTO_TEST_SUITE_END();
