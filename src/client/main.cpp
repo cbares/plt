@@ -15,7 +15,8 @@ using namespace std;
 using namespace state;
 
 int main(int argc,char* argv[])
-{
+{   
+    make_shared<River>(1);
     cout << "It works !" << endl;
 
     return 0;

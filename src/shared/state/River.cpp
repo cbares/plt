@@ -1,12 +1,13 @@
 #include "River.h"
 #include <fstream>
+#include <iostream>
 
 using namespace state;
 using namespace std;
 
 River::River(int tier){
     Json::Reader reader;
-    Json::Value value;
+    Json::Value cardPoolJson;
     std::string file;
     switch (tier)
     {
@@ -23,11 +24,16 @@ River::River(int tier){
         return;
     }
     ifstream stream(file,ifstream::binary);
-    reader.parse(stream,value,false);
-
+    reader.parse(stream,cardPoolJson,false);
     std::vector<Json::Value> cardPool;
-    for(uint i =0; i<value.size();i++){
-        cardPool[i] = value[i];
+
+    for(uint i =0; i<cardPoolJson["cards"].size();i++){
+        Json::Value cardJson;
+        std::string subFile = "res/cardsData/"+cardPoolJson["cards"][i].asString()+".json";
+        ifstream subStream(subFile,ifstream::binary);
+        reader.parse(subStream,cardJson,false);
+
+        cardPool.push_back(cardJson);
     }
 
     this->cardPool = cardPool;
