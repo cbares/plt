@@ -902,7 +902,7 @@
         </dia:composite>
         <dia:composite type="umloperation">
           <dia:attribute name="name">
-            <dia:string>#isGreater()#</dia:string>
+            <dia:string>#isGreater#</dia:string>
           </dia:attribute>
           <dia:attribute name="stereotype">
             <dia:string>##</dia:string>
@@ -2855,6 +2855,23 @@
         <dia:connection handle="0" to="O18" connection="8"/>
         <dia:connection handle="1" to="O17" connection="4"/>
       </dia:connections>
+      <dia:childnode parent="O0"/>
+    </dia:object>
+    <dia:object type="Standard - Polygon" version="0" id="O21">
+      <dia:attribute name="obj_pos">
+        <dia:point val="10,35"/>
+      </dia:attribute>
+      <dia:attribute name="obj_bb">
+        <dia:rectangle val="9.95,34.95;11.1207,36.1207"/>
+      </dia:attribute>
+      <dia:attribute name="poly_points">
+        <dia:point val="10,35"/>
+        <dia:point val="11,35"/>
+        <dia:point val="10,36"/>
+      </dia:attribute>
+      <dia:attribute name="show_background">
+        <dia:boolean val="true"/>
+      </dia:attribute>
       <dia:childnode parent="O0"/>
     </dia:object>
   </dia:layer>
