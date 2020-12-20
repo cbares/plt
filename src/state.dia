@@ -1533,7 +1533,7 @@
                 <dia:string>#card#</dia:string>
               </dia:attribute>
               <dia:attribute name="type">
-                <dia:string>#Card#</dia:string>
+                <dia:string>#std::shared_ptr&lt;Card&gt;#</dia:string>
               </dia:attribute>
               <dia:attribute name="value">
                 <dia:string>##</dia:string>
