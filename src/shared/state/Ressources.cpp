@@ -50,10 +50,28 @@ bool Ressources::isGreaterOrEqual(std::shared_ptr<Ressources> ressources){
 }
 
 void Ressources::unserialize (Json::Value value){
-    
+    this->stone = value["stone"].asInt();
+    this->stoneIncome = value["stoneIncome"].asInt();
+    this->water = value["water"].asInt();
+    this->waterIncome = value["waterIncome"].asInt();
+    this->wood = value["wood"].asInt();
+    this->woodIncome = value["woodIncome"].asInt();
+    this->victoryPoint = value["victoryPoint"].asInt();
+    this->victoryPointIncome = value["victoryPointIncome"].asInt();
 }
 
 Json::Value Ressources::serialize (){
+    Json::Value value;
 
+    value["stone"] = this->stone;
+    value["stoneIncome"] = this->stoneIncome;
+    value["water"] = this->water;
+    value["waterIncome"] = this->waterIncome;
+    value["wood"] = this->wood;
+    value["woodIncome"] = this->woodIncome;
+    value["victoryPoint"] = this->victoryPoint;
+    value["victoryPointIncome"] = this->victoryPointIncome;
+
+    return value;
 }
 
