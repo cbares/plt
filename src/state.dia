@@ -1189,13 +1189,13 @@
         <dia:point val="-11,2"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="-11.05,1.95;3.8075,6.45"/>
+        <dia:rectangle val="-11.05,1.95;3.80156,6.45"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
         <dia:point val="-11,2"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="14.757499999999999"/>
+        <dia:real val="14.7515625"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
         <dia:real val="4.4000000000000004"/>
@@ -1309,10 +1309,10 @@
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="abstract">
-            <dia:boolean val="true"/>
+            <dia:boolean val="false"/>
           </dia:attribute>
           <dia:attribute name="inheritance_type">
-            <dia:enum val="0"/>
+            <dia:enum val="1"/>
           </dia:attribute>
           <dia:attribute name="query">
             <dia:boolean val="false"/>
@@ -1339,10 +1339,10 @@
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="abstract">
-            <dia:boolean val="true"/>
+            <dia:boolean val="false"/>
           </dia:attribute>
           <dia:attribute name="inheritance_type">
-            <dia:enum val="0"/>
+            <dia:enum val="1"/>
           </dia:attribute>
           <dia:attribute name="query">
             <dia:boolean val="false"/>
@@ -1782,17 +1782,17 @@
     </dia:object>
     <dia:object type="UML - Generalization" version="1" id="O8">
       <dia:attribute name="obj_pos">
-        <dia:point val="-3.62125,6.4"/>
+        <dia:point val="-3.62422,6.4"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="-4.47125,6.35;26,15.05"/>
+        <dia:rectangle val="-4.47422,6.35;26,15.05"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="-3.62125,6.4"/>
-        <dia:point val="-3.62125,11"/>
+        <dia:point val="-3.62422,6.4"/>
+        <dia:point val="-3.62422,11"/>
         <dia:point val="25.95,11"/>
         <dia:point val="25.95,15"/>
       </dia:attribute>
@@ -1833,17 +1833,17 @@
     </dia:object>
     <dia:object type="UML - Generalization" version="1" id="O9">
       <dia:attribute name="obj_pos">
-        <dia:point val="-3.62125,6.4"/>
+        <dia:point val="-3.62422,6.4"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="-4.47125,6.35;4.6575,32.05"/>
+        <dia:rectangle val="-4.47422,6.35;4.6575,32.05"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="-3.62125,6.4"/>
-        <dia:point val="-3.62125,11"/>
+        <dia:point val="-3.62422,6.4"/>
+        <dia:point val="-3.62422,11"/>
         <dia:point val="4.6075,11"/>
         <dia:point val="4.6075,32"/>
       </dia:attribute>
@@ -1884,17 +1884,17 @@
     </dia:object>
     <dia:object type="UML - Generalization" version="1" id="O10">
       <dia:attribute name="obj_pos">
-        <dia:point val="-3.62125,6.4"/>
+        <dia:point val="-3.62422,6.4"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="-4.47125,6.35;40.845,29.05"/>
+        <dia:rectangle val="-4.47422,6.35;40.845,29.05"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="-3.62125,6.4"/>
-        <dia:point val="-3.62125,11"/>
+        <dia:point val="-3.62422,6.4"/>
+        <dia:point val="-3.62422,11"/>
         <dia:point val="40.795,11"/>
         <dia:point val="40.795,29"/>
       </dia:attribute>
@@ -1935,17 +1935,17 @@
     </dia:object>
     <dia:object type="UML - Generalization" version="1" id="O11">
       <dia:attribute name="obj_pos">
-        <dia:point val="-3.62125,6.4"/>
+        <dia:point val="-3.62422,6.4"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="-4.47125,6.35;57.615,24.05"/>
+        <dia:rectangle val="-4.47422,6.35;57.615,24.05"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="-3.62125,6.4"/>
-        <dia:point val="-3.62125,11"/>
+        <dia:point val="-3.62422,6.4"/>
+        <dia:point val="-3.62422,11"/>
         <dia:point val="57.565,11"/>
         <dia:point val="57.565,24"/>
       </dia:attribute>
@@ -1986,17 +1986,17 @@
     </dia:object>
     <dia:object type="UML - Generalization" version="1" id="O12">
       <dia:attribute name="obj_pos">
-        <dia:point val="-3.62125,6.4"/>
+        <dia:point val="-3.62422,6.4"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="-4.47125,6.35;79.155,19.05"/>
+        <dia:rectangle val="-4.47422,6.35;79.155,19.05"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
-        <dia:point val="-3.62125,6.4"/>
-        <dia:point val="-3.62125,11"/>
+        <dia:point val="-3.62422,6.4"/>
+        <dia:point val="-3.62422,11"/>
         <dia:point val="79.105,11"/>
         <dia:point val="79.105,19"/>
       </dia:attribute>
@@ -2488,10 +2488,10 @@
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="abstract">
-            <dia:boolean val="true"/>
+            <dia:boolean val="false"/>
           </dia:attribute>
           <dia:attribute name="inheritance_type">
-            <dia:enum val="0"/>
+            <dia:enum val="1"/>
           </dia:attribute>
           <dia:attribute name="query">
             <dia:boolean val="false"/>
