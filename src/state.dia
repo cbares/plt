@@ -3068,7 +3068,7 @@
                 <dia:string>#observable#</dia:string>
               </dia:attribute>
               <dia:attribute name="type">
-                <dia:string>#std::shared_ptr&lt;Observalbe&gt;#</dia:string>
+                <dia:string>#std::shared_ptr&lt;Observable&gt;#</dia:string>
               </dia:attribute>
               <dia:attribute name="value">
                 <dia:string>##</dia:string>
