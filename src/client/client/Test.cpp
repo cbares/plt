@@ -29,6 +29,8 @@ void Test::render(){
             if (event.type == sf::Event::Closed){
                 stateRenderer->window.close();
             }
+    
+            stateRenderer->update(state);
         }
 
     }
