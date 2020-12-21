@@ -23,10 +23,19 @@ void PlayerRenderer::draw(sf::RenderTarget &target, sf::RenderStates states) con
     sf::Vector2f _position = this->getPosition();
 
     sf::Sprite _sprite(this->texture);
-    _sprite.setScale(500/_sprite.getLocalBounds().width,400/_sprite.getLocalBounds().height);
+    _sprite.setScale(400/_sprite.getLocalBounds().width,499/_sprite.getLocalBounds().height);
     _sprite.setPosition(_position.x,_position.y);
 
-    sf::Text _text(string("Player \n") + string("Stone :") + std::to_string(this->ressources->stone),this->font, 30);
+    sf::Text _text(string("Player \n") + 
+                    string("Stone :") + std::to_string(this->ressources->stone)+ 
+                    string("Stone :") + std::to_string(this->ressources->stone)+ 
+                    string("Stone :") + std::to_string(this->ressources->stone)+ 
+                    string("Stone :") + std::to_string(this->ressources->stone)+ 
+                    string("Stone :") + std::to_string(this->ressources->stone)+ 
+                    string("Stone :") + std::to_string(this->ressources->stone)+ 
+                    string("Stone :") + std::to_string(this->ressources->stone)+ 
+                    string("Stone :") + std::to_string(this->ressources->stone)
+                    ,this->font, 30);
     _text.setPosition(_position.x+10,_position.y);
     
     target.draw(_sprite);

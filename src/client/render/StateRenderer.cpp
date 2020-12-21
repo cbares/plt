@@ -9,9 +9,11 @@ StateRenderer::StateRenderer(){
 
 void StateRenderer::update(std::shared_ptr<state::State> state){
     this->window.clear();
-    std::shared_ptr<state::State> _state = dynamic_pointer_cast<state::State>(state);
-    /*shared_ptr<PlayerRenderer> playerRenderer = make_shared<PlayerRenderer>(_state->players[0]);
-
-    this->window.draw(*playerRenderer);*/
-    this->window.display(); 
+    shared_ptr<state::Player> player1 = state->players[0];
+    shared_ptr<PlayerRenderer> playerRenderer1 = make_shared<PlayerRenderer>(player1,sf::Vector2f(0,0));
+    shared_ptr<state::Player> player2 = state->players[1];
+    shared_ptr<PlayerRenderer> playerRenderer2 = make_shared<PlayerRenderer>(player2,sf::Vector2f(0,501));
+    this->window.draw(*playerRenderer1);
+    this->window.draw(*playerRenderer2);
+    this->window.display();
 }
