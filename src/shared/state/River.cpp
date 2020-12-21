@@ -5,7 +5,11 @@
 using namespace state;
 using namespace std;
 
-River::River(int tier){
+River::River(){
+
+}
+
+void River::load(int tier,std::string path){
     Json::Reader reader;
     Json::Value cardPoolJson;
     std::string file;
