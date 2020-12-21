@@ -1,0 +1,25 @@
+{
+    "name":"fountain",
+    "cost":
+        {
+            "stone":0,
+            "stoneIncome":0,
+            "victoryPoint":0,
+            "victoryPointIncome":0
+            ,"water":0
+            ,"waterIncome":0
+            ,"wood":7
+            ,"woodIncome":0
+        },
+    "gain":
+        {
+            "stone":0,
+            "stoneIncome":0
+            ,"victoryPoint":0
+            ,"victoryPointIncome":1
+            ,"water":0
+            ,"waterIncome":0
+            ,"wood":0
+            ,"woodIncome":0
+        }
+}
