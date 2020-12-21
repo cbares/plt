@@ -26,10 +26,19 @@ State::State (int remainingTurns,std::string ressourcespath){
 
 }
 State::State (Json::Value value){
-    this->unserialize();
+    this->unserialize(value);
 }
 Json::Value State::serialize (){
+    Json::Value value;
 
+    value["remainingTurns"] = this->remainingTurns;
+    for(uint i = 0;i<rivers.size();i++){
+        value["players"][i] = players[i]->serialize();
+    }
+    for(uint i = 0;i<rivers.size();i++){
+        value["rivers"][i] = players[i]->serialize();
+    }
+    value["rivers"]; 
 }
 void State::unserialize (Json::Value value){
 
