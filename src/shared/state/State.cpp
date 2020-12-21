@@ -3,14 +3,6 @@
 using namespace state;
 using namespace std;
 
-State::State(){
-	this->remainingTurns = 10;
-}
-
-State::State(Json::Value value){
-	this->unserialize(value);
-}
-
 Json::Value State::serialize(){
 	Json::Value value;
 
@@ -41,4 +33,30 @@ void State::unserialize(Json::Value value){
 	for (Json::ArrayIndex i(0); i<value["rivers"].size(); i++) {
 		this->rivers.push_back(make_shared<River>(value["rivers"][i]));
 	}
+}
+
+State::State (int remainingTurns,std::string ressourcespath){
+    this->remainingTurns = remainingTurns;
+    
+    shared_ptr<Player> player1 = make_shared<Player>();
+    shared_ptr<Player> player2 = make_shared<Player>();
+
+    players.push_back(player1);
+    players.push_back(player2);
+
+    shared_ptr<River> river1 = make_shared<River>();
+    river1->load("tier1.json","../../../res/cardsData/");
+    rivers.push_back(river1);
+
+    shared_ptr<River> river2 = make_shared<River>();
+    river2->load("tier1.json","../../../res/cardsData/");
+    rivers.push_back(river2);
+
+    shared_ptr<River> river3 = make_shared<River>();
+    river3->load("tier1.json","../../../res/cardsData/");
+    rivers.push_back(river3);
+}
+
+State::State (Json::Value value){
+    this->unserialize(value);
 }

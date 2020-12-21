@@ -1,6 +1,7 @@
 #include "River.h"
 #include <fstream>
 #include <iostream>
+#include <random>
 
 using namespace state;
 using namespace std;
@@ -9,32 +10,23 @@ River::River(){
 
 }
 
-void River::load(int tier,std::string path){
+River::River(Json::Value value){
+    this->unserialize(value);
+}
+
+void River::load(std::string filename,std::string resPath){
     Json::Reader reader;
     Json::Value cardPoolJson;
-    std::string file;
-    switch (tier)
-    {
-    case 1:
-        file = "res/cardsData/tier1.json";
-        break;
-    case 2:
-        file = "res/cardsData/tier2.json";
-        break;
-    case 3:
-        file = "res/cardsData/tier3.json";
-        break;
-    default :
-        return;
-    }
-    ifstream stream(file,ifstream::binary);
+    std::string filepath  = resPath + filename;
+
+    ifstream stream(filepath,ifstream::binary);
     reader.parse(stream,cardPoolJson,false);
     std::vector<Json::Value> cardPool;
 
     for(uint i =0; i<cardPoolJson["cards"].size();i++){
         Json::Value cardJson;
-        std::string subFile = "res/cardsData/"+cardPoolJson["cards"][i].asString()+".json";
-        ifstream subStream(subFile,ifstream::binary);
+        std::string subFilepath = resPath +cardPoolJson["cards"][i].asString()+".json";
+        ifstream subStream(subFilepath,ifstream::binary);
         reader.parse(subStream,cardJson,false);
 
         cardPool.push_back(cardJson);
@@ -45,48 +37,54 @@ void River::load(int tier,std::string path){
 }
 
 Json::Value River::serialize(){
-    Json::Value river;
+    Json::Value riverValue;
 
-    Json::Value cards;
-    for(uint i =0; i<cards.size();i++){
-        cards[i] = this->cards[i]->serialize();
+    Json::Value cardsValue;
+    for(uint i =0; i<this->cards.size();i++){
+        cardsValue[i] = this->cards[i]->serialize();
     }
-    river["cards"] = cards;
+    riverValue["cards"] = cardsValue;
 
-    Json::Value cardPool;
-    for(uint i =0; i<cardPool.size();i++){
-        cardPool[i] = this->cardPool[i];
+    Json::Value cardPoolValue;
+    for(uint i =0; i<this->cardPool.size();i++){
+        cardPoolValue[i] = this->cardPool[i];
     }
-    river["cardPool"] = cardPool;
+    riverValue["cardPool"] = cardPoolValue;
 
-    return river;
+    return riverValue;
 }
 
 void River::unserialize(Json::Value value){
 
-    std::vector<std::shared_ptr<Card>> cards;
+    vector<shared_ptr<Card>> cards;
     for(uint i =0; i<value["cards"].size();i++){
-        this->cards.push_back(make_shared<Card>(value["cards"][i]));
+        shared_ptr<Card> card = make_shared<Card>(value["cards"][i]);
+        cards.push_back(card);
     }
     this->cards = cards;
 
-    std::vector<Json::Value> cardPool;
+    vector<Json::Value> cardPool;
     for(uint i =0; i<value["cardPool"].size();i++){
-        cardPool.push_back(value["cards"][i]);
+        cardPool.push_back(value["cardPool"][i]);
     }
     this->cardPool = cardPool;
 }
 
 std::shared_ptr<Card> River::popCard(int position){
-    std::shared_ptr<Card> card = this->cards[position];
+    shared_ptr<Card> card = this->cards[position];
     this->cards.erase(cards.begin()+position);
     return card;
 }
 
-void River::addCard(std::shared_ptr<Card>){
-
+void River::addCard(shared_ptr<Card> card){
+    cards.push_back(card);
 }
 
 void River::refill(){
+    while(this->cards.size()<5){
+        Json::Value newCardJson = cardPool[rand()%(cardPool.size())];
+        shared_ptr<Card> card = make_shared<Card>(newCardJson);
+        addCard(card);
+    }
 
 }
