@@ -66,6 +66,34 @@ BOOST_AUTO_TEST_CASE(River_popCard){
 
 }
 
+BOOST_AUTO_TEST_CASE(River_serialization){
+    shared_ptr<River> river1 = make_shared<River>();
+    river1->load("tier1.json","../../../res/cardsData/");
+    river1->refill();
 
+    Json::Value value = river1->serialize();
+    shared_ptr<River> river2 = make_shared<River>();
+    river2->unserialize(value);
+
+    BOOST_TEST(river2->cardPool.size() == river1->cardPool.size());
+
+    BOOST_TEST(river2->cards.size() == river1->cards.size());
+
+
+}
+
+BOOST_AUTO_TEST_CASE(River_serialization_constructor){
+    shared_ptr<River> river1 = make_shared<River>();
+    river1->load("tier1.json","../../../res/cardsData/");
+    river1->refill();
+
+    Json::Value value = river1->serialize();
+    shared_ptr<River> river2 = make_shared<River>(value);
+
+    BOOST_TEST(river2->cardPool.size() == river1->cardPool.size());
+
+    BOOST_TEST(river2->cards.size() == river1->cards.size());
+
+}
 
 BOOST_AUTO_TEST_SUITE_END();

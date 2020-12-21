@@ -10,6 +10,10 @@ River::River(){
 
 }
 
+River::River(Json::Value value){
+    this->unserialize(value);
+}
+
 void River::load(std::string filename,std::string resPath){
     Json::Reader reader;
     Json::Value cardPoolJson;
@@ -52,26 +56,27 @@ Json::Value River::serialize(){
 
 void River::unserialize(Json::Value value){
 
-    std::vector<std::shared_ptr<Card>> cards;
+    vector<shared_ptr<Card>> cards;
     for(uint i =0; i<value["cards"].size();i++){
-        this->cards.push_back(make_shared<Card>(value["cards"][i]));
+        shared_ptr<Card> card = make_shared<Card>(value["cards"][i]);
+        cards.push_back(card);
     }
     this->cards = cards;
 
-    std::vector<Json::Value> cardPool;
+    vector<Json::Value> cardPool;
     for(uint i =0; i<value["cardPool"].size();i++){
-        cardPool.push_back(value["cards"][i]);
+        cardPool.push_back(value["cardPool"][i]);
     }
     this->cardPool = cardPool;
 }
 
 std::shared_ptr<Card> River::popCard(int position){
-    std::shared_ptr<Card> card = this->cards[position];
+    shared_ptr<Card> card = this->cards[position];
     this->cards.erase(cards.begin()+position);
     return card;
 }
 
-void River::addCard(std::shared_ptr<Card> card){
+void River::addCard(shared_ptr<Card> card){
     cards.push_back(card);
 }
 
