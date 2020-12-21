@@ -10,10 +10,10 @@ River::River(){
 
 }
 
-void River::load(std::string filename,std::string path){
+void River::load(std::string filename,std::string resPath){
     Json::Reader reader;
     Json::Value cardPoolJson;
-    std::string filepath  = path + filename;
+    std::string filepath  = resPath + filename;
 
     ifstream stream(filepath,ifstream::binary);
     reader.parse(stream,cardPoolJson,false);
@@ -21,7 +21,7 @@ void River::load(std::string filename,std::string path){
 
     for(uint i =0; i<cardPoolJson["cards"].size();i++){
         Json::Value cardJson;
-        std::string subFilepath = path +cardPoolJson["cards"][i].asString()+".json";
+        std::string subFilepath = resPath +cardPoolJson["cards"][i].asString()+".json";
         ifstream subStream(subFilepath,ifstream::binary);
         reader.parse(subStream,cardJson,false);
 

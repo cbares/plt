@@ -1637,13 +1637,13 @@
         <dia:point val="22,24"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="21.95,23.95;41.8,33.05"/>
+        <dia:rectangle val="21.95,23.95;42.955,33.05"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
         <dia:point val="22,24"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="19.75"/>
+        <dia:real val="20.905000000000001"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
         <dia:real val="9"/>
@@ -1865,7 +1865,7 @@
             </dia:composite>
             <dia:composite type="umlparameter">
               <dia:attribute name="name">
-                <dia:string>#path#</dia:string>
+                <dia:string>#resPath#</dia:string>
               </dia:attribute>
               <dia:attribute name="type">
                 <dia:string>#std::string#</dia:string>
@@ -2398,6 +2398,23 @@
                 <dia:enum val="0"/>
               </dia:attribute>
             </dia:composite>
+            <dia:composite type="umlparameter">
+              <dia:attribute name="name">
+                <dia:string>#resPath#</dia:string>
+              </dia:attribute>
+              <dia:attribute name="type">
+                <dia:string>#std::string#</dia:string>
+              </dia:attribute>
+              <dia:attribute name="value">
+                <dia:string>##</dia:string>
+              </dia:attribute>
+              <dia:attribute name="comment">
+                <dia:string>##</dia:string>
+              </dia:attribute>
+              <dia:attribute name="kind">
+                <dia:enum val="0"/>
+              </dia:attribute>
+            </dia:composite>
           </dia:attribute>
         </dia:composite>
         <dia:composite type="umloperation">
@@ -2619,16 +2636,16 @@
         <dia:point val="72,24.7"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="41.7,23.95;72.75,25.555"/>
+        <dia:rectangle val="42.855,23.95;72.75,25.555"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
       </dia:attribute>
       <dia:attribute name="orth_points">
         <dia:point val="72,24.7"/>
-        <dia:point val="56.525,24.7"/>
-        <dia:point val="56.525,24.7"/>
-        <dia:point val="41.75,24.7"/>
+        <dia:point val="57.1025,24.7"/>
+        <dia:point val="57.1025,24.7"/>
+        <dia:point val="42.905,24.7"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="0"/>
