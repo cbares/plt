@@ -96,8 +96,53 @@ void CardRenderer::draw(sf::RenderTarget &target, sf::RenderStates states) const
         _position += sf::Vector2f(_spriteWater.getLocalBounds().width,0);
     }
 
-    _position += sf::Vector2f(0,20);
+    _position += sf::Vector2f(0,40);
 
-    // Card cost part
+    // Card gain part
+
+    if(gain->stone !=0){
+        sf::Text _nameText(string("Gain ") + to_string(this->gain->stone),this->font, 15);
+        _nameText.setPosition(_position.x,_position.y);
+        target.draw(_nameText);
+        _position += sf::Vector2f(_nameText.getLocalBounds().width,0);
+        sf::Sprite _stoneSprite(this->ressourcesTextures.find("stone")->second);
+        _stoneSprite.setScale(15.36/_stoneSprite.getLocalBounds().width,15.36/_stoneSprite.getLocalBounds().height);
+        _stoneSprite.setPosition(_position.x,_position.y+2);
+        target.draw(_stoneSprite);
+        _position += sf::Vector2f(_stoneSprite.getLocalBounds().width,0);
+    }
+    if(gain->water !=0){
+        sf::Text _nameText(string("Gain ") + to_string(this->gain->water),this->font, 15);
+        _nameText.setPosition(_position.x,_position.y);
+        target.draw(_nameText);
+        _position += sf::Vector2f(_nameText.getLocalBounds().width,0);
+        sf::Sprite _waterSprite(this->ressourcesTextures.find("stone")->second);
+        _waterSprite.setScale(15.36/_waterSprite.getLocalBounds().width,15.36/_waterSprite.getLocalBounds().height);
+        _waterSprite.setPosition(_position.x,_position.y+2);
+        target.draw(_waterSprite);
+        _position += sf::Vector2f(_waterSprite.getLocalBounds().width,0);
+    }
+    if(gain->wood !=0){
+        sf::Text _nameText(string("Gain ") + to_string(this->gain->wood),this->font, 15);
+        _nameText.setPosition(_position.x,_position.y);
+        target.draw(_nameText);
+        _position += sf::Vector2f(_nameText.getLocalBounds().width,0);
+        sf::Sprite _woodSprite(this->ressourcesTextures.find("stone")->second);
+        _woodSprite.setScale(15.36/_woodSprite.getLocalBounds().width,15.36/_woodSprite.getLocalBounds().height);
+        _woodSprite.setPosition(_position.x,_position.y+2);
+        target.draw(_woodSprite);
+        _position += sf::Vector2f(_woodSprite.getLocalBounds().width,0);
+    }
+    if(gain->victoryPoint !=0){
+        sf::Text _nameText(string("Gain ") + to_string(this->gain->victoryPoint),this->font, 15);
+        _nameText.setPosition(_position.x,_position.y);
+        target.draw(_nameText);
+        _position += sf::Vector2f(_nameText.getLocalBounds().width,0);
+        sf::Sprite _victoryPointSprite(this->ressourcesTextures.find("stone")->second);
+        _victoryPointSprite.setScale(15.36/_victoryPointSprite.getLocalBounds().width,15.36/_victoryPointSprite.getLocalBounds().height);
+        _victoryPointSprite.setPosition(_position.x,_position.y+2);
+        target.draw(_victoryPointSprite);
+        _position += sf::Vector2f(_victoryPointSprite.getLocalBounds().width,0);
+    }
 
 }
