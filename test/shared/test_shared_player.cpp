@@ -11,7 +11,8 @@ using namespace std;
 BOOST_AUTO_TEST_SUITE(shared_Player)
 
 BOOST_AUTO_TEST_CASE(Player_constructor){
-    shared_ptr<Player> player = make_shared<Player>();
+    shared_ptr<Player> player = make_shared<Player>(string("test"));
+    BOOST_TEST(player->name == "test");
     BOOST_TEST(player->ressources->stone == 0);
     BOOST_TEST(player->ressources->stoneIncome == 0);
     BOOST_TEST(player->ressources->water == 0);
@@ -24,7 +25,7 @@ BOOST_AUTO_TEST_CASE(Player_constructor){
 
 BOOST_AUTO_TEST_CASE(Player_serialization){
     shared_ptr<Ressources> ressources = make_shared<Ressources>(1,2,3,4,5,6,7,8);
-    shared_ptr<Player> player1 = make_shared<Player>();
+    shared_ptr<Player> player1 = make_shared<Player>(string("test"));
     player1->ressources = ressources;
     Json::Value value = player1->serialize();
     shared_ptr<Player> player2 = make_shared<Player>(value);
@@ -40,7 +41,7 @@ BOOST_AUTO_TEST_CASE(Player_serialization){
 
 BOOST_AUTO_TEST_CASE(Player_earnIncome){
     shared_ptr<Ressources> ressources = make_shared<Ressources>(1,2,3,4,5,6,7,8);
-    shared_ptr<Player> player = make_shared<Player>();
+    shared_ptr<Player> player = make_shared<Player>(string("test"));
     player->ressources = ressources;
     player->earnIncome();
     BOOST_TEST(player->ressources->stone == 3);
@@ -55,7 +56,7 @@ BOOST_AUTO_TEST_CASE(Player_earnIncome){
 
 BOOST_AUTO_TEST_CASE(Player_pick){
     shared_ptr<Ressources> ressources = make_shared<Ressources>(1,2,3,4,5,6,7,8);
-    shared_ptr<Player> player = make_shared<Player>();
+    shared_ptr<Player> player = make_shared<Player>(string("test"));
     player->ressources = ressources;
 
     shared_ptr<Ressources> cost = make_shared<Ressources>(1,2,3,4,5,6,7,8);
@@ -73,7 +74,7 @@ BOOST_AUTO_TEST_CASE(Player_pick){
     BOOST_TEST(player->ressources->victoryPointIncome == 0);
 
     ressources = make_shared<Ressources>(1,2,3,4,5,6,7,8);
-    player = make_shared<Player>();
+    player = make_shared<Player>(string("test"));
     player->ressources = ressources;
 
     cost = make_shared<Ressources>(0,0,0,0,0,0,0,0);

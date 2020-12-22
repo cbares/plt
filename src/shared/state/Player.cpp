@@ -3,7 +3,8 @@
 using namespace state;
 using namespace std;
 
-Player::Player(){
+Player::Player(std::string name){
+    this->name = name;
     this->ressources = make_shared<Ressources>();
 }
 
@@ -26,12 +27,13 @@ void Player::pick(std::shared_ptr<Card> card){
 
 Json::Value Player::serialize(){
     Json::Value value;
-
+    value["name"] = name;
     value["ressources"] = this->ressources->serialize();
 
     return value;
 }
 
 void Player::unserialize(Json::Value value){
+    this->name = value["name"].asString();
     this->ressources = make_shared<Ressources>(value["ressources"]);
 }

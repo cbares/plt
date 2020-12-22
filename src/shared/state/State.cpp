@@ -6,8 +6,8 @@ using namespace std;
 State::State (int remainingTurns,std::string ressourcespath){
     this->remainingTurns = remainingTurns;
     
-    shared_ptr<Player> player1 = make_shared<Player>();
-    shared_ptr<Player> player2 = make_shared<Player>();
+    shared_ptr<Player> player1 = make_shared<Player>(string("Player 1"));
+    shared_ptr<Player> player2 = make_shared<Player>(string("Player 2"));
 
     players.push_back(player1);
     players.push_back(player2);
