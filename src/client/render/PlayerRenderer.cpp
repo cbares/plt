@@ -3,12 +3,6 @@
 using namespace render;
 using namespace std;
 
-/*
-    sf::Texture texture;
-    sf::Font font;
-    std::shared_ptr<state::Ressources> ressouces;
-*/
-
 std::string dif2string(int ressource){
     if(ressource>=0){
         return string("+") + to_string(ressource);
@@ -20,6 +14,8 @@ std::string dif2string(int ressource){
 
 PlayerRenderer::PlayerRenderer(std::shared_ptr<state::Player> player, sf::Vector2f position){
     this->setPosition(position);
+    
+    this->name = player->name;
 
     this->ressources = make_shared<state::Ressources>(player->ressources->serialize());
 
