@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include <random>
+#include <ctime>
 
 using namespace state;
 using namespace std;
@@ -82,6 +83,7 @@ void River::addCard(shared_ptr<Card> card){
 
 void River::refill(){
     while(this->cards.size()<5){
+        srand((unsigned int) time(NULL));
         Json::Value newCardJson = cardPool[rand()%(cardPool.size())];
         shared_ptr<Card> card = make_shared<Card>(newCardJson);
         addCard(card);
