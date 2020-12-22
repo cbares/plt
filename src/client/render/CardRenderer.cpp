@@ -49,18 +49,19 @@ void CardRenderer::draw(sf::RenderTarget &target, sf::RenderStates states) const
 
     _position += sf::Vector2f(5,5);
     // Card name part
-    sf::Sprite _nameSprite(this->texture);
-    _nameSprite.setScale(90/_nameSprite.getLocalBounds().width,20/_nameSprite.getLocalBounds().height);
-    _nameSprite.setPosition(_position.x,_position.y);
-    target.draw(_nameSprite);
+    sf::Sprite _backgroundSprite(this->texture);
+    _backgroundSprite.setScale(90/_backgroundSprite.getLocalBounds().width,120/_backgroundSprite.getLocalBounds().height);
+    _backgroundSprite.setPosition(_position.x,_position.y);
+    target.draw(_backgroundSprite);
 
     sf::Text _nameText(this->name,this->font, 15);
-    _nameText.setPosition(_position.x,_position.y);
+    _nameText.setPosition(_position.x+3,_position.y);
     target.draw(_nameText);
 
     _position += sf::Vector2f(0,20);
 
     // Card cost part
+
     if(cost->stone !=0){
         sf::Text _nameText(to_string(this->cost->stone),this->font, 15);
         _nameText.setPosition(_position.x,_position.y);
@@ -94,6 +95,8 @@ void CardRenderer::draw(sf::RenderTarget &target, sf::RenderStates states) const
         target.draw(_spriteWater);
         _position += sf::Vector2f(_spriteWater.getLocalBounds().width,0);
     }
+
+    _position += sf::Vector2f(0,20);
 
     // Card cost part
 
