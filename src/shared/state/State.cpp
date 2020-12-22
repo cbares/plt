@@ -14,14 +14,17 @@ State::State (int remainingTurns,std::string ressourcespath){
 
     shared_ptr<River> river1 = make_shared<River>();
     river1->load("tier1.json",ressourcespath);
+	river1->refill();
     rivers.push_back(river1);
 
     shared_ptr<River> river2 = make_shared<River>();
-    river2->load("tier1.json",ressourcespath);
+    river2->load("tier2.json",ressourcespath);
+	river2->refill();
     rivers.push_back(river2);
 
     shared_ptr<River> river3 = make_shared<River>();
-    river3->load("tier1.json",ressourcespath);
+    river3->load("tier3.json",ressourcespath);
+	river3->refill();
     rivers.push_back(river3);
 }
 
