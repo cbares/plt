@@ -24,17 +24,19 @@ BOOST_AUTO_TEST_CASE(PickCommand_verify){
     shared_ptr<PickCommand> wrongPickCommand1 = make_shared<PickCommand>(3,1,"Player 1");
     shared_ptr<PickCommand> wrongPickCommand2 = make_shared<PickCommand>(2,5,"Player 1");
     shared_ptr<PickCommand> wrongPickCommand3 = make_shared<PickCommand>(2,2,"Player 3");
+    shared_ptr<PickCommand> wrongPickCommand4 = make_shared<PickCommand>(2,4,"Player 2");
 
     BOOST_TEST(wrongPickCommand1->verify(state) == false);
     BOOST_TEST(wrongPickCommand2->verify(state) == false);
     BOOST_TEST(wrongPickCommand3->verify(state) == false);
+    BOOST_TEST(wrongPickCommand4->verify(state) == false);
 
     //should work
     shared_ptr<PickCommand> validPickCommand1 = make_shared<PickCommand>(0,0,"Player 1");
+    state->players[1]->ressources = make_shared<state::Ressources>(100,100,100,0,100,0,0,0);
     shared_ptr<PickCommand> validPickCommand2 = make_shared<PickCommand>(2,4,"Player 2");
     BOOST_TEST(validPickCommand1->verify(state));
     BOOST_TEST(validPickCommand2->verify(state));
-    
 }
 
 
