@@ -39,5 +39,27 @@ BOOST_AUTO_TEST_CASE(PickCommand_verify){
     BOOST_TEST(validPickCommand2->verify(state));
 }
 
+BOOST_AUTO_TEST_CASE(PickCommand_execute){
+    shared_ptr<state::State> state = make_shared<state::State>(42,"../../../res/cardsData/");
+
+    shared_ptr<state::Ressources> ressourcesP1BeforeTesting = make_shared<state::Ressources>(state->players[0]->ressources->serialize());
+    shared_ptr<PickCommand> PickCommand1 = make_shared<PickCommand>(0,0,"Player 1");
+    state->players[1]->ressources = make_shared<state::Ressources>(100,100,100,0,100,0,0,0);
+    shared_ptr<state::Ressources> ressourcesP2BeforeTesting = make_shared<state::Ressources>(state->players[1]->ressources->serialize());
+
+    shared_ptr<PickCommand> PickCommand2 = make_shared<PickCommand>(2,4,"Player 2");
+    PickCommand1->execute(state);
+    PickCommand2->execute(state);
+
+    shared_ptr<state::Ressources> ressourcesP1AfterTesting = make_shared<state::Ressources>(state->players[0]->ressources->serialize());
+    shared_ptr<state::Ressources> ressourcesP2AfterTesting = make_shared<state::Ressources>(state->players[1]->ressources->serialize());
+
+    BOOST_TEST(ressourcesP1AfterTesting->isGreaterOrEqual(ressourcesP1BeforeTesting));
+    BOOST_TEST(!(ressourcesP2AfterTesting->isGreaterOrEqual(ressourcesP2BeforeTesting)));
+
+    BOOST_TEST(state->rivers[0]->cards.size() = 5);
+    BOOST_TEST(state->rivers[2]->cards.size() = 5);
+
+}
 
 BOOST_AUTO_TEST_SUITE_END();
