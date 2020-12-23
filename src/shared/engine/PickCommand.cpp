@@ -10,9 +10,10 @@ using namespace std;
     const std::string& getPlayerName() const;
 */
 
-PickCommand::PickCommand (int riverPosition, int cardPosition){
+PickCommand::PickCommand (int riverPosition, int cardPosition, std::string playerName){
     this->riverPosition = riverPosition;
     this->cardPosition = cardPosition;
+    this->setPlayerName(playerName);
 }
 
 void PickCommand::execute (std::shared_ptr<state::State> state){
