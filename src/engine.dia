@@ -857,7 +857,7 @@
                 <dia:string>#command#</dia:string>
               </dia:attribute>
               <dia:attribute name="type">
-                <dia:string>#Command#</dia:string>
+                <dia:string>#std::shared_ptr&lt;Command&gt;#</dia:string>
               </dia:attribute>
               <dia:attribute name="value">
                 <dia:string>##</dia:string>
@@ -905,7 +905,7 @@
                 <dia:string>#command#</dia:string>
               </dia:attribute>
               <dia:attribute name="type">
-                <dia:string>#Command#</dia:string>
+                <dia:string>#std::shared_ptr&lt;Command&gt;#</dia:string>
               </dia:attribute>
               <dia:attribute name="value">
                 <dia:string>##</dia:string>
