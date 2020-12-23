@@ -59,7 +59,27 @@ BOOST_AUTO_TEST_CASE(PickCommand_execute){
 
     BOOST_TEST(state->rivers[0]->cards.size() = 5);
     BOOST_TEST(state->rivers[2]->cards.size() = 5);
+}
 
+BOOST_AUTO_TEST_CASE(PickCommand_serialization){
+    shared_ptr<PickCommand> pickCommand1 = make_shared<PickCommand>(7,3,"Player 1");
+    Json::Value pickCommand1Json = pickCommand1->serialize();
+    shared_ptr<PickCommand> pickCommand2 = make_shared<PickCommand>(0,0,"Player 2");
+    pickCommand2->unserialize(pickCommand1Json);
+
+    BOOST_TEST(pickCommand2->riverPosition == 7);
+    BOOST_TEST(pickCommand2->cardPosition == 3);
+    BOOST_TEST(pickCommand2->getPlayerName() == "Player 1");
+}
+
+BOOST_AUTO_TEST_CASE(PickCommand_serialization_constructor){
+    shared_ptr<PickCommand> pickCommand1 = make_shared<PickCommand>(7,3,"Player 1");
+    Json::Value pickCommand1Json = pickCommand1->serialize();
+    shared_ptr<PickCommand> pickCommand2 = make_shared<PickCommand>(pickCommand1Json);
+
+    BOOST_TEST(pickCommand2->riverPosition == 7);
+    BOOST_TEST(pickCommand2->cardPosition == 3);
+    BOOST_TEST(pickCommand2->getPlayerName() == "Player 1");
 }
 
 BOOST_AUTO_TEST_SUITE_END();

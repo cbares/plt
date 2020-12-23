@@ -15,6 +15,9 @@ PickCommand::PickCommand (int riverPosition, int cardPosition, std::string playe
     this->cardPosition = cardPosition;
     this->setPlayerName(playerName);
 }
+PickCommand::PickCommand (Json::Value value){
+    this->unserialize(value);
+}
 
 void PickCommand::execute (std::shared_ptr<state::State> state){
     vector<shared_ptr<state::Player>> players = state->players;
@@ -54,9 +57,15 @@ bool PickCommand::verify (std::shared_ptr<state::State> state){
 }
 
 Json::Value PickCommand::serialize (){
-    //Json::Value value;
+    Json::Value value;
+    value["riverPosition"] = this->riverPosition;
+    value["cardPosition"] = this->cardPosition;
+    value["playerName"] = this->getPlayerName();
+    return value;
 }
 
 void PickCommand::unserialize (Json::Value value){
-    //value["riverPosition"].asUInt();
+    this->riverPosition = value["riverPosition"].asUInt();
+    this->cardPosition = value["cardPosition"].asUInt();
+    this->setPlayerName(value["playerName"].asString());
 }
