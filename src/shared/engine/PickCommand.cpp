@@ -27,7 +27,7 @@ bool PickCommand::verify (std::shared_ptr<state::State> state){
     for(auto it = players.begin();it != players.end();it++){
         if(((*it)->name == this->getPlayerName()) &&
             (this->riverPosition < rivers.size()) &&
-            (this->cardPosition  < players.size())){
+            (this->cardPosition  < rivers[riverPosition]->cards.size())){
             return true;
         }
     }

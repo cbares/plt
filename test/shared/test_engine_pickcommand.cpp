@@ -32,7 +32,6 @@ BOOST_AUTO_TEST_CASE(PickCommand_verify){
     //should work
     shared_ptr<PickCommand> validPickCommand1 = make_shared<PickCommand>(0,0,"Player 1");
     shared_ptr<PickCommand> validPickCommand2 = make_shared<PickCommand>(2,4,"Player 2");
-
     BOOST_TEST(validPickCommand1->verify(state));
     BOOST_TEST(validPickCommand2->verify(state));
     
