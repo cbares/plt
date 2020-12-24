@@ -58,7 +58,7 @@ void Test::engine(){
                     std::shared_ptr<state::Player> player = state->players[state->remainingTurns%2];
                     shared_ptr<PickCommand> pickCommand = make_shared<PickCommand>(0,0,player->name);
                     engine->execute(pickCommand);
-                    state->remainingTurns--;
+                    state->endTurn();
                 }
             }
         }

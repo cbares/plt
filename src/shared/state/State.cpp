@@ -26,12 +26,38 @@ State::State (int remainingTurns,std::string ressourcespath){
     river3->load("tier3.json",ressourcespath);
 	river3->refill();
     rivers.push_back(river3);
+	
+	activePlayerName = player1->name;
 }
 
 
 State::State (Json::Value value){
     this->unserialize(value);
 }
+
+void State::endTurn (){
+	if(remainingTurns >0){
+		remainingTurns--;
+		refreshActivePlayer();
+	}
+	else{
+		if(players[0]->ressources->victoryPoint > players[1]->ressources->victoryPoint){
+			winnerName = players[0]->name;
+		}else{
+			winnerName = players[1]->name;
+		}
+	}
+}
+
+void State::refreshActivePlayer (){
+	if(activePlayerName == players[0]->name){
+		activePlayerName = players[0]->name;
+	}
+	else{
+		activePlayerName = players[1]->name;
+	}
+}
+
 
 Json::Value State::serialize(){
 	Json::Value value;

@@ -27,4 +27,21 @@ BOOST_AUTO_TEST_CASE(State_serialization){
 	BOOST_TEST(state1->remainingTurns == state2->remainingTurns);
 }
 
+BOOST_AUTO_TEST_CASE(State_endOfTurn){
+	shared_ptr<State> state = make_shared<State>(1,"../../../res/cardsData/");
+	
+	BOOST_TEST(state->remainingTurns == 1);
+	state->endTurn();
+	BOOST_TEST(state->remainingTurns == 0);
+
+	state->players[0]->ressources->victoryPoint = 1;
+	state->endTurn();
+	BOOST_TEST(state->remainingTurns == 0);
+	BOOST_TEST(state->winnerName == state->players[0]->name);
+	state->players[1]->ressources->victoryPoint = 2;
+	state->endTurn();
+	BOOST_TEST(state->remainingTurns == 0);
+	BOOST_TEST(state->winnerName == state->players[1]->name);
+}
+
 BOOST_AUTO_TEST_SUITE_END();
