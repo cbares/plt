@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <SFML/Graphics.hpp>
-
 using namespace client;
 using namespace state;
 using namespace render;
@@ -50,7 +49,12 @@ void Test::engine(){
             if (event.type == sf::Event::Closed){
                 stateRenderer->close();
             }
-
+            if(event.type == sf::Event::KeyPressed)
+            {
+                if(event.key.code == sf::Keyboard::Space){
+                    cout << "space" << endl;
+                }
+            }
         }
     }
 }
