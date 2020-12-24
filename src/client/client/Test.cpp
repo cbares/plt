@@ -35,7 +35,7 @@ void Test::render(){
 }
 
 void Test::engine(){
-    shared_ptr<State> state = make_shared<State>(1000,"res/cardsData/");
+    shared_ptr<State> state = make_shared<State>(20,"res/cardsData/");
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
     std::vector<std::shared_ptr<Actor>> actors;
     shared_ptr<Engine> engine = make_shared<Engine>(actors,state);
