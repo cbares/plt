@@ -7,6 +7,7 @@
 using namespace client;
 using namespace state;
 using namespace render;
+using namespace engine;
 using namespace std;
 
 void Test::state(){
@@ -36,6 +37,8 @@ void Test::render(){
 void Test::engine(){
     shared_ptr<State> state = make_shared<State>(10,"res/cardsData/");
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
+    std::vector<std::shared_ptr<Actor>> actors;
+    shared_ptr<Engine> engine = make_shared<Engine>(actors,state);
 
     while (stateRenderer->isOpen())
     {
