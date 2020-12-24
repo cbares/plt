@@ -18,16 +18,16 @@ void Test::render(){
     shared_ptr<State> state = make_shared<State>(10,"res/cardsData/");
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
 
-    while (stateRenderer->window.isOpen())
+    while (stateRenderer->isOpen())
     {
         // Process events
         stateRenderer->update(state);
         sf::Event event;
-        while (stateRenderer->window.pollEvent(event))
+        while (stateRenderer->pollEvent(event))
         {
             // Close window: exit
             if (event.type == sf::Event::Closed){
-                stateRenderer->window.close();
+                stateRenderer->close();
             }
     
         }
@@ -38,18 +38,19 @@ void Test::engine(){
     shared_ptr<State> state = make_shared<State>(10,"res/cardsData/");
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
 
-    while (stateRenderer->window.isOpen())
+    while (stateRenderer->isOpen())
     {
         // Process events
-        stateRenderer->update(state);
         sf::Event event;
-        /*while (stateRenderer->window.pollEvent(event))
+
+        stateRenderer->update(state);
+        while (stateRenderer->pollEvent(event))
         {
             // Close window: exit
             if (event.type == sf::Event::Closed){
-                stateRenderer->window.close();
+                stateRenderer->close();
             }
-    
-        }*/
+
+        }
     }
 }
