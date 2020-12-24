@@ -35,7 +35,7 @@ void Test::render(){
 }
 
 void Test::engine(){
-    shared_ptr<State> state = make_shared<State>(10,"res/cardsData/");
+    shared_ptr<State> state = make_shared<State>(1000,"res/cardsData/");
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
     std::vector<std::shared_ptr<Actor>> actors;
     shared_ptr<Engine> engine = make_shared<Engine>(actors,state);
@@ -55,7 +55,10 @@ void Test::engine(){
             if(event.type == sf::Event::KeyPressed)
             {
                 if(event.key.code == sf::Keyboard::Space){
-                    cout << "space" << endl;
+                    std::shared_ptr<state::Player> player = state->players[state->remainingTurns%2];
+                    shared_ptr<PickCommand> pickCommand = make_shared<PickCommand>(0,0,player->name);
+                    engine->execute(pickCommand);
+                    state->remainingTurns--;
                 }
             }
         }
