@@ -292,13 +292,13 @@
         <dia:point val="9,27"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="8.95,26.95;24.565,29.85"/>
+        <dia:rectangle val="8.95,26.95;27.645,29.85"/>
       </dia:attribute>
       <dia:attribute name="elem_corner">
         <dia:point val="9,27"/>
       </dia:attribute>
       <dia:attribute name="elem_width">
-        <dia:real val="15.515000000000001"/>
+        <dia:real val="18.594999999999999"/>
       </dia:attribute>
       <dia:attribute name="elem_height">
         <dia:real val="2.7999999999999998"/>
@@ -403,7 +403,7 @@
             <dia:string>##</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#std::shared_ptr&lt;Command&gt;#</dia:string>
+            <dia:string>#std::shared_ptr&lt;engine::Command&gt;#</dia:string>
           </dia:attribute>
           <dia:attribute name="visibility">
             <dia:enum val="0"/>
@@ -727,7 +727,7 @@
         <dia:point val="30.9925,20"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="16.7075,19.95;31.8425,27.05"/>
+        <dia:rectangle val="18.2475,19.95;31.8425,27.05"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
@@ -735,8 +735,8 @@
       <dia:attribute name="orth_points">
         <dia:point val="30.9925,20"/>
         <dia:point val="30.9925,23.9"/>
-        <dia:point val="16.7575,23.9"/>
-        <dia:point val="16.7575,27"/>
+        <dia:point val="18.2975,23.9"/>
+        <dia:point val="18.2975,27"/>
       </dia:attribute>
       <dia:attribute name="orth_orient">
         <dia:enum val="1"/>
