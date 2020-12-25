@@ -9,6 +9,7 @@ AI::AI (std::shared_ptr<state::Player> player) : engine::Actor(player){
 
 void AI::updateState (std::shared_ptr<state::State> state){
     this->state = state;
+    validCommandsInit();
 }
 
 void AI::validCommandsInit (){

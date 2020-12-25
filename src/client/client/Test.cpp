@@ -8,6 +8,7 @@ using namespace client;
 using namespace state;
 using namespace render;
 using namespace engine;
+using namespace ai;
 using namespace std;
 
 void Test::state(){
@@ -59,6 +60,36 @@ void Test::engine(){
                     shared_ptr<PickCommand> pickCommand = make_shared<PickCommand>(0,0,player->name);
                     engine->execute(pickCommand);
                     state->endTurn();
+                }
+            }
+        }
+    }
+}
+
+void Test::random_ai(){
+    shared_ptr<State> state = make_shared<State>(20,"res/cardsData/");
+    shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
+    std::vector<std::shared_ptr<Actor>> actors;
+    actors.push_back(make_shared<RandomAI>(state->players[0]));
+    actors.push_back(make_shared<RandomAI>(state->players[1]));
+    shared_ptr<Engine> engine = make_shared<Engine>(actors,state);
+
+    while (stateRenderer->isOpen())
+    {
+        // Process events
+        sf::Event event;
+
+        stateRenderer->update(state);
+        while (stateRenderer->pollEvent(event))
+        {
+            // Close window: exit
+            if (event.type == sf::Event::Closed){
+                stateRenderer->close();
+            }
+            if(event.type == sf::Event::KeyPressed)
+            {
+                if(event.key.code == sf::Keyboard::Space){
+                    engine->step();
                 }
             }
         }
