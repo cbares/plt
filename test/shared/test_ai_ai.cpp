@@ -18,9 +18,10 @@ BOOST_AUTO_TEST_CASE(AI_validCommandsInit){
     shared_ptr<State> state = make_shared<State>(42,"../../../res/cardsData/");
     shared_ptr<Engine> engine = make_shared<Engine>(actors,state);
     shared_ptr<RandomAI> randomAI = make_shared<RandomAI>(state->players[0]);
-
-    //random
-    BOOST_TEST(1);
+    randomAI->updateState(state);
+    randomAI->validCommandsInit();
+    BOOST_TEST(randomAI->validCommands.size()==5);
+    
 }
 
 BOOST_AUTO_TEST_SUITE_END();
