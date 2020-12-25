@@ -8,7 +8,7 @@ using namespace state;
 using namespace std;
 
 
-BOOST_AUTO_TEST_SUITE(shared_River)
+BOOST_AUTO_TEST_SUITE(state_River)
 
 BOOST_AUTO_TEST_CASE(River_constructor){
     shared_ptr<River> river = make_shared<River>();

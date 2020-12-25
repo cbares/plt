@@ -7,7 +7,7 @@
 using namespace engine;
 using namespace std;
 
-BOOST_AUTO_TEST_SUITE(shared_PickCommand)
+BOOST_AUTO_TEST_SUITE(engine_PickCommand)
 
 BOOST_AUTO_TEST_CASE(PickCommand_constructor){
     shared_ptr<PickCommand> pickCommand = make_shared<PickCommand>(7,3,"Player 1");

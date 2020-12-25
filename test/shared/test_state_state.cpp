@@ -8,7 +8,7 @@ using namespace state;
 using namespace std;
 
 
-BOOST_AUTO_TEST_SUITE(shared_State)
+BOOST_AUTO_TEST_SUITE(state_State)
 
 BOOST_AUTO_TEST_CASE(State_constructor){
     shared_ptr<State> state = make_shared<State>(42,"../../../res/cardsData/");

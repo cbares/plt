@@ -8,7 +8,7 @@ using namespace state;
 using namespace std;
 
 
-BOOST_AUTO_TEST_SUITE(shared_Player)
+BOOST_AUTO_TEST_SUITE(state_Player)
 
 BOOST_AUTO_TEST_CASE(Player_constructor){
     shared_ptr<Player> player = make_shared<Player>(string("test"));

@@ -7,7 +7,7 @@
 using namespace state;
 using namespace std;
 
-BOOST_AUTO_TEST_SUITE(shared_Ressources)
+BOOST_AUTO_TEST_SUITE(state_Ressources)
 
 BOOST_AUTO_TEST_CASE(Ressources_constructor){
     shared_ptr<Ressources> ressources = make_shared<Ressources>(1,2,3,4,5,6,7,8);
