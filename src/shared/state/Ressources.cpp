@@ -17,7 +17,6 @@ Ressources::Ressources(Json::Value value){
     this->unserialize(value);
 }
 
-
 void Ressources::add (std::shared_ptr<Ressources> ressources){
     this->stone += ressources->stone;
     this->stoneIncome += ressources->stoneIncome;

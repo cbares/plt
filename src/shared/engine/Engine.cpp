@@ -19,7 +19,7 @@ bool Engine::verify (std::shared_ptr<Command> command){
 
 void Engine::step (){
     vector<shared_ptr<state::Player>> players = state->players;
-    if(state->remainingTurns ==0){
+    if(state->winnerName !=""){
         return;
     }
 
