@@ -4,19 +4,19 @@
 
 #include "../../src/shared/state.h"
 #include "../../src/shared/engine.h"
-#include "../../src/shared/ai.h"
 
 using namespace state;
 using namespace engine;
-using namespace ai;
 using namespace std;
 
-BOOST_AUTO_TEST_SUITE(test_AI);
+BOOST_AUTO_TEST_SUITE(test_Engine);
 
-BOOST_AUTO_TEST_CASE(ai_validCommandsInit){
+BOOST_AUTO_TEST_CASE(Engine_constructor){
+    vector<shared_ptr<Actor>> actors;
     shared_ptr<State> state = make_shared<State>(42,"../../../res/cardsData/");
-    
+    shared_ptr<Engine> engine = make_shared<Engine>(actors,state);
     BOOST_TEST(1);
+
 }
 
 BOOST_AUTO_TEST_SUITE_END();
