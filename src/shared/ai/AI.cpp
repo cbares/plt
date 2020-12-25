@@ -3,6 +3,10 @@
 using namespace ai;
 using namespace std;
 
+AI::AI (std::shared_ptr<state::Player> player) : engine::Actor(player){
+    
+}
+
 void AI::updateState (std::shared_ptr<state::State> state){
     this->state = state;
 }

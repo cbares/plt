@@ -13,9 +13,13 @@ using namespace std;
 
 BOOST_AUTO_TEST_SUITE(test_AI);
 
-BOOST_AUTO_TEST_CASE(ai_validCommandsInit){
+BOOST_AUTO_TEST_CASE(AI_validCommandsInit){
+    vector<shared_ptr<Actor>> actors;
     shared_ptr<State> state = make_shared<State>(42,"../../../res/cardsData/");
-    
+    shared_ptr<Engine> engine = make_shared<Engine>(actors,state);
+    shared_ptr<RandomAI> randomAI = make_shared<RandomAI>(state->players[0]);
+
+    //random
     BOOST_TEST(1);
 }
 
