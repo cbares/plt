@@ -32,7 +32,6 @@ void River::load(std::string filename,std::string resPath){
 
         cardPool.push_back(cardJson);
     }
-    srand(time(NULL));
 
     this->cardPool = cardPool;
     

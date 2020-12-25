@@ -12,6 +12,7 @@ void testSFML() {
 #include <state.h>
 #include <client.h>
 #include <cstring>
+#include <random>
 
 using namespace std;
 using namespace state;
@@ -20,6 +21,8 @@ using namespace client;
 
 int main(int argc,char* argv[])
 {   
+
+    srand(time(NULL));
     Test test;
     if (argc == 2) {
         if (strcmp(argv[1], "hello") == 0) {
