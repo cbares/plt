@@ -18,7 +18,7 @@ BOOST_AUTO_TEST_CASE(PickCommand_constructor){
 }
 
 BOOST_AUTO_TEST_CASE(PickCommand_verify){
-    shared_ptr<state::State> state = make_shared<state::State>(42,"../../../res/cardsData/");
+    shared_ptr<state::State> state = make_shared<state::State>(42,"../../../res/cardsData/",rand());
     
     //should not work
     shared_ptr<PickCommand> wrongPickCommand1 = make_shared<PickCommand>(3,1,"Player 1");
@@ -40,7 +40,7 @@ BOOST_AUTO_TEST_CASE(PickCommand_verify){
 }
 
 BOOST_AUTO_TEST_CASE(PickCommand_execute){
-    shared_ptr<state::State> state = make_shared<state::State>(42,"../../../res/cardsData/");
+    shared_ptr<state::State> state = make_shared<state::State>(42,"../../../res/cardsData/",rand());
 
     shared_ptr<state::Ressources> ressourcesP1BeforeTesting = make_shared<state::Ressources>(state->players[0]->ressources->serialize());
     shared_ptr<PickCommand> PickCommand1 = make_shared<PickCommand>(0,0,"Player 1");

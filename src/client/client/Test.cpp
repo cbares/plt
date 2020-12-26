@@ -16,7 +16,7 @@ void Test::state(){
 }
 
 void Test::render(){
-    shared_ptr<State> state = make_shared<State>(10,"res/cardsData/");
+    shared_ptr<State> state = make_shared<State>(10,"res/cardsData/",rand());
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
 
     while (stateRenderer->isOpen())
@@ -36,7 +36,7 @@ void Test::render(){
 }
 
 void Test::engine(){
-    shared_ptr<State> state = make_shared<State>(20,"res/cardsData/");
+    shared_ptr<State> state = make_shared<State>(20,"res/cardsData/",rand());
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
     std::vector<std::shared_ptr<Actor>> actors;
     shared_ptr<Engine> engine = make_shared<Engine>(actors,state);
@@ -67,7 +67,7 @@ void Test::engine(){
 }
 
 void Test::random_ai(){
-    shared_ptr<State> state = make_shared<State>(200,"res/cardsData/");
+    shared_ptr<State> state = make_shared<State>(200,"res/cardsData/",rand());
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
     std::vector<std::shared_ptr<Actor>> actors;
     actors.push_back(make_shared<RandomAI>(state->players[0]));
