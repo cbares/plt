@@ -22,8 +22,8 @@ void Engine::step (){
     vector<shared_ptr<state::Player>> players = state->players;
     shared_ptr<state::Player> activePlayer = state->players[state->activePlayerIndex];
     if(state->winnerIndex != -1){
-        state->endTurn();       
-        this->createReplay("replay.json"); 
+        state->endTurn();
+        this->saveReplay("replay.json");
         return;
     }
 
@@ -50,7 +50,7 @@ void Engine::step (){
     }   
 }
 
-void Engine::createReplay (std::string name){
+void Engine::saveReplay (std::string name){
     Json::Value replay;
     replay["seed"] = state->seed;
     
