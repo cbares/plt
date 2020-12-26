@@ -59,13 +59,14 @@ void Engine::saveReplay (std::string name){
     }
 
     Json::StyledWriter styledWriter;
-    std::ofstream replay_file("replays/"+name);
-    cout << to_string(replay_file.is_open()) <<endl;
+    std::ofstream replay_file;
+    replay_file.open("replays/"+name);
     replay_file << styledWriter.write(replay);
     replay_file.close();
 
 }
 
 void Engine::loadReplay (std::string name){
-
+    Json::Reader reader;
+    
 }
