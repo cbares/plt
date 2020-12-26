@@ -13,17 +13,17 @@ State::State (int remainingTurns,std::string ressourcespath,uint seed){
     players.push_back(player1);
     players.push_back(player2);
 
-    shared_ptr<River> river1 = make_shared<River>();
+    shared_ptr<River> river1 = make_shared<River>(seed);
     river1->load("tier1.json",ressourcespath);
 	river1->refill();
     rivers.push_back(river1);
 
-    shared_ptr<River> river2 = make_shared<River>();
+    shared_ptr<River> river2 = make_shared<River>(seed);
     river2->load("tier2.json",ressourcespath);
 	river2->refill();
     rivers.push_back(river2);
 
-    shared_ptr<River> river3 = make_shared<River>();
+    shared_ptr<River> river3 = make_shared<River>(seed);
     river3->load("tier3.json",ressourcespath);
 	river3->refill();
     rivers.push_back(river3);
@@ -56,7 +56,7 @@ void State::refreshActivePlayer (){
 
 Json::Value State::serialize(){
 	Json::Value value;
-
+	value["seed"] = this->seed;
 	value["remainingTurns"] = this->remainingTurns;
 	value["activePlayerIndex"] = this->activePlayerIndex;
 	value["winnerIndex"] = this->winnerIndex;
@@ -75,6 +75,8 @@ Json::Value State::serialize(){
 }
 
 void State::unserialize(Json::Value value){
+
+	this->seed = value["seed"].asUInt();
 	this->remainingTurns = value["remainingTurns"].asInt();
 	this->activePlayerIndex = value["activePlayerName"].asUInt();
 	this->winnerIndex = value["winnerName"].asInt();

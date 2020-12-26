@@ -67,7 +67,7 @@ void Test::engine(){
 }
 
 void Test::random_ai(){
-    shared_ptr<State> state = make_shared<State>(200,"res/cardsData/",rand());
+    shared_ptr<State> state = make_shared<State>(200,"res/cardsData/",1);
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
     std::vector<std::shared_ptr<Actor>> actors;
     actors.push_back(make_shared<RandomAI>(state->players[0]));
