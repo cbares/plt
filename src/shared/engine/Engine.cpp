@@ -1,5 +1,6 @@
 #include "Engine.h"
 #include <iostream>
+#include <fstream>
 
 using namespace engine;
 using namespace std;
@@ -21,6 +22,8 @@ void Engine::step (){
     vector<shared_ptr<state::Player>> players = state->players;
     shared_ptr<state::Player> activePlayer = state->players[state->activePlayerIndex];
     if(state->winnerIndex != -1){
+        state->endTurn();       
+        this->createReplay("replay.json"); 
         return;
     }
 
@@ -31,7 +34,7 @@ void Engine::step (){
         shared_ptr<Actor> actor = actors[j];
         actor->updateState(state);
 
-        if(actor->player->name == activePlayer->name){
+        if(actor->player == activePlayer){
 
             shared_ptr<Command> command;
                     
@@ -39,12 +42,30 @@ void Engine::step (){
                 command = actor->getCommand();
             }
             while((verify(command) != true) || (command->getPlayerName() != activePlayer->name));
+            commandHistoric.push_back(command);
             execute(command);
-                    
+            
             state->endTurn();        
         }
     }   
-            
+}
+
+void Engine::createReplay (std::string name){
+    Json::Value replay;
+    replay["seed"] = state->seed;
     
+    for(uint i = 0;i<commandHistoric.size();i++){
+        replay["commands"][i] = commandHistoric[i]->serialize();
+    }
+
+    Json::StyledWriter styledWriter;
+    std::ofstream replay_file("replays/"+name);
+    cout << to_string(replay_file.is_open()) <<endl;
+    replay_file << styledWriter.write(replay);
+    replay_file.close();
+
+}
+
+void Engine::loadReplay (std::string name){
 
 }
