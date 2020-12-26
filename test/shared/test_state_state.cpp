@@ -37,11 +37,11 @@ BOOST_AUTO_TEST_CASE(State_endOfTurn){
 	state->players[0]->ressources->victoryPoint = 1;
 	state->endTurn();
 	BOOST_TEST(state->remainingTurns == 0);
-	BOOST_TEST(state->winnerName == state->players[0]->name);
+	BOOST_TEST(state->winnerIndex == 0);
 	state->players[1]->ressources->victoryPoint = 2;
 	state->endTurn();
 	BOOST_TEST(state->remainingTurns == 0);
-	BOOST_TEST(state->winnerName == state->players[1]->name);
+	BOOST_TEST(state->winnerIndex == 1);
 }
 
 BOOST_AUTO_TEST_SUITE_END();
