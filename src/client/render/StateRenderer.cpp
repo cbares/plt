@@ -22,14 +22,14 @@ void StateRenderer::update(std::shared_ptr<state::State> state){
     stateSprite.setPosition(0,400);
     this->draw(stateSprite);
 
-    if(state->winnerName !=""){
-        sf::Text text(std::string("Winner :") + state->winnerName ,font, 30);
+    if(state->winnerIndex !=-1){
+        sf::Text text(std::string("Winner :") + state->players[state->winnerIndex]->name ,font, 30);
         text.setPosition(10,450);
 
         this->draw(text);
     }
     else{
-        sf::Text text(std::string("Active player :") + state->activePlayerName ,font, 30);
+        sf::Text text(std::string("Active player :") + state->players[state->activePlayerIndex]->name ,font, 30);
         text.setPosition(10,450);
 
         this->draw(text);

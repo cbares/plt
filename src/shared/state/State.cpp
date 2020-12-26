@@ -27,7 +27,6 @@ State::State (int remainingTurns,std::string ressourcespath){
 	river3->refill();
     rivers.push_back(river3);
 	
-	activePlayerName = player1->name;
 }
 
 
@@ -42,21 +41,15 @@ void State::endTurn (){
 	}
 	else{
 		if(players[0]->ressources->victoryPoint > players[1]->ressources->victoryPoint){
-			winnerName = players[0]->name;
+			winnerIndex = 0;
 		}else{
-			winnerName = players[1]->name;
+			winnerIndex = 1;
 		}
 	}
 }
 
 void State::refreshActivePlayer (){
-	
-	if(activePlayerName == players[0]->name){
-		activePlayerName = players[1]->name;
-	}
-	else{
-		activePlayerName = players[0]->name;
-	}
+	activePlayerIndex = (activePlayerIndex +1) %2;
 }
 
 
@@ -64,8 +57,8 @@ Json::Value State::serialize(){
 	Json::Value value;
 
 	value["remainingTurns"] = this->remainingTurns;
-	value["activePlayerName"] = this->activePlayerName;
-	value["winnerName"] = this->winnerName;
+	value["activePlayerIndex"] = this->activePlayerIndex;
+	value["winnerIndex"] = this->winnerIndex;
 
 	value["players"].resize(this->players.size());
 	for (size_t i(0); i<this->players.size(); i++) {
@@ -82,8 +75,8 @@ Json::Value State::serialize(){
 
 void State::unserialize(Json::Value value){
 	this->remainingTurns = value["remainingTurns"].asInt();
-	this->activePlayerName = value["activePlayerName"].asString();
-	this->winnerName = value["winnerName"].asString();
+	this->activePlayerIndex = value["activePlayerName"].asUInt();
+	this->winnerIndex = value["winnerName"].asInt();
 	this->players.clear();
 	for (Json::ArrayIndex i(0); i<value["players"].size(); i++) {
 		this->players.push_back(make_shared<Player>(value["players"][i]));

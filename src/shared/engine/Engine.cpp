@@ -19,43 +19,32 @@ bool Engine::verify (std::shared_ptr<Command> command){
 
 void Engine::step (){
     vector<shared_ptr<state::Player>> players = state->players;
-    if(state->winnerName !=""){
+    shared_ptr<state::Player> activePlayer = state->players[state->activePlayerIndex];
+    if(state->winnerIndex != -1){
         return;
     }
 
-    for(uint i =0;i<state->players.size();i++){
-        
-        shared_ptr<state::Player> player = players[i];
-
-        if(player->name == state->activePlayerName){
+    activePlayer->earnIncome();
             
-            player->earnIncome();
-            
-            for(uint j =0;j<actors.size();j++){
+    for(uint j =0;j<actors.size();j++){
                 
-                shared_ptr<Actor> actor = actors[i];
-                actor->updateState(state);
+        shared_ptr<Actor> actor = actors[j];
+        actor->updateState(state);
 
-                if(actor->player->name == player->name){
+        if(actor->player->name == activePlayer->name){
 
-                    shared_ptr<Command> command;
+            shared_ptr<Command> command;
                     
-                    do{
-                        command = actor->getCommand();
-                    }
-                    while((verify(command) != true) || (command->getPlayerName() != player->name));
-                    execute(command);
+            do{
+                command = actor->getCommand();
+            }
+            while((verify(command) != true) || (command->getPlayerName() != activePlayer->name));
+            execute(command);
                     
-                    state->endTurn();
-                    
-                    
-                }
-                return;
-            }   
-            
-            cout << "can't find active player" <<endl;
+            state->endTurn();        
         }
-        
-    }
-    cout << "can't find active player" <<endl;
+    }   
+            
+    
+
 }
