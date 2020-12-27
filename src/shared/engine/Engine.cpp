@@ -23,7 +23,6 @@ void Engine::step (){
     shared_ptr<state::Player> activePlayer = state->players[state->activePlayerIndex];
     if(state->winnerIndex != -1){
         state->endTurn();
-        this->saveReplay("replay.json");
         return;
     }
 
@@ -60,13 +59,13 @@ void Engine::saveReplay (std::string filename){
 
     Json::StyledWriter styledWriter;
     std::ofstream replay_file_stream;
-    replay_file_stream.open("replays/"+filename);
+    replay_file_stream.open(filename);
     replay_file_stream << styledWriter.write(replay);
     replay_file_stream.close();
 
 }
 
-int Engine::loadReplay (std::string filename){
+int Engine::loadReplay (std::string filename,std::string ressourcespath){
     Json::Reader reader;
     Json::Value replay;
 
@@ -79,7 +78,7 @@ int Engine::loadReplay (std::string filename){
     reader.parse(replay_file_stream,replay,false);
     uint seed = replay["seed"].asUInt();
     Json::Value commands = replay["commands"];
-    this->state = make_shared<state::State>(commands.size()-1,"res/cardsData/",seed);
+    this->state = make_shared<state::State>(commands.size()-1,ressourcespath,seed);
     vector<shared_ptr<Command>> P1commands,P2commands;
     for(uint i =0;i<commands.size();i++){
 

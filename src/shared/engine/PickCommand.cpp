@@ -11,7 +11,7 @@ using namespace std;
 */
 
 PickCommand::PickCommand (int riverPosition, int cardPosition, std::string playerName){
-    this->id = CommandID::PICK;
+    this->setId(CommandID::PICK);
     this->riverPosition = riverPosition;
     this->cardPosition = cardPosition;
     this->setPlayerName(playerName);

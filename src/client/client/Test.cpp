@@ -94,6 +94,7 @@ void Test::random_ai(){
             }
         }
     }
+    engine->saveReplay("replays/replay.json");
 }
 
 void Test::replay (std::string filename){
@@ -101,7 +102,7 @@ void Test::replay (std::string filename){
     std::vector<std::shared_ptr<Actor>> actors;
     shared_ptr<Engine> engine = make_shared<Engine>(actors,nullptr);
     
-    if(engine->loadReplay(filename) == -1){
+    if(engine->loadReplay(filename,"res/cardsData/") == -1){
         return;
     }
     std::shared_ptr<State> state = engine->state;
