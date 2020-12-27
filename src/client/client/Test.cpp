@@ -99,9 +99,12 @@ void Test::random_ai(){
 void Test::replay (std::string filename){
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
     std::vector<std::shared_ptr<Actor>> actors;
-    std::shared_ptr<State> state;
-    shared_ptr<Engine> engine = make_shared<Engine>(actors,state);
-    engine->loadReplay(filename);
+    shared_ptr<Engine> engine = make_shared<Engine>(actors,nullptr);
+    
+    if(engine->loadReplay(filename) == -1){
+        return;
+    }
+    std::shared_ptr<State> state = engine->state;
 
     while(stateRenderer->isOpen())
     {
@@ -118,6 +121,7 @@ void Test::replay (std::string filename){
             if(event.type == sf::Event::KeyPressed)
             {
                 if(event.key.code == sf::Keyboard::Space){
+
                     engine->step();
                 }
             }
