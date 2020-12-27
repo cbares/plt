@@ -11,6 +11,7 @@ using namespace std;
 */
 
 PickCommand::PickCommand (int riverPosition, int cardPosition, std::string playerName){
+    this->id = CommandID::PICK;
     this->riverPosition = riverPosition;
     this->cardPosition = cardPosition;
     this->setPlayerName(playerName);
@@ -57,10 +58,9 @@ bool PickCommand::verify (std::shared_ptr<state::State> state){
 }
 
 Json::Value PickCommand::serialize (){
-    Json::Value value;
+    Json::Value value = this->Command::serialize();
     value["riverPosition"] = this->riverPosition;
     value["cardPosition"] = this->cardPosition;
-    value["playerName"] = this->getPlayerName();
     return value;
 }
 
