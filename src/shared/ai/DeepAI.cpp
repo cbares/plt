@@ -1,6 +1,7 @@
 #include "DeepAI.h"
 #include <iostream>
 #include <algorithm>
+#include <time.h>
 
 using namespace ai;
 using namespace std;
@@ -17,8 +18,8 @@ std::shared_ptr<engine::Command> DeepAI::getCommand (){
     }
 
     for(uint i=0; i<validCommands.size();i++){
-        
         shared_ptr<state::State> testingState = make_shared<state::State>(state); //deep copy
+        
         validCommands[i]->execute(testingState);
         testingState->players[playerIndex]->earnIncome();
 
