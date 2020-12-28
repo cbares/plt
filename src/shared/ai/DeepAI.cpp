@@ -17,7 +17,8 @@ std::shared_ptr<engine::Command> DeepAI::getCommand (){
     }
 
     for(uint i=0; i<validCommands.size();i++){
-        shared_ptr<state::State> testingState = make_shared<state::State>(state->serialize()); //deep copy
+        
+        shared_ptr<state::State> testingState = make_shared<state::State>(state); //deep copy
         validCommands[i]->execute(testingState);
         testingState->players[playerIndex]->earnIncome();
 
@@ -42,7 +43,7 @@ std::shared_ptr<engine::Command> DeepAI::getCommand (){
             bestScore = score;
         }
     }
-
+    
     return command;
 }
 

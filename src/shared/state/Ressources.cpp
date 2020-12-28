@@ -1,6 +1,7 @@
 #include "Ressources.h"
 
 using namespace state;
+using namespace std;
 
 Ressources::Ressources(int stone, int stoneIncome, int water, int waterIncome, int wood, int woodIncome, int victoryPoint, int victoryPointIncome){
     this->stone = stone;
@@ -15,6 +16,17 @@ Ressources::Ressources(int stone, int stoneIncome, int water, int waterIncome, i
 
 Ressources::Ressources(Json::Value value){
     this->unserialize(value);
+}
+
+Ressources::Ressources(shared_ptr<Ressources> ressources){
+    this->stone = ressources->stone;
+    this->stoneIncome = ressources->stoneIncome;
+    this->water = ressources->water;
+    this->waterIncome = ressources->waterIncome;
+    this->wood = ressources->wood;
+    this->woodIncome = ressources->woodIncome;
+    this->victoryPoint = ressources->victoryPoint;
+    this->victoryPointIncome = ressources->victoryPointIncome;
 }
 
 void Ressources::add (std::shared_ptr<Ressources> ressources){

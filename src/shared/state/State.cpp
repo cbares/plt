@@ -30,6 +30,21 @@ State::State (int remainingTurns,std::string ressourcespath,uint seed){
 	
 }
 
+State::State (shared_ptr<State> state){
+    this->remainingTurns = state->remainingTurns;
+	this->seed = state->seed;
+	
+    for(uint i =0 ; i<state->players.size();i++){
+    	shared_ptr<Player> player = make_shared<Player>(state->players[i]);
+    	this->players.push_back(player);
+	}
+
+	for(uint i =0 ; i<state->rivers.size();i++){
+    	shared_ptr<River> river = make_shared<River>(state->rivers[i]);
+    	this->rivers.push_back(river);
+	}
+
+}
 
 State::State (Json::Value value){
     this->unserialize(value);

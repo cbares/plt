@@ -8,6 +8,11 @@ Player::Player(std::string name){
     this->ressources = make_shared<Ressources>();
 }
 
+Player::Player(shared_ptr<Player> player){
+    this->name = player->name;
+    this->ressources = make_shared<Ressources>(player->ressources);
+}
+
 Player::Player(Json::Value value){
     this->unserialize(value);
 }

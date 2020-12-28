@@ -15,6 +15,19 @@ River::River(Json::Value value){
     this->unserialize(value);
 }
 
+River::River(shared_ptr<River> river){
+    this->seed = river->seed;
+
+    for(uint i =0; i<river->cards.size();i++){
+        shared_ptr<Card> card = make_shared<Card>(river->cards[i]);
+        this->cards.push_back(card);
+    }
+
+    for(uint i =0; i<river->cardPool.size();i++){
+        this->cardPool.push_back(river->cardPool[i]);
+    }
+}
+
 void River::load(std::string filename,std::string resPath){
     Json::Reader reader;
     Json::Value cardPoolJson;
