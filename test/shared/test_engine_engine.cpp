@@ -39,8 +39,22 @@ BOOST_AUTO_TEST_CASE(Engine_replay){
     }
     replayEngine->step();
 
-
-
+    BOOST_TEST(state->players[0]->ressources->wood == replayState->players[0]->ressources->wood);
+    BOOST_TEST(state->players[0]->ressources->woodIncome == replayState->players[0]->ressources->woodIncome);
+    BOOST_TEST(state->players[0]->ressources->stone == replayState->players[0]->ressources->stone);
+    BOOST_TEST(state->players[0]->ressources->stoneIncome == replayState->players[0]->ressources->stoneIncome);
+    BOOST_TEST(state->players[0]->ressources->water == replayState->players[0]->ressources->water);
+    BOOST_TEST(state->players[0]->ressources->waterIncome == replayState->players[0]->ressources->waterIncome);
+    BOOST_TEST(state->players[0]->ressources->victoryPoint == replayState->players[0]->ressources->victoryPoint);
+    BOOST_TEST(state->players[0]->ressources->victoryPointIncome == replayState->players[0]->ressources->victoryPointIncome);
+    BOOST_TEST(state->players[1]->ressources->wood == replayState->players[1]->ressources->wood);
+    BOOST_TEST(state->players[1]->ressources->woodIncome == replayState->players[1]->ressources->woodIncome);
+    BOOST_TEST(state->players[1]->ressources->stone == replayState->players[1]->ressources->stone);
+    BOOST_TEST(state->players[1]->ressources->stoneIncome == replayState->players[1]->ressources->stoneIncome);
+    BOOST_TEST(state->players[1]->ressources->water == replayState->players[1]->ressources->water);
+    BOOST_TEST(state->players[1]->ressources->waterIncome == replayState->players[1]->ressources->waterIncome);
+    BOOST_TEST(state->players[1]->ressources->victoryPoint == replayState->players[1]->ressources->victoryPoint);
+    BOOST_TEST(state->players[1]->ressources->victoryPointIncome == replayState->players[1]->ressources->victoryPointIncome);
 }
 
 BOOST_AUTO_TEST_SUITE_END();
