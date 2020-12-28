@@ -4,7 +4,9 @@
 
 This project aims to make a game where players pick cards from 3 zones called rivers, each river is composed of 5 cards and each card cost ressources and grant you ressources.
 
-Ressources are stone, water, wood and victory points, when there is no turn left to play, the player with the most victory points wins the game. 
+Ressources are stone, water, wood and victory points.
+
+When there is no turn left to play, the player with the most victory points wins the game. 
 
 ## Build instructions
 
