@@ -97,6 +97,37 @@ void Test::random_ai(){
     engine->saveReplay("replays/replay.json");
 }
 
+void Test::heuristic_ai(){
+    shared_ptr<State> state = make_shared<State>(200,"res/cardsData/",rand());
+    shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
+    std::vector<std::shared_ptr<Actor>> actors;
+    actors.push_back(make_shared<HeuristicAI>(state->players[0]));
+    actors.push_back(make_shared<HeuristicAI>(state->players[1]));
+    shared_ptr<Engine> engine = make_shared<Engine>(actors,state);
+
+    while (stateRenderer->isOpen())
+    {
+        // Process events
+        sf::Event event;
+
+        stateRenderer->update(state);
+        while (stateRenderer->pollEvent(event))
+        {
+            // Close window: exit
+            if (event.type == sf::Event::Closed){
+                stateRenderer->close();
+            }
+            if(event.type == sf::Event::KeyPressed)
+            {
+                if(event.key.code == sf::Keyboard::Space){
+                    engine->step();
+                }
+            }
+        }
+    }
+    engine->saveReplay("replays/replay.json");
+}
+
 void Test::replay (std::string filename){
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
     std::vector<std::shared_ptr<Actor>> actors;
