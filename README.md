@@ -1,6 +1,6 @@
 # MagiX
 
-## Getting started
+## Game description
 
 This project aims to make a game where players pick cards from 3 zones called rivers, each river is composed of 5 cards and each card cost ressources and grant you ressources.
 
