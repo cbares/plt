@@ -27,6 +27,18 @@ BOOST_AUTO_TEST_CASE(State_serialization){
 	BOOST_TEST(state1->remainingTurns == state2->remainingTurns);
 }
 
+
+BOOST_AUTO_TEST_CASE(State_serialization_constructor){
+    shared_ptr<State> state1 = make_shared<State>(42,"../../../res/cardsData/",rand());
+	Json::Value valueState1 = state1->serialize();
+
+	shared_ptr<State> state2 = make_shared<State>(valueState1); // Different from state1
+
+	BOOST_TEST(state2->remainingTurns == 42);
+	BOOST_TEST(state2->players.size() == 2);
+	BOOST_TEST(state2->rivers.size() = 3);
+}
+
 BOOST_AUTO_TEST_CASE(State_endOfTurn){
 	shared_ptr<State> state = make_shared<State>(1,"../../../res/cardsData/",rand());
 	

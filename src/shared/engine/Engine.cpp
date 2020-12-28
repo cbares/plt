@@ -23,7 +23,6 @@ void Engine::step (){
     shared_ptr<state::Player> activePlayer = state->players[state->activePlayerIndex];
     if(state->winnerIndex != -1){
         state->endTurn();
-        this->saveReplay("replay.json");
         return;
     }
 
@@ -50,7 +49,7 @@ void Engine::step (){
     }   
 }
 
-void Engine::saveReplay (std::string name){
+void Engine::saveReplay (std::string filename){
     Json::Value replay;
     replay["seed"] = state->seed;
     
@@ -59,13 +58,48 @@ void Engine::saveReplay (std::string name){
     }
 
     Json::StyledWriter styledWriter;
-    std::ofstream replay_file("replays/"+name);
-    cout << to_string(replay_file.is_open()) <<endl;
-    replay_file << styledWriter.write(replay);
-    replay_file.close();
+    std::ofstream replay_file_stream;
+    replay_file_stream.open(filename);
+    cout << replay_file_stream.is_open()<< endl;
+    replay_file_stream << styledWriter.write(replay);
+    replay_file_stream.close();
 
 }
 
-void Engine::loadReplay (std::string name){
+int Engine::loadReplay (std::string filename,std::string ressourcespath){
+    Json::Reader reader;
+    Json::Value replay;
 
+    ifstream replay_file_stream;
+    replay_file_stream.open(filename);
+    if(replay_file_stream.is_open() != true){
+        cout << "Cannot open "<< filename<< endl;
+        return -1;
+    }
+    reader.parse(replay_file_stream,replay,false);
+    uint seed = replay["seed"].asUInt();
+    Json::Value commands = replay["commands"];
+    this->state = make_shared<state::State>(commands.size()-1,ressourcespath,seed);
+    vector<shared_ptr<Command>> P1commands,P2commands;
+    for(uint i =0;i<commands.size();i++){
+
+        shared_ptr<Command> command;
+        CommandID id = (CommandID) commands[i]["id"].asUInt();;
+        switch(id){
+            case CommandID::PICK:
+                command = make_shared<PickCommand>(commands[i]);
+                break;
+            default:
+                cout << "bad command id" << endl;
+                return -1;
+        }
+        if(i%2 ==0){
+            P1commands.push_back(make_shared<PickCommand>(commands[i]));
+        }else{
+            P2commands.push_back(make_shared<PickCommand>(commands[i]));
+        }
+    }
+    actors.push_back(make_shared<ReplayActor>(state->players[0],P1commands));
+    actors.push_back(make_shared<ReplayActor>(state->players[1],P2commands));
+    return 0;
 }

@@ -12,9 +12,11 @@ BOOST_AUTO_TEST_SUITE(engine_PickCommand)
 BOOST_AUTO_TEST_CASE(PickCommand_constructor){
     shared_ptr<PickCommand> pickCommand = make_shared<PickCommand>(7,3,"Player 1");
 
+    BOOST_TEST((pickCommand->getId() == CommandID::PICK));
     BOOST_TEST(pickCommand->riverPosition == 7);
     BOOST_TEST(pickCommand->cardPosition == 3);
     BOOST_TEST(pickCommand->getPlayerName() == "Player 1");
+
 }
 
 BOOST_AUTO_TEST_CASE(PickCommand_verify){

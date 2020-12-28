@@ -24,7 +24,7 @@ int main(int argc,char* argv[])
 
     srand(time(NULL));
     Test test;
-    if (argc == 2) {
+    if (argc > 1) {
         if (strcmp(argv[1], "hello") == 0) {
             cout << "Hello world !" << endl;
         }else if (strcmp(argv[1], "state") == 0) {
@@ -36,26 +36,21 @@ int main(int argc,char* argv[])
         } else if (strcmp(argv[1], "random_ai") == 0) {
             test.random_ai();
         } else if (strcmp(argv[1], "heuristic_ai") == 0) {
-            //test.heuristic_ai();
-        } else if (strcmp(argv[1], "rollback") == 0) {
-            //test.thread();
-        }else if (strcmp(argv[1], "deep_ia") == 0) {
-            //test.thread();
-        }else if (strcmp(argv[1], "thread") == 0) {
-            //test.thread();
-        }else if (strcmp(argv[1], "record") == 0) {
-            //test.thread();
-        }else if (strcmp(argv[1], "play") == 0) {
-            //test.thread();
-        }else if (strcmp(argv[1], "listen") == 0) {
-            //test.thread();
-        }else if (strcmp(argv[1], "network") == 0) {
-            //test.thread();
+            test.heuristic_ai();
+        } else if (strcmp(argv[1], "heuristic_ai_performance") == 0) {
+            test.heuristic_ai_performance();
+        } else if (strcmp(argv[1], "replay") == 0) {
+            if(argc >2){
+                test.replay(argv[2]);
+            }
+            else{
+                cout << "Too few arguments" << endl;
+            }
         }else{
             cout << "Unknown argument" << endl;
         }
     } else {
-        cout << "Too few or too many arguments" << endl;
+        cout << "Too few arguments" << endl;
     }
 
     return 0;

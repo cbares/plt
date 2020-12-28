@@ -18,3 +18,11 @@ const std::string& Command::getPlayerName() const{
 void Command::setPlayerName(const std::string& playerName){
     this->playerName = playerName;
 }
+
+
+Json::Value Command::serialize (){
+    Json::Value value;
+    value["playerName"] = this->playerName;
+    value["id"] = (uint)this->id;
+    return value;
+}
