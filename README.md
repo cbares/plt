@@ -60,11 +60,11 @@ bin/client random_ai
 
 You can test the replay :
 
-At the end of a game such as a game played by ai, a replay of the game is stored in the replays folder.
+At the end of a game such as a game played by ai, a replay of the game is stored at the root of the project.
 
 You can simply replay the game that has been played.
 ```
-bin/client replay *replayfile*
+bin/client replay replay.json
 ```
 
 

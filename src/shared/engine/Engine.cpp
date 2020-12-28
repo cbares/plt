@@ -60,6 +60,7 @@ void Engine::saveReplay (std::string filename){
     Json::StyledWriter styledWriter;
     std::ofstream replay_file_stream;
     replay_file_stream.open(filename);
+    cout << replay_file_stream.is_open()<< endl;
     replay_file_stream << styledWriter.write(replay);
     replay_file_stream.close();
 
