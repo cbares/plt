@@ -22,7 +22,7 @@ git clone https://github.com/sonibla/plt.git
 mkdir build
 cd build
 cmake ..
-make -j
+make all
 ```
 
 Binaries are generated in *bin/* folder
