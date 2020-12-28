@@ -32,6 +32,34 @@ You can also display a list of makefile targets with :
 make help
 ```
 
+### Features
+Please make sure that you are in the top level folder of the project before trying to execute binaries.
+
+You can test the rendering :
+```
+bin/client render
+```
+
+You can test the state evolution :
+each player will pick the first card of the first river when you press the spacebar.
+```
+bin/client engine
+```
+
+You can test the random ai :
+each player will be an ai that pick a decision at random among possible decisions.
+```
+bin/client random_ai
+```
+
+You can test the replay :
+At the end of a game such as a game played by ai, a replay of the game is stored in the replays folder.
+You can simply replay the game that has been played.
+```
+bin/client replay *replayfile*
+```
+
+
 ## Authors
 
 * [**Maxime Marroufin**](https://github.com/Marroufin)
