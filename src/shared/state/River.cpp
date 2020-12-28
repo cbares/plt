@@ -7,8 +7,8 @@
 using namespace state;
 using namespace std;
 
-River::River(){
-
+River::River(uint seed){
+    this->seed = seed;
 }
 
 River::River(Json::Value value){
@@ -40,6 +40,8 @@ void River::load(std::string filename,std::string resPath){
 Json::Value River::serialize(){
     Json::Value riverValue;
 
+    riverValue["seed"] = seed;
+
     Json::Value cardsValue;
     for(uint i =0; i<this->cards.size();i++){
         cardsValue[i] = this->cards[i]->serialize();
@@ -56,6 +58,8 @@ Json::Value River::serialize(){
 }
 
 void River::unserialize(Json::Value value){
+
+    seed = value["seed"].asUInt(); 
 
     vector<shared_ptr<Card>> cards;
     for(uint i =0; i<value["cards"].size();i++){
@@ -83,7 +87,7 @@ void River::addCard(shared_ptr<Card> card){
 
 void River::refill(){
     while(this->cards.size()<5){
-        Json::Value newCardJson = cardPool[rand()%(cardPool.size())];
+        Json::Value newCardJson = cardPool[rand_r(&(this->seed))%(cardPool.size())];
         shared_ptr<Card> card = make_shared<Card>(newCardJson);
         addCard(card);
     }

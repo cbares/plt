@@ -16,7 +16,7 @@ void Test::state(){
 }
 
 void Test::render(){
-    shared_ptr<State> state = make_shared<State>(10,"res/cardsData/");
+    shared_ptr<State> state = make_shared<State>(10,"res/cardsData/",rand());
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
 
     while (stateRenderer->isOpen())
@@ -36,7 +36,7 @@ void Test::render(){
 }
 
 void Test::engine(){
-    shared_ptr<State> state = make_shared<State>(20,"res/cardsData/");
+    shared_ptr<State> state = make_shared<State>(20,"res/cardsData/",rand());
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
     std::vector<std::shared_ptr<Actor>> actors;
     shared_ptr<Engine> engine = make_shared<Engine>(actors,state);
@@ -67,7 +67,7 @@ void Test::engine(){
 }
 
 void Test::random_ai(){
-    shared_ptr<State> state = make_shared<State>(200,"res/cardsData/");
+    shared_ptr<State> state = make_shared<State>(200,"res/cardsData/",rand());
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
     std::vector<std::shared_ptr<Actor>> actors;
     actors.push_back(make_shared<RandomAI>(state->players[0]));
@@ -89,6 +89,40 @@ void Test::random_ai(){
             if(event.type == sf::Event::KeyPressed)
             {
                 if(event.key.code == sf::Keyboard::Space){
+                    engine->step();
+                }
+            }
+        }
+    }
+    engine->saveReplay("replays/replay.json");
+}
+
+void Test::replay (std::string filename){
+    shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
+    std::vector<std::shared_ptr<Actor>> actors;
+    shared_ptr<Engine> engine = make_shared<Engine>(actors,nullptr);
+    
+    if(engine->loadReplay(filename,"res/cardsData/") == -1){
+        return;
+    }
+    std::shared_ptr<State> state = engine->state;
+
+    while(stateRenderer->isOpen())
+    {
+        // Process events
+        sf::Event event;
+
+        stateRenderer->update(state);
+        while (stateRenderer->pollEvent(event))
+        {
+            // Close window: exit
+            if (event.type == sf::Event::Closed){
+                stateRenderer->close();
+            }
+            if(event.type == sf::Event::KeyPressed)
+            {
+                if(event.key.code == sf::Keyboard::Space){
+
                     engine->step();
                 }
             }
