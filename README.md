@@ -2,7 +2,9 @@
 
 ## Getting started
 
-This project aims to make a game inspired by board games such as Mystic Vale.
+This project aims to make a game where players pick cards from 3 zones called rivers, each river is composed of 5 cards and each card cost ressources and grant you ressources.
+
+Ressources are stone, water, wood and victory points, when there is no turn left to play, the player with the most victory points wins the game. 
 
 ## Build instructions
 
@@ -42,7 +44,7 @@ bin/client render
 
 You can test the state evolution :
 
-each player will pick the first card of the first river when you press the spacebar.
+the active player will pick the first card of the first river when you press the spacebar.
 ```
 bin/client engine
 ```
