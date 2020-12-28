@@ -94,7 +94,7 @@ void Test::random_ai(){
             }
         }
     }
-    engine->saveReplay("replays/replay.json");
+    engine->saveReplay("replay.json");
 }
 
 void Test::heuristic_ai(){
@@ -125,7 +125,7 @@ void Test::heuristic_ai(){
             }
         }
     }
-    engine->saveReplay("replays/replay.json");
+    engine->saveReplay("replay.json");
 }
 
 void Test::replay (std::string filename){
