@@ -17,7 +17,7 @@ Following instructions will install build dependencies on Debian.
 
 ```
 sudo apt install git dia ghostscript cmake g++ lcov gcovr libxml2-dev libsfml-dev libboost-test-dev
-git clone https://github.com/sonibla/plt.git
+git clone https://github.com/Kangulu/plt
 ```
 
 ### Build binaries
@@ -56,6 +56,22 @@ You can test the random ai :
 each player will be an ai that pick a decision at random among possible decisions.
 ```
 bin/client random_ai
+```
+
+You can test the heuristic ai :
+
+each player will be an ai that pick a decision at random among possible decisions, favoring the cards in higher rivers.
+```
+bin/client heuristic_ai
+```
+
+You can compare the heuristic ai to the random_ai:
+
+The heuristic ai will play 1000 times against the random one in game of 200 turns and a winrate will be printed.
+
+In our experiance the winrate is about 63.1%.
+```
+bin/client heuristic_ai_performance
 ```
 
 You can test the replay :

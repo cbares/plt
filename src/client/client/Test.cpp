@@ -128,6 +128,31 @@ void Test::heuristic_ai(){
     engine->saveReplay("replay.json");
 }
 
+void Test::heuristic_ai_performance(){
+    const uint nbOfGames = 1000;
+    uint heuristicWins =0;
+    uint randomWins =0;
+    for(uint i=0;i<nbOfGames;i++){
+        shared_ptr<State> state = make_shared<State>(200,"res/cardsData/",rand());
+        std::vector<std::shared_ptr<Actor>> actors;
+        actors.push_back(make_shared<RandomAI>(state->players[0]));
+        actors.push_back(make_shared<HeuristicAI>(state->players[1]));
+        shared_ptr<Engine> engine = make_shared<Engine>(actors,state);
+        while(state->winnerIndex == -1){
+            engine->step();
+        }
+        if(state->winnerIndex == 0){
+            randomWins++;
+            cout << "random Wins" << endl;
+        }else{
+            heuristicWins++;
+            cout << "heuristic Wins" << endl;
+        }
+    }
+    double winrate = (((double)heuristicWins)/((double)nbOfGames))*100;
+    cout << "HeuristicAI win rate against RandomAI: " << winrate << "%" << endl;
+}
+
 void Test::replay (std::string filename){
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
     std::vector<std::shared_ptr<Actor>> actors;
