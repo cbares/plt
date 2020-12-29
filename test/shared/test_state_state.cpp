@@ -11,15 +11,15 @@ using namespace std;
 BOOST_AUTO_TEST_SUITE(state_State)
 
 BOOST_AUTO_TEST_CASE(State_constructor){
-    shared_ptr<State> state = make_shared<State>(42,"../../../res/cardsData/",rand());
+    shared_ptr<State> state = make_shared<State>(42,"../../../res/cardsData/");
 	BOOST_TEST(state->remainingTurns == 42);
 	BOOST_TEST(state->players.size() == 2);
 	BOOST_TEST(state->rivers.size() = 3);
 }
 
 BOOST_AUTO_TEST_CASE(State_serialization){
-	shared_ptr<State> state1 = make_shared<State>(42,"../../../res/cardsData/",rand());
-	shared_ptr<State> state2 = make_shared<State>(10,"../../../res/cardsData/",rand()); // Different from state1
+	shared_ptr<State> state1 = make_shared<State>(42,"../../../res/cardsData/");
+	shared_ptr<State> state2 = make_shared<State>(10,"../../../res/cardsData/"); // Different from state1
 
 	Json::Value valueState1 = state1->serialize();
 	state2->unserialize(valueState1);
@@ -29,7 +29,7 @@ BOOST_AUTO_TEST_CASE(State_serialization){
 
 
 BOOST_AUTO_TEST_CASE(State_serialization_constructor){
-    shared_ptr<State> state1 = make_shared<State>(42,"../../../res/cardsData/",rand());
+    shared_ptr<State> state1 = make_shared<State>(42,"../../../res/cardsData/");
 	Json::Value valueState1 = state1->serialize();
 
 	shared_ptr<State> state2 = make_shared<State>(valueState1); // Different from state1
@@ -40,7 +40,7 @@ BOOST_AUTO_TEST_CASE(State_serialization_constructor){
 }
 
 BOOST_AUTO_TEST_CASE(State_endOfTurn){
-	shared_ptr<State> state = make_shared<State>(1,"../../../res/cardsData/",rand());
+	shared_ptr<State> state = make_shared<State>(1,"../../../res/cardsData/");
 	
 	BOOST_TEST(state->remainingTurns == 1);
 	state->endTurn();

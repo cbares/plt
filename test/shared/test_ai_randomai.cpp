@@ -15,7 +15,7 @@ BOOST_AUTO_TEST_SUITE(test_AI_RandomAI);
 
 BOOST_AUTO_TEST_CASE(RandomAI_validCommandsInit){
     vector<shared_ptr<Actor>> actors;
-    shared_ptr<State> state = make_shared<State>(42,"../../../res/cardsData/",rand());
+    shared_ptr<State> state = make_shared<State>(42,"../../../res/cardsData/");
     shared_ptr<Engine> engine = make_shared<Engine>(actors,state);
     shared_ptr<RandomAI> randomAI = make_shared<RandomAI>(state->players[0]);
     randomAI->updateState(state);

@@ -16,7 +16,7 @@ void Test::state(){
 }
 
 void Test::render(){
-    shared_ptr<State> state = make_shared<State>(10,"res/cardsData/",rand());
+    shared_ptr<State> state = make_shared<State>(10,"res/cardsData/");
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
 
     while (stateRenderer->isOpen())
@@ -36,7 +36,7 @@ void Test::render(){
 }
 
 void Test::engine(){
-    shared_ptr<State> state = make_shared<State>(20,"res/cardsData/",rand());
+    shared_ptr<State> state = make_shared<State>(20,"res/cardsData/");
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
     std::vector<std::shared_ptr<Actor>> actors;
     shared_ptr<Engine> engine = make_shared<Engine>(actors,state);
@@ -67,7 +67,7 @@ void Test::engine(){
 }
 
 void Test::random_ai(){
-    shared_ptr<State> state = make_shared<State>(200,"res/cardsData/",rand());
+    shared_ptr<State> state = make_shared<State>(200,"res/cardsData/");
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
     std::vector<std::shared_ptr<Actor>> actors;
     actors.push_back(make_shared<RandomAI>(state->players[0]));
@@ -98,7 +98,7 @@ void Test::random_ai(){
 }
 
 void Test::heuristic_ai(){
-    shared_ptr<State> state = make_shared<State>(200,"res/cardsData/",rand());
+    shared_ptr<State> state = make_shared<State>(200,"res/cardsData/");
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
     std::vector<std::shared_ptr<Actor>> actors;
     actors.push_back(make_shared<HeuristicAI>(state->players[0]));
@@ -129,7 +129,7 @@ void Test::heuristic_ai(){
 }
 
 void Test::deep_ai(){
-    shared_ptr<State> state = make_shared<State>(200,"res/cardsData/",rand());
+    shared_ptr<State> state = make_shared<State>(200,"res/cardsData/");
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
     std::vector<std::shared_ptr<Actor>> actors;
     actors.push_back(make_shared<DeepAI>(state->players[0]));
@@ -164,7 +164,7 @@ void Test::heuristic_ai_performance(){
     uint heuristicWins =0;
     uint randomWins =0;
     for(uint i=0;i<nbOfGames;i++){
-        shared_ptr<State> state = make_shared<State>(200,"res/cardsData/",rand());
+        shared_ptr<State> state = make_shared<State>(200,"res/cardsData/");
         std::vector<std::shared_ptr<Actor>> actors;
         actors.push_back(make_shared<RandomAI>(state->players[0]));
         actors.push_back(make_shared<HeuristicAI>(state->players[1]));
@@ -189,7 +189,7 @@ void Test::deep_ai_performance(){
     uint deepWins =0;
     uint randomWins =0;
     for(uint i=0;i<nbOfGames;i++){
-        shared_ptr<State> state = make_shared<State>(200,"res/cardsData/",rand());
+        shared_ptr<State> state = make_shared<State>(200,"res/cardsData/");
         std::vector<std::shared_ptr<Actor>> actors;
         actors.push_back(make_shared<RandomAI>(state->players[0]));
         actors.push_back(make_shared<DeepAI>(state->players[1]));
