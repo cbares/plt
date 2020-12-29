@@ -7,6 +7,9 @@ using namespace ai;
 using namespace std;
 //validCommands
 std::shared_ptr<engine::Command> DeepAI::getCommand (){
+
+    std::vector<std::shared_ptr<engine::Command>> validCommands = AI::validCommands(this->state,this->player);
+    
     shared_ptr<engine::Command> command;
     int bestScore = 0;
     int playerIndex;

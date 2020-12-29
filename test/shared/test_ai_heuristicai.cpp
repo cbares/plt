@@ -20,7 +20,6 @@ BOOST_AUTO_TEST_CASE(HeuristicAI_validCommandsInit){
     state->players[0]->ressources = make_shared<Ressources>(100,0,100,0,100,0,0,0);
     shared_ptr<HeuristicAI> heuristicAI = make_shared<HeuristicAI>(state->players[0]);
     heuristicAI->updateState(state);
-    heuristicAI->validCommandsInit();
     shared_ptr<PickCommand> command = dynamic_pointer_cast<PickCommand>(heuristicAI->getCommand());
     
     BOOST_TEST(command->riverPosition == 2);  
