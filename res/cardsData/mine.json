@@ -2,13 +2,13 @@
     "name":"mine",
     "cost":
         {
-            "stone":2,
+            "stone":1,
             "stoneIncome":0,
             "victoryPoint":0,
             "victoryPointIncome":0
             ,"water":0
             ,"waterIncome":0
-            ,"wood":4
+            ,"wood":1
             ,"woodIncome":0
         },
     "gain":
