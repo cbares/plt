@@ -10,6 +10,7 @@ add_custom_test(ai_ai)
 add_custom_test(ai_randomai)
 add_custom_test(ai_heuristicai)
 add_custom_test(ai_node)
+add_custom_test(ai_deepai)
 
 # vim: set sw=2 sts=2 et:
 

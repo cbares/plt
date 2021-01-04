@@ -54,3 +54,55 @@ std::shared_ptr<engine::Command> DeepAI::getCommand (){
 DeepAI::DeepAI (std::shared_ptr<state::Player> player) : AI(player){
     
 }
+
+/*
+function alphabeta(node, depth, α, β, maximizingPlayer) is
+    if depth = 0 or node is a terminal node then
+        return the heuristic value of node
+    if maximizingPlayer then
+        value := −∞
+        for each child of node do
+            value := max(value, alphabeta(child, depth − 1, α, β, FALSE))
+            α := max(α, value)
+            if α ≥ β then
+                break (* β cutoff *)
+        return value
+    else
+        value := +∞
+        for each child of node do
+            value := min(value, alphabeta(child, depth − 1, α, β, TRUE))
+            β := min(β, value)
+            if β ≤ α then
+                break (* α cutoff *)
+        return value
+*/
+
+int DeepAI::alphabeta (std::shared_ptr<Node> node, bool max, int alpha, int beta, int depth){
+    if((depth == 0 )||(node->terminalNode = true)){
+        return node->heuristicValue();
+    }
+    if(max){
+        int value = INT32_MIN;
+        for(auto it = node->childs.begin();it != node->childs.end();it++){
+            std::shared_ptr<Node> child = *it;
+            value = std::max<int>(value,alphabeta(child,false,alpha,beta,depth-1));
+            alpha = std::max(alpha,value);
+            if(alpha >= beta){
+                break;
+            }
+        }
+        return value;
+    }
+    else{
+        int value = INT32_MAX;
+        for(auto it = node->childs.begin();it != node->childs.end();it++){
+            std::shared_ptr<Node> child = *it;
+            value = std::max<int>(value,alphabeta(child,true,alpha,beta,depth-1));
+            beta = std::max(beta,value);
+            if(beta <= alpha){
+                break;
+            }
+        }
+        return value;
+    }
+}

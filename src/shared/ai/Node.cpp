@@ -52,5 +52,8 @@ Node::Node (std::shared_ptr<state::State> state, std::shared_ptr<engine::Command
 }
 
 int Node::heuristicValue (){
-
+    std::shared_ptr<state::Player> player1 = state->players[0];
+    std::shared_ptr<state::Player> player2 = state->players[1];
+    return (player1->ressources->victoryPoint + player1->ressources->victoryPointIncome * state->remainingTurns) -(player2->ressources->victoryPoint + player2->ressources->victoryPointIncome * state->remainingTurns);
+    //difference de point de victoires
 }
