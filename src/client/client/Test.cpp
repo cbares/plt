@@ -132,7 +132,7 @@ void Test::deep_ai(){
     shared_ptr<State> state = make_shared<State>(200,"res/cardsData/");
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
     std::vector<std::shared_ptr<Actor>> actors;
-    actors.push_back(make_shared<DeepAI>(state->players[0]));
+    actors.push_back(make_shared<RandomAI>(state->players[0]));
     actors.push_back(make_shared<DeepAI>(state->players[1]));
     shared_ptr<Engine> engine = make_shared<Engine>(actors,state);
 
@@ -152,6 +152,8 @@ void Test::deep_ai(){
             {
                 if(event.key.code == sf::Keyboard::Space){
                     engine->step();
+
+                    stateRenderer->update(state);
                 }
             }
         }

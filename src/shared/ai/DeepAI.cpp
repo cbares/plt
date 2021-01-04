@@ -7,48 +7,35 @@ using namespace ai;
 using namespace std;
 //validCommands
 std::shared_ptr<engine::Command> DeepAI::getCommand (){
-
     std::vector<std::shared_ptr<engine::Command>> validCommands = AI::validCommands(this->state,this->player);
     
-    shared_ptr<engine::Command> command;
-    int bestScore = 0;
-    int playerIndex;
+    bool maximizingPlayer;
     for(uint i=0; i<state->players.size();i++){
         if(state->players[i] == player){
-            playerIndex = i;
+            if(i == 0){
+                maximizingPlayer= true;
+            }
+            else{
+                 maximizingPlayer= false;
+            }
             break;
         }
     }
 
-    for(uint i=0; i<validCommands.size();i++){
-        shared_ptr<state::State> testingState = make_shared<state::State>(state); //deep copy
-        
-        validCommands[i]->execute(testingState);
-        testingState->players[playerIndex]->earnIncome();
+    shared_ptr<Node> root = make_shared<Node>(state,3);
 
-        shared_ptr<state::Ressources> ressources = testingState->players[playerIndex]->ressources;
-        int stoneIncomeScore = 25*max(ressources->stoneIncome,2);
-        int woodIncomeScore  = 25*max(ressources->woodIncome,2);
-        int waterIncomeScore = 25*max(ressources->waterIncome,2);
-        int score;
-        if((stoneIncomeScore+woodIncomeScore+waterIncomeScore)<75){
-            int stoneScore = max(ressources->stoneIncome,10);
-            int woodScore  = max(ressources->woodIncome,10);
-            int waterScore = max(ressources->waterIncome,10);
-            score = waterScore + woodScore + stoneScore + waterIncomeScore + woodIncomeScore + stoneIncomeScore;
-        }
-        else{
-            int victoryPointScore = (ressources->victoryPointIncome*testingState->remainingTurns + ressources->victoryPoint);
-            score = victoryPointScore + waterIncomeScore + woodIncomeScore +stoneIncomeScore;
-        }
+    int score = DeepAI::alphabeta(root,maximizingPlayer,INT32_MIN,INT32_MAX,3);
 
-        if(score>=bestScore){
-            command = validCommands[i];
-            bestScore = score;
+    for(auto it = root->childs.begin();it != root->childs.end();it++){
+        std::shared_ptr<Node> child = *it;
+        if(child->value == score){
+            return child->command;
         }
     }
-    
-    return command;
+
+    cout << "error" << endl;
+    return validCommands[0];
+
 }
 
 DeepAI::DeepAI (std::shared_ptr<state::Player> player) : AI(player){
@@ -78,31 +65,32 @@ function alphabeta(node, depth, α, β, maximizingPlayer) is
 */
 
 int DeepAI::alphabeta (std::shared_ptr<Node> node, bool max, int alpha, int beta, int depth){
-    if((depth == 0 )||(node->terminalNode = true)){
+
+    if((depth == 0 )||(node->terminalNode == true)){
         return node->heuristicValue();
     }
     if(max){
-        int value = INT32_MIN;
+        node->value = INT32_MIN;
         for(auto it = node->childs.begin();it != node->childs.end();it++){
             std::shared_ptr<Node> child = *it;
-            value = std::max<int>(value,alphabeta(child,false,alpha,beta,depth-1));
-            alpha = std::max(alpha,value);
+            node->value = std::max<int>(node->value,alphabeta(child,false,alpha,beta,depth-1));
+            alpha = std::max(alpha,node->value);
             if(alpha >= beta){
                 break;
             }
         }
-        return value;
+        return node->value;
     }
     else{
-        int value = INT32_MAX;
+        node->value = INT32_MAX;
         for(auto it = node->childs.begin();it != node->childs.end();it++){
             std::shared_ptr<Node> child = *it;
-            value = std::max<int>(value,alphabeta(child,true,alpha,beta,depth-1));
-            beta = std::max(beta,value);
+            node->value = std::min<int>(node->value,alphabeta(child,true,alpha,beta,depth-1));
+            beta = std::min(beta,node->value);
             if(beta <= alpha){
                 break;
             }
         }
-        return value;
+        return node->value;
     }
 }

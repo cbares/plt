@@ -29,6 +29,7 @@ Node::Node (std::shared_ptr<state::State> state, int depth){
 
 Node::Node (std::shared_ptr<state::State> state, std::shared_ptr<engine::Command> command , int depth){
     this->state = make_shared<State>(state);
+    this->command = command;
 
     command->execute(this->state);
     this->state->endTurn();
