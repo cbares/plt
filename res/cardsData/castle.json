@@ -2,13 +2,13 @@
     "name":"castle",
     "cost":
         {
-            "stone":15,
+            "stone":4,
             "stoneIncome":0,
             "victoryPoint":0,
             "victoryPointIncome":0
             ,"water":0
             ,"waterIncome":0
-            ,"wood":1
+            ,"wood":2
             ,"woodIncome":0
         },
     "gain":
