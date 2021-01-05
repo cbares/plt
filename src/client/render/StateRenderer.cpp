@@ -9,6 +9,7 @@ StateRenderer::StateRenderer(){
 
     this->texture.loadFromFile("res/textures/stateSprite.png");
     this->font.loadFromFile("res/fonts/arial.ttf");
+    
 }
 
 void StateRenderer::update(std::shared_ptr<state::State> state){
@@ -46,14 +47,21 @@ void StateRenderer::update(std::shared_ptr<state::State> state){
     text.setColor(sf::Color::Black);
     this->draw(text);
 
+    this->playerRenderers.clear();
+
     shared_ptr<state::Player> player2 = state->players[1];
     shared_ptr<PlayerRenderer> playerRenderer2 = make_shared<PlayerRenderer>(player2,sf::Vector2f(0,600));
     this->draw(*playerRenderer1);
     this->draw(*playerRenderer2);
+    this->playerRenderers.push_back(playerRenderer1);
+    this->playerRenderers.push_back(playerRenderer2);
+
+    this->riverRenderers.clear();
 
     for(int i =0;i<3;i++){
         shared_ptr<state::River> river = state->rivers[i];
         shared_ptr<RiverRenderer> riverRenderer = make_shared<RiverRenderer>(river,sf::Vector2f(460+180*i,50));
+        this->riverRenderers.push_back(riverRenderer);
         this->draw(*riverRenderer);
     }
     this->display();

@@ -35,6 +35,8 @@ int main(int argc,char* argv[])
             test.engine();
         } else if (strcmp(argv[1], "random_ai") == 0) {
             test.random_ai();
+        } else if (strcmp(argv[1], "player_vs_ai") == 0) {
+            test.player_vs_ai();
         } else if (strcmp(argv[1], "heuristic_ai") == 0) {
             test.heuristic_ai();
         } else if (strcmp(argv[1], "heuristic_ai_performance") == 0) {

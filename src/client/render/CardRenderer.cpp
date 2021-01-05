@@ -11,6 +11,18 @@ using namespace std;
 */
 
 CardRenderer::CardRenderer(std::shared_ptr<state::Card> card, sf::Vector2f position){
+
+    sf::Vector2f _position = this->getPosition();
+
+    // Card name part
+    sf::Sprite _backgroundSprite(this->texture);
+    _backgroundSprite.setScale(105/_backgroundSprite.getLocalBounds().width,140/_backgroundSprite.getLocalBounds().height);
+    _backgroundSprite.setPosition(_position.x,_position.y);
+
+    //Sprite setter
+    this->sprite = _backgroundSprite;
+
+
     this->setPosition(position);
 
     this->texture.loadFromFile("res/textures/cardSprite.png");
@@ -99,6 +111,7 @@ void CardRenderer::draw(sf::RenderTarget &target, sf::RenderStates states) const
     _backgroundSprite.setScale(105/_backgroundSprite.getLocalBounds().width,140/_backgroundSprite.getLocalBounds().height);
     _backgroundSprite.setPosition(_position.x,_position.y);
     target.draw(_backgroundSprite);
+
 
     sf::Text _nameText(this->name,this->font, 15);
     _nameText.setColor(sf::Color::Black);
