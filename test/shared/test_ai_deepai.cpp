@@ -11,17 +11,13 @@ using namespace engine;
 using namespace ai;
 using namespace std;
 
-BOOST_AUTO_TEST_SUITE(test_AI_RandomAI);
+BOOST_AUTO_TEST_SUITE(test_AI_DeepAI);
 
-BOOST_AUTO_TEST_CASE(RandomAI_validCommandsInit){
-    vector<shared_ptr<Actor>> actors;
+BOOST_AUTO_TEST_CASE(DeepAI_alphabeta){
     shared_ptr<State> state = make_shared<State>(42,"../../../res/cardsData/");
-    shared_ptr<Engine> engine = make_shared<Engine>(actors,state);
-    shared_ptr<RandomAI> randomAI = make_shared<RandomAI>(state->players[0]);
-    randomAI->updateState(state);
-
-    BOOST_TEST(randomAI->getCommand()->verify(state));
-    
+    shared_ptr<Node> root = make_shared<Node>(state,5);
+    cout << DeepAI::alphabeta(root,true,INT32_MIN,INT32_MAX,5);
+    BOOST_TEST(1);
 }
 
 BOOST_AUTO_TEST_SUITE_END();

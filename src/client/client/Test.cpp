@@ -16,7 +16,7 @@ void Test::state(){
 }
 
 void Test::render(){
-    shared_ptr<State> state = make_shared<State>(10,"res/cardsData/",rand());
+    shared_ptr<State> state = make_shared<State>(10,"res/cardsData/");
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
 
     while (stateRenderer->isOpen())
@@ -36,7 +36,7 @@ void Test::render(){
 }
 
 void Test::engine(){
-    shared_ptr<State> state = make_shared<State>(20,"res/cardsData/",rand());
+    shared_ptr<State> state = make_shared<State>(20,"res/cardsData/");
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
     std::vector<std::shared_ptr<Actor>> actors;
     shared_ptr<Engine> engine = make_shared<Engine>(actors,state);
@@ -67,7 +67,7 @@ void Test::engine(){
 }
 
 void Test::random_ai(){
-    shared_ptr<State> state = make_shared<State>(200,"res/cardsData/",rand());
+    shared_ptr<State> state = make_shared<State>(200,"res/cardsData/");
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
     std::vector<std::shared_ptr<Actor>> actors;
     actors.push_back(make_shared<RandomAI>(state->players[0]));
@@ -137,7 +137,7 @@ void Test::player_vs_ai(){
 }
 
 void Test::heuristic_ai(){
-    shared_ptr<State> state = make_shared<State>(200,"res/cardsData/",rand());
+    shared_ptr<State> state = make_shared<State>(200,"res/cardsData/");
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
     std::vector<std::shared_ptr<Actor>> actors;
     actors.push_back(make_shared<HeuristicAI>(state->players[0]));
@@ -167,12 +167,45 @@ void Test::heuristic_ai(){
     engine->saveReplay("replay.json");
 }
 
+void Test::deep_ai(){
+    shared_ptr<State> state = make_shared<State>(200,"res/cardsData/");
+    shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
+    std::vector<std::shared_ptr<Actor>> actors;
+    actors.push_back(make_shared<RandomAI>(state->players[0]));
+    actors.push_back(make_shared<DeepAI>(state->players[1]));
+    shared_ptr<Engine> engine = make_shared<Engine>(actors,state);
+
+    while (stateRenderer->isOpen())
+    {
+        // Process events
+        sf::Event event;
+
+        stateRenderer->update(state);
+        while (stateRenderer->pollEvent(event))
+        {
+            // Close window: exit
+            if (event.type == sf::Event::Closed){
+                stateRenderer->close();
+            }
+            if(event.type == sf::Event::KeyPressed)
+            {
+                if(event.key.code == sf::Keyboard::Space){
+                    engine->step();
+
+                    stateRenderer->update(state);
+                }
+            }
+        }
+    }
+    engine->saveReplay("replay.json");
+}
+
 void Test::heuristic_ai_performance(){
     const uint nbOfGames = 1000;
     uint heuristicWins =0;
     uint randomWins =0;
     for(uint i=0;i<nbOfGames;i++){
-        shared_ptr<State> state = make_shared<State>(200,"res/cardsData/",rand());
+        shared_ptr<State> state = make_shared<State>(200,"res/cardsData/");
         std::vector<std::shared_ptr<Actor>> actors;
         actors.push_back(make_shared<RandomAI>(state->players[0]));
         actors.push_back(make_shared<HeuristicAI>(state->players[1]));
@@ -182,14 +215,39 @@ void Test::heuristic_ai_performance(){
         }
         if(state->winnerIndex == 0){
             randomWins++;
-            cout << "random Wins" << endl;
+            cout << "Random Wins" << endl;
         }else{
             heuristicWins++;
-            cout << "heuristic Wins" << endl;
+            cout << "Heuristic Wins" << endl;
         }
     }
     double winrate = (((double)heuristicWins)/((double)nbOfGames))*100;
     cout << "HeuristicAI win rate against RandomAI: " << winrate << "%" << endl;
+}
+
+void Test::deep_ai_performance(){
+    const uint nbOfGames = 100;
+    uint deepWins =0;
+    uint randomWins =0;
+    for(uint i=0;i<nbOfGames;i++){
+        shared_ptr<State> state = make_shared<State>(200,"res/cardsData/");
+        std::vector<std::shared_ptr<Actor>> actors;
+        actors.push_back(make_shared<RandomAI>(state->players[0]));
+        actors.push_back(make_shared<DeepAI>(state->players[1]));
+        shared_ptr<Engine> engine = make_shared<Engine>(actors,state);
+        while(state->winnerIndex == -1){
+            engine->step();
+        }
+        if(state->winnerIndex == 0){
+            randomWins++;
+            cout << "Random Wins" << endl;
+        }else{
+            deepWins++;
+            cout << "Deep Wins" << endl;
+        }
+    }
+    double winrate = (((double)deepWins)/((double)nbOfGames))*100;
+    cout << "DeepAI win rate against RandomAI: " << winrate << "%" << endl;
 }
 
 void Test::replay (std::string filename){

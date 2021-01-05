@@ -51,7 +51,6 @@ void Engine::step (){
 
 void Engine::saveReplay (std::string filename){
     Json::Value replay;
-    replay["seed"] = state->seed;
     
     for(uint i = 0;i<commandHistoric.size();i++){
         replay["commands"][i] = commandHistoric[i]->serialize();
@@ -77,9 +76,8 @@ int Engine::loadReplay (std::string filename,std::string ressourcespath){
         return -1;
     }
     reader.parse(replay_file_stream,replay,false);
-    uint seed = replay["seed"].asUInt();
     Json::Value commands = replay["commands"];
-    this->state = make_shared<state::State>(commands.size()-1,ressourcespath,seed);
+    this->state = make_shared<state::State>(commands.size()-1,ressourcespath);
     vector<shared_ptr<Command>> P1commands,P2commands;
     for(uint i =0;i<commands.size();i++){
 

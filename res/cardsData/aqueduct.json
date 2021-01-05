@@ -2,11 +2,11 @@
     "name":"aqueduct",
     "cost":
         {
-            "stone":12,
+            "stone":5,
             "stoneIncome":0,
             "victoryPoint":0,
             "victoryPointIncome":0
-            ,"water":5
+            ,"water":1
             ,"waterIncome":0
             ,"wood":0
             ,"woodIncome":0
@@ -15,8 +15,8 @@
         {
             "stone":0,
             "stoneIncome":0
-            ,"victoryPoint":5
-            ,"victoryPointIncome":0
+            ,"victoryPoint":0
+            ,"victoryPointIncome":1
             ,"water":0
             ,"waterIncome":1
             ,"wood":0

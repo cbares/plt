@@ -5,7 +5,6 @@ using namespace std;
 
 StateRenderer::StateRenderer(){
     this->create(sf::VideoMode(1000, 1000), "Rendering");
-    this->setFramerateLimit(60);
 
     this->texture.loadFromFile("res/textures/stateSprite.png");
     this->font.loadFromFile("res/fonts/arial.ttf");

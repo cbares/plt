@@ -6,8 +6,14 @@ using namespace std;
 
 Card::Card (std::string name, std::shared_ptr<Ressources> cost, std::shared_ptr<Ressources> gain){
     this->name = name;
-    this->cost = make_shared<Ressources>(cost->serialize());
-    this->gain = make_shared<Ressources>(gain->serialize());
+    this->cost = make_shared<Ressources>(cost);
+    this->gain = make_shared<Ressources>(gain);
+}
+
+Card::Card (shared_ptr<Card> card){
+    this->name = card->name;
+    this->cost = make_shared<Ressources>(card->cost);
+    this->gain = make_shared<Ressources>(card->gain);
 }
 
 Card::Card (Json::Value value){

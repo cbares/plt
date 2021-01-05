@@ -15,7 +15,7 @@ BOOST_AUTO_TEST_SUITE(test_Engine);
 
 BOOST_AUTO_TEST_CASE(Engine_replay){
     srand(time(NULL));
-    shared_ptr<State> state = make_shared<State>(200,"../../../res/cardsData/",rand());
+    shared_ptr<State> state = make_shared<State>(200,"../../../res/cardsData/");
     std::vector<std::shared_ptr<Actor>> actors;
     actors.push_back(make_shared<RandomAI>(state->players[0]));
     actors.push_back(make_shared<RandomAI>(state->players[1]));

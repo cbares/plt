@@ -2,11 +2,11 @@
     "name":"fountain",
     "cost":
         {
-            "stone":4,
+            "stone":1,
             "stoneIncome":0,
             "victoryPoint":0,
             "victoryPointIncome":0
-            ,"water":10
+            ,"water":3
             ,"waterIncome":0
             ,"wood":0
             ,"woodIncome":0
