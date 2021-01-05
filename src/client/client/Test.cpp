@@ -98,7 +98,7 @@ void Test::random_ai(){
 }
 
 void Test::player_vs_ai(){
-    shared_ptr<State> state = make_shared<State>(200,"res/cardsData/",rand());
+    shared_ptr<State> state = make_shared<State>(200,"res/cardsData/");
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
     std::vector<std::shared_ptr<Actor>> actors;
     actors.push_back(make_shared<Human>(state->players[0]));
