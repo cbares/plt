@@ -127,15 +127,31 @@ void Test::player_vs_ai(){
             
             if (event.type == sf::Event::MouseButtonPressed){
                 sf::Vector2i _position = sf::Mouse::getPosition();
-		for (size_t _river = 0; _river < stateRenderer->riverRenderers.size(); _river++) {
-			for (size_t _card = 0; _card < _river->cards.size(); _card++) {
-				if (_card->sprite.getGlobalBounds().contains(_position)) {
+		vector<shared_ptr<render::RiverRenderer>> _riverRenderers = stateRenderer->riverRenderers;
+
+		// Loop on rivers:
+    		for(uint riverpos = 0; riverpos < _riverRenderers.size(); riverpos++){
+			shared_ptr<render::RiverRenderer> _riverRenderer = _riverRenderers[riverpos];
+			// _riverRenderer is current river.
+			
+			// Loop on cards (in current river):
+        		for(uint cardpos = 0; cardpos < _riverRenderer->cards.size(); cardpos++){
+            			sf::Sprite _sprite = _riverRenderer->cards[cardpos]->sprite;
+				
+				// Debug:
+				//sf::FloatRect _rect = _sprite.getGlobalBounds();
+				sf::FloatRect _rect = _sprite.getTransform().transformRect(_sprite.getLocalBounds());
+				cout << "Haut:" << _sprite.getGlobalBounds().top << " Bas:" << _rect.top - _rect.height << " Gauche:" << _rect.left << " Droite:" << _rect.left + _rect.width << endl;
+
+				cout << "Local:" << _sprite.getTransform().getMatrix()[0] << endl;
+
+            			if(_sprite.getGlobalBounds().contains((float)_position.x, (float)_position.y)){
 					// Clicked on that card !
-					engine::PickCommand _command(_river, _card, _human->player->name);
-					_human->commandBuffer = std::make_shared<engine::Command>(_command);
+					engine::PickCommand _command(riverpos, cardpos, _human->player->name);
+					_human->commandBuffer = std::make_shared<engine::PickCommand>(_command);
 
 					// Debug:
-					cout << "river number " << _river << ", card number " << _card << endl;
+					cout << "river number " << riverpos << ", card number " << cardpos << endl;
 				}
 			}
 		}
