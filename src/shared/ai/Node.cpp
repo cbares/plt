@@ -56,7 +56,7 @@ Node::Node (std::shared_ptr<state::State> state, std::shared_ptr<engine::Command
                 }
             }
             for(uint i =0; i<bestCommands.size();i++){
-                std::shared_ptr<Node> child = make_shared<Node>(this->state,validCommands[i],depth-1);
+                std::shared_ptr<Node> child = make_shared<Node>(this->state,bestCommands[i],depth-1);
                 childs.push_back(child);
             }
         }

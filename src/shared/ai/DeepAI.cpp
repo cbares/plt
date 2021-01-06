@@ -26,9 +26,13 @@ std::shared_ptr<engine::Command> DeepAI::getCommand (){
 
     int score = DeepAI::alphabeta(root,maximizingPlayer,INT32_MIN,INT32_MAX,3);
 
+    cout << "score: " << score << endl; 
+
     for(auto it = root->childs.begin();it != root->childs.end();it++){
         std::shared_ptr<Node> child = *it;
         if(child->value == score){
+            std::shared_ptr<engine::PickCommand> childCommand = std::dynamic_pointer_cast<engine::PickCommand>(child->command);
+            cout << "child row: " << childCommand->riverPosition << endl; 
             return child->command;
         }
     }

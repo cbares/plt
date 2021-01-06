@@ -2,7 +2,7 @@
     "name":"well",
     "cost":
         {
-            "stone":2,
+            "stone":3,
             "stoneIncome":0,
             "victoryPoint":0,
             "victoryPointIncome":0
