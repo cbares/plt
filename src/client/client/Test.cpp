@@ -126,7 +126,6 @@ void Test::player_vs_ai(){
             }
             
             if (event.type == sf::Event::MouseButtonPressed){
-                sf::Vector2i _position = sf::Mouse::getPosition();
 		        vector<shared_ptr<render::RiverRenderer>> _riverRenderers = stateRenderer->riverRenderers;
 
                 // Loop on rivers:
@@ -140,13 +139,11 @@ void Test::player_vs_ai(){
                         sf::Vector2f _cardPosition = _riverRenderer->cards[cardpos]->cardPosition;
                         sf::Vector2f _cardDimension = _riverRenderer->cards[cardpos]->cardDimension;
 
-                        //cout << "x pos" << _cardPosition.x << ", y pos " << _cardPosition.y << endl;
-                        //cout << "card width" << _cardDimension.x << ", card height " << _cardDimension.y << endl;
-
-                        bool x_condition = _position.x >= _cardPosition.x && _position.x <= _cardPosition.x+_cardDimension.x;
-                        bool y_condition = _position.y >= _cardPosition.y && _position.y <= _cardPosition.y+_cardDimension.y;
+                        bool x_condition = event.mouseButton.x >= _cardPosition.x && event.mouseButton.x <= _cardPosition.x+_cardDimension.x;
+                        bool y_condition = event.mouseButton.y >= _cardPosition.y && event.mouseButton.y <= _cardPosition.y+_cardDimension.y;
 
                         if (x_condition && y_condition){
+                            cout << "hit" << endl;
                             // Clicked on that card !
                             std::shared_ptr<PickCommand> command = std::make_shared<engine::PickCommand>(riverpos, cardpos, _human->player->name);
                             _human->commandBuffer = command;
