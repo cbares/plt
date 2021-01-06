@@ -127,40 +127,40 @@ void Test::player_vs_ai(){
             
             if (event.type == sf::Event::MouseButtonPressed){
                 sf::Vector2i _position = sf::Mouse::getPosition();
-		vector<shared_ptr<render::RiverRenderer>> _riverRenderers = stateRenderer->riverRenderers;
+		        vector<shared_ptr<render::RiverRenderer>> _riverRenderers = stateRenderer->riverRenderers;
 
-		// Loop on rivers:
-    		for(uint riverpos = 0; riverpos < _riverRenderers.size(); riverpos++){
-			shared_ptr<render::RiverRenderer> _riverRenderer = _riverRenderers[riverpos];
-			// _riverRenderer is current river.
-			
-			// Loop on cards (in current river):
-        		for(uint cardpos = 0; cardpos < _riverRenderer->cards.size(); cardpos++){
-            			sf::Sprite _sprite = _riverRenderer->cards[cardpos]->sprite;
-				
-				// Debug:
-				//sf::FloatRect _rect = _sprite.getGlobalBounds();
-				sf::FloatRect _rect = _sprite.getTransform().transformRect(_sprite.getLocalBounds());
-				cout << "Haut:" << _sprite.getGlobalBounds().top << " Bas:" << _rect.top - _rect.height << " Gauche:" << _rect.left << " Droite:" << _rect.left + _rect.width << endl;
+                // Loop on rivers:
+                for(uint riverpos = 0; riverpos < _riverRenderers.size(); riverpos++){
+                    shared_ptr<render::RiverRenderer> _riverRenderer = _riverRenderers[riverpos];
+                    // _riverRenderer is current river.
+                    
+                    // Loop on cards (in current river):
+                    for(uint cardpos = 0; cardpos < _riverRenderer->cards.size(); cardpos++){
+                        sf::Sprite _sprite = _riverRenderer->cards[cardpos]->sprite;
+                        sf::Vector2f _cardPosition = _riverRenderer->cards[cardpos]->cardPosition;
+                        sf::Vector2f _cardDimension = _riverRenderer->cards[cardpos]->cardDimension;
 
-				cout << "Local:" << _sprite.getTransform().getMatrix()[0] << endl;
+                        //cout << "x pos" << _cardPosition.x << ", y pos " << _cardPosition.y << endl;
+                        //cout << "card width" << _cardDimension.x << ", card height " << _cardDimension.y << endl;
 
-            			if(_sprite.getGlobalBounds().contains((float)_position.x, (float)_position.y)){
-					// Clicked on that card !
-					engine::PickCommand _command(riverpos, cardpos, _human->player->name);
-					_human->commandBuffer = std::make_shared<engine::PickCommand>(_command);
+                        bool x_condition = _position.x >= _cardPosition.x && _position.x <= _cardPosition.x+_cardDimension.x;
+                        bool y_condition = _position.y >= _cardPosition.y && _position.y <= _cardPosition.y+_cardDimension.y;
 
-					// Debug:
-					cout << "river number " << riverpos << ", card number " << cardpos << endl;
-				}
-			}
-		}
+                        if (x_condition && y_condition){
+                            // Clicked on that card !
+                            _human->commandBuffer = std::make_shared<engine::PickCommand>(riverpos, cardpos, _human->player->name);
 
-		// Debug:
+                            // Debug:
+                            cout << "river number " << riverpos << ", card number " << cardpos << endl;
+                        }
+                    }
+                }
+                // Debug:
                 cout << "x pos" << _position.x << endl;
                 cout << "y pos" << _position.y << endl;
-            }
             
+                
+            }
         }
     }
     engine->saveReplay("replay.json");

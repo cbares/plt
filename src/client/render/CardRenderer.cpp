@@ -22,6 +22,12 @@ CardRenderer::CardRenderer(std::shared_ptr<state::Card> card, sf::Vector2f posit
     //Sprite setter
     this->sprite = _backgroundSprite;
 
+    //Position attribute setter
+    this->cardPosition = position;
+
+    //Dimension attribute setter
+    this->cardDimension = sf::Vector2f(105, 140);
+
 
     this->setPosition(position);
 
