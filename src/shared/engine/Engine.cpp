@@ -34,7 +34,7 @@ void Engine::step (){
         actor->updateState(state);
 
         if(actor->player == activePlayer){
-
+            
             shared_ptr<Command> command;
                     
             do{

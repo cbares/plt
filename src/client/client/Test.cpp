@@ -148,18 +148,13 @@ void Test::player_vs_ai(){
 
                         if (x_condition && y_condition){
                             // Clicked on that card !
-                            _human->commandBuffer = std::make_shared<engine::PickCommand>(riverpos, cardpos, _human->player->name);
+                            std::shared_ptr<PickCommand> command = std::make_shared<engine::PickCommand>(riverpos, cardpos, _human->player->name);
+                            _human->commandBuffer = command;
 
                             // Debug:
-                            cout << "river number " << riverpos << ", card number " << cardpos << endl;
                         }
                     }
-                }
-                // Debug:
-                cout << "x pos" << _position.x << endl;
-                cout << "y pos" << _position.y << endl;
-            
-                
+                }                
             }
         }
     }

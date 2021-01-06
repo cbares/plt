@@ -1,1 +1,22 @@
-null
+{
+   "commands" : [
+      {
+         "cardPosition" : 0,
+         "id" : 1,
+         "playerName" : "Player 1",
+         "riverPosition" : 0
+      },
+      {
+         "cardPosition" : 4,
+         "id" : 1,
+         "playerName" : "Player 2",
+         "riverPosition" : 0
+      },
+      {
+         "cardPosition" : 0,
+         "id" : 1,
+         "playerName" : "Player 1",
+         "riverPosition" : 0
+      }
+   ]
+}
