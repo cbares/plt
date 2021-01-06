@@ -101,7 +101,8 @@ void Test::player_vs_ai(){
     shared_ptr<State> state = make_shared<State>(200,"res/cardsData/");
     shared_ptr<StateRenderer> stateRenderer = make_shared<StateRenderer>();
     std::vector<std::shared_ptr<Actor>> actors;
-    actors.push_back(make_shared<Human>(state->players[0]));
+    shared_ptr<Human> _human = make_shared<Human>(state->players[0]);
+    actors.push_back(_human);
     actors.push_back(make_shared<RandomAI>(state->players[1]));
     shared_ptr<Engine> engine = make_shared<Engine>(actors,state);
 
@@ -126,6 +127,20 @@ void Test::player_vs_ai(){
             
             if (event.type == sf::Event::MouseButtonPressed){
                 sf::Vector2i _position = sf::Mouse::getPosition();
+		for (size_t _river = 0; _river < stateRenderer->riverRenderers.size(); _river++) {
+			for (size_t _card = 0; _card < _river->cards.size(); _card++) {
+				if (_card->sprite.getGlobalBounds().contains(_position)) {
+					// Clicked on that card !
+					engine::PickCommand _command(_river, _card, _human->player->name);
+					_human->commandBuffer = std::make_shared<engine::Command>(_command);
+
+					// Debug:
+					cout << "river number " << _river << ", card number " << _card << endl;
+				}
+			}
+		}
+
+		// Debug:
                 cout << "x pos" << _position.x << endl;
                 cout << "y pos" << _position.y << endl;
             }
