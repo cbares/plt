@@ -22,7 +22,7 @@ std::shared_ptr<engine::Command> DeepAI::getCommand (){
         }
     }
 
-    shared_ptr<Node> root = make_shared<Node>(state,3);
+    shared_ptr<Node> root = make_shared<Node>(state,4);
 
     int score = DeepAI::alphabeta(root,maximizingPlayer,INT32_MIN,INT32_MAX,3);
 
