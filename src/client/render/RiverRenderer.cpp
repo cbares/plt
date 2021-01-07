@@ -8,10 +8,10 @@ using namespace std;
 RiverRenderer::RiverRenderer(std::shared_ptr<state::River> river, sf::Vector2f position){
     this->setPosition(position);
 
-    this->texture.loadFromFile("res/textures/footer_lodyas.png");
+    this->texture.loadFromFile("res/textures/riverSprite.png");
 
     for(uint i =0;i<river->cards.size();i++){
-        shared_ptr<CardRenderer> cardRenderer = make_shared<CardRenderer>(river->cards[i],sf::Vector2f(position.x+15,position.y+40+170*i));
+        shared_ptr<CardRenderer> cardRenderer = make_shared<CardRenderer>(river->cards[i],sf::Vector2f(position.x+12,position.y+40+170*i));
         this->cards.push_back(cardRenderer); 
     }
 }
