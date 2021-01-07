@@ -14,8 +14,25 @@ Node::Node (std::shared_ptr<state::State> state, int depth){
         activePlayer->earnIncome();
         if(depth != 0){
             std::vector<std::shared_ptr<engine::Command>> validCommands = AI::validCommands(state,activePlayer);
-            for(uint i =0; i<validCommands.size();i++){
-                std::shared_ptr<Node> child = make_shared<Node>(this->state,validCommands[i],depth-1);
+            uint highestRiverAvailable =0;
+            for(uint i =0 ;i<validCommands.size();i++){
+                if(shared_ptr<engine::PickCommand> pickCommand = dynamic_pointer_cast<engine::PickCommand>(validCommands[i])){
+                    if(pickCommand->riverPosition > highestRiverAvailable){
+                        highestRiverAvailable = pickCommand->riverPosition;
+                    }
+                }
+            }
+            vector<shared_ptr<engine::Command>> bestCommands;
+            for(uint i =0 ;i<validCommands.size();i++){
+                if(shared_ptr<engine::PickCommand> pickCommand = dynamic_pointer_cast<engine::PickCommand>(validCommands[i])){
+                    if(pickCommand->riverPosition == highestRiverAvailable){
+                        bestCommands.push_back(validCommands[i]);
+                    }
+                }
+            }
+            for(uint i =0; i<bestCommands.size();i++){
+                std::shared_ptr<engine::PickCommand> childCommand = std::dynamic_pointer_cast<engine::PickCommand>(bestCommands[i]);
+                std::shared_ptr<Node> child = make_shared<Node>(this->state,bestCommands[i],depth-1);
                 childs.push_back(child);
             }
         }
@@ -56,6 +73,7 @@ Node::Node (std::shared_ptr<state::State> state, std::shared_ptr<engine::Command
                 }
             }
             for(uint i =0; i<bestCommands.size();i++){
+                std::shared_ptr<engine::PickCommand> childCommand = std::dynamic_pointer_cast<engine::PickCommand>(bestCommands[i]);
                 std::shared_ptr<Node> child = make_shared<Node>(this->state,bestCommands[i],depth-1);
                 childs.push_back(child);
             }

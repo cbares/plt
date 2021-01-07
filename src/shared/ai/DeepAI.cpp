@@ -22,21 +22,18 @@ std::shared_ptr<engine::Command> DeepAI::getCommand (){
         }
     }
 
-    shared_ptr<Node> root = make_shared<Node>(state,4);
+    shared_ptr<Node> root = make_shared<Node>(state,3);
 
     int score = DeepAI::alphabeta(root,maximizingPlayer,INT32_MIN,INT32_MAX,3);
-
-    cout << "score: " << score << endl; 
-
+    std::shared_ptr<engine::Command> command;
     for(auto it = root->childs.begin();it != root->childs.end();it++){
         std::shared_ptr<Node> child = *it;
         if(child->value == score){
             std::shared_ptr<engine::PickCommand> childCommand = std::dynamic_pointer_cast<engine::PickCommand>(child->command);
-            cout << "child row: " << childCommand->riverPosition << endl; 
+
             return child->command;
         }
     }
-
     cout << "error" << endl;
     return validCommands[0];
 

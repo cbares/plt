@@ -1,4 +1,5 @@
 #include "PickCommand.h"
+#include <iostream>
 
 using namespace engine;
 using namespace std;
