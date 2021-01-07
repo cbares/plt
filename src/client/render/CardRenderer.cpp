@@ -11,13 +11,83 @@ using namespace std;
 */
 
 CardRenderer::CardRenderer(std::shared_ptr<state::Card> card, sf::Vector2f position){
+
+    sf::Vector2f _position = this->getPosition();
+
+    // Card name part
+    sf::Sprite _backgroundSprite(this->texture);
+    _backgroundSprite.setScale(105/_backgroundSprite.getLocalBounds().width,140/_backgroundSprite.getLocalBounds().height);
+    _backgroundSprite.setPosition(_position.x,_position.y);
+
+    //Sprite setter
+    this->sprite = _backgroundSprite;
+
+    //Position attribute setter
+    this->cardPosition = position;
+
+    //Dimension attribute setter
+    this->cardDimension = sf::Vector2f(105, 140);
+
+
     this->setPosition(position);
 
-    this->texture.loadFromFile("res/textures/brushed_alu_dark.png");
+    this->texture.loadFromFile("res/textures/cardSprite.png");
 
     this->font.loadFromFile("res/fonts/arial.ttf");
-    
-    this->name = card->name;
+
+    std::string cardname = card->name;
+    sf::Texture imgTexture;
+    imgTexture.loadFromFile("res/textures/"+cardname+".png");
+
+    if(cardname == "aqueduct"){
+        this->name = "Aqueduct";
+    }
+    else if (cardname == "castle"){
+        this->name = "Castle";
+    }
+    else if (cardname == "fountain"){
+        this->name = "Fountain";
+    }
+    else if (cardname == "house"){
+        this->name = "House";
+    }
+    else if (cardname == "library"){
+        this->name = "Library";
+    }
+    else if (cardname == "mine"){
+        this->name = "Mine";
+    }
+    else if (cardname == "pool"){
+        this->name = "Pool";
+    }
+    else if (cardname == "sawmill"){
+        this->name = "Sawmill";
+    }
+    else if (cardname == "stone"){
+        this->name = "Stone";
+        imgTexture.loadFromFile("res/textures/stoneToken.png");
+    }
+    else if (cardname == "victoryPoint"){
+        this->name = "Victory Point";
+        imgTexture.loadFromFile("res/textures/victoryToken.png");
+    }
+    else if (cardname == "water"){
+        this->name = "Water";
+        imgTexture.loadFromFile("res/textures/waterToken.png");
+    }
+    else if (cardname == "well"){
+        this->name = "Well";
+    }
+    else if (cardname == "wood"){
+        this->name = "Wood";
+        imgTexture.loadFromFile("res/textures/woodToken.png");
+    }
+    else{
+        this->name = "undefined";
+    }
+
+    this->picture = imgTexture;
+
     this->cost = card->cost;
     this->gain = card->gain;
 
@@ -42,30 +112,32 @@ CardRenderer::CardRenderer(std::shared_ptr<state::Card> card, sf::Vector2f posit
 void CardRenderer::draw(sf::RenderTarget &target, sf::RenderStates states) const{
     sf::Vector2f _position = this->getPosition();
 
-    sf::Sprite _borderSprite(this->texture);
-    _borderSprite.setScale(100/_borderSprite.getLocalBounds().width,130/_borderSprite.getLocalBounds().height);
-    _borderSprite.setPosition(_position.x,_position.y);
-    _borderSprite.setColor(sf::Color::Black);
-    target.draw(_borderSprite);
-
-    _position += sf::Vector2f(5,5);
     // Card name part
     sf::Sprite _backgroundSprite(this->texture);
-    _backgroundSprite.setScale(90/_backgroundSprite.getLocalBounds().width,120/_backgroundSprite.getLocalBounds().height);
+    _backgroundSprite.setScale(105/_backgroundSprite.getLocalBounds().width,140/_backgroundSprite.getLocalBounds().height);
     _backgroundSprite.setPosition(_position.x,_position.y);
     target.draw(_backgroundSprite);
 
+
     sf::Text _nameText(this->name,this->font, 15);
-    _nameText.setPosition(_position.x+3,_position.y);
+    _nameText.setColor(sf::Color::Black);
+    _nameText.setPosition(_position.x+10,_position.y+8);
     target.draw(_nameText);
 
-    _position += sf::Vector2f(0,20);
+    // Card picture part
+     sf::Sprite _pictureSprite(this->picture);
+    _pictureSprite.setScale(59/_pictureSprite.getLocalBounds().width,44/_pictureSprite.getLocalBounds().height);
+    _pictureSprite.setPosition(_position.x+23,_position.y+33);
+    target.draw(_pictureSprite);   
 
     // Card cost part
+
+    _position = sf::Vector2f(this->getPosition().x+8,this->getPosition().y+80);
 
     if(cost->stone !=0){
         sf::Text _text(to_string(this->cost->stone),this->font, 15);
         _text.setPosition(_position.x,_position.y);
+        _text.setColor(sf::Color::Black);
         target.draw(_text);
         _position += sf::Vector2f(_text.getLocalBounds().width,0);
         sf::Sprite _spriteStone(this->ressourcesTextures.find("stone")->second);
@@ -77,6 +149,7 @@ void CardRenderer::draw(sf::RenderTarget &target, sf::RenderStates states) const
     if(cost->wood !=0){
         sf::Text _text(to_string(this->cost->wood),this->font, 15);
         _text.setPosition(_position.x,_position.y);
+        _text.setColor(sf::Color::Black);
         target.draw(_text);
         _position += sf::Vector2f(_text.getLocalBounds().width,0);
         sf::Sprite _spriteWood(this->ressourcesTextures.find("wood")->second);
@@ -88,6 +161,7 @@ void CardRenderer::draw(sf::RenderTarget &target, sf::RenderStates states) const
     if(cost->water !=0){
         sf::Text _text(to_string(this->cost->water),this->font, 15);
         _text.setPosition(_position.x,_position.y);
+        _text.setColor(sf::Color::Black);
         target.draw(_text);
         _position += sf::Vector2f(_text.getLocalBounds().width,0);
         sf::Sprite _spriteWater(this->ressourcesTextures.find("water")->second);
@@ -97,17 +171,18 @@ void CardRenderer::draw(sf::RenderTarget &target, sf::RenderStates states) const
         _position += sf::Vector2f(_spriteWater.getGlobalBounds().width,0);
     }
 
-    _position = sf::Vector2f(this->getPosition().x+5,_position.y+40);
+    _position = sf::Vector2f(this->getPosition().x+8,this->getPosition().y+105);
 
     // Card gain part
     if(gain->stone !=0){
-        sf::Text _text(string("Gain ") + to_string(this->gain->stone),this->font, 15);
+        sf::Text _text(string("Gain ") + to_string(this->gain->stone),this->font, 10);
         _text.setPosition(_position.x,_position.y);
+        _text.setColor(sf::Color::Black);
         target.draw(_text);
         _position += sf::Vector2f(_text.getLocalBounds().width,0);
         sf::Sprite _stoneSprite(this->ressourcesTextures.find("stone")->second);
         _stoneSprite.setScale(15.36/_stoneSprite.getLocalBounds().width,15.36/_stoneSprite.getLocalBounds().height);
-        _stoneSprite.setPosition(_position.x,_position.y+2);
+        _stoneSprite.setPosition(_position.x+3,_position.y);
         target.draw(_stoneSprite);
         _position += sf::Vector2f(_stoneSprite.getGlobalBounds().width,0);
     }
@@ -115,27 +190,30 @@ void CardRenderer::draw(sf::RenderTarget &target, sf::RenderStates states) const
     if(gain->stoneIncome !=0){
         sf::Text _text(string("Gain ") + to_string(this->gain->stoneIncome),this->font, 10);
         _text.setPosition(_position.x,_position.y);
+        _text.setColor(sf::Color::Black);
         target.draw(_text);
         _position += sf::Vector2f(_text.getGlobalBounds().width,0);
         sf::Sprite _stoneSprite(this->ressourcesTextures.find("stone")->second);
         _stoneSprite.setScale(15.36/_stoneSprite.getLocalBounds().width,15.36/_stoneSprite.getLocalBounds().height);
-        _stoneSprite.setPosition(_position.x,_position.y);
+        _stoneSprite.setPosition(_position.x+3,_position.y);
         target.draw(_stoneSprite);
         _position += sf::Vector2f(_stoneSprite.getGlobalBounds().width,0);
         sf::Text _text2(string(" per turn"),this->font, 10);
         _text2.setPosition(_position.x,_position.y);
+        _text2.setColor(sf::Color::Black);
         target.draw(_text2);
-        _position = sf::Vector2f(this->getPosition().x+5,_text2.getGlobalBounds().top+_text2.getGlobalBounds().height+10);
+        _position = sf::Vector2f(this->getPosition().x+8,_text2.getGlobalBounds().top+_text2.getGlobalBounds().height);
     }
 
     if(gain->water !=0){
-        sf::Text _text(string("Gain ") + to_string(this->gain->water),this->font, 15);
+        sf::Text _text(string("Gain ") + to_string(this->gain->water),this->font, 10);
         _text.setPosition(_position.x,_position.y);
+        _text.setColor(sf::Color::Black);
         target.draw(_text);
         _position += sf::Vector2f(_text.getLocalBounds().width,0);
         sf::Sprite _waterSprite(this->ressourcesTextures.find("water")->second);
         _waterSprite.setScale(15.36/_waterSprite.getLocalBounds().width,15.36/_waterSprite.getLocalBounds().height);
-        _waterSprite.setPosition(_position.x,_position.y+2);
+        _waterSprite.setPosition(_position.x+3,_position.y);
         target.draw(_waterSprite);
         _position += sf::Vector2f(_waterSprite.getGlobalBounds().width,0);
     }
@@ -143,27 +221,30 @@ void CardRenderer::draw(sf::RenderTarget &target, sf::RenderStates states) const
     if(gain->waterIncome !=0){
         sf::Text _text(string("Gain ") + to_string(this->gain->waterIncome),this->font, 10);
         _text.setPosition(_position.x,_position.y);
+        _text.setColor(sf::Color::Black);
         target.draw(_text);
         _position += sf::Vector2f(_text.getGlobalBounds().width,0);
         sf::Sprite _waterSprite(this->ressourcesTextures.find("water")->second);
         _waterSprite.setScale(15.36/_waterSprite.getLocalBounds().width,15.36/_waterSprite.getLocalBounds().height);
-        _waterSprite.setPosition(_position.x,_position.y);
+        _waterSprite.setPosition(_position.x+3,_position.y);
         target.draw(_waterSprite);
         _position += sf::Vector2f(_waterSprite.getGlobalBounds().width,0);
         sf::Text _text2(string(" per turn"),this->font, 10);
         _text2.setPosition(_position.x,_position.y);
+        _text2.setColor(sf::Color::Black);
         target.draw(_text2);
-        _position = sf::Vector2f(this->getPosition().x+5,_text2.getGlobalBounds().top+_text2.getGlobalBounds().height+10);
+        _position = sf::Vector2f(this->getPosition().x+8,_text2.getGlobalBounds().top+_text2.getGlobalBounds().height);
     }
 
     if(gain->wood !=0){
-        sf::Text _text(string("Gain ") + to_string(this->gain->wood),this->font, 15);
+        sf::Text _text(string("Gain ") + to_string(this->gain->wood),this->font, 10);
         _text.setPosition(_position.x,_position.y);
+        _text.setColor(sf::Color::Black);
         target.draw(_text);
         _position += sf::Vector2f(_text.getLocalBounds().width,0);
         sf::Sprite _woodSprite(this->ressourcesTextures.find("wood")->second);
         _woodSprite.setScale(15.36/_woodSprite.getLocalBounds().width,15.36/_woodSprite.getLocalBounds().height);
-        _woodSprite.setPosition(_position.x,_position.y+2);
+        _woodSprite.setPosition(_position.x+3,_position.y);
         target.draw(_woodSprite);
         _position += sf::Vector2f(_woodSprite.getGlobalBounds().width,0);
     }
@@ -171,27 +252,30 @@ void CardRenderer::draw(sf::RenderTarget &target, sf::RenderStates states) const
     if(gain->woodIncome !=0){
         sf::Text _text(string("Gain ") + to_string(this->gain->woodIncome),this->font, 10);
         _text.setPosition(_position.x,_position.y);
+        _text.setColor(sf::Color::Black);
         target.draw(_text);
         _position += sf::Vector2f(_text.getGlobalBounds().width,0);
         sf::Sprite _woodSprite(this->ressourcesTextures.find("wood")->second);
         _woodSprite.setScale(15.36/_woodSprite.getLocalBounds().width,15.36/_woodSprite.getLocalBounds().height);
-        _woodSprite.setPosition(_position.x,_position.y);
+        _woodSprite.setPosition(_position.x+3,_position.y);
         target.draw(_woodSprite);
         _position += sf::Vector2f(_woodSprite.getGlobalBounds().width,0);
         sf::Text _text2(string(" per turn"),this->font, 10);
         _text2.setPosition(_position.x,_position.y);
+        _text2.setColor(sf::Color::Black);
         target.draw(_text2);
-        _position = sf::Vector2f(this->getPosition().x+5,_text2.getGlobalBounds().top+_text2.getGlobalBounds().height+10);
+        _position = sf::Vector2f(this->getPosition().x+8,_text2.getGlobalBounds().top+_text2.getGlobalBounds().height);
     }
 
     if(gain->victoryPoint !=0){
-        sf::Text _text(string("Gain ") + to_string(this->gain->victoryPoint),this->font, 15);
+        sf::Text _text(string("Gain ") + to_string(this->gain->victoryPoint),this->font, 10);
         _text.setPosition(_position.x,_position.y);
+        _text.setColor(sf::Color::Black);
         target.draw(_text);
         _position += sf::Vector2f(_text.getLocalBounds().width,0);
         sf::Sprite _victoryPointSprite(this->ressourcesTextures.find("crown")->second);
         _victoryPointSprite.setScale(15.36/_victoryPointSprite.getLocalBounds().width,15.36/_victoryPointSprite.getLocalBounds().height);
-        _victoryPointSprite.setPosition(_position.x,_position.y+2);
+        _victoryPointSprite.setPosition(_position.x+3,_position.y);
         target.draw(_victoryPointSprite);
         _position += sf::Vector2f(_victoryPointSprite.getGlobalBounds().width,0);
     }
@@ -199,17 +283,19 @@ void CardRenderer::draw(sf::RenderTarget &target, sf::RenderStates states) const
     if(gain->victoryPointIncome !=0){
         sf::Text _text(string("Gain ") + to_string(this->gain->victoryPointIncome),this->font, 10);
         _text.setPosition(_position.x,_position.y);
+        _text.setColor(sf::Color::Black);
         target.draw(_text);
         _position += sf::Vector2f(_text.getGlobalBounds().width,0);
         sf::Sprite _crownSprite(this->ressourcesTextures.find("crown")->second);
         _crownSprite.setScale(15.36/_crownSprite.getLocalBounds().width,15.36/_crownSprite.getLocalBounds().height);
-        _crownSprite.setPosition(_position.x,_position.y);
+        _crownSprite.setPosition(_position.x+3,_position.y);
         target.draw(_crownSprite);
         _position += sf::Vector2f(_crownSprite.getGlobalBounds().width,0);
         sf::Text _text2(string(" per turn"),this->font, 10);
         _text2.setPosition(_position.x,_position.y);
+        _text2.setColor(sf::Color::Black);
         target.draw(_text2);
-        _position = sf::Vector2f(this->getPosition().x+5,_text2.getGlobalBounds().top+_text2.getGlobalBounds().height+10);
+        _position = sf::Vector2f(this->getPosition().x+8,_text2.getGlobalBounds().top+_text2.getGlobalBounds().height);
     }
 
 }
