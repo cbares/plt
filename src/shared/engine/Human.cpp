@@ -8,6 +8,7 @@ Human::Human (std::shared_ptr<state::Player> player) : engine::Actor(player){
 }
 
 void Human::updateState (std::shared_ptr<state::State> state){
+	state->notifyObservers();
 	// Empty commandBuffer (out of date)
 	// this->commandBuffer = make_shared<engine::PickCommand>(-1,-1,player->name);
 }
