@@ -95,7 +95,6 @@ You can test the replay :
 At the end of a game such as a game played by ai, a replay of the game is stored at the root of the project.
 
 You can simply replay the game that has been played.
-(recording of games played by the deep_ai are known to be bugged at the moment so keep that in mind)
 ```
 bin/client replay replay.json
 ```
