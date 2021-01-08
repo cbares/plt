@@ -99,9 +99,9 @@ You can simply replay the game that has been played.
 bin/client replay replay.json
 ```
 
-Experimental feature :
+You can play the game versus an ai :
 
-Playing yourself versus a random_ai is possible make sure to click a valid card before pressing space otherwise a seg fault is what you'll get.
+Playing yourself by clicking on cards versus a random_ai is possible make sure to click a valid card before pressing space otherwise a seg fault is what you'll get.
 ```
 bin/client player_vs_ai
 ```
