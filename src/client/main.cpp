@@ -42,6 +42,9 @@ int main(int argc,char* argv[])
             test.heuristic_ai();
         } else if (strcmp(argv[1], "deep_ai") == 0) {
             test.deep_ai();
+        } else if (strcmp(argv[1], "network") == 0) {
+            NetworkClient client;
+            client.start();
         } else if (strcmp(argv[1], "heuristic_ai_performance") == 0) {
             test.heuristic_ai_performance();
         } else if (strcmp(argv[1], "deep_ai_performance") == 0) {

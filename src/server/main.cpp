@@ -11,6 +11,7 @@ using namespace server;
 int main(int argc,char* argv[])
 {   
     srand(time(NULL));
-
+    Server server;
+    server.start();
     return 0;
 }
