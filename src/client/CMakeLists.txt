@@ -11,16 +11,19 @@ list(REMOVE_ITEM client_sources "${CMAKE_CURRENT_SOURCE_DIR}/main.cpp")
 
 # Build the "client" library, add required include and link against dependencies
 find_package(X11 REQUIRED)
+find_package(Boost REQUIRED)
 add_library(${lib_client_target} STATIC ${client_sources})
 add_dependencies(${lib_client_target} generate-headers)
 target_include_directories(${lib_client_target} PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${SFML_INCLUDE_DIR}
   ${X11_INCLUDE_DIR}
+  ${Boost_INCLUDE_DIRS}
   )
 target_link_libraries(${lib_client_target} PUBLIC
   ${SFML_LIBRARIES}
   ${X11_LIBRARIES}
+  ${Boost_LIBRARIES}
   $<TARGET_NAME:shared_static>
   )
 
@@ -33,4 +36,3 @@ if(BUILD_CODE_COVERAGE)
 endif()
 
 # vim: set sw=2 sts=2 et:
-

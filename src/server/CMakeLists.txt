@@ -2,21 +2,24 @@
 set(lib_server_target server_static)
 
 # Generate header files from dia UML files
-#generate_dia_header("${CMAKE_CURRENT_SOURCE_DIR}/../server.dia")
+generate_dia_header("${CMAKE_CURRENT_SOURCE_DIR}/../server.dia")
 
 # Find all source files to include in library
 file(GLOB_RECURSE server_sources *.cpp)
 list(REMOVE_ITEM server_sources "${CMAKE_CURRENT_SOURCE_DIR}/main.cpp")
 
 # Build the "server" library, add required include and link against dependencies
+find_package(Boost REQUIRED)
 add_library(${lib_server_target} STATIC ${server_sources} ${jsoncpp_sources})
 add_dependencies(${lib_server_target} generate-headers)
 target_include_directories(${lib_server_target} PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${jsoncpp_include_dir}
+  ${Boost_INCLUDE_DIRS}
   )
 target_link_libraries(${lib_server_target} PUBLIC
   ${MHD_LIBRARY}
+  ${Boost_LIBRARIES}
   $<TARGET_NAME:shared_static>
   )
 
@@ -29,4 +32,3 @@ if(BUILD_CODE_COVERAGE)
 endif()
 
 # vim: set sw=2 sts=2 et:
-
