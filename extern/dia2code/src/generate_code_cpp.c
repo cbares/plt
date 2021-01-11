@@ -803,7 +803,8 @@ void print_include_stdlib(struct stdlib_includes* si,char* name) {
        }
        if (!si->boostAsio
        && (strstr(name,"boost::asio::") == name
-       ||  strstr(name,"std::list<boost::asio::") == name )) {
+       ||  strstr(name,"std::shared_ptr<boost::asio::") == name 
+       ||  strstr(name,"std::list<std::shared_ptr<boost::asio::") == name )) {
            print ("#include <boost/asio.hpp>\n");
            si->boostAsio = 1;
        }          
