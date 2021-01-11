@@ -17,4 +17,8 @@ void NetworkClient::start(){
     asio::ip::tcp::socket socket(io_context,endpoint.protocol());
 
     socket.connect(endpoint);
+    std::string request ="hello server !\n";
+    asio::write(socket,asio::buffer(request));
+
+
 }
