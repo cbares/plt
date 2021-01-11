@@ -14,19 +14,14 @@ void ConnectionService::startHandlingClient (std::shared_ptr<boost::asio::ip::tc
 	th.detach(); 
 }
 void ConnectionService::handleClient (std::shared_ptr<boost::asio::ip::tcp::socket> socket, std::shared_ptr<Lobby> lobby){
-
-	try{         
-		boost::asio::streambuf request;
-		boost::asio::read_until(*socket.get(), request, '\n');         // Emulate request processing.         
-		std::istream is(&request);
-		std::string str;
-		is >> str;
-		std::cout << str;
-        /*      
-		std::this_thread::sleep_for(std::chrono::milliseconds(500));         // Sending response.         
-		std::string response = "Response\n";         
-		boost::asio::write(*socket.get(), boost::asio::buffer(response));      
-        */
+	try{
+		asio::streambuf buf;
+		asio::read_until(*socket, buf, '\n');
+		std::istream stream(&buf);
+		std::string username;
+		stream >> username;
+		std::cout << username << endl;
+		lobby->clients.push_back(std::make_shared<Client>(username,socket));
 	}      
 	catch (system::system_error &e) {         
 		std::cout << "Error occured! Error code = " << e.code() << ". Message: " << e.what() << std::endl;

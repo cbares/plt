@@ -17,13 +17,4 @@ void Server::start(){
     while(1){
         acc->accept();
     }
-    /*
-    asio::ip::tcp::endpoint endpoint(asio::ip::address_v4::any(),port);
-    asio::io_context io_context;
-    asio::ip::tcp::acceptor acceptor(io_context,endpoint.protocol());
-    acceptor.bind(endpoint);
-    acceptor.listen(backlog_size);
-    asio::ip::tcp::socket active_socket(io_context);
-    acceptor.accept(active_socket);
-    */
 }
