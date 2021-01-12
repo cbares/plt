@@ -21,9 +21,7 @@ void ConnectionService::handleClient (std::shared_ptr<boost::asio::ip::tcp::sock
 		std::string username;
 		stream >> username;
 		std::cout << username << endl;
-		lobby->clientsMutex.lock();
-		lobby->clients.push_back(std::make_shared<Client>(username,socket));
-		lobby->clientsMutex.unlock();
+		lobby->addClient(std::make_shared<Client>(username,socket));
 	}      
 	catch (system::system_error &e) {         
 		std::cout << "Error occured! Error code = " << e.code() << ". Message: " << e.what() << std::endl;
