@@ -18,7 +18,6 @@ Client::Client (std::shared_ptr<engine::Human> human, std::shared_ptr<state::Sta
 //std::shared_ptr<std::thread> t = make_shared<std::thread>(&Client::run,client);
 void Client::start (){
     this->thread = std::make_shared<std::thread>(&Client::run,this);
-    
 }
 
 
