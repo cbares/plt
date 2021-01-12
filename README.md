@@ -16,7 +16,7 @@ We use Ubuntu, but it also works on most Linux distributions.
 Following instructions will install build dependencies on Debian.
 
 ```
-sudo apt install git dia ghostscript cmake g++ lcov gcovr libxml2-dev libsfml-dev libboost-test-dev
+sudo apt install git dia ghostscript cmake g++ lcov gcovr libxml2-dev libsfml-dev libboost-dev
 git clone https://github.com/Kangulu/plt
 ```
 
