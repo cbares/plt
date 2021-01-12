@@ -25,7 +25,7 @@ void Lobby::removeClient(std::shared_ptr<server::Client> client) {
 	this->clientsMutex.unlock();
 }
 
-std::set<std::string> Lobby::getClients() {
+std::list<std::shared_ptr<Client>> Lobby::getClients() {
 	return this->clients;
 }
 
