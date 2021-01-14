@@ -20,7 +20,7 @@ void ConnectionService::handleClient (std::shared_ptr<boost::asio::ip::tcp::sock
 		std::istream stream(&buf);
 		std::string username;
 		stream >> username;
-		std::cout << username << endl;
+		std::cout << "user \"" << username << "\" connected"<< endl;
 		lobby->addClient(std::make_shared<Client>(username,socket));
 	}      
 	catch (system::system_error &e) {         
