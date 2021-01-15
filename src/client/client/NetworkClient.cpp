@@ -3,6 +3,8 @@
 #include <iostream>
 #include <boost/asio.hpp>
 
+#include "network/UserNameMessage.h"
+
 using namespace client;
 using namespace std;
 using namespace boost;
@@ -17,9 +19,9 @@ void NetworkClient::start(){
     asio::ip::tcp::socket socket(io_context,endpoint.protocol());
 
     socket.connect(endpoint);
-    std::string username;
+    std::string userName;
     std::cout << "username :" << endl;
-    cin >> username;
-    username.append("\n");
-    socket.send(asio::buffer(username));
+    cin >> userName;
+    std::shared_ptr<network::UserNameMessage> userNameMessage = make_shared<network::UserNameMessage>(userName);
+    socket.send(asio::buffer(network::Message::format(userNameMessage->serialize())));
 }

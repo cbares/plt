@@ -48,6 +48,8 @@ std::shared_ptr<Message> Message::unserialize (Json::Value value){
 }
 
 std::string Message::format (Json::Value value){
-    std::string formattedString;
+    Json::FastWriter fw;
+    std::string formattedString = fw.write(value);
+    formattedString.append("\n");
     return formattedString;
 }
