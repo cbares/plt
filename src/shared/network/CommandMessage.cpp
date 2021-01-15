@@ -9,6 +9,7 @@ CommandMessage::CommandMessage (Json::Value value){
 }
 CommandMessage::CommandMessage (std::shared_ptr<engine::Command> command){
     this->id = MessageID::COMMAND;
+    this->command = command;
 }
 Json::Value CommandMessage::serialize (){
     Json::Value value = this->Message::serialize();
