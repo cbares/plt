@@ -66,6 +66,7 @@ void Client::start(){
 }
 
 void Client::run(){
+    cout << "start running" <<endl;
     while(1){
         Json::Value response = receive(socket);
         switch((MessageID)response["id"].asInt()){

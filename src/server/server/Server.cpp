@@ -3,6 +3,8 @@
 #include <boost/asio.hpp>
 #include <iostream>
 
+#include "Game.h"
+
 using namespace server;
 using namespace std;
 using namespace boost;
