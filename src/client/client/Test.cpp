@@ -104,7 +104,7 @@ void Test::random_ai(){
 }
 
 void Test::player_vs_ai(){
-    shared_ptr<State> state = make_shared<State>(200,"res/cardsData/");
+    /*shared_ptr<State> state = make_shared<State>(200,"res/cardsData/");
     std::vector<std::shared_ptr<Actor>> actors;
     shared_ptr<Human> human = make_shared<Human>(state->players[0]);
     actors.push_back(human);
@@ -119,6 +119,7 @@ void Test::player_vs_ai(){
         engine->step();
     }
     engine->saveReplay("replay.json");
+    */
 
 }
 

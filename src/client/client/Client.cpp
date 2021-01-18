@@ -1,68 +1,44 @@
 #include "Client.h"
 
 #include <iostream>
-#include <stdio.h>
-#include <functional>
-#include <memory>
+#include <boost/asio.hpp>
+
+#include "network/UserNameMessage.h"
+#include "network/AckMessage.h"
+#include "network/Message.h"
 
 using namespace client;
 using namespace std;
+using namespace boost;
+using namespace network;
 
-Client::Client (std::shared_ptr<engine::Human> human, std::shared_ptr<state::State> state)  {
-    this->stateRenderer = make_shared<render::StateRenderer>();
-    state->registerObserver(stateRenderer);
-    this->human =human;
+const int port = 8080;
+const std::string ip_address = "127.0.0.1";
 
-}
-//
-//std::shared_ptr<std::thread> t = make_shared<std::thread>(&Client::run,client);
-void Client::start (){
-    this->thread = std::make_shared<std::thread>(&Client::run,this);
-}
+void Client::start(){
+    asio::ip::tcp::endpoint endpoint(asio::ip::address::from_string(ip_address),port);
+    asio::io_context io_context;
 
+    std::shared_ptr<asio::ip::tcp::socket> socket = make_shared<asio::ip::tcp::socket>(io_context,endpoint.protocol());
 
-void Client::run (){
-    while (stateRenderer->isOpen())
-    {
-        // Process events
-        sf::Event event;
+    socket->connect(endpoint);
+    std::string userName;
+    std::cout << "username :" << endl;
+    cin >> userName;
+    std::shared_ptr<network::UserNameMessage> userNameMessage = make_shared<network::UserNameMessage>(userName);
+    socket->send(asio::buffer(network::Message::format(userNameMessage->serialize())));
 
-        while (stateRenderer->pollEvent(event))
-        {
-            // Close window: exit
-            if (event.type == sf::Event::Closed){
-                stateRenderer->close();
-            }
-            
-            if (event.type == sf::Event::MouseButtonPressed){
-		        vector<shared_ptr<render::RiverRenderer>> _riverRenderers = stateRenderer->riverRenderers;
-
-                // Loop on rivers:
-                for(uint riverpos = 0; riverpos < _riverRenderers.size(); riverpos++){
-                    shared_ptr<render::RiverRenderer> _riverRenderer = _riverRenderers[riverpos];
-                    // _riverRenderer is current river.
-                    
-                    // Loop on cards (in current river):
-                    for(uint cardpos = 0; cardpos < _riverRenderer->cards.size(); cardpos++){
-                        sf::Sprite _sprite = _riverRenderer->cards[cardpos]->sprite;
-                        sf::Vector2f _cardPosition = _riverRenderer->cards[cardpos]->cardPosition;
-                        sf::Vector2f _cardDimension = _riverRenderer->cards[cardpos]->cardDimension;
-
-                        bool x_condition = event.mouseButton.x >= _cardPosition.x && event.mouseButton.x <= _cardPosition.x+_cardDimension.x;
-                        bool y_condition = event.mouseButton.y >= _cardPosition.y && event.mouseButton.y <= _cardPosition.y+_cardDimension.y;
-
-                        if (x_condition && y_condition){
-                            // Clicked on that card !
-                            std::shared_ptr<engine::PickCommand> command = std::make_shared<engine::PickCommand>(riverpos, cardpos, human->player->name);
-                            
-                            human->commandMutex.lock();
-                            human->commandBuffer = command;
-                            human->commandMutex.unlock();
-
-                        }
-                    }
-                }                
-            }
-        }
+	asio::streambuf buf;
+    asio::read_until(*socket, buf, '\n');
+    std::istream stream(&buf);
+	Json::Value response;
+	Json::Reader reader;
+	reader.parse(stream,response,false);
+    std::shared_ptr<AckMessage> ackMessage = std::dynamic_pointer_cast<AckMessage>(Message::unserialize(response));
+    if(ackMessage){
+        cout << "connected" << endl;
+    }
+	else{
+        cout << "error" << endl;
     }
 }
