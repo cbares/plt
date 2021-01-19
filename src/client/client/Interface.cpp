@@ -8,8 +8,8 @@
 using namespace client;
 using namespace std;
 
-Interface::Interface (std::shared_ptr<state::State> state, std::string PlayerName)  {
-    this->PlayerName = PlayerName;
+Interface::Interface (std::shared_ptr<state::State> state, std::string playerName)  {
+    this->playerName = playerName;
     this->stateRenderer = make_shared<render::StateRenderer>();
     state->registerObserver(stateRenderer);
 
@@ -54,7 +54,7 @@ void Interface::run (){
                             // Clicked on that card !
                             cout << "click to be handled" << endl;
                             
-                            std::shared_ptr<engine::PickCommand> command = std::make_shared<engine::PickCommand>(riverpos, cardpos, this->PlayerName);
+                            std::shared_ptr<engine::PickCommand> command = std::make_shared<engine::PickCommand>(riverpos, cardpos, this->playerName);
                             
                             this->commandMutex.lock();
                             this->commandBuffer = command;
