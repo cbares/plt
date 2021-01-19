@@ -104,6 +104,7 @@ void State::unserialize(Json::Value value){
 	for (Json::ArrayIndex i(0); i<value["rivers"].size(); i++) {
 		this->rivers.push_back(make_shared<River>(value["rivers"][i]));
 	}
+	notifyObservers();
 }
 
 

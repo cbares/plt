@@ -30,8 +30,8 @@ void ConnectionService::handleClient (std::shared_ptr<boost::asio::ip::tcp::sock
 		std::shared_ptr<UserNameMessage> userNameMessage = std::dynamic_pointer_cast<UserNameMessage>(Message::unserialize(response));
 		if(userNameMessage){
 			std::cout << "user \"" << userNameMessage->userName << "\" connected"<< endl;
-			lobby->addClient(std::make_shared<Client>(userNameMessage->userName,socket));
 			socket->send(asio::buffer(Message::format(make_shared<AckMessage>()->serialize())));
+			lobby->addClient(std::make_shared<Client>(userNameMessage->userName,socket));
 		}
 
 	}

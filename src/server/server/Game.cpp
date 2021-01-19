@@ -20,13 +20,17 @@ void Game::start (){
     cout << "Game: " << clients[0]->username <<" vs "<< clients[1]->username<<"has started !" << endl;
 
     std::shared_ptr<state::State> state = make_shared<state::State>(20,"res/cardsData/");
+    state->players[0]->name = clients[0]->username;
+    state->players[1]->name = clients[1]->username;
 
     std::vector<std::shared_ptr<engine::Actor>> actors;
 
     actors.push_back(make_shared<Human>(state->players[0],clients[0]));
     actors[0]->updateState(state);
+    cout << "sent first state to J1" << endl;
     actors.push_back(make_shared<Human>(state->players[1],clients[1]));
-    actors[0]->updateState(state);
+    actors[1]->updateState(state);
+    cout << "sent first state to J2" << endl;
 
     this->engine = make_shared<engine::Engine>(actors,state);
 
@@ -38,6 +42,7 @@ void Game::run (){
     while(engine->state->winnerIndex == -1){
         engine->step();
     }
+    cout << "end of game"<< endl;
 }
 
 void Game::stop (){

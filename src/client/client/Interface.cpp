@@ -12,7 +12,7 @@ Interface::Interface (std::shared_ptr<state::State> state, std::string playerNam
     this->playerName = playerName;
     this->stateRenderer = make_shared<render::StateRenderer>();
     state->registerObserver(stateRenderer);
-
+    stateRenderer->update(state);
 }
 
 void Interface::start (){
