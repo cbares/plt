@@ -94,7 +94,7 @@ void State::unserialize(Json::Value value){
 
 	this->remainingTurns = value["remainingTurns"].asInt();
 	this->activePlayerIndex = value["activePlayerName"].asUInt();
-	this->winnerIndex = value["winnerName"].asInt();
+	this->winnerIndex = value["winnerIndex"].asInt();
 	this->players.clear();
 	for (Json::ArrayIndex i(0); i<value["players"].size(); i++) {
 		this->players.push_back(make_shared<Player>(value["players"][i]));
