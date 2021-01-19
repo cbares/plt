@@ -10,7 +10,7 @@ using namespace std;
 
 Interface::Interface (std::shared_ptr<state::State> state, std::string playerName)  {
     this->playerName = playerName;
-    this->stateRenderer = make_shared<render::StateRenderer>();
+    this->stateRenderer = make_shared<render::StateRenderer>(playerName);
     state->registerObserver(stateRenderer);
     stateRenderer->update(state);
 }

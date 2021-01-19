@@ -4,8 +4,8 @@
 using namespace render;
 using namespace std;
 
-StateRenderer::StateRenderer(){
-    this->create(sf::VideoMode(1000, 1000), "Rendering");
+StateRenderer::StateRenderer(std::string windowName){
+    this->create(sf::VideoMode(1000, 1000), windowName);
 
     this->texture.loadFromFile("res/textures/stateSprite.png");
     this->font.loadFromFile("res/fonts/arial.ttf");
