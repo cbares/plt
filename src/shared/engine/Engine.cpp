@@ -25,11 +25,14 @@ void Engine::step (){
         state->endTurn();
         return;
     }
-            
     for(uint j =0;j<actors.size();j++){
                 
         shared_ptr<Actor> actor = actors[j];
         actor->updateState(state);
+    }
+    for(uint j =0;j<actors.size();j++){
+                
+        shared_ptr<Actor> actor = actors[j];
 
         if(actor->player == activePlayer){
             shared_ptr<Command> command;
