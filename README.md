@@ -99,12 +99,20 @@ You can simply replay the game that has been played.
 bin/client replay replay.json
 ```
 
-You can play the game versus an ai :
+You can play the game over the network :
 
-Playing yourself by clicking on cards versus a random_ai is possible make sure to click a valid card before pressing space otherwise a seg fault is what you'll get.
+Start the server using:
 ```
-bin/client player_vs_ai
+bin/network
 ```
+
+Start clients using:
+```
+bin/client network
+```
+then enter your username and play the game.
+
+Keep in mind that you need 2 clients to play.
 
 
 ## Authors
