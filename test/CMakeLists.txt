@@ -12,6 +12,7 @@ find_package(Boost 1.50 REQUIRED COMPONENTS unit_test_framework)
 message(STATUS "Boost libraries: ${Boost_LIBRARIES}")
 message(STATUS "Boost include directory: ${Boost_INCLUDE_DIRS}")
 
+find_package(GTest REQUIRED)
 
 # Function to compile a test against Boost Unit Test and add a
 # CTest entry.
@@ -59,6 +60,7 @@ function(add_custom_test name)
     )
   target_link_libraries(${target_name} PRIVATE
     ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY}
+    ${GTEST_BOTH_LIBRARIES}
     ${ARG_TEST_LIBRARIES}
     $<TARGET_NAME:shared_static>
     $<TARGET_NAME:client_static>
