@@ -59,7 +59,7 @@ jobs:
     - name: Code Coverage Summary Report
       uses: irongut/CodeCoverageSummary@v1.2.0
       with:
-        filename: build/code-coverage-gcov.xml.
+        filename: build/code-coverage-gcov.xml
         badge: true
         fail_below_min: true
         format: markdown
