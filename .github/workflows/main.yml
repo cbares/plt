@@ -67,7 +67,7 @@ jobs:
         hide_complexity: true
         indicators: true
         output: both
-        thresholds: '60 80'
+        thresholds: '0 50'
         
         
 # vim: set sw=2 sts=2 et:
