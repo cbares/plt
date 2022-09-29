@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 2.8)
+cmake_minimum_required (VERSION 3.0)
 project (plt)
 
 # CMP0074 policy enable find_* to use <PackageName>_ROOT variables to find
@@ -75,15 +75,12 @@ if(BUILD_CODE_COVERAGE)
 endif()
 
 # Build dia2code
-add_subdirectory(extern/dia2code)
+add_subdirectory(extern)
 
 # Add option to enable special build for ENSEA's machines
 set(MACHINE_ENSEA OFF CACHE BOOL
   "Set MACHINE_ENSEA to ON to build on the CentOS machine at ENSEA")
 
-# Find library jsoncpp
-set(jsoncpp_include_dir "${PROJECT_SOURCE_DIR}/extern/jsoncpp-1.8.0")
-file(GLOB_RECURSE jsoncpp_sources extern/jsoncpp-1.8.0/*.cpp)
 
 # Find library SFML
 if(WIN32)

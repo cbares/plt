@@ -9,7 +9,7 @@ void testSFML() {
 
 // Fin test SFML
 
-#include <state.h>
+#include "../shared/state.hpp"
 
 using namespace std;
 using namespace state;
