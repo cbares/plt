@@ -1,5 +1,6 @@
 
 set(lib_server_target server_static)
+set(jsoncpp_include_dir "${PROJECT_SOURCE_DIR}/extern/jsoncpp-src/include")
 
 # Generate header files from dia UML files
 #generate_dia_header("${CMAKE_CURRENT_SOURCE_DIR}/../server.dia")
@@ -9,8 +10,8 @@ file(GLOB_RECURSE server_sources *.cpp)
 list(REMOVE_ITEM server_sources "${CMAKE_CURRENT_SOURCE_DIR}/main.cpp")
 
 # Build the "server" library, add required include and link against dependencies
-add_library(${lib_server_target} STATIC ${server_sources} ${jsoncpp_sources})
-add_dependencies(${lib_server_target} generate-headers)
+add_library(${lib_server_target} STATIC ${server_sources})
+add_dependencies(${lib_server_target} generate-headers jsoncpp)
 target_include_directories(${lib_server_target} PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${jsoncpp_include_dir}

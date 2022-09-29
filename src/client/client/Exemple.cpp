@@ -1,5 +1,5 @@
-#include <state/Exemple.h>  // Included from library shared_static
-#include "Exemple.h"
+#include "../client.hpp"
+#include "../shared/state.hpp"
 
 namespace client {
 

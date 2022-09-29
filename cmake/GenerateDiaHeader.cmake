@@ -21,6 +21,8 @@ add_custom_target(clean-headers
 #   inside the dia file.
 #
 function(generate_dia_header dia_file)
+
+message("executing command for ${dia_file} in ${output_dir}")
   # Path to the .dia file used to generate the cpp headers
   get_filename_component(namespace ${dia_file} NAME_WE)
   # Path to the output directory
@@ -34,7 +36,7 @@ function(generate_dia_header dia_file)
     OUTPUT ${stamp}
     COMMAND rm -vf ${PROJECT_SOURCE_DIR}/src/*/${namespace}.h
     COMMAND rm -vf ${PROJECT_SOURCE_DIR}/src/*/${namespace}/*.h
-    COMMAND $<TARGET_FILE:dia2code> -ns ${namespace} -d ${output_dir} -t cpp ${dia_file}
+    COMMAND ${CMAKE_COMMAND} -E env "LD_LIBRARY_PATH=${PROJECT_SOURCE_DIR}/lib/:$LD_LIBRARY_PATH" ${PROJECT_SOURCE_DIR}/bin/dia2code -ns ${namespace} -d ${output_dir} -t cpp ${dia_file}
     COMMAND ${CMAKE_COMMAND} -E touch ${stamp}
     DEPENDS ${dia_file}
     )
