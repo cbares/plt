@@ -1,0 +1,66 @@
+/snap/clion/206/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/206/bin/ninja/linux/ninja -G Ninja -S /home/ensea/CLionProjects/plt -B /home/ensea/CLionProjects/plt/cmake-build-debug
+CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- The C compiler identification is GNU 7.5.0
+-- The CXX compiler identification is GNU 7.5.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Build type: Debug
+-- Code coverage: ON
+-- Found Python: /usr/bin/python3.6 (found version "3.6.9") found components: Interpreter 
+-- Appending code coverage compiler flags: -g --coverage -fprofile-arcs -ftest-coverage
+CMake Deprecation Warning at extern/dia2code/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- Found LibXml2: /usr/lib/x86_64-linux-gnu/libxml2.so (found version "2.9.4") 
+-- Found SFML 2.4.2 in /usr/include
+-- Found Dia: /usr/bin/dia  
+-- Could NOT find Ps2Pdf (missing: PS2PDF_EXECUTABLE) 
+CMake Warning at rapport/CMakeLists.txt:51 (message):
+  Dia or ps2pdf not found! Rapport generation not available!
+
+
+-- Found Boost: /usr/include (found suitable version "1.65.1", minimum required is "1.50") found components: unit_test_framework 
+-- Boost libraries: /usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so
+-- Boost include directory: /usr/include
+-- Configuring done
+-- Generating done
+CMake Warning (dev):
+  Policy CMP0058 is not set: Ninja requires custom command byproducts to be
+  explicit.  Run "cmake --help-policy CMP0058" for policy details.  Use the
+  cmake_policy command to set the policy and suppress this warning.
+
+  This project specifies custom command DEPENDS on files in the build tree
+  that are not specified as the OUTPUT or BYPRODUCTS of any
+  add_custom_command or add_custom_target:
+
+   run_test.sh
+
+  For compatibility with versions of CMake that did not have the BYPRODUCTS
+  option, CMake is generating phony rules for such files to convince 'ninja'
+  to build.
+
+  Project authors should add the missing BYPRODUCTS or OUTPUT options to the
+  custom commands that produce these files.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Build files have been written to: /home/ensea/CLionProjects/plt/cmake-build-debug
