@@ -78,26 +78,26 @@ Lorsque vous placez une tuile, vous recevez immédiatement le **bonus de placeme
 
 **Tuiles Océan : Les tuiles Océan ne peuvent être placées que sur les zones qui leur sont réservées** (zones bleues du plateau).
 
-– (+1NT) : Placer une tuile Océan augmente votre NT de 1 niveau (c’est un paramètre global).
+- (+1NT) : Placer une tuile Océan augmente votre NT de 1 niveau (c’est un paramètre global).
 
-– Les tuiles Océan ne sont la propriété de personne.
+- Les tuiles Océan ne sont la propriété de personne.
 
-– Chaque tuile Océan sur le plateau procure un bonus de placement de 2 M€ à chaque joueur qui placera une tuile sur une zone adjacente (même s’il s’agit d’une autre tuile Océan).
+- Chaque tuile Océan sur le plateau procure un bonus de placement de 2 M€ à chaque joueur qui placera une tuile sur une zone adjacente (même s’il s’agit d’une autre tuile Océan).
 
 **Tuiles Forêt : Si possible, les tuiles Forêt doivent être placées à côté d’une autre tuile que vous possédez.**
 
-– Si aucune zone n’est disponible autour de vos tuiles, ou si vous n’avez pas encore placé de tuile sur le plateau, vous pouvez placer la tuile Forêt sur n’importe quelle zone disponible.
+- Si aucune zone n’est disponible autour de vos tuiles, ou si vous n’avez pas encore placé de tuile sur le plateau, vous pouvez placer la tuile Forêt sur n’importe quelle zone disponible.
 
-– Placez ensuite un cube de votre couleur sur la tuile pour indiquer qu’elle vous appartient.
+- La tuile que vous avez placé vous appartient.
 **Lorsque vous placez une tuile Forêt, vous augmentez le niveau d’oxygène, si possible (et par conséquent votre NT, car l’oxygène est un paramètre global). Si vous ne pouvez pas augmenter le niveau d’oxygène, vous n’augmentez pas non plus votre NT.**
 
-– A la fin de la partie, les tuiles Forêt valent 1 PV et procurent 1 PV à chaque cité adjacente (voir ci-dessous).
+- A la fin de la partie, les tuiles Forêt valent 1 PV et procurent 1 PV à chaque cité adjacente (voir ci-dessous).
 
 **Tuiles Cité : Les tuiles Cité ne peuvent pas être placées à côté d’une autre tuile Cité** (exception : **Noctis Ville** doit toujours être placée sur la zone qui lui est réservée).
 
-– Placez un cube de votre couleur sur la tuile Cité que vous venez de poser.
+- La tuile que vous avez placé vous appartient.
 
-– A la fin de la partie, chaque tuile Cité rapporte 1 PV pour chaque tuile Forêt adjacente (peu importe son propriétaire).
+- A la fin de la partie, chaque tuile Cité rapporte 1 PV pour chaque tuile Forêt adjacente (peu importe son propriétaire).
 (Remarque : la carte **Capitale** permet de placer l’unique tuile Capitale. Elle est considérée comme une tuile Cité normale pour le décompte des PV, mais procure également un bonus lié aux tuiles Océan adjacentes, comme indiqué sur la carte.)
 
 **Tuiles Spéciales :** Certaines cartes permettent de placer des tuiles spéciales. Les restrictions de placement et les effets spécifiques sont indiqués sur les cartes. N’oubliez pas de placer un cube de votre couleur sur la tuile.
