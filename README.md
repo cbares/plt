@@ -1,4 +1,4 @@
-# PLT : Terraforming Mars :
+# PLT : Terraforming Mars
 
 ## Présentation du jeu :
 
@@ -31,11 +31,11 @@ Lorsque les trois paramètres globaux (océans, température et oxygène) ont at
 
 En clair,la partie se termine lorsqu'il y a :
 
--suffisamment d’oxygène dans l’air (14%),
+- suffisamment d’oxygène dans l’air (14%),
 
--assez d’océans pour reconstituer une météorologie proche de celle de la Terre (9),
+- assez d’océans pour reconstituer une météorologie proche de celle de la Terre (9),
 
--une température supportable ( +8°C).
+- une température supportable ( +8°C).
 
 Lorsque ces trois conditions sont remplies, la partie s'arrête à la fin de la génération en cours.
 
@@ -44,25 +44,25 @@ Lorsque ces trois conditions sont remplies, la partie s'arrête à la fin de la 
 Le joueur qui aura accumulé le plus de Points de Victoire pendant toute la partie sera déclaré vainqueur.
 Les Points de Victoire proviennent :
 
--de votre Niveau de Terraformation,
+- de votre Niveau de Terraformation,
 
--de vos tuiles sur le plateau,
+- de vos tuiles sur le plateau,
 
--des récompenses obtenues,
+- des récompenses obtenues,
 
--des objectifs validés,
+- des objectifs validés,
 
--mais aussi directement des cartes que vous aurez jouées.
+- mais aussi directement des cartes que vous aurez jouées.
 
 ### Les 3 paramètres globaux :
 
 **Les 3 paramètres globaux (PG) :**
 
--La température,
+- La température,
 
--L’oxygène,
+- L’oxygène,
 
--Les océans.
+- Les océans.
 
 À chaque fois que vous augmentez l’un de ces paramètres, votre Niveau de Terraformation augmente proportionnellement, vous permettant d’améliorer votre revenu et votre score.
 
