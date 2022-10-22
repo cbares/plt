@@ -1,4 +1,4 @@
-# Install script for directory: /home/ensea/CLionProjects/plt/test/client
+# Install script for directory: /home/ali/CLionProjects/plt/test/client
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

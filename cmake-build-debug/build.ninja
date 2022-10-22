@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = /home/ensea/CLionProjects/plt/cmake-build-debug/
+cmake_ninja_workdir = /home/ali/CLionProjects/plt/cmake-build-debug/
 
 #############################################
 # Utility command for generate-headers
@@ -69,7 +69,7 @@ build code-coverage-gcov: phony CMakeFiles/code-coverage-gcov test/client/test_c
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/ensea/CLionProjects/plt/cmake-build-debug && /snap/clion/206/bin/cmake/linux/bin/ccmake -S/home/ensea/CLionProjects/plt -B/home/ensea/CLionProjects/plt/cmake-build-debug
+  COMMAND = cd /home/ali/CLionProjects/plt/cmake-build-debug && /snap/clion/209/bin/cmake/linux/bin/ccmake -S/home/ali/CLionProjects/plt -B/home/ali/CLionProjects/plt/cmake-build-debug
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -81,7 +81,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/ensea/CLionProjects/plt/cmake-build-debug && /snap/clion/206/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/ensea/CLionProjects/plt -B/home/ensea/CLionProjects/plt/cmake-build-debug
+  COMMAND = cd /home/ali/CLionProjects/plt/cmake-build-debug && /snap/clion/209/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/ali/CLionProjects/plt -B/home/ali/CLionProjects/plt/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -93,14 +93,14 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # Custom command for CMakeFiles/clean-headers
 
 build CMakeFiles/clean-headers | ${cmake_ninja_workdir}CMakeFiles/clean-headers: CUSTOM_COMMAND
-  COMMAND = cd /home/ensea/CLionProjects/plt/cmake-build-debug && rm -vf /home/ensea/CLionProjects/plt/src/*/*.h && rm -vf /home/ensea/CLionProjects/plt/src/*/*/*.h && rm -f /home/ensea/CLionProjects/plt/cmake-build-debug/generate_header_*.stamp
+  COMMAND = cd /home/ali/CLionProjects/plt/cmake-build-debug && rm -vf /home/ali/CLionProjects/plt/src/*/*.h && rm -vf /home/ali/CLionProjects/plt/src/*/*/*.h && rm -f /home/ali/CLionProjects/plt/cmake-build-debug/generate_header_*.stamp
 
 
 #############################################
 # Custom command for CMakeFiles/code-coverage
 
 build CMakeFiles/code-coverage | ${cmake_ninja_workdir}CMakeFiles/code-coverage: CUSTOM_COMMAND run_test.sh || ../bin/client ../bin/dia2code generate-headers src/client/generate-header-client src/client/libclient_static.a src/shared/generate-header-state src/shared/libshared_static.a test/client/test_client_dummy test/shared/test_shared_dummy
-  COMMAND = cd /home/ensea/CLionProjects/plt/cmake-build-debug && /usr/bin/lcov --gcov-tool /usr/bin/gcov -directory . --zerocounters && /usr/bin/lcov --gcov-tool /usr/bin/gcov -c -i -d . -o code-coverage.base && sh /home/ensea/CLionProjects/plt/cmake-build-debug/run_test.sh && /usr/bin/lcov --gcov-tool /usr/bin/gcov --directory . --capture --output-file code-coverage.info && /usr/bin/lcov --gcov-tool /usr/bin/gcov -a code-coverage.base -a code-coverage.info --output-file code-coverage.total && /usr/bin/lcov --gcov-tool /usr/bin/gcov --remove code-coverage.total '/usr/*' '/home/ensea/CLionProjects/plt/test/*' '/home/ensea/CLionProjects/plt/extern/*' --output-file /home/ensea/CLionProjects/plt/cmake-build-debug/code-coverage.info.cleaned && /usr/bin/genhtml -o code-coverage /home/ensea/CLionProjects/plt/cmake-build-debug/code-coverage.info.cleaned && /snap/clion/206/bin/cmake/linux/bin/cmake -E remove code-coverage.base code-coverage.total /home/ensea/CLionProjects/plt/cmake-build-debug/code-coverage.info.cleaned
+  COMMAND = cd /home/ali/CLionProjects/plt/cmake-build-debug && /usr/bin/lcov --gcov-tool /usr/bin/gcov -directory . --zerocounters && /usr/bin/lcov --gcov-tool /usr/bin/gcov -c -i -d . -o code-coverage.base && sh /home/ali/CLionProjects/plt/cmake-build-debug/run_test.sh && /usr/bin/lcov --gcov-tool /usr/bin/gcov --directory . --capture --output-file code-coverage.info && /usr/bin/lcov --gcov-tool /usr/bin/gcov -a code-coverage.base -a code-coverage.info --output-file code-coverage.total && /usr/bin/lcov --gcov-tool /usr/bin/gcov --remove code-coverage.total '/usr/*' '/home/ali/CLionProjects/plt/test/*' '/home/ali/CLionProjects/plt/extern/*' --output-file /home/ali/CLionProjects/plt/cmake-build-debug/code-coverage.info.cleaned && /usr/bin/genhtml -o code-coverage /home/ali/CLionProjects/plt/cmake-build-debug/code-coverage.info.cleaned && /snap/clion/209/bin/cmake/linux/bin/cmake -E remove code-coverage.base code-coverage.total /home/ali/CLionProjects/plt/cmake-build-debug/code-coverage.info.cleaned
   DESC = Resetting code coverage counters to zero.$
 Processing code coverage counters and generating report.
 
@@ -109,12 +109,12 @@ Processing code coverage counters and generating report.
 # Custom command for CMakeFiles/code-coverage-gcov
 
 build CMakeFiles/code-coverage-gcov | ${cmake_ninja_workdir}CMakeFiles/code-coverage-gcov: CUSTOM_COMMAND run_test.sh || ../bin/dia2code generate-headers src/client/generate-header-client src/client/libclient_static.a src/shared/generate-header-state src/shared/libshared_static.a test/client/test_client_dummy test/shared/test_shared_dummy
-  COMMAND = cd /home/ensea/CLionProjects/plt/cmake-build-debug && sh /home/ensea/CLionProjects/plt/cmake-build-debug/run_test.sh && /usr/bin/gcovr --xml -r /home/ensea/CLionProjects/plt -e /usr/ -e /home/ensea/CLionProjects/plt/test/ -e /home/ensea/CLionProjects/plt/extern/ --object-directory=/home/ensea/CLionProjects/plt/cmake-build-debug -o code-coverage-gcov.xml
+  COMMAND = cd /home/ali/CLionProjects/plt/cmake-build-debug && sh /home/ali/CLionProjects/plt/cmake-build-debug/run_test.sh && /usr/bin/gcovr --xml -r /home/ali/CLionProjects/plt -e /usr/ -e /home/ali/CLionProjects/plt/test/ -e /home/ali/CLionProjects/plt/extern/ --object-directory=/home/ali/CLionProjects/plt/cmake-build-debug -o code-coverage-gcov.xml
   DESC = Running gcovr to produce Cobertura code coverage report.
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /home/ensea/CLionProjects/plt/CMakeLists.txt
+# /home/ali/CLionProjects/plt/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -126,7 +126,7 @@ build CMakeFiles/code-coverage-gcov | ${cmake_ninja_workdir}CMakeFiles/code-cove
 
 build cmake_object_order_depends_target_dia2code: phony || extern/dia2code/CMakeFiles/dia2code.dir
 
-build extern/dia2code/CMakeFiles/dia2code.dir/src/comment_helper.c.o: C_COMPILER__dia2code_Release /home/ensea/CLionProjects/plt/extern/dia2code/src/comment_helper.c || cmake_object_order_depends_target_dia2code
+build extern/dia2code/CMakeFiles/dia2code.dir/src/comment_helper.c.o: C_COMPILER__dia2code_Release /home/ali/CLionProjects/plt/extern/dia2code/src/comment_helper.c || cmake_object_order_depends_target_dia2code
   DEP_FILE = extern/dia2code/CMakeFiles/dia2code.dir/src/comment_helper.c.o.d
   FLAGS = -Wall -std=c11   -pthread -g -g --coverage -fprofile-arcs -ftest-coverage  -std=c99   -pthread -g -Wno-unused-variable -Wno-unused-function -Wno-pointer-sign -Wno-unused-but-set-variable -Wno-stringop-truncation -Wno-maybe-uninitialized -O3 -DNDEBUG -std=gnu99
   INCLUDES = -I/usr/include/libxml2
@@ -135,7 +135,7 @@ build extern/dia2code/CMakeFiles/dia2code.dir/src/comment_helper.c.o: C_COMPILER
   TARGET_COMPILE_PDB = extern/dia2code/CMakeFiles/dia2code.dir/
   TARGET_PDB = ../bin/dia2code.pdb
 
-build extern/dia2code/CMakeFiles/dia2code.dir/src/decls.c.o: C_COMPILER__dia2code_Release /home/ensea/CLionProjects/plt/extern/dia2code/src/decls.c || cmake_object_order_depends_target_dia2code
+build extern/dia2code/CMakeFiles/dia2code.dir/src/decls.c.o: C_COMPILER__dia2code_Release /home/ali/CLionProjects/plt/extern/dia2code/src/decls.c || cmake_object_order_depends_target_dia2code
   DEP_FILE = extern/dia2code/CMakeFiles/dia2code.dir/src/decls.c.o.d
   FLAGS = -Wall -std=c11   -pthread -g -g --coverage -fprofile-arcs -ftest-coverage  -std=c99   -pthread -g -Wno-unused-variable -Wno-unused-function -Wno-pointer-sign -Wno-unused-but-set-variable -Wno-stringop-truncation -Wno-maybe-uninitialized -O3 -DNDEBUG -std=gnu99
   INCLUDES = -I/usr/include/libxml2
@@ -144,7 +144,7 @@ build extern/dia2code/CMakeFiles/dia2code.dir/src/decls.c.o: C_COMPILER__dia2cod
   TARGET_COMPILE_PDB = extern/dia2code/CMakeFiles/dia2code.dir/
   TARGET_PDB = ../bin/dia2code.pdb
 
-build extern/dia2code/CMakeFiles/dia2code.dir/src/dia2code.c.o: C_COMPILER__dia2code_Release /home/ensea/CLionProjects/plt/extern/dia2code/src/dia2code.c || cmake_object_order_depends_target_dia2code
+build extern/dia2code/CMakeFiles/dia2code.dir/src/dia2code.c.o: C_COMPILER__dia2code_Release /home/ali/CLionProjects/plt/extern/dia2code/src/dia2code.c || cmake_object_order_depends_target_dia2code
   DEP_FILE = extern/dia2code/CMakeFiles/dia2code.dir/src/dia2code.c.o.d
   FLAGS = -Wall -std=c11   -pthread -g -g --coverage -fprofile-arcs -ftest-coverage  -std=c99   -pthread -g -Wno-unused-variable -Wno-unused-function -Wno-pointer-sign -Wno-unused-but-set-variable -Wno-stringop-truncation -Wno-maybe-uninitialized -O3 -DNDEBUG -std=gnu99
   INCLUDES = -I/usr/include/libxml2
@@ -153,7 +153,7 @@ build extern/dia2code/CMakeFiles/dia2code.dir/src/dia2code.c.o: C_COMPILER__dia2
   TARGET_COMPILE_PDB = extern/dia2code/CMakeFiles/dia2code.dir/
   TARGET_PDB = ../bin/dia2code.pdb
 
-build extern/dia2code/CMakeFiles/dia2code.dir/src/generate_code_cpp.c.o: C_COMPILER__dia2code_Release /home/ensea/CLionProjects/plt/extern/dia2code/src/generate_code_cpp.c || cmake_object_order_depends_target_dia2code
+build extern/dia2code/CMakeFiles/dia2code.dir/src/generate_code_cpp.c.o: C_COMPILER__dia2code_Release /home/ali/CLionProjects/plt/extern/dia2code/src/generate_code_cpp.c || cmake_object_order_depends_target_dia2code
   DEP_FILE = extern/dia2code/CMakeFiles/dia2code.dir/src/generate_code_cpp.c.o.d
   FLAGS = -Wall -std=c11   -pthread -g -g --coverage -fprofile-arcs -ftest-coverage  -std=c99   -pthread -g -Wno-unused-variable -Wno-unused-function -Wno-pointer-sign -Wno-unused-but-set-variable -Wno-stringop-truncation -Wno-maybe-uninitialized -O3 -DNDEBUG -std=gnu99
   INCLUDES = -I/usr/include/libxml2
@@ -162,7 +162,7 @@ build extern/dia2code/CMakeFiles/dia2code.dir/src/generate_code_cpp.c.o: C_COMPI
   TARGET_COMPILE_PDB = extern/dia2code/CMakeFiles/dia2code.dir/
   TARGET_PDB = ../bin/dia2code.pdb
 
-build extern/dia2code/CMakeFiles/dia2code.dir/src/includes.c.o: C_COMPILER__dia2code_Release /home/ensea/CLionProjects/plt/extern/dia2code/src/includes.c || cmake_object_order_depends_target_dia2code
+build extern/dia2code/CMakeFiles/dia2code.dir/src/includes.c.o: C_COMPILER__dia2code_Release /home/ali/CLionProjects/plt/extern/dia2code/src/includes.c || cmake_object_order_depends_target_dia2code
   DEP_FILE = extern/dia2code/CMakeFiles/dia2code.dir/src/includes.c.o.d
   FLAGS = -Wall -std=c11   -pthread -g -g --coverage -fprofile-arcs -ftest-coverage  -std=c99   -pthread -g -Wno-unused-variable -Wno-unused-function -Wno-pointer-sign -Wno-unused-but-set-variable -Wno-stringop-truncation -Wno-maybe-uninitialized -O3 -DNDEBUG -std=gnu99
   INCLUDES = -I/usr/include/libxml2
@@ -171,7 +171,7 @@ build extern/dia2code/CMakeFiles/dia2code.dir/src/includes.c.o: C_COMPILER__dia2
   TARGET_COMPILE_PDB = extern/dia2code/CMakeFiles/dia2code.dir/
   TARGET_PDB = ../bin/dia2code.pdb
 
-build extern/dia2code/CMakeFiles/dia2code.dir/src/main.c.o: C_COMPILER__dia2code_Release /home/ensea/CLionProjects/plt/extern/dia2code/src/main.c || cmake_object_order_depends_target_dia2code
+build extern/dia2code/CMakeFiles/dia2code.dir/src/main.c.o: C_COMPILER__dia2code_Release /home/ali/CLionProjects/plt/extern/dia2code/src/main.c || cmake_object_order_depends_target_dia2code
   DEP_FILE = extern/dia2code/CMakeFiles/dia2code.dir/src/main.c.o.d
   FLAGS = -Wall -std=c11   -pthread -g -g --coverage -fprofile-arcs -ftest-coverage  -std=c99   -pthread -g -Wno-unused-variable -Wno-unused-function -Wno-pointer-sign -Wno-unused-but-set-variable -Wno-stringop-truncation -Wno-maybe-uninitialized -O3 -DNDEBUG -std=gnu99
   INCLUDES = -I/usr/include/libxml2
@@ -180,7 +180,7 @@ build extern/dia2code/CMakeFiles/dia2code.dir/src/main.c.o: C_COMPILER__dia2code
   TARGET_COMPILE_PDB = extern/dia2code/CMakeFiles/dia2code.dir/
   TARGET_PDB = ../bin/dia2code.pdb
 
-build extern/dia2code/CMakeFiles/dia2code.dir/src/parse_diagram.c.o: C_COMPILER__dia2code_Release /home/ensea/CLionProjects/plt/extern/dia2code/src/parse_diagram.c || cmake_object_order_depends_target_dia2code
+build extern/dia2code/CMakeFiles/dia2code.dir/src/parse_diagram.c.o: C_COMPILER__dia2code_Release /home/ali/CLionProjects/plt/extern/dia2code/src/parse_diagram.c || cmake_object_order_depends_target_dia2code
   DEP_FILE = extern/dia2code/CMakeFiles/dia2code.dir/src/parse_diagram.c.o.d
   FLAGS = -Wall -std=c11   -pthread -g -g --coverage -fprofile-arcs -ftest-coverage  -std=c99   -pthread -g -Wno-unused-variable -Wno-unused-function -Wno-pointer-sign -Wno-unused-but-set-variable -Wno-stringop-truncation -Wno-maybe-uninitialized -O3 -DNDEBUG -std=gnu99
   INCLUDES = -I/usr/include/libxml2
@@ -189,7 +189,7 @@ build extern/dia2code/CMakeFiles/dia2code.dir/src/parse_diagram.c.o: C_COMPILER_
   TARGET_COMPILE_PDB = extern/dia2code/CMakeFiles/dia2code.dir/
   TARGET_PDB = ../bin/dia2code.pdb
 
-build extern/dia2code/CMakeFiles/dia2code.dir/src/scan_tree.c.o: C_COMPILER__dia2code_Release /home/ensea/CLionProjects/plt/extern/dia2code/src/scan_tree.c || cmake_object_order_depends_target_dia2code
+build extern/dia2code/CMakeFiles/dia2code.dir/src/scan_tree.c.o: C_COMPILER__dia2code_Release /home/ali/CLionProjects/plt/extern/dia2code/src/scan_tree.c || cmake_object_order_depends_target_dia2code
   DEP_FILE = extern/dia2code/CMakeFiles/dia2code.dir/src/scan_tree.c.o.d
   FLAGS = -Wall -std=c11   -pthread -g -g --coverage -fprofile-arcs -ftest-coverage  -std=c99   -pthread -g -Wno-unused-variable -Wno-unused-function -Wno-pointer-sign -Wno-unused-but-set-variable -Wno-stringop-truncation -Wno-maybe-uninitialized -O3 -DNDEBUG -std=gnu99
   INCLUDES = -I/usr/include/libxml2
@@ -198,7 +198,7 @@ build extern/dia2code/CMakeFiles/dia2code.dir/src/scan_tree.c.o: C_COMPILER__dia
   TARGET_COMPILE_PDB = extern/dia2code/CMakeFiles/dia2code.dir/
   TARGET_PDB = ../bin/dia2code.pdb
 
-build extern/dia2code/CMakeFiles/dia2code.dir/src/source_parser.c.o: C_COMPILER__dia2code_Release /home/ensea/CLionProjects/plt/extern/dia2code/src/source_parser.c || cmake_object_order_depends_target_dia2code
+build extern/dia2code/CMakeFiles/dia2code.dir/src/source_parser.c.o: C_COMPILER__dia2code_Release /home/ali/CLionProjects/plt/extern/dia2code/src/source_parser.c || cmake_object_order_depends_target_dia2code
   DEP_FILE = extern/dia2code/CMakeFiles/dia2code.dir/src/source_parser.c.o.d
   FLAGS = -Wall -std=c11   -pthread -g -g --coverage -fprofile-arcs -ftest-coverage  -std=c99   -pthread -g -Wno-unused-variable -Wno-unused-function -Wno-pointer-sign -Wno-unused-but-set-variable -Wno-stringop-truncation -Wno-maybe-uninitialized -O3 -DNDEBUG -std=gnu99
   INCLUDES = -I/usr/include/libxml2
@@ -231,7 +231,7 @@ build ../bin/dia2code: C_EXECUTABLE_LINKER__dia2code_Release extern/dia2code/CMa
 # Utility command for edit_cache
 
 build extern/dia2code/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/ensea/CLionProjects/plt/cmake-build-debug/extern/dia2code && /snap/clion/206/bin/cmake/linux/bin/ccmake -S/home/ensea/CLionProjects/plt -B/home/ensea/CLionProjects/plt/cmake-build-debug
+  COMMAND = cd /home/ali/CLionProjects/plt/cmake-build-debug/extern/dia2code && /snap/clion/209/bin/cmake/linux/bin/ccmake -S/home/ali/CLionProjects/plt -B/home/ali/CLionProjects/plt/cmake-build-debug
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -243,7 +243,7 @@ build extern/dia2code/edit_cache: phony extern/dia2code/CMakeFiles/edit_cache.ut
 # Utility command for rebuild_cache
 
 build extern/dia2code/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/ensea/CLionProjects/plt/cmake-build-debug/extern/dia2code && /snap/clion/206/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/ensea/CLionProjects/plt -B/home/ensea/CLionProjects/plt/cmake-build-debug
+  COMMAND = cd /home/ali/CLionProjects/plt/cmake-build-debug/extern/dia2code && /snap/clion/209/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/ali/CLionProjects/plt -B/home/ali/CLionProjects/plt/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -252,7 +252,7 @@ build extern/dia2code/rebuild_cache: phony extern/dia2code/CMakeFiles/rebuild_ca
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /home/ensea/CLionProjects/plt/CMakeLists.txt
+# /home/ali/CLionProjects/plt/CMakeLists.txt
 # =============================================================================
 
 
@@ -270,10 +270,10 @@ build src/shared/generate-header-state: phony src/shared/CMakeFiles/generate-hea
 
 build cmake_object_order_depends_target_shared_static: phony || generate-headers
 
-build src/shared/CMakeFiles/shared_static.dir/state/Exemple.cpp.o: CXX_COMPILER__shared_static_Debug /home/ensea/CLionProjects/plt/src/shared/state/Exemple.cpp || cmake_object_order_depends_target_shared_static
+build src/shared/CMakeFiles/shared_static.dir/state/Exemple.cpp.o: CXX_COMPILER__shared_static_Debug /home/ali/CLionProjects/plt/src/shared/state/Exemple.cpp || cmake_object_order_depends_target_shared_static
   DEP_FILE = src/shared/CMakeFiles/shared_static.dir/state/Exemple.cpp.o.d
   FLAGS = -Wall -std=c++11 -pthread -g -g --coverage -fprofile-arcs -ftest-coverage -g -std=gnu++11
-  INCLUDES = -I/home/ensea/CLionProjects/plt/src/shared
+  INCLUDES = -I/home/ali/CLionProjects/plt/src/shared
   OBJECT_DIR = src/shared/CMakeFiles/shared_static.dir
   OBJECT_FILE_DIR = src/shared/CMakeFiles/shared_static.dir/state
   TARGET_COMPILE_PDB = src/shared/CMakeFiles/shared_static.dir/shared_static.pdb
@@ -301,7 +301,7 @@ build src/shared/libshared_static.a: CXX_STATIC_LIBRARY_LINKER__shared_static_De
 # Utility command for edit_cache
 
 build src/shared/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/ensea/CLionProjects/plt/cmake-build-debug/src/shared && /snap/clion/206/bin/cmake/linux/bin/ccmake -S/home/ensea/CLionProjects/plt -B/home/ensea/CLionProjects/plt/cmake-build-debug
+  COMMAND = cd /home/ali/CLionProjects/plt/cmake-build-debug/src/shared && /snap/clion/209/bin/cmake/linux/bin/ccmake -S/home/ali/CLionProjects/plt -B/home/ali/CLionProjects/plt/cmake-build-debug
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -313,7 +313,7 @@ build src/shared/edit_cache: phony src/shared/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build src/shared/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/ensea/CLionProjects/plt/cmake-build-debug/src/shared && /snap/clion/206/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/ensea/CLionProjects/plt -B/home/ensea/CLionProjects/plt/cmake-build-debug
+  COMMAND = cd /home/ali/CLionProjects/plt/cmake-build-debug/src/shared && /snap/clion/209/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/ali/CLionProjects/plt -B/home/ali/CLionProjects/plt/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -331,13 +331,13 @@ build src/shared/CMakeFiles/generate-header-state | ${cmake_ninja_workdir}src/sh
 # Custom command for generate_header_state.stamp
 
 build generate_header_state.stamp | ${cmake_ninja_workdir}generate_header_state.stamp: CUSTOM_COMMAND ../src/state.dia || ../bin/dia2code
-  COMMAND = cd /home/ensea/CLionProjects/plt/cmake-build-debug/src/shared && rm -vf /home/ensea/CLionProjects/plt/src/*/state.h && rm -vf /home/ensea/CLionProjects/plt/src/*/state/*.h && /home/ensea/CLionProjects/plt/bin/dia2code -ns state -d /home/ensea/CLionProjects/plt/src/shared -t cpp /home/ensea/CLionProjects/plt/src/shared/../state.dia && /snap/clion/206/bin/cmake/linux/bin/cmake -E touch /home/ensea/CLionProjects/plt/cmake-build-debug/generate_header_state.stamp
+  COMMAND = cd /home/ali/CLionProjects/plt/cmake-build-debug/src/shared && rm -vf /home/ali/CLionProjects/plt/src/*/state.h && rm -vf /home/ali/CLionProjects/plt/src/*/state/*.h && /home/ali/CLionProjects/plt/bin/dia2code -ns state -d /home/ali/CLionProjects/plt/src/shared -t cpp /home/ali/CLionProjects/plt/src/shared/../state.dia && /snap/clion/209/bin/cmake/linux/bin/cmake -E touch /home/ali/CLionProjects/plt/cmake-build-debug/generate_header_state.stamp
   DESC = Generating ../../generate_header_state.stamp
   restat = 1
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /home/ensea/CLionProjects/plt/CMakeLists.txt
+# /home/ali/CLionProjects/plt/CMakeLists.txt
 # =============================================================================
 
 
@@ -355,10 +355,10 @@ build src/client/generate-header-client: phony src/client/CMakeFiles/generate-he
 
 build cmake_object_order_depends_target_client_static: phony || cmake_object_order_depends_target_shared_static generate-headers
 
-build src/client/CMakeFiles/client_static.dir/client/Exemple.cpp.o: CXX_COMPILER__client_static_Debug /home/ensea/CLionProjects/plt/src/client/client/Exemple.cpp || cmake_object_order_depends_target_client_static
+build src/client/CMakeFiles/client_static.dir/client/Exemple.cpp.o: CXX_COMPILER__client_static_Debug /home/ali/CLionProjects/plt/src/client/client/Exemple.cpp || cmake_object_order_depends_target_client_static
   DEP_FILE = src/client/CMakeFiles/client_static.dir/client/Exemple.cpp.o.d
   FLAGS = -Wall -std=c++11 -pthread -g -g --coverage -fprofile-arcs -ftest-coverage -g -std=gnu++11
-  INCLUDES = -I/home/ensea/CLionProjects/plt/src/client -I/home/ensea/CLionProjects/plt/src/shared
+  INCLUDES = -I/home/ali/CLionProjects/plt/src/client -I/home/ali/CLionProjects/plt/src/shared
   OBJECT_DIR = src/client/CMakeFiles/client_static.dir
   OBJECT_FILE_DIR = src/client/CMakeFiles/client_static.dir/client
   TARGET_COMPILE_PDB = src/client/CMakeFiles/client_static.dir/client_static.pdb
@@ -372,7 +372,7 @@ build src/client/CMakeFiles/client_static.dir/client/Exemple.cpp.o: CXX_COMPILER
 #############################################
 # Link the static library src/client/libclient_static.a
 
-build src/client/libclient_static.a: CXX_STATIC_LIBRARY_LINKER__client_static_Debug src/client/CMakeFiles/client_static.dir/client/Exemple.cpp.o || generate-headers src/shared/libshared_static.a
+build src/client/libclient_static.a: CXX_STATIC_LIBRARY_LINKER__client_static_Debug src/client/CMakeFiles/client_static.dir/client/Exemple.cpp.o || generate-headers src/shared/libshared_static.a /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-network.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
   LANGUAGE_COMPILE_FLAGS = -Wall -std=c++11 -pthread -g -g --coverage -fprofile-arcs -ftest-coverage -g
   OBJECT_DIR = src/client/CMakeFiles/client_static.dir
   POST_BUILD = :
@@ -390,10 +390,10 @@ build src/client/libclient_static.a: CXX_STATIC_LIBRARY_LINKER__client_static_De
 
 build cmake_object_order_depends_target_client: phony || cmake_object_order_depends_target_client_static cmake_object_order_depends_target_shared_static
 
-build src/client/CMakeFiles/client.dir/main.cpp.o: CXX_COMPILER__client_Debug /home/ensea/CLionProjects/plt/src/client/main.cpp || cmake_object_order_depends_target_client
+build src/client/CMakeFiles/client.dir/main.cpp.o: CXX_COMPILER__client_Debug /home/ali/CLionProjects/plt/src/client/main.cpp || cmake_object_order_depends_target_client
   DEP_FILE = src/client/CMakeFiles/client.dir/main.cpp.o.d
   FLAGS = -Wall -std=c++11 -pthread -g -g --coverage -fprofile-arcs -ftest-coverage -g -std=gnu++11
-  INCLUDES = -I/home/ensea/CLionProjects/plt/src/client -I/home/ensea/CLionProjects/plt/src/shared
+  INCLUDES = -I/home/ali/CLionProjects/plt/src/client -I/home/ali/CLionProjects/plt/src/shared
   OBJECT_DIR = src/client/CMakeFiles/client.dir
   OBJECT_FILE_DIR = src/client/CMakeFiles/client.dir
   TARGET_COMPILE_PDB = src/client/CMakeFiles/client.dir/
@@ -407,10 +407,10 @@ build src/client/CMakeFiles/client.dir/main.cpp.o: CXX_COMPILER__client_Debug /h
 #############################################
 # Link the executable ../bin/client
 
-build ../bin/client: CXX_EXECUTABLE_LINKER__client_Debug src/client/CMakeFiles/client.dir/main.cpp.o | src/client/libclient_static.a src/shared/libshared_static.a || src/client/libclient_static.a src/shared/libshared_static.a
+build ../bin/client: CXX_EXECUTABLE_LINKER__client_Debug src/client/CMakeFiles/client.dir/main.cpp.o | src/client/libclient_static.a /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-network.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1 src/shared/libshared_static.a || src/client/libclient_static.a src/shared/libshared_static.a
   FLAGS = -Wall -std=c++11 -pthread -g -g --coverage -fprofile-arcs -ftest-coverage -g
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = -lgcov  src/client/libclient_static.a  -lsfml-graphics  -lsfml-network  -lsfml-window  -lsfml-system  src/shared/libshared_static.a  -lgcov
+  LINK_LIBRARIES = -lgcov  src/client/libclient_static.a  /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-network.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1  src/shared/libshared_static.a  -lgcov
   OBJECT_DIR = src/client/CMakeFiles/client.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -423,7 +423,7 @@ build ../bin/client: CXX_EXECUTABLE_LINKER__client_Debug src/client/CMakeFiles/c
 # Utility command for edit_cache
 
 build src/client/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/ensea/CLionProjects/plt/cmake-build-debug/src/client && /snap/clion/206/bin/cmake/linux/bin/ccmake -S/home/ensea/CLionProjects/plt -B/home/ensea/CLionProjects/plt/cmake-build-debug
+  COMMAND = cd /home/ali/CLionProjects/plt/cmake-build-debug/src/client && /snap/clion/209/bin/cmake/linux/bin/ccmake -S/home/ali/CLionProjects/plt -B/home/ali/CLionProjects/plt/cmake-build-debug
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -435,7 +435,7 @@ build src/client/edit_cache: phony src/client/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build src/client/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/ensea/CLionProjects/plt/cmake-build-debug/src/client && /snap/clion/206/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/ensea/CLionProjects/plt -B/home/ensea/CLionProjects/plt/cmake-build-debug
+  COMMAND = cd /home/ali/CLionProjects/plt/cmake-build-debug/src/client && /snap/clion/209/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/ali/CLionProjects/plt -B/home/ali/CLionProjects/plt/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -453,21 +453,33 @@ build src/client/CMakeFiles/generate-header-client | ${cmake_ninja_workdir}src/c
 # Custom command for generate_header_client.stamp
 
 build generate_header_client.stamp | ${cmake_ninja_workdir}generate_header_client.stamp: CUSTOM_COMMAND ../src/client.dia || ../bin/dia2code
-  COMMAND = cd /home/ensea/CLionProjects/plt/cmake-build-debug/src/client && rm -vf /home/ensea/CLionProjects/plt/src/*/client.h && rm -vf /home/ensea/CLionProjects/plt/src/*/client/*.h && /home/ensea/CLionProjects/plt/bin/dia2code -ns client -d /home/ensea/CLionProjects/plt/src/client -t cpp /home/ensea/CLionProjects/plt/src/client/../client.dia && /snap/clion/206/bin/cmake/linux/bin/cmake -E touch /home/ensea/CLionProjects/plt/cmake-build-debug/generate_header_client.stamp
+  COMMAND = cd /home/ali/CLionProjects/plt/cmake-build-debug/src/client && rm -vf /home/ali/CLionProjects/plt/src/*/client.h && rm -vf /home/ali/CLionProjects/plt/src/*/client/*.h && /home/ali/CLionProjects/plt/bin/dia2code -ns client -d /home/ali/CLionProjects/plt/src/client -t cpp /home/ali/CLionProjects/plt/src/client/../client.dia && /snap/clion/209/bin/cmake/linux/bin/cmake -E touch /home/ali/CLionProjects/plt/cmake-build-debug/generate_header_client.stamp
   DESC = Generating ../../generate_header_client.stamp
   restat = 1
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /home/ensea/CLionProjects/plt/CMakeLists.txt
+# /home/ali/CLionProjects/plt/CMakeLists.txt
 # =============================================================================
+
+
+#############################################
+# Utility command for rapport
+
+build rapport/rapport: phony rapport/rapport-diapdf-state
+
+
+#############################################
+# Utility command for rapport-diapdf-state
+
+build rapport/rapport-diapdf-state: phony rapport/CMakeFiles/rapport-diapdf-state rapport/state.pdf
 
 
 #############################################
 # Utility command for edit_cache
 
 build rapport/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/ensea/CLionProjects/plt/cmake-build-debug/rapport && /snap/clion/206/bin/cmake/linux/bin/ccmake -S/home/ensea/CLionProjects/plt -B/home/ensea/CLionProjects/plt/cmake-build-debug
+  COMMAND = cd /home/ali/CLionProjects/plt/cmake-build-debug/rapport && /snap/clion/209/bin/cmake/linux/bin/ccmake -S/home/ali/CLionProjects/plt -B/home/ali/CLionProjects/plt/cmake-build-debug
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -479,16 +491,31 @@ build rapport/edit_cache: phony rapport/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build rapport/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/ensea/CLionProjects/plt/cmake-build-debug/rapport && /snap/clion/206/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/ensea/CLionProjects/plt -B/home/ensea/CLionProjects/plt/cmake-build-debug
+  COMMAND = cd /home/ali/CLionProjects/plt/cmake-build-debug/rapport && /snap/clion/209/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/ali/CLionProjects/plt -B/home/ali/CLionProjects/plt/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
 
 build rapport/rebuild_cache: phony rapport/CMakeFiles/rebuild_cache.util
 
+
+#############################################
+# Phony custom command for rapport/CMakeFiles/rapport-diapdf-state
+
+build rapport/CMakeFiles/rapport-diapdf-state | ${cmake_ninja_workdir}rapport/CMakeFiles/rapport-diapdf-state: phony rapport/state.pdf
+
+
+#############################################
+# Custom command for rapport/state.pdf
+
+build rapport/state.pdf | ${cmake_ninja_workdir}rapport/state.pdf: CUSTOM_COMMAND ../src/state.dia
+  COMMAND = cd /home/ali/CLionProjects/plt/cmake-build-debug/rapport && /usr/bin/dia -e /home/ali/CLionProjects/plt/cmake-build-debug/rapport/rapport_diapdf_state.ps /home/ali/CLionProjects/plt/src/state.dia && /snap/clion/209/bin/cmake/linux/bin/cmake -E make_directory /home/ali/CLionProjects/plt/rapport/diapdf/ && /usr/bin/ps2pdf /home/ali/CLionProjects/plt/cmake-build-debug/rapport/rapport_diapdf_state.ps /home/ali/CLionProjects/plt/rapport/diapdf//state.pdf
+  DESC = Generating state.pdf
+  restat = 1
+
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /home/ensea/CLionProjects/plt/CMakeLists.txt
+# /home/ali/CLionProjects/plt/CMakeLists.txt
 # =============================================================================
 
 
@@ -508,7 +535,7 @@ build test/unittest: phony test/CMakeFiles/unittest test/check
 # Utility command for edit_cache
 
 build test/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/ensea/CLionProjects/plt/cmake-build-debug/test && /snap/clion/206/bin/cmake/linux/bin/ccmake -S/home/ensea/CLionProjects/plt -B/home/ensea/CLionProjects/plt/cmake-build-debug
+  COMMAND = cd /home/ali/CLionProjects/plt/cmake-build-debug/test && /snap/clion/209/bin/cmake/linux/bin/ccmake -S/home/ali/CLionProjects/plt -B/home/ali/CLionProjects/plt/cmake-build-debug
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -520,7 +547,7 @@ build test/edit_cache: phony test/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build test/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/ensea/CLionProjects/plt/cmake-build-debug/test && /snap/clion/206/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/ensea/CLionProjects/plt -B/home/ensea/CLionProjects/plt/cmake-build-debug
+  COMMAND = cd /home/ali/CLionProjects/plt/cmake-build-debug/test && /snap/clion/209/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/ali/CLionProjects/plt -B/home/ali/CLionProjects/plt/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -532,7 +559,7 @@ build test/rebuild_cache: phony test/CMakeFiles/rebuild_cache.util
 # Custom command for test/CMakeFiles/check
 
 build test/CMakeFiles/check | ${cmake_ninja_workdir}test/CMakeFiles/check: CUSTOM_COMMAND
-  COMMAND = cd /home/ensea/CLionProjects/plt/cmake-build-debug/test && /snap/clion/206/bin/cmake/linux/bin/ctest --output-on-failure
+  COMMAND = cd /home/ali/CLionProjects/plt/cmake-build-debug/test && /snap/clion/209/bin/cmake/linux/bin/ctest --output-on-failure
 
 
 #############################################
@@ -542,7 +569,7 @@ build test/CMakeFiles/unittest | ${cmake_ninja_workdir}test/CMakeFiles/unittest:
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /home/ensea/CLionProjects/plt/test/CMakeLists.txt
+# /home/ali/CLionProjects/plt/test/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -554,11 +581,11 @@ build test/CMakeFiles/unittest | ${cmake_ninja_workdir}test/CMakeFiles/unittest:
 
 build cmake_object_order_depends_target_test_shared_dummy: phony || cmake_object_order_depends_target_client_static cmake_object_order_depends_target_shared_static generate-headers
 
-build test/shared/CMakeFiles/test_shared_dummy.dir/test_shared_dummy.cpp.o: CXX_COMPILER__test_shared_dummy_Debug /home/ensea/CLionProjects/plt/test/shared/test_shared_dummy.cpp || cmake_object_order_depends_target_test_shared_dummy
-  DEFINES = -DBOOST_TEST_DYN_LINK -DBOOST_TEST_MAIN -DBOOST_TEST_MODULE=shared_dummy
+build test/shared/CMakeFiles/test_shared_dummy.dir/test_shared_dummy.cpp.o: CXX_COMPILER__test_shared_dummy_Debug /home/ali/CLionProjects/plt/test/shared/test_shared_dummy.cpp || cmake_object_order_depends_target_test_shared_dummy
+  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_TEST_DYN_LINK -DBOOST_TEST_MAIN -DBOOST_TEST_MODULE=shared_dummy -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK
   DEP_FILE = test/shared/CMakeFiles/test_shared_dummy.dir/test_shared_dummy.cpp.o.d
   FLAGS = -Wall -std=c++11 -pthread -g -g --coverage -fprofile-arcs -ftest-coverage -g -std=gnu++11
-  INCLUDES = -I/home/ensea/CLionProjects/plt/src/shared -I/home/ensea/CLionProjects/plt/src/client
+  INCLUDES = -I/home/ali/CLionProjects/plt/src/shared -I/home/ali/CLionProjects/plt/src/client
   OBJECT_DIR = test/shared/CMakeFiles/test_shared_dummy.dir
   OBJECT_FILE_DIR = test/shared/CMakeFiles/test_shared_dummy.dir
   TARGET_COMPILE_PDB = test/shared/CMakeFiles/test_shared_dummy.dir/
@@ -572,10 +599,10 @@ build test/shared/CMakeFiles/test_shared_dummy.dir/test_shared_dummy.cpp.o: CXX_
 #############################################
 # Link the executable test/shared/test_shared_dummy
 
-build test/shared/test_shared_dummy: CXX_EXECUTABLE_LINKER__test_shared_dummy_Debug test/shared/CMakeFiles/test_shared_dummy.dir/test_shared_dummy.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so src/shared/libshared_static.a src/client/libclient_static.a src/shared/libshared_static.a || generate-headers src/client/libclient_static.a src/shared/libshared_static.a
+build test/shared/test_shared_dummy: CXX_EXECUTABLE_LINKER__test_shared_dummy_Debug test/shared/CMakeFiles/test_shared_dummy.dir/test_shared_dummy.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so.1.74.0 src/shared/libshared_static.a src/client/libclient_static.a src/shared/libshared_static.a /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-network.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1 || generate-headers src/client/libclient_static.a src/shared/libshared_static.a
   FLAGS = -Wall -std=c++11 -pthread -g -g --coverage -fprofile-arcs -ftest-coverage -g
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = -lgcov  -lboost_unit_test_framework  src/shared/libshared_static.a  src/client/libclient_static.a  src/shared/libshared_static.a  -lgcov  -lsfml-graphics  -lsfml-network  -lsfml-window  -lsfml-system
+  LINK_LIBRARIES = -lgcov  /usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so.1.74.0  src/shared/libshared_static.a  src/client/libclient_static.a  src/shared/libshared_static.a  -lgcov  /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-network.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
   OBJECT_DIR = test/shared/CMakeFiles/test_shared_dummy.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -588,7 +615,7 @@ build test/shared/test_shared_dummy: CXX_EXECUTABLE_LINKER__test_shared_dummy_De
 # Utility command for edit_cache
 
 build test/shared/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/ensea/CLionProjects/plt/cmake-build-debug/test/shared && /snap/clion/206/bin/cmake/linux/bin/ccmake -S/home/ensea/CLionProjects/plt -B/home/ensea/CLionProjects/plt/cmake-build-debug
+  COMMAND = cd /home/ali/CLionProjects/plt/cmake-build-debug/test/shared && /snap/clion/209/bin/cmake/linux/bin/ccmake -S/home/ali/CLionProjects/plt -B/home/ali/CLionProjects/plt/cmake-build-debug
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -600,7 +627,7 @@ build test/shared/edit_cache: phony test/shared/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build test/shared/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/ensea/CLionProjects/plt/cmake-build-debug/test/shared && /snap/clion/206/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/ensea/CLionProjects/plt -B/home/ensea/CLionProjects/plt/cmake-build-debug
+  COMMAND = cd /home/ali/CLionProjects/plt/cmake-build-debug/test/shared && /snap/clion/209/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/ali/CLionProjects/plt -B/home/ali/CLionProjects/plt/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -609,7 +636,7 @@ build test/shared/rebuild_cache: phony test/shared/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /home/ensea/CLionProjects/plt/test/CMakeLists.txt
+# /home/ali/CLionProjects/plt/test/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -621,11 +648,11 @@ build test/shared/rebuild_cache: phony test/shared/CMakeFiles/rebuild_cache.util
 
 build cmake_object_order_depends_target_test_client_dummy: phony || cmake_object_order_depends_target_client_static cmake_object_order_depends_target_shared_static generate-headers
 
-build test/client/CMakeFiles/test_client_dummy.dir/test_client_dummy.cpp.o: CXX_COMPILER__test_client_dummy_Debug /home/ensea/CLionProjects/plt/test/client/test_client_dummy.cpp || cmake_object_order_depends_target_test_client_dummy
-  DEFINES = -DBOOST_TEST_DYN_LINK -DBOOST_TEST_MAIN -DBOOST_TEST_MODULE=client_dummy
+build test/client/CMakeFiles/test_client_dummy.dir/test_client_dummy.cpp.o: CXX_COMPILER__test_client_dummy_Debug /home/ali/CLionProjects/plt/test/client/test_client_dummy.cpp || cmake_object_order_depends_target_test_client_dummy
+  DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_TEST_DYN_LINK -DBOOST_TEST_MAIN -DBOOST_TEST_MODULE=client_dummy -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK
   DEP_FILE = test/client/CMakeFiles/test_client_dummy.dir/test_client_dummy.cpp.o.d
   FLAGS = -Wall -std=c++11 -pthread -g -g --coverage -fprofile-arcs -ftest-coverage -g -std=gnu++11
-  INCLUDES = -I/home/ensea/CLionProjects/plt/src/shared -I/home/ensea/CLionProjects/plt/src/client
+  INCLUDES = -I/home/ali/CLionProjects/plt/src/shared -I/home/ali/CLionProjects/plt/src/client
   OBJECT_DIR = test/client/CMakeFiles/test_client_dummy.dir
   OBJECT_FILE_DIR = test/client/CMakeFiles/test_client_dummy.dir
   TARGET_COMPILE_PDB = test/client/CMakeFiles/test_client_dummy.dir/
@@ -639,10 +666,10 @@ build test/client/CMakeFiles/test_client_dummy.dir/test_client_dummy.cpp.o: CXX_
 #############################################
 # Link the executable test/client/test_client_dummy
 
-build test/client/test_client_dummy: CXX_EXECUTABLE_LINKER__test_client_dummy_Debug test/client/CMakeFiles/test_client_dummy.dir/test_client_dummy.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so src/shared/libshared_static.a src/client/libclient_static.a src/shared/libshared_static.a || generate-headers src/client/libclient_static.a src/shared/libshared_static.a
+build test/client/test_client_dummy: CXX_EXECUTABLE_LINKER__test_client_dummy_Debug test/client/CMakeFiles/test_client_dummy.dir/test_client_dummy.cpp.o | /usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so.1.74.0 src/shared/libshared_static.a src/client/libclient_static.a src/shared/libshared_static.a /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-network.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1 || generate-headers src/client/libclient_static.a src/shared/libshared_static.a
   FLAGS = -Wall -std=c++11 -pthread -g -g --coverage -fprofile-arcs -ftest-coverage -g
   LINK_FLAGS = -rdynamic
-  LINK_LIBRARIES = -lgcov  -lboost_unit_test_framework  src/shared/libshared_static.a  src/client/libclient_static.a  src/shared/libshared_static.a  -lgcov  -lsfml-graphics  -lsfml-network  -lsfml-window  -lsfml-system
+  LINK_LIBRARIES = -lgcov  /usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so.1.74.0  src/shared/libshared_static.a  src/client/libclient_static.a  src/shared/libshared_static.a  -lgcov  /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-network.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
   OBJECT_DIR = test/client/CMakeFiles/test_client_dummy.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -655,7 +682,7 @@ build test/client/test_client_dummy: CXX_EXECUTABLE_LINKER__test_client_dummy_De
 # Utility command for edit_cache
 
 build test/client/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/ensea/CLionProjects/plt/cmake-build-debug/test/client && /snap/clion/206/bin/cmake/linux/bin/ccmake -S/home/ensea/CLionProjects/plt -B/home/ensea/CLionProjects/plt/cmake-build-debug
+  COMMAND = cd /home/ali/CLionProjects/plt/cmake-build-debug/test/client && /snap/clion/209/bin/cmake/linux/bin/ccmake -S/home/ali/CLionProjects/plt -B/home/ali/CLionProjects/plt/cmake-build-debug
   DESC = Running CMake cache editor...
   pool = console
   restat = 1
@@ -667,7 +694,7 @@ build test/client/edit_cache: phony test/client/CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build test/client/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/ensea/CLionProjects/plt/cmake-build-debug/test/client && /snap/clion/206/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/ensea/CLionProjects/plt -B/home/ensea/CLionProjects/plt/cmake-build-debug
+  COMMAND = cd /home/ali/CLionProjects/plt/cmake-build-debug/test/client && /snap/clion/209/bin/cmake/linux/bin/cmake --regenerate-during-build -S/home/ali/CLionProjects/plt -B/home/ali/CLionProjects/plt/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -693,6 +720,10 @@ build libclient_static.a: phony src/client/libclient_static.a
 
 build libshared_static.a: phony src/shared/libshared_static.a
 
+build rapport: phony rapport/rapport
+
+build rapport-diapdf-state: phony rapport/rapport-diapdf-state
+
 build shared_static: phony src/shared/libshared_static.a
 
 build test_client_dummy: phony test/client/test_client_dummy
@@ -707,56 +738,56 @@ build unittest: phony test/unittest
 # =============================================================================
 
 #############################################
-# Folder: /home/ensea/CLionProjects/plt/cmake-build-debug
+# Folder: /home/ali/CLionProjects/plt/cmake-build-debug
 
 build all: phony extern/dia2code/all src/shared/all src/client/all rapport/all test/all
 
 # =============================================================================
 
 #############################################
-# Folder: /home/ensea/CLionProjects/plt/cmake-build-debug/extern/dia2code
+# Folder: /home/ali/CLionProjects/plt/cmake-build-debug/extern/dia2code
 
 build extern/dia2code/all: phony ../bin/dia2code
 
 # =============================================================================
 
 #############################################
-# Folder: /home/ensea/CLionProjects/plt/cmake-build-debug/rapport
+# Folder: /home/ali/CLionProjects/plt/cmake-build-debug/rapport
 
 build rapport/all: phony
 
 # =============================================================================
 
 #############################################
-# Folder: /home/ensea/CLionProjects/plt/cmake-build-debug/src/client
+# Folder: /home/ali/CLionProjects/plt/cmake-build-debug/src/client
 
 build src/client/all: phony src/client/libclient_static.a ../bin/client
 
 # =============================================================================
 
 #############################################
-# Folder: /home/ensea/CLionProjects/plt/cmake-build-debug/src/shared
+# Folder: /home/ali/CLionProjects/plt/cmake-build-debug/src/shared
 
 build src/shared/all: phony src/shared/libshared_static.a
 
 # =============================================================================
 
 #############################################
-# Folder: /home/ensea/CLionProjects/plt/cmake-build-debug/test
+# Folder: /home/ali/CLionProjects/plt/cmake-build-debug/test
 
 build test/all: phony test/shared/all test/client/all
 
 # =============================================================================
 
 #############################################
-# Folder: /home/ensea/CLionProjects/plt/cmake-build-debug/test/client
+# Folder: /home/ali/CLionProjects/plt/cmake-build-debug/test/client
 
 build test/client/all: phony test/client/test_client_dummy
 
 # =============================================================================
 
 #############################################
-# Folder: /home/ensea/CLionProjects/plt/cmake-build-debug/test/shared
+# Folder: /home/ali/CLionProjects/plt/cmake-build-debug/test/shared
 
 build test/shared/all: phony test/shared/test_shared_dummy
 
@@ -774,14 +805,14 @@ build run_test.sh: phony
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../cmake/CodeCoverage.cmake ../cmake/GenerateDiaHeader.cmake ../extern/dia2code/CMakeLists.txt ../rapport/CMakeLists.txt ../src/client/CMakeLists.txt ../src/shared/CMakeLists.txt ../test/CMakeLists.txt ../test/client/CMakeLists.txt ../test/shared/CMakeLists.txt /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCCompiler.cmake.in /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCCompilerABI.c /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCInformation.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXCompiler.cmake.in /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCompilerIdDetection.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCXXCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCompileFeatures.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCompilerABI.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCompilerId.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineSystem.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeFindBinUtils.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeParseArguments.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeParseImplicitIncludeInfo.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeParseImplicitLinkInfo.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeParseLibraryArchitecture.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystem.cmake.in /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeTestCCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeTestCXXCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeTestCompilerCommon.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/ADSP-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/ARMCC-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/ARMClang-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/AppleClang-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Borland-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Cray-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GHS-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-C.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-FindBinUtils.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/HP-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IAR-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Intel-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/LCC-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/MSVC-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/NVHPC-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/PGI-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/PathScale-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/SCO-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/TI-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Watcom-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/XL-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/zOS-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/FindBoost.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/FindLibXml2.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/FindPackageMessage.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/FindPkgConfig.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/FindPython.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/FindPython/Support.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Internal/FeatureTesting.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-Determine-CXX.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Platform/UnixPaths.cmake /usr/share/SFML/cmake/Modules/FindSFML.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../cmake/CodeCoverage.cmake ../cmake/GenerateDiaHeader.cmake ../extern/dia2code/CMakeLists.txt ../rapport/CMakeLists.txt ../src/client/CMakeLists.txt ../src/shared/CMakeLists.txt ../test/CMakeLists.txt ../test/client/CMakeLists.txt ../test/shared/CMakeLists.txt /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCCompiler.cmake.in /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCCompilerABI.c /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCInformation.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXCompiler.cmake.in /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCompilerIdDetection.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCXXCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCompileFeatures.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCompilerABI.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCompilerId.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineSystem.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeFindBinUtils.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeParseArguments.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeParseImplicitIncludeInfo.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeParseImplicitLinkInfo.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeParseLibraryArchitecture.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystem.cmake.in /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeTestCCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeTestCXXCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeTestCompilerCommon.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/ADSP-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/ARMCC-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/ARMClang-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/AppleClang-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Borland-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Cray-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GHS-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-C.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-FindBinUtils.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/HP-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IAR-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Intel-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/LCC-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/MSVC-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/NVHPC-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/PGI-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/PathScale-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/SCO-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/TI-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Watcom-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/XL-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/zOS-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/FindBoost.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/FindLibXml2.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/FindPackageMessage.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/FindPkgConfig.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/FindPython.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/FindPython/Support.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Internal/FeatureTesting.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-Determine-CXX.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/UnixPaths.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.74.0.cmake /usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigDependencies.cmake /usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets-none.cmake /usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.74.0/boost_headers-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.74.0/boost_headers-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.74.0/boost_unit_test_framework-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.74.0/boost_unit_test_framework-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.74.0/libboost_unit_test_framework-variant-shared.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.74.0/libboost_unit_test_framework-variant-static.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt ../cmake/CodeCoverage.cmake ../cmake/GenerateDiaHeader.cmake ../extern/dia2code/CMakeLists.txt ../rapport/CMakeLists.txt ../src/client/CMakeLists.txt ../src/shared/CMakeLists.txt ../test/CMakeLists.txt ../test/client/CMakeLists.txt ../test/shared/CMakeLists.txt /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCCompiler.cmake.in /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCCompilerABI.c /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCInformation.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXCompiler.cmake.in /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCompilerIdDetection.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCXXCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCompileFeatures.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCompilerABI.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCompilerId.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineSystem.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeFindBinUtils.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeParseArguments.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeParseImplicitIncludeInfo.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeParseImplicitLinkInfo.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeParseLibraryArchitecture.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystem.cmake.in /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeTestCCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeTestCXXCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/CMakeTestCompilerCommon.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/ADSP-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/ARMCC-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/ARMClang-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/AppleClang-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Borland-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Cray-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GHS-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-C.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-FindBinUtils.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/HP-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IAR-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Intel-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/LCC-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/MSVC-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/NVHPC-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/PGI-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/PathScale-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/SCO-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/TI-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Watcom-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/XL-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/zOS-C-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/FindBoost.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/FindLibXml2.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/FindPackageMessage.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/FindPkgConfig.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/FindPython.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/FindPython/Support.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Internal/FeatureTesting.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-Determine-CXX.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux.cmake /snap/clion/206/bin/cmake/linux/share/cmake-3.23/Modules/Platform/UnixPaths.cmake /usr/share/SFML/cmake/Modules/FindSFML.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../cmake/CodeCoverage.cmake ../cmake/GenerateDiaHeader.cmake ../extern/dia2code/CMakeLists.txt ../rapport/CMakeLists.txt ../src/client/CMakeLists.txt ../src/shared/CMakeLists.txt ../test/CMakeLists.txt ../test/client/CMakeLists.txt ../test/shared/CMakeLists.txt /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCCompiler.cmake.in /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCCompilerABI.c /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCInformation.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXCompiler.cmake.in /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeCompilerIdDetection.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCXXCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCompileFeatures.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCompilerABI.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineCompilerId.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeDetermineSystem.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeFindBinUtils.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeParseArguments.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeParseImplicitIncludeInfo.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeParseImplicitLinkInfo.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeParseLibraryArchitecture.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystem.cmake.in /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeTestCCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeTestCXXCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/CMakeTestCompilerCommon.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/ADSP-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/ARMCC-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/ARMClang-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/AppleClang-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Borland-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Cray-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GHS-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-C.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-CXX.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU-FindBinUtils.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/GNU.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/HP-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IAR-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Intel-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/LCC-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/MSVC-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/NVHPC-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/PGI-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/PathScale-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/SCO-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/TI-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/Watcom-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/XL-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/zOS-C-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/FindBoost.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/FindLibXml2.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/FindPackageHandleStandardArgs.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/FindPackageMessage.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/FindPkgConfig.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/FindPython.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/FindPython/Support.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Internal/FeatureTesting.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-Determine-CXX.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-C.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux-GNU.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/Linux.cmake /snap/clion/209/bin/cmake/linux/share/cmake-3.23/Modules/Platform/UnixPaths.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.74.0.cmake /usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfig.cmake /usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigDependencies.cmake /usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigVersion.cmake /usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets-none.cmake /usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.74.0/boost_headers-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.74.0/boost_headers-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.74.0/boost_unit_test_framework-config-version.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.74.0/boost_unit_test_framework-config.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.74.0/libboost_unit_test_framework-variant-shared.cmake /usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.74.0/libboost_unit_test_framework-variant-static.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake: phony
 
 
 #############################################
