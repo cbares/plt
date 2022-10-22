@@ -1,4 +1,4 @@
-/snap/clion/206/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/206/bin/ninja/linux/ninja -G Ninja -S /home/ensea/CLionProjects/plt -B /home/ensea/CLionProjects/plt/cmake-build-debug
+/snap/clion/209/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/209/bin/ninja/linux/ninja -G Ninja -S /home/ali/CLionProjects/plt -B /home/ali/CLionProjects/plt/cmake-build-debug
 CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
   Compatibility with CMake < 2.8.12 will be removed from a future version of
   CMake.
@@ -7,8 +7,8 @@ CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
   CMake that the project does not need compatibility with older versions.
 
 
--- The C compiler identification is GNU 7.5.0
--- The CXX compiler identification is GNU 7.5.0
+-- The C compiler identification is GNU 11.2.0
+-- The CXX compiler identification is GNU 11.2.0
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
 -- Check for working C compiler: /usr/bin/cc - skipped
@@ -21,7 +21,7 @@ CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
 -- Detecting CXX compile features - done
 -- Build type: Debug
 -- Code coverage: ON
--- Found Python: /usr/bin/python3.6 (found version "3.6.9") found components: Interpreter 
+-- Found Python: /usr/bin/python3.10 (found version "3.10.4") found components: Interpreter 
 -- Appending code coverage compiler flags: -g --coverage -fprofile-arcs -ftest-coverage
 CMake Deprecation Warning at extern/dia2code/CMakeLists.txt:1 (cmake_minimum_required):
   Compatibility with CMake < 2.8.12 will be removed from a future version of
@@ -31,16 +31,12 @@ CMake Deprecation Warning at extern/dia2code/CMakeLists.txt:1 (cmake_minimum_req
   CMake that the project does not need compatibility with older versions.
 
 
--- Found LibXml2: /usr/lib/x86_64-linux-gnu/libxml2.so (found version "2.9.4") 
--- Found SFML 2.4.2 in /usr/include
+-- Found LibXml2: /usr/lib/x86_64-linux-gnu/libxml2.so (found version "2.9.13") 
+-- Found SFML 2.5.1 in /usr/lib/x86_64-linux-gnu/cmake/SFML
 -- Found Dia: /usr/bin/dia  
--- Could NOT find Ps2Pdf (missing: PS2PDF_EXECUTABLE) 
-CMake Warning at rapport/CMakeLists.txt:51 (message):
-  Dia or ps2pdf not found! Rapport generation not available!
-
-
--- Found Boost: /usr/include (found suitable version "1.65.1", minimum required is "1.50") found components: unit_test_framework 
--- Boost libraries: /usr/lib/x86_64-linux-gnu/libboost_unit_test_framework.so
+-- Found Ps2Pdf: /usr/bin/ps2pdf  
+-- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found suitable version "1.74.0", minimum required is "1.50") found components: unit_test_framework 
+-- Boost libraries: Boost::unit_test_framework
 -- Boost include directory: /usr/include
 -- Configuring done
 -- Generating done
@@ -63,4 +59,4 @@ CMake Warning (dev):
   custom commands that produce these files.
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
--- Build files have been written to: /home/ensea/CLionProjects/plt/cmake-build-debug
+-- Build files have been written to: /home/ali/CLionProjects/plt/cmake-build-debug

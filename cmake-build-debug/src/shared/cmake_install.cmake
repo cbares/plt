@@ -1,4 +1,4 @@
-# Install script for directory: /home/ensea/CLionProjects/plt/src/shared
+# Install script for directory: /home/ali/CLionProjects/plt/src/shared
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,4 +1,4 @@
-# Install script for directory: /home/ensea/CLionProjects/plt/test
+# Install script for directory: /home/ali/CLionProjects/plt/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,8 +44,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/ensea/CLionProjects/plt/cmake-build-debug/test/shared/cmake_install.cmake")
-  include("/home/ensea/CLionProjects/plt/cmake-build-debug/test/client/cmake_install.cmake")
+  include("/home/ali/CLionProjects/plt/cmake-build-debug/test/shared/cmake_install.cmake")
+  include("/home/ali/CLionProjects/plt/cmake-build-debug/test/client/cmake_install.cmake")
 
 endif()
 
