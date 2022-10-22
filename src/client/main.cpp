@@ -18,9 +18,14 @@ int main(int argc,char* argv[])
 {
     Exemple exemple;
     exemple.setX(53);
-// TEST TEST TEST TEST TEST
 
-    cout << "It works !" << endl;
+    if ((string)argv[argc-1]=="hello"){
+        cout << "Hello World !" << endl;
+    }
+else {
+        cout << "It works !" << endl;
+}
+
 
     return 0;
 }
