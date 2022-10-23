@@ -91,7 +91,7 @@ Voici les textures de tous les pions pour chaque joueurs:
 
 
 
-<img src="image/Capturedécran 2022-10-23 140325.png">
+<img src="rapport/image/Capturedécran 2022-10-23 140325.png">
 
 
 
@@ -171,7 +171,7 @@ Après avoir décrit les différents états, nous allons aborder le diagramme de
 
 - Classe **Jeu :** 
 
-<img src="image/Aspose.Words.d663220b-ca81-4584-8c4f-95488ddd0e67.016.png">
+<img src="rapport/image/Aspose.Words.d663220b-ca81-4584-8c4f-95488ddd0e67.016.png">
 
 
 
@@ -201,7 +201,7 @@ Cette classe permet de suivre l’état du jeu. Il est composé d’un attribut 
 
 Dans cette classe on pourra générer un tableau avec les dimensions souhaitées. L’attribut ListeCoordonnees sera donc rempli à l’aide du constructeur. Chaque  espace du tableau aura un objet Case associé. Chaque objet Case aura une coordonnée et un attribut “occupe”.
 
-<img src="image/Aspose.Words.d663220b-ca81-4584-8c4f-95488ddd0e67.017.png">
+<img src="rapport/image/Aspose.Words.d663220b-ca81-4584-8c4f-95488ddd0e67.017.png">
 
 
 
@@ -227,7 +227,7 @@ C’est une classe ayant une méthode abstraite, chaque insecte aura un nom, une
 
 Les classes qui héritent de cette classe devront overrider la méthode permettant de déplacer le pion selon l'insecte.
 
-<img src="image/Aspose.Words.d663220b-ca81-4584-8c4f-95488ddd0e67.018.png">
+<img src="rapport/image/Aspose.Words.d663220b-ca81-4584-8c4f-95488ddd0e67.018.png">
 
 
 
@@ -241,14 +241,14 @@ Les classes qui héritent de cette classe devront overrider la méthode permetta
 C’est dans cette classe qu’on la couleur des pions du joueur et les différentes listes des pions. C’est à partir de ces listes que l’on va déplacer/placer les pions.
 
 
-<img src="image/Aspose.Words.d663220b-ca81-4584-8c4f-95488ddd0e67.019.png">
+<img src="rapport/image/Aspose.Words.d663220b-ca81-4584-8c4f-95488ddd0e67.019.png">
 
 
 
 
 Diagramme des classes d’état : 
 
-<img src="image/Aspose.Words.d663220b-ca81-4584-8c4f-95488ddd0e67.020.png">
+<img src="rapport/image/Aspose.Words.d663220b-ca81-4584-8c4f-95488ddd0e67.020.png">
 ` `
 
 Projet Logiciel Transversal – Ali ZOUHAIRI – Lavan SRISKANDARAJAH – Royston WINSON AROKIARAJAH
