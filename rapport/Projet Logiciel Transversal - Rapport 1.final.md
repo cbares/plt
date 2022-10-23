@@ -43,15 +43,7 @@ Royston WINSON AROKIARAJAH
 [2.1 Description des états](#_mtmhau3gsmsu)	
 
 [2.2. Conception logiciel](#_q837fg47fu16)	
-#
-#
-#
-#
-#
-#
-#
-#
-#
+
 # **1 Objectif**
 ## **1.1 – Présentation générale**
 Le but de ce projet est de réaliser le jeu de plateau et de stratégie  “HIVE”.
