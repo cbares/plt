@@ -58,7 +58,7 @@ function(add_custom_test name)
     BOOST_TEST_MODULE=${name}
     )
   target_link_libraries(${target_name} PRIVATE
-    ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY}
+    ${Boost_LIBRARIES}
     ${ARG_TEST_LIBRARIES}
     $<TARGET_NAME:shared_static>
     $<TARGET_NAME:client_static>

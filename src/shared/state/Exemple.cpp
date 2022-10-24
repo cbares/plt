@@ -2,9 +2,8 @@
 
 namespace state {
 
-void Exemple::setX (int x) {
-    this->x = x;
-}
+    void Exemple::setA (int a) {
+        this->a.setX(a);
+    }
 
 }
-

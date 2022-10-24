@@ -229,6 +229,7 @@ add_setter_getter(umlclassnode *node, char* typename,char* varname)
     strcpy(setter,"set");
     strcat(setter,tmp);
     free(tmp);
+    emit("//%s / %s\n", getter, setter);
     if (node->key->operations != NULL) {
         umloplist umlo = node->key->operations;
         while (umlo != NULL) {
@@ -471,9 +472,11 @@ gen_class (umlclassnode *node)
 
     print ("// Setters and Getters\n");
     if (node->associations != NULL) {
+        fprintf (stderr, "test\n");
         umlassoclist assoc = node->associations;
         while (assoc != NULL) {
             umlclassnode *ref;
+            fprintf (stderr, "test %s, %s\n", assoc->name, assoc->key->name);
             if (assoc->name[0] != '\0')
             {
                 add_setter_getter(node,assoc->key->name,assoc->name);
