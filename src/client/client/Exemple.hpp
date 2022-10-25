@@ -2,7 +2,7 @@
 #ifndef CLIENT__EXEMPLE__H
 #define CLIENT__EXEMPLE__H
 
-
+/*
 namespace client {
 
   /// class Exemple - 
@@ -18,5 +18,5 @@ namespace client {
   };
 
 };
-
+*/
 #endif

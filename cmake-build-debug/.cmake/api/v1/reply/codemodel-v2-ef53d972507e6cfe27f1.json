@@ -292,14 +292,14 @@
 				{
 					"directoryIndex" : 7,
 					"id" : "test_client_dummy::@72fa32a39d54abdb8e25",
-					"jsonFile" : "target-test_client_dummy-Debug-6b9ae9fcead6a6a33168.json",
+					"jsonFile" : "target-test_client_dummy-Debug-2a1d6c0f1c4e3f21c01e.json",
 					"name" : "test_client_dummy",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 6,
 					"id" : "test_shared_dummy::@9e1e2a59b6770e8465e5",
-					"jsonFile" : "target-test_shared_dummy-Debug-c839c5b0390596e91e22.json",
+					"jsonFile" : "target-test_shared_dummy-Debug-e962ce702d7bdc1cade0.json",
 					"name" : "test_shared_dummy",
 					"projectIndex" : 0
 				},

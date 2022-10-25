@@ -39,7 +39,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0"
+			"value" : "/usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0"
 		},
 		{
 			"name" : "Boost_INCLUDE_DIR",
@@ -1275,7 +1275,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake][cfound components: unit_test_framework ][v1.74.0(1.50)]"
+			"value" : "[/usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake][cfound components: unit_test_framework ][v1.71.0(1.50)]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Dia",
@@ -1299,7 +1299,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/usr/lib/x86_64-linux-gnu/libxml2.so][/usr/include/libxml2][v2.9.13()]"
+			"value" : "[/usr/lib/x86_64-linux-gnu/libxml2.so][/usr/include/libxml2][v2.9.10()]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Ps2Pdf",
@@ -1323,7 +1323,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/usr/bin/python3.10][cfound components: Interpreter ][v3.10.4()]"
+			"value" : "[/usr/bin/python3.8][cfound components: Interpreter ][v3.8.10()]"
 		},
 		{
 			"name" : "GCOVR_PATH",
@@ -1455,7 +1455,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : ""
+			"value" : "-I/usr/include/libxml2"
 		},
 		{
 			"name" : "PC_LIBXML_CFLAGS_I",
@@ -1491,10 +1491,46 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : ""
+			"value" : "1"
 		},
 		{
 			"name" : "PC_LIBXML_INCLUDEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/usr/include"
+		},
+		{
+			"name" : "PC_LIBXML_INCLUDE_DIRS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/usr/include/libxml2"
+		},
+		{
+			"name" : "PC_LIBXML_LDFLAGS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "-L/usr/lib/x86_64-linux-gnu;-lxml2"
+		},
+		{
+			"name" : "PC_LIBXML_LDFLAGS_OTHER",
 			"properties" : 
 			[
 				{
@@ -1515,7 +1551,31 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : ""
+			"value" : "/usr/lib/x86_64-linux-gnu"
+		},
+		{
+			"name" : "PC_LIBXML_LIBRARIES",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "xml2"
+		},
+		{
+			"name" : "PC_LIBXML_LIBRARY_DIRS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/usr/lib/x86_64-linux-gnu"
 		},
 		{
 			"name" : "PC_LIBXML_LIBS",
@@ -1575,7 +1635,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : ""
+			"value" : "libxml-2.0"
 		},
 		{
 			"name" : "PC_LIBXML_PREFIX",
@@ -1587,7 +1647,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : ""
+			"value" : "/usr"
 		},
 		{
 			"name" : "PC_LIBXML_STATIC_CFLAGS",
@@ -1599,7 +1659,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : ""
+			"value" : "-I/usr/include/libxml2"
 		},
 		{
 			"name" : "PC_LIBXML_STATIC_CFLAGS_I",
@@ -1626,6 +1686,42 @@
 			"value" : ""
 		},
 		{
+			"name" : "PC_LIBXML_STATIC_INCLUDE_DIRS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/usr/include/libxml2"
+		},
+		{
+			"name" : "PC_LIBXML_STATIC_LDFLAGS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "-L/usr/lib/x86_64-linux-gnu;-lxml2;-licui18n;-licuuc;-licudata;-lz;-llzma;-lm"
+		},
+		{
+			"name" : "PC_LIBXML_STATIC_LDFLAGS_OTHER",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
 			"name" : "PC_LIBXML_STATIC_LIBDIR",
 			"properties" : 
 			[
@@ -1636,6 +1732,30 @@
 			],
 			"type" : "INTERNAL",
 			"value" : ""
+		},
+		{
+			"name" : "PC_LIBXML_STATIC_LIBRARIES",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "xml2;icui18n;icuuc;icudata;z;lzma;m"
+		},
+		{
+			"name" : "PC_LIBXML_STATIC_LIBRARY_DIRS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/usr/lib/x86_64-linux-gnu"
 		},
 		{
 			"name" : "PC_LIBXML_STATIC_LIBS",
@@ -1695,6 +1815,54 @@
 				}
 			],
 			"type" : "INTERNAL",
+			"value" : "2.9.10"
+		},
+		{
+			"name" : "PC_LIBXML_libxml-2.0_INCLUDEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PC_LIBXML_libxml-2.0_LIBDIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PC_LIBXML_libxml-2.0_PREFIX",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "PC_LIBXML_libxml-2.0_VERSION",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
 			"value" : ""
 		},
 		{
@@ -1727,7 +1895,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "PKG_CONFIG_EXECUTABLE-NOTFOUND"
+			"value" : "/usr/bin/pkg-config"
 		},
 		{
 			"name" : "PS2PDF_EXECUTABLE",
@@ -1775,7 +1943,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/usr/bin/python3.10"
+			"value" : "/usr/bin/python3.8"
 		},
 		{
 			"name" : "_Python_INTERPRETER_PROPERTIES",
@@ -1787,7 +1955,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "Python;3;10;4;64;;cpython-310-x86_64-linux-gnu;/usr/lib/python3.10;/usr/lib/python3.10;/usr/local/lib/python3.10/dist-packages;/usr/local/lib/python3.10/dist-packages"
+			"value" : "Python;3;8;10;64;;cpython-38-x86_64-linux-gnu;/usr/lib/python3.8;/usr/lib/python3.8;/usr/lib/python3.8/site-packages;/usr/lib/python3.8/site-packages"
 		},
 		{
 			"name" : "_Python_INTERPRETER_SIGNATURE",
@@ -1799,7 +1967,19 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "b91b4035ecb3bb3f5760d35922531bcd"
+			"value" : "1d67f3455c450d8c2e1e4f08924f9fd7"
+		},
+		{
+			"name" : "__pkg_config_arguments_PC_LIBXML",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "QUIET;libxml-2.0"
 		},
 		{
 			"name" : "__pkg_config_checked_PC_LIBXML",
@@ -1827,7 +2007,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.74.0"
+			"value" : "/usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0"
 		},
 		{
 			"name" : "boost_unit_test_framework_DIR",
@@ -1843,7 +2023,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.74.0"
+			"value" : "/usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0"
 		},
 		{
 			"name" : "client_static_LIB_DEPENDS",
@@ -1894,6 +2074,22 @@
 			"value" : "/home/ali/CLionProjects/plt/extern/dia2code"
 		},
 		{
+			"name" : "pkgcfg_lib_PC_LIBXML_xml2",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/lib/x86_64-linux-gnu/libxml2.so"
+		},
+		{
 			"name" : "plt_BINARY_DIR",
 			"properties" : 
 			[
@@ -1928,6 +2124,18 @@
 			],
 			"type" : "STATIC",
 			"value" : "/home/ali/CLionProjects/plt"
+		},
+		{
+			"name" : "prefix_result",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/usr/lib/x86_64-linux-gnu"
 		},
 		{
 			"name" : "shared_static_LIB_DEPENDS",

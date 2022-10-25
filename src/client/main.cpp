@@ -9,15 +9,14 @@ void testSFML() {
 
 // Fin test SFML
 
-#include <state.h>
+#include <state.hpp>
 
 using namespace std;
 using namespace state;
 
 int main(int argc,char* argv[])
 {
-    Exemple exemple;
-    exemple.setX(53);
+
 
     if ((string)argv[argc-1]=="hello"){
         cout << "Hello World !" << endl;

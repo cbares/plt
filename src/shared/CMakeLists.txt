@@ -7,7 +7,7 @@ generate_dia_header("${CMAKE_CURRENT_SOURCE_DIR}/../state.dia")
 #generate_dia_header("${CMAKE_CURRENT_SOURCE_DIR}/../ai.dia")
 
 # Find all source files to compile into a library
-file(GLOB_RECURSE shared_sources *.cpp)
+file(GLOB_RECURSE shared_sources *.cpp *.hpp)
 
 # Build the "shared" library and add required includes
 add_library(${lib_shared_target} STATIC ${shared_sources})
