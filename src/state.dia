@@ -1986,7 +1986,7 @@
         </dia:composite>
         <dia:composite type="umlattribute">
           <dia:attribute name="name">
-            <dia:string>#ListInectRemaining#</dia:string>
+            <dia:string>#ListInsectRemaining#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
             <dia:string>#std::list&lt;Insect&gt;#</dia:string>

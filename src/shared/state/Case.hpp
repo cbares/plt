@@ -3,7 +3,8 @@
 #define STATE__CASE__H
 
 #include <list>
-
+#include "string"
+using namespace std;
 namespace state {
 
   /// class Case - 
@@ -18,6 +19,7 @@ namespace state {
     Case  (std::list<int> coord, bool empty);
     bool GetEmpty ();
     void SetEmpty (bool state);
+    string coordtostring ();
     // Setters and Getters
   };
 

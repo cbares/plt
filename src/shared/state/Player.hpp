@@ -20,7 +20,7 @@ namespace state {
   private:
     std::string Name;
     std::string Color;
-    std::list<Insect> ListInectRemaining;
+    std::list<Insect> ListInsectRemaining;
     static std::list<Insect> ListInsectPlayed;
     // Operations
   public:
