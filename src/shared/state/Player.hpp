@@ -3,7 +3,7 @@
 #define STATE__PLAYER__H
 
 #include <string>
-#include <list>
+#include <vector>
 
 namespace state {
   class Insect;
@@ -20,16 +20,16 @@ namespace state {
   private:
     std::string Name;
     std::string Color;
-    std::list<Insect> ListInsectRemaining;
-    static std::list<Insect> ListInsectPlayed;
+    std::vector<Insect> ListInsectRemaining;
+    std::vector<Insect> ListInsectPlayed;
     // Operations
   public:
     Player (std::string name, std::string color);
     std::string GetName ();
     std::string GetColor ();
-    std::list<Insect> Get_List_Insect (std::list<Insect> list);
-    void Add_Insect (Insect insecte, std::list<Insect> list);
-    void Remove_Insect (Insect insecte, std::list<Insect> list);
+    std::vector<Insect> Get_List_Insect (std::vector<Insect> list);
+    void Add_Insect (Insect insecte, std::vector<Insect> list);
+    void Remove_Insect (Insect insecte, std::vector<Insect> list);
     // Setters and Getters
   };
 

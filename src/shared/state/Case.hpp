@@ -2,24 +2,22 @@
 #ifndef STATE__CASE__H
 #define STATE__CASE__H
 
-#include <list>
-#include "string"
-using namespace std;
+#include <vector>
+
 namespace state {
 
   /// class Case - 
   class Case {
     // Attributes
   private:
-    std::list<int> position;
+    std::vector<int> position;
     bool empty;
     // Operations
   public:
-    std::list<int> GetPosition ();
-    Case  (std::list<int> coord, bool empty);
+    std::vector<int> GetPosition ();
+    Case  (std::vector<int> coord, bool empty);
     bool GetEmpty ();
     void SetEmpty (bool state);
-    string coordtostring ();
     // Setters and Getters
   };
 

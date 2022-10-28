@@ -16,14 +16,27 @@ using namespace state;
 
 int main(int argc,char* argv[])
 {
-    Case case1=Case({1,2},false);
-    case1.GetEmpty();
-    list<int> coord=case1.GetPosition();
 
+    Map maptest = Map(5,3);
 
-    for(list<int>::iterator it = coord.begin(); it != coord.end(); it++){
-        cout << *it << endl;
+    cout << "CONSTRUCTEUR OK" << endl;
+
+    for (int i=0;i<maptest.GetLength();i++){
+        for(int j=0;j<maptest.GetWidth();j++){
+
+            int x=maptest.GetListCase()[i][j].GetPosition()[0];
+            int y=maptest.GetListCase()[i][j].GetPosition()[1];
+
+            cout << "x="<< x <<"  et y="<< y <<" et empty= "<< maptest.GetListCase()[i][j].GetEmpty() << endl;
+
+        }
     }
+
+
+
+
+
+
 
     if ((string)argv[argc-1]=="hello"){
         cout << "Hello World !" << endl;

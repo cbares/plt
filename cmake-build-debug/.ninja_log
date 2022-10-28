@@ -24,3 +24,14 @@
 1319	1431	1666728606240470577	extern/dia2code/CMakeFiles/dia2code.dir/src/includes.c.o	1d087fb7a31fa1ca
 3015	3285	1666728608092459408	src/shared/CMakeFiles/shared_static.dir/state/Case.cpp.o	b8fd8c7e7878efda
 5286	6555	1666435806182938294	test/client/CMakeFiles/test_client_dummy.dir/test_client_dummy.cpp.o	af9a26457bdc3428
+0	17	0	clean	444481794918ce0
+3	392	1666794925053700196	extern/dia2code/CMakeFiles/dia2code.dir/src/decls.c.o	9c03bccf2f001b33
+393	480	1666794925141699821	extern/dia2code/CMakeFiles/dia2code.dir/src/comment_helper.c.o	c1c1ff9765c02c04
+481	1092	1666794925753697212	extern/dia2code/CMakeFiles/dia2code.dir/src/dia2code.c.o	3a209053a409fd6a
+1092	1297	1666794925957696344	extern/dia2code/CMakeFiles/dia2code.dir/src/main.c.o	ecd7aa3b644d0f74
+1297	1414	1666794926077695832	extern/dia2code/CMakeFiles/dia2code.dir/src/includes.c.o	1d087fb7a31fa1ca
+1415	1882	1666794926545693836	extern/dia2code/CMakeFiles/dia2code.dir/src/generate_code_cpp.c.o	ce46cf01c16f6869
+1883	2451	1666794927113691415	extern/dia2code/CMakeFiles/dia2code.dir/src/parse_diagram.c.o	fbdab15cf08835a
+2451	2675	1666794927337690461	extern/dia2code/CMakeFiles/dia2code.dir/src/scan_tree.c.o	714a2c78ce58f964
+2675	2851	1666794927513689710	extern/dia2code/CMakeFiles/dia2code.dir/src/source_parser.c.o	b5b2123adf6a7dc5
+2851	2945	1666794927605689317	../bin/dia2code	3d2d6bcca259693b
