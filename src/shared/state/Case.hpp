@@ -2,7 +2,7 @@
 #ifndef STATE__CASE__H
 #define STATE__CASE__H
 
-#include <list>
+#include <vector>
 
 namespace state {
 
@@ -10,12 +10,12 @@ namespace state {
   class Case {
     // Attributes
   private:
-    std::list<int> position;
+    std::vector<int> position;
     bool empty;
     // Operations
   public:
-    std::list<int> GetPosition ();
-    Case  (std::list<int> coord, bool empty);
+    std::vector<int> GetPosition ();
+    Case  (std::vector<int> coord, bool empty);
     bool GetEmpty ();
     void SetEmpty (bool state);
     // Setters and Getters

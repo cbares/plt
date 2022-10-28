@@ -3,7 +3,7 @@
 #define STATE__INSECT__H
 
 #include <string>
-#include <list>
+#include <vector>
 
 namespace state {
 
@@ -13,21 +13,21 @@ namespace state {
   private:
     std::string Name;
     std::string Color;
-    std::list<int> Coord;
+    std::vector<int> Coord;
     int Level;
     // Operations
   public:
     void Select_Insect ();
-    void Update_Coord (std::list<int> coord);
-    std::list<int> Get_Position ();
-    std::list<std::list<int>> Possible_Placement_Insect ();
-    virtual std::list<std::list<int>> Possible_Deplacement_Insect ();
+    void Update_Coord (std::vector<int> coord);
+    std::vector<int> Get_Position ();
+    std::vector<std::vector<int>> Possible_Placement_Insect ();
+    virtual std::vector<std::vector<int>> Possible_Deplacement_Insect ();
     std::string GetName ();
     std::string GetColor ();
     int GetLevel ();
-    void SetPosition (std::list<int> coord);
+    void SetPosition (std::vector<int> coord);
     void SetLevel (int level);
-    Insect (std::string name, std::string color, std::list<int> coord, int level);
+    Insect (std::string name, std::string color, std::vector<int> coord, int level);
     // Setters and Getters
   };
 

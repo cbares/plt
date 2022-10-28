@@ -2,14 +2,14 @@
 #ifndef STATE__MAP__H
 #define STATE__MAP__H
 
-#include <list>
+#include <vector>
 
 namespace state {
   class Case;
 }
 
-#include "GameStatus.hpp"
 #include "Case.hpp"
+#include "GameStatus.hpp"
 
 namespace state {
 
@@ -20,13 +20,14 @@ namespace state {
   private:
     int Length;
     int Width;
-    std::list<std::list<Case>> ListCase;
+    std::vector<std::vector<Case>> ListCase;
     // Operations
   public:
     Map (int length, int width);
     int GetLength ();
     int GetWidth ();
-    std::list<std::list<Case>> GetListCase ();
+    std::vector<std::vector<Case>> GetListCase ();
+    void SetListCase (Case case1, int i, int j);
     // Setters and Getters
   };
 

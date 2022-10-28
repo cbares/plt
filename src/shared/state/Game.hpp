@@ -2,7 +2,7 @@
 #ifndef STATE__GAME__H
 #define STATE__GAME__H
 
-#include <list>
+#include <vector>
 
 namespace state {
   class Map;
@@ -26,17 +26,17 @@ namespace state {
   private:
     GameStatus state;
     int nbIteration;
-    std::list<Insect> ListeAllInsect;
+    std::vector<Insect> ListeAllInsect;
     // Operations
   public:
     bool IsBeeCircled (Player player);
     void UpdateState (GameStatus state);
     void IncrementIteration ();
-    void Display_Possible_Moves (std::list<std::list<int>> ListMoves);
+    void Display_Possible_Moves (std::vector<std::vector<int>> ListMoves);
     GameStatus GetState ();
     int GetIteration ();
     void SetIteration (int param);
-    std::list<Insect> GetAllInsects ();
+    std::vector<Insect> GetAllInsects ();
     void AppendListInsect (Insect insect);
     void AddMap (Map map);
     Map GetMap ();
