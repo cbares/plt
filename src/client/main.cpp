@@ -21,6 +21,10 @@ int main(int argc,char* argv[])
 
     cout << "CONSTRUCTEUR OK" << endl;
 
+
+
+
+
     for (int i=0;i<maptest.GetLength();i++){
         for(int j=0;j<maptest.GetWidth();j++){
 

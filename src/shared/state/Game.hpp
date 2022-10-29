@@ -22,7 +22,7 @@ namespace state {
     // Associations
     // Attributes
   public:
-    Map GameMap;
+    Map GameMap     = Map(0,0);
   private:
     GameStatus state;
     int nbIteration;
@@ -38,9 +38,7 @@ namespace state {
     void SetIteration (int param);
     std::vector<Insect> GetAllInsects ();
     void AppendListInsect (Insect insect);
-    void AddMap (Map map);
-    Map GetMap ();
-    Game (GameStatus state, int iteration, Map map);
+    Game ();
     // Setters and Getters
   };
 

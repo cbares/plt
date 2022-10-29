@@ -10,6 +10,8 @@ namespace state {
   /// class Insect - 
   class Insect {
     // Attributes
+  public:
+    bool IsPlaced;
   private:
     std::string Name;
     std::string Color;
@@ -28,6 +30,8 @@ namespace state {
     void SetPosition (std::vector<int> coord);
     void SetLevel (int level);
     Insect (std::string name, std::string color, std::vector<int> coord, int level);
+    bool GetIsPlaced ();
+    void SetIsPlaced (bool state);
     // Setters and Getters
   };
 
