@@ -9,35 +9,18 @@
 using namespace std;
 using namespace state;
 
-Player::Player(string name, string color) {
+Player:: Player(string name, string color) {
     Name = name;
-    Color = color;
+    Color = color; //couleur de ses pions
 }
 
+//Getters
 string Player::GetName() {
     return Name;
 }
 
 string Player::GetColor() {
     return Color;
-}
-
-void Player::Add_Insect(Insect insecte, vector<Insect>& list) {
-    return list.push_back(insecte);
-}
-
-void Player::Remove_Insect(Insect insecte, vector<Insect>& list) {
-    //bool stInsect = 0;
-    for (int i=0; i<list.size(); i++) {
-        if (list[i].GetName() == insecte.GetName()) {
-            list.erase(list.begin() + i);
-            //stInsect = 1;
-        }
-        /*if (stInsect) {
-            stInsect = 0;
-            break;
-        }*/
-    }
 }
 
 std::vector<Insect> Player::Get_List_Insect_Remaining() {
@@ -48,4 +31,20 @@ std::vector<Insect> Player::Get_List_Insect_Played() {
     return this->ListInsectPlayed;
 }
 
+void Player::Add_Insect_Played(Insect insecte) {
+    ListInsectPlayed.push_back(insecte);//Une fois l'insecte ajoutée à la liste des pions joués
+    Player::Remove_Insect_Remaining(insecte);//on supprime l'insecte de la liste des pions restants
+}
+
+void Player::Remove_Insect_Remaining(Insect insecte) {//Efface
+    for (int i = 0; i < ListInsectRemaining.size(); i++) {
+        if (ListInsectRemaining[i].GetName() == insecte.GetName()) {
+            ListInsectRemaining.erase(ListInsectRemaining.begin() + i);
+        }
+    }
+}
+
+void Player::Add_Insect_Remaining(Insect insecte) {
+        ListInsectRemaining.push_back(insecte);//Ajout de l'élément à la dernière place
+}
 
