@@ -6,24 +6,29 @@
 #include <vector>
 
 namespace state {
+  class Insect;
+  class Case;
+}
+
+#include "Case.hpp"
+
+namespace state {
 
   /// class Insect - 
   class Insect {
     // Attributes
-  public:
-    bool IsPlaced;
-  private:
     std::string Name;
     std::string Color;
     std::vector<int> Coord;
     int Level;
+    bool IsPlaced;
     // Operations
   public:
     void Select_Insect ();
     void Update_Coord (std::vector<int> coord);
     std::vector<int> Get_Position ();
-    std::vector<std::vector<int>> Possible_Placement_Insect ();
-    virtual std::vector<std::vector<int>> Possible_Deplacement_Insect ();
+    std::vector<std::vector<int>> Possible_Placement_Insect (std::vector<Insect> list_insect_placed, std::vector<Case> list_case);
+    virtual std::vector<std::vector<int>> Possible_Deplacement_Insect (std::vector<Insect> list_insect_placed, std::vector<Case> list_case);
     std::string GetName ();
     std::string GetColor ();
     int GetLevel ();

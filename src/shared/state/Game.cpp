@@ -29,17 +29,39 @@ void state::Game::AppendListInsect(state::Insect insect) {
 this->ListeAllInsect.push_back(insect);
 }
 
-void state::Game::Display_Possible_Moves(std::vector<std::vector<int>> ListMoves) {
 
-}
 
 bool state::Game::IsBeeCircled(state::Player player) {
 
     bool result;
 
-    //Recherche de l'abeille du joueur
-    std::vector<Insect> listins =player.Get_List_Insect_Played();
+    if (player.GetColor()=="White"){
+        for (Insect bee : player.Get_List_Insect_Played()){
+            if (bee.GetName()=="Bee_W"){
+                int i = bee.Get_Position()[0];int j=bee.Get_Position()[1];
+                if((GameMap.GetListCase()[i-1][j].GetEmpty()== false)&&(GameMap.GetListCase()[i-1][j+1].GetEmpty()== false)&&(GameMap.GetListCase()[i][j-1].GetEmpty()== false)&&(GameMap.GetListCase()[i][j+1].GetEmpty()== false)&&(GameMap.GetListCase()[i+1][j].GetEmpty()== false)&&(GameMap.GetListCase()[i][j+1].GetEmpty()== false)){
+                    result = true;
+                }
+                else {
+                    result= false;
+                }
+            }
+        }
+    }
 
+    if (player.GetColor()=="Black"){
+        for (Insect bee : player.Get_List_Insect_Played()){
+            if (bee.GetName()=="Bee_B"){
+                int i = bee.Get_Position()[0];int j=bee.Get_Position()[1];
+                if((GameMap.GetListCase()[i-1][j].GetEmpty()== false)&&(GameMap.GetListCase()[i-1][j+1].GetEmpty()== false)&&(GameMap.GetListCase()[i][j-1].GetEmpty()== false)&&(GameMap.GetListCase()[i][j+1].GetEmpty()== false)&&(GameMap.GetListCase()[i+1][j].GetEmpty()== false)&&(GameMap.GetListCase()[i][j+1].GetEmpty()== false)){
+                    result = true;
+                }
+                else {
+                    result= false;
+                }
+            }
+        }
+    }
 
     return result;
 }
@@ -61,6 +83,11 @@ state::Game::Game() {
         ListeAllInsect.push_back(player_white.Get_List_Insect_Remaining()[i]);
     }
 
+
+}
+
+state::Map state::Game::GetMap() {
+    return this->GameMap;
 }
 
 

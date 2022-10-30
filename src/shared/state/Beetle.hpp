@@ -2,17 +2,24 @@
 #ifndef STATE__BEETLE__H
 #define STATE__BEETLE__H
 
+#include <vector>
 
 namespace state {
   class Insect;
+  class Case;
 }
 
 #include "Insect.hpp"
+#include "Case.hpp"
 
 namespace state {
 
   /// class Beetle - 
   class Beetle : public state::Insect {
+    // Operations
+  public:
+    Beetle ();
+    std::vector<std::vector<int>> Possible_Deplacement_Insect (std::vector<Insect> list_insect_placed, std::vector<Case> list_case);
     // Setters and Getters
   };
 
