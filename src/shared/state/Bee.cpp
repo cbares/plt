@@ -1,6 +1,7 @@
 #include "Bee.hpp"
 #include "vector"
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 state::Bee::Bee(std::string name, std::string color, std::vector<int> coord, int level) : Insect(name, color, coord,level) {
@@ -151,6 +152,8 @@ state::Bee::Possible_Deplacement_Insect(vector<Insect> list_insect_placed, vecto
         }
 
     }
+    std::sort(indicetosup.begin(), indicetosup.end());
+    std::unique(indicetosup.begin(), indicetosup.end());
     for (int i=0;i<indicetosup.size();i++){
         list_possible_placement_unique.erase(list_possible_placement_unique.begin()+indicetosup[i]-i);
     }
