@@ -1,6 +1,11 @@
 #include "Insect.hpp"
 #include "Case.hpp"
 #include <iostream>
+#include <iostream>
+#include <vector>
+#include <iterator>
+#include <iomanip>
+#include <algorithm>
 using namespace std;
 
 void state::Insect::Update_Coord(std::vector<int> coord) {
@@ -176,6 +181,8 @@ std::vector<std::vector<int>> state::Insect::Possible_Placement_Insect(vector<In
         }
 
     }
+    std::sort(indicetosup.begin(), indicetosup.end());
+    std::unique(indicetosup.begin(), indicetosup.end());
     for (int i=0;i<indicetosup.size();i++){
         list_possible_placement_unique.erase(list_possible_placement_unique.begin()+indicetosup[i]-i);
     }

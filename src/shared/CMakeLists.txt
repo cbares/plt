@@ -10,7 +10,7 @@ generate_dia_header("${CMAKE_CURRENT_SOURCE_DIR}/../state.dia")
 file(GLOB_RECURSE shared_sources *.cpp *.hpp)
 
 # Build the "shared" library and add required includes
-add_library(${lib_shared_target} STATIC ${shared_sources} state/Map.cpp state/Case.cpp state/Game.cpp state/Insect.cpp state/Player.cpp state/Bee.cpp)
+add_library(${lib_shared_target} STATIC ${shared_sources} state/Map.cpp state/Case.cpp state/Game.cpp state/Insect.cpp state/Player.cpp state/Bee.cpp state/Spider.cpp)
 add_dependencies(${lib_shared_target} generate-headers)
 target_include_directories(${lib_shared_target} PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}

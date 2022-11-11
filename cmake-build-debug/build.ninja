@@ -300,6 +300,13 @@ build src/shared/CMakeFiles/shared_static.dir/state/Player.cpp.o: CXX_COMPILER__
   OBJECT_DIR = src/shared/CMakeFiles/shared_static.dir
   OBJECT_FILE_DIR = src/shared/CMakeFiles/shared_static.dir/state
 
+build src/shared/CMakeFiles/shared_static.dir/state/Spider.cpp.o: CXX_COMPILER__shared_static_Debug /home/ali/CLionProjects/plt/src/shared/state/Spider.cpp || cmake_object_order_depends_target_shared_static
+  DEP_FILE = src/shared/CMakeFiles/shared_static.dir/state/Spider.cpp.o.d
+  FLAGS = -Wall -std=c++11 -pthread -g -g --coverage -fprofile-arcs -ftest-coverage -g -std=gnu++11
+  INCLUDES = -I/home/ali/CLionProjects/plt/src/shared
+  OBJECT_DIR = src/shared/CMakeFiles/shared_static.dir
+  OBJECT_FILE_DIR = src/shared/CMakeFiles/shared_static.dir/state
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target shared_static
@@ -308,7 +315,7 @@ build src/shared/CMakeFiles/shared_static.dir/state/Player.cpp.o: CXX_COMPILER__
 #############################################
 # Link the static library src/shared/libshared_static.a
 
-build src/shared/libshared_static.a: CXX_STATIC_LIBRARY_LINKER__shared_static_Debug src/shared/CMakeFiles/shared_static.dir/state/Bee.cpp.o src/shared/CMakeFiles/shared_static.dir/state/Case.cpp.o src/shared/CMakeFiles/shared_static.dir/state/Exemple.cpp.o src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.o src/shared/CMakeFiles/shared_static.dir/state/Insect.cpp.o src/shared/CMakeFiles/shared_static.dir/state/Map.cpp.o src/shared/CMakeFiles/shared_static.dir/state/Player.cpp.o || generate-headers
+build src/shared/libshared_static.a: CXX_STATIC_LIBRARY_LINKER__shared_static_Debug src/shared/CMakeFiles/shared_static.dir/state/Bee.cpp.o src/shared/CMakeFiles/shared_static.dir/state/Case.cpp.o src/shared/CMakeFiles/shared_static.dir/state/Exemple.cpp.o src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.o src/shared/CMakeFiles/shared_static.dir/state/Insect.cpp.o src/shared/CMakeFiles/shared_static.dir/state/Map.cpp.o src/shared/CMakeFiles/shared_static.dir/state/Player.cpp.o src/shared/CMakeFiles/shared_static.dir/state/Spider.cpp.o || generate-headers
   LANGUAGE_COMPILE_FLAGS = -Wall -std=c++11 -pthread -g -g --coverage -fprofile-arcs -ftest-coverage -g
   OBJECT_DIR = src/shared/CMakeFiles/shared_static.dir
   POST_BUILD = :
