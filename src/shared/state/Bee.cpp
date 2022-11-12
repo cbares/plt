@@ -12,133 +12,526 @@ std::vector<std::vector<int>>
 state::Bee::Possible_Deplacement_Insect(vector<Insect> list_insect_placed, vector<Case> list_case) {
 
     vector<int> coord = this->Coord;
-    int i = coord[0];
-    int j = coord[1];
+    int i_depart = coord[0];
+    int j_depart = coord[1];
 
     std::vector<std::vector<int>> list_possible_placement;
 
+        //Parité de la colonne
+    if (j_depart%2==0){
+
 
     for (Case casetemp:list_case){
-            if((casetemp.GetPosition()[0]==i-1)&&(casetemp.GetPosition()[1]==j)&&(casetemp.GetEmpty()== true)) {
-                int x = casetemp.GetPosition()[0];
-                int y = casetemp.GetPosition()[1];
-                for (Case casetemp2: list_case) {
-                    if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y + 1) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y - 1) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y - 1) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    }
-                }
-            }
-            else if((casetemp.GetPosition()[0]==i-1)&&(casetemp.GetPosition()[1]==j+1)&&(casetemp.GetEmpty()== true)){
-                int x = casetemp.GetPosition()[0];
-                int y = casetemp.GetPosition()[1];
-                for (Case casetemp2: list_case) {
-                    if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y + 1) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y - 1) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y - 1) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    }
-                }
-            }
-            else if ((casetemp.GetPosition()[0]==i)&&(casetemp.GetPosition()[1]==j-1)&&(casetemp.GetEmpty()== true)){
-                int x = casetemp.GetPosition()[0];
-                int y = casetemp.GetPosition()[1];
-                for (Case casetemp2: list_case) {
-                    if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y + 1) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y - 1) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y - 1) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    }
-                }
-            }
-            else if ((casetemp.GetPosition()[0]==i)&&(casetemp.GetPosition()[1]==j+1)&&(casetemp.GetEmpty()== true)){
-                int x = casetemp.GetPosition()[0];
-                int y = casetemp.GetPosition()[1];
-                for (Case casetemp2: list_case) {
-                    if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y + 1) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y - 1) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y - 1) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    }
-                }
-            }
-            else if ((casetemp.GetPosition()[0]==i+1)&&(casetemp.GetPosition()[1]==j)&&(casetemp.GetEmpty()== true)){
-                int x = casetemp.GetPosition()[0];
-                int y = casetemp.GetPosition()[1];
-                for (Case casetemp2: list_case) {
-                    if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y + 1) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y - 1) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y - 1) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    }
-                }
-            }
-            else if ((casetemp.GetPosition()[0]==i-1)&&(casetemp.GetPosition()[1]==j-1)&&(casetemp.GetEmpty()== true)){
-                int x = casetemp.GetPosition()[0];
-                int y = casetemp.GetPosition()[1];
-                for (Case casetemp2: list_case) {
-                    if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y + 1) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y - 1) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y - 1) && (casetemp2.GetEmpty() == false)) {
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    }
-                }
-            }
 
+            if((casetemp.GetPosition()[0]==i_depart)&&(casetemp.GetPosition()[1]==j_depart-1)&&(casetemp.GetEmpty()== true)) {
+
+                int x = casetemp.GetPosition()[0];
+                int y = casetemp.GetPosition()[1];
+
+
+                if (y%2==0){
+                    for (Case casetemp2: list_case) {
+                        if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y-1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x-1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x+1) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y + 1)&& ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        }
+                    }
+                }
+                else{
+
+                    for (Case casetemp2: list_case) {
+                        if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) &&(casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        }
+                    }
+                }
+
+
+            }
+            else if((casetemp.GetPosition()[0]==i_depart)&&(casetemp.GetPosition()[1]==j_depart+1)&&(casetemp.GetEmpty()== true)){
+
+                int x = casetemp.GetPosition()[0];
+                int y = casetemp.GetPosition()[1];
+
+
+                if (y%2==0){
+                    for (Case casetemp2: list_case) {
+                        if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y-1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x-1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x+1) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y + 1)&& ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        }
+                    }
+                }
+                else{
+
+                    for (Case casetemp2: list_case) {
+                        if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) &&(casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        }
+                    }
+                }
+            }
+            else if ((casetemp.GetPosition()[0]==i_depart-1)&&(casetemp.GetPosition()[1]==j_depart)&&(casetemp.GetEmpty()== true)){
+
+                int x = casetemp.GetPosition()[0];
+                int y = casetemp.GetPosition()[1];
+
+                if (y%2==0){
+                    for (Case casetemp2: list_case) {
+                        if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y-1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x-1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x+1) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y + 1)&& ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        }
+                    }
+                }
+                else{
+
+                    for (Case casetemp2: list_case) {
+                        if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) &&(casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        }
+                    }
+                }
+            }
+            else if ((casetemp.GetPosition()[0]==i_depart+1)&&(casetemp.GetPosition()[1]==j_depart-1)&&(casetemp.GetEmpty()== true)){
+                int x = casetemp.GetPosition()[0];
+                int y = casetemp.GetPosition()[1];
+
+                if (y%2==0){
+                    for (Case casetemp2: list_case) {
+                        if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y-1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x-1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x+1) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y + 1)&& ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        }
+                    }
+                }
+                else{
+
+                    for (Case casetemp2: list_case) {
+                        if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) &&(casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        }
+                    }
+                }
+            }
+            else if ((casetemp.GetPosition()[0]==i_depart+1)&&(casetemp.GetPosition()[1]==j_depart)&&(casetemp.GetEmpty()== true)){
+
+                int x = casetemp.GetPosition()[0];
+                int y = casetemp.GetPosition()[1];
+
+                if (y%2==0){
+                    for (Case casetemp2: list_case) {
+                        if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y-1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x-1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x+1) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y + 1)&& ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        }
+                    }
+                }
+                else{
+
+                    for (Case casetemp2: list_case) {
+                        if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) &&(casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        }
+                    }
+                }
+            }
+            else if ((casetemp.GetPosition()[0]==i_depart+1)&&(casetemp.GetPosition()[1]==j_depart+1)&&(casetemp.GetEmpty()== true)){
+
+                int x = casetemp.GetPosition()[0];
+                int y = casetemp.GetPosition()[1];
+
+                if (y%2==0){
+                    for (Case casetemp2: list_case) {
+                        if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y-1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x-1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x+1) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y + 1)&& ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        }
+                    }
+                }
+                else{
+
+                    for (Case casetemp2: list_case) {
+                        if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) &&(casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        }
+                    }
+                }
+            }
+        }
+    }
+    else{
+
+        for (Case casetemp:list_case){
+
+            if((casetemp.GetPosition()[0]==i_depart-1)&&(casetemp.GetPosition()[1]==j_depart-1)&&(casetemp.GetEmpty()== true)) {
+
+                int x = casetemp.GetPosition()[0];
+                int y = casetemp.GetPosition()[1];
+
+
+                if (y%2==0){
+                    for (Case casetemp2: list_case) {
+                        if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y-1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x-1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x+1) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y + 1)&& ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        }
+                    }
+                }
+                else{
+
+                    for (Case casetemp2: list_case) {
+                        if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) &&(casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        }
+                    }
+                }
+
+
+            }
+            else if((casetemp.GetPosition()[0]==i_depart-1)&&(casetemp.GetPosition()[1]==j_depart)&&(casetemp.GetEmpty()== true)){
+
+                int x = casetemp.GetPosition()[0];
+                int y = casetemp.GetPosition()[1];
+
+
+                if (y%2==0){
+                    for (Case casetemp2: list_case) {
+                        if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y-1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x-1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x+1) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y + 1)&& ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        }
+                    }
+                }
+                else{
+
+                    for (Case casetemp2: list_case) {
+                        if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) &&(casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        }
+                    }
+                }
+            }
+            else if ((casetemp.GetPosition()[0]==i_depart-1)&&(casetemp.GetPosition()[1]==j_depart+1)&&(casetemp.GetEmpty()== true)){
+
+                int x = casetemp.GetPosition()[0];
+                int y = casetemp.GetPosition()[1];
+
+                if (y%2==0){
+                    for (Case casetemp2: list_case) {
+                        if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y-1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x-1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x+1) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y + 1)&& ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        }
+                    }
+                }
+                else{
+
+                    for (Case casetemp2: list_case) {
+                        if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) &&(casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        }
+                    }
+                }
+            }
+            else if ((casetemp.GetPosition()[0]==i_depart)&&(casetemp.GetPosition()[1]==j_depart-1)&&(casetemp.GetEmpty()== true)){
+
+                int x = casetemp.GetPosition()[0];
+                int y = casetemp.GetPosition()[1];
+
+                if (y%2==0){
+                    for (Case casetemp2: list_case) {
+                        if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y-1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x-1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x+1) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y + 1)&& ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        }
+                    }
+                }
+                else{
+
+                    for (Case casetemp2: list_case) {
+                        if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) &&(casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        }
+                    }
+                }
+            }
+            else if ((casetemp.GetPosition()[0]==i_depart)&&(casetemp.GetPosition()[1]==j_depart+1)&&(casetemp.GetEmpty()== true)){
+
+                int x = casetemp.GetPosition()[0];
+                int y = casetemp.GetPosition()[1];
+
+                if (y%2==0){
+                    for (Case casetemp2: list_case) {
+                        if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y-1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x-1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x+1) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y + 1)&& ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        }
+                    }
+                }
+                else{
+
+                    for (Case casetemp2: list_case) {
+                        if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) &&(casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        }
+                    }
+                }
+            }
+            else if ((casetemp.GetPosition()[0]==i_depart+1)&&(casetemp.GetPosition()[1]==j_depart)&&(casetemp.GetEmpty()== true)){
+
+                int x = casetemp.GetPosition()[0];
+                int y = casetemp.GetPosition()[1];
+
+                if (y%2==0){
+                    for (Case casetemp2: list_case) {
+                        if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y-1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x-1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x+1) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y + 1)&& ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        }
+                    }
+                }
+                else{
+
+                    for (Case casetemp2: list_case) {
+                        if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) &&(casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x) && (casetemp2.GetPosition()[1] == y + 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart))&& (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x + 1) && (casetemp2.GetPosition()[1] == y) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        } else if ((casetemp2.GetPosition()[0] == x - 1) && (casetemp2.GetPosition()[1] == y - 1) && ((casetemp2.GetPosition()[0]!=i_depart) || (casetemp2.GetPosition()[1] != j_depart)) && (casetemp2.GetEmpty() == false)) {
+                            list_possible_placement.push_back(casetemp.GetPosition());
+                        }
+                    }
+                }
+            }
+        }
     }
 
 //RECHERCHE DES DOUBLONS DANS LA LISTES DES COORDONNEES POSSIBLES
-
-
     vector<int> indicetosup;
     vector<vector<int>> list_possible_placement_unique=list_possible_placement;
     for (int i=0;i<list_possible_placement.size()-1;i++){
@@ -148,9 +541,7 @@ state::Bee::Possible_Deplacement_Insect(vector<Insect> list_insect_placed, vecto
             if ((temp[0] == candidat[0]) && (temp[1] == candidat[1])){
                 indicetosup.push_back(j);
             }
-
         }
-
     }
     std::sort(indicetosup.begin(), indicetosup.end());
     std::unique(indicetosup.begin(), indicetosup.end());
