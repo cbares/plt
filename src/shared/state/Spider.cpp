@@ -12026,7 +12026,7 @@ state::Spider::Possible_Deplacement_Insect(vector<Insect> list_insect_placed, ve
 //RECHERCHE DES DOUBLONS DANS LA LISTES DES COORDONNEES POSSIBLES
 
 
-    vector<int> indicetosup;
+    /*vector<int> indicetosup;
     vector<vector<int>> list_possible_placement_unique=list_possible_placement;
     for (int i=0;i<list_possible_placement.size()-1;i++){
         for (int j=i+1;j<list_possible_placement.size();j++){
@@ -12043,10 +12043,10 @@ state::Spider::Possible_Deplacement_Insect(vector<Insect> list_insect_placed, ve
     std::unique(indicetosup.begin(), indicetosup.end());
     for (int i=0;i<indicetosup.size();i++){
         list_possible_placement_unique.erase(list_possible_placement_unique.begin()+indicetosup[i]-i);
-    }
+    }*/
 
 
-    return list_possible_placement_unique;
+    return list_possible_placement;
 }
 
 

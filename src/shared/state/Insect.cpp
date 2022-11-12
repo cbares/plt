@@ -80,6 +80,86 @@ std::vector<std::vector<int>> state::Insect::Possible_Placement_Insect(vector<In
             int i = temp.Get_Position()[0];
             int j = temp.Get_Position()[1];
 
+            //Parité de j
+            if (j%2==0){
+                for (Case casetemp:list_case){
+                    if((casetemp.GetPosition()[0]==i)&&(casetemp.GetPosition()[1]==j-1)&&(casetemp.GetEmpty()== true)){
+                        list_possible_placement.push_back(casetemp.GetPosition());
+                    }
+                    else if((casetemp.GetPosition()[0]==i)&&(casetemp.GetPosition()[1]==j+1)&&(casetemp.GetEmpty()== true)){
+                        list_possible_placement.push_back(casetemp.GetPosition());
+                    }
+                    else if ((casetemp.GetPosition()[0]==i-1)&&(casetemp.GetPosition()[1]==j)&&(casetemp.GetEmpty()== true)){
+                        list_possible_placement.push_back(casetemp.GetPosition());
+                    }
+                    else if ((casetemp.GetPosition()[0]==i+1)&&(casetemp.GetPosition()[1]==j-1)&&(casetemp.GetEmpty()== true)){
+                        list_possible_placement.push_back(casetemp.GetPosition());
+                    }
+                    else if ((casetemp.GetPosition()[0]==i+1)&&(casetemp.GetPosition()[1]==j)&&(casetemp.GetEmpty()== true)){
+                        list_possible_placement.push_back(casetemp.GetPosition());
+                    }
+                    else if ((casetemp.GetPosition()[0]==i+1)&&(casetemp.GetPosition()[1]==j+1)&&(casetemp.GetEmpty()== true)){
+                        list_possible_placement.push_back(casetemp.GetPosition());
+                    }
+                }
+            }
+            else {
+                for (Case casetemp:list_case){
+                    if((casetemp.GetPosition()[0]==i-1)&&(casetemp.GetPosition()[1]==j)&&(casetemp.GetEmpty()== true)){
+                        list_possible_placement.push_back(casetemp.GetPosition());
+                    }
+                    else if((casetemp.GetPosition()[0]==i-1)&&(casetemp.GetPosition()[1]==j+1)&&(casetemp.GetEmpty()== true)){
+                        list_possible_placement.push_back(casetemp.GetPosition());
+                    }
+                    else if ((casetemp.GetPosition()[0]==i)&&(casetemp.GetPosition()[1]==j-1)&&(casetemp.GetEmpty()== true)){
+                        list_possible_placement.push_back(casetemp.GetPosition());
+                    }
+                    else if ((casetemp.GetPosition()[0]==i)&&(casetemp.GetPosition()[1]==j+1)&&(casetemp.GetEmpty()== true)){
+                        list_possible_placement.push_back(casetemp.GetPosition());
+                    }
+                    else if ((casetemp.GetPosition()[0]==i+1)&&(casetemp.GetPosition()[1]==j)&&(casetemp.GetEmpty()== true)){
+                        list_possible_placement.push_back(casetemp.GetPosition());
+                    }
+                    else if ((casetemp.GetPosition()[0]==i-1)&&(casetemp.GetPosition()[1]==j-1)&&(casetemp.GetEmpty()== true)){
+                        list_possible_placement.push_back(casetemp.GetPosition());
+                    }
+                }
+            }
+        }
+        return list_possible_placement;
+    }
+
+
+    //Cette partie concerne donc les autres cas
+    for (Insect temp: Allies_Insect){
+        int i = temp.Get_Position()[0];
+        int j = temp.Get_Position()[1];
+
+
+        //Parité de j
+        if (j%2==0){
+            for (Case casetemp:list_case){
+                if((casetemp.GetPosition()[0]==i)&&(casetemp.GetPosition()[1]==j-1)&&(casetemp.GetEmpty()== true)){
+                    list_possible_placement.push_back(casetemp.GetPosition());
+                }
+                else if((casetemp.GetPosition()[0]==i)&&(casetemp.GetPosition()[1]==j+1)&&(casetemp.GetEmpty()== true)){
+                    list_possible_placement.push_back(casetemp.GetPosition());
+                }
+                else if ((casetemp.GetPosition()[0]==i-1)&&(casetemp.GetPosition()[1]==j)&&(casetemp.GetEmpty()== true)){
+                    list_possible_placement.push_back(casetemp.GetPosition());
+                }
+                else if ((casetemp.GetPosition()[0]==i+1)&&(casetemp.GetPosition()[1]==j-1)&&(casetemp.GetEmpty()== true)){
+                    list_possible_placement.push_back(casetemp.GetPosition());
+                }
+                else if ((casetemp.GetPosition()[0]==i+1)&&(casetemp.GetPosition()[1]==j)&&(casetemp.GetEmpty()== true)){
+                    list_possible_placement.push_back(casetemp.GetPosition());
+                }
+                else if ((casetemp.GetPosition()[0]==i+1)&&(casetemp.GetPosition()[1]==j+1)&&(casetemp.GetEmpty()== true)){
+                    list_possible_placement.push_back(casetemp.GetPosition());
+                }
+            }
+        }
+        else {
             for (Case casetemp:list_case){
                 if((casetemp.GetPosition()[0]==i-1)&&(casetemp.GetPosition()[1]==j)&&(casetemp.GetEmpty()== true)){
                     list_possible_placement.push_back(casetemp.GetPosition());
@@ -99,37 +179,6 @@ std::vector<std::vector<int>> state::Insect::Possible_Placement_Insect(vector<In
                 else if ((casetemp.GetPosition()[0]==i-1)&&(casetemp.GetPosition()[1]==j-1)&&(casetemp.GetEmpty()== true)){
                     list_possible_placement.push_back(casetemp.GetPosition());
                 }
-            }
-
-
-        }
-        return list_possible_placement;
-    }
-
-
-    //Cette partie concerne donc les autres cas
-    for (Insect temp: Allies_Insect){
-        int i = temp.Get_Position()[0];
-        int j = temp.Get_Position()[1];
-
-        for (Case casetemp:list_case){
-            if((casetemp.GetPosition()[0]==i-1)&&(casetemp.GetPosition()[1]==j)&&(casetemp.GetEmpty()== true)){
-                    list_possible_placement.push_back(casetemp.GetPosition());
-                }
-            else if((casetemp.GetPosition()[0]==i-1)&&(casetemp.GetPosition()[1]==j+1)&&(casetemp.GetEmpty()== true)){
-                        list_possible_placement.push_back(casetemp.GetPosition());
-                    }
-            else if ((casetemp.GetPosition()[0]==i)&&(casetemp.GetPosition()[1]==j-1)&&(casetemp.GetEmpty()== true)){
-                    list_possible_placement.push_back(casetemp.GetPosition());
-                }
-            else if ((casetemp.GetPosition()[0]==i)&&(casetemp.GetPosition()[1]==j+1)&&(casetemp.GetEmpty()== true)){
-                list_possible_placement.push_back(casetemp.GetPosition());
-            }
-            else if ((casetemp.GetPosition()[0]==i+1)&&(casetemp.GetPosition()[1]==j)&&(casetemp.GetEmpty()== true)){
-                list_possible_placement.push_back(casetemp.GetPosition());
-            }
-            else if ((casetemp.GetPosition()[0]==i-1)&&(casetemp.GetPosition()[1]==j-1)&&(casetemp.GetEmpty()== true)){
-                list_possible_placement.push_back(casetemp.GetPosition());
             }
         }
 
