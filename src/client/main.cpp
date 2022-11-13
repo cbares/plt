@@ -19,7 +19,7 @@ int main(int argc,char* argv[])
     Map maptest = Map(10,12);
 
 //On crée les insectes
-    Spider spidy = Spider("test","White",{2,1},0);
+    //Spider spidy = Spider("test","White",{2,1},0);
     Bee testbee2 = Bee("test2","White",{1,1},0);
     Bee testbee3 = Bee("test3","White",{1,2},0);
 
@@ -63,7 +63,7 @@ int main(int argc,char* argv[])
 
 
     vector<Insect> listins;
-    listins.push_back(spidy);
+    //listins.push_back(spidy);
     listins.push_back(testbee2);
     listins.push_back(testbee3);
 
@@ -80,12 +80,12 @@ int main(int argc,char* argv[])
 
 
     //vector<vector<int>> coordpossibles=testbee.Possible_Placement_Insect(listins,listcasetemp);
-    vector<vector<int>> coordpossibles=spidy.Possible_Deplacement_Insect(listins,listcasetemp);
+    //vector<vector<int>> coordpossibles=spidy.Possible_Deplacement_Insect(listins,listcasetemp);
 
 
-for (int i=0;i<coordpossibles.size();i++){
+/*for (int i=0;i<coordpossibles.size();i++){
     cout << "Coord dispos uniques :"<<coordpossibles[i][0]<<" "<<coordpossibles[i][1] << endl;
-}
+}*/
 
     if ((string)argv[argc-1]=="hello"){
         cout << "Hello World !" << endl;
