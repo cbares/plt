@@ -2,6 +2,7 @@
 #ifndef STATE__BEETLE__H
 #define STATE__BEETLE__H
 
+#include <string>
 #include <vector>
 
 namespace state {
@@ -18,7 +19,7 @@ namespace state {
   class Beetle : public state::Insect {
     // Operations
   public:
-    Beetle ();
+    Beetle (std::string name, std::string color, std::vector<int> coord, int level);
     std::vector<std::vector<int>> Possible_Deplacement_Insect (std::vector<Insect> list_insect_placed, std::vector<Case> list_case);
     // Setters and Getters
   };

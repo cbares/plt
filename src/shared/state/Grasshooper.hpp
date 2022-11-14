@@ -2,6 +2,7 @@
 #ifndef STATE__GRASSHOOPER__H
 #define STATE__GRASSHOOPER__H
 
+#include <string>
 #include <vector>
 
 namespace state {
@@ -18,7 +19,7 @@ namespace state {
   class Grasshooper : public state::Insect {
     // Operations
   public:
-    Grasshooper ();
+    Grasshooper (std::string name, std::string color, std::vector<int> coord, int level);
     std::vector<std::vector<int>> Possible_Deplacement_Insect (std::vector<Insect> list_insect_placed, std::vector<Case> list_case);
     // Setters and Getters
   };

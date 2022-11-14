@@ -19,9 +19,10 @@ int main(int argc,char* argv[])
     Map maptest = Map(10,12);
 
 //On crée les insectes
-    Spider spidy = Spider("test","White",{2,1},0);
+    Grasshooper blue = Grasshooper("test","White",{2,1},0);
     Bee testbee2 = Bee("test2","White",{1,1},0);
     Bee testbee3 = Bee("test3","White",{1,2},0);
+    Bee testbee4 = Bee("test4","White",{2,2},0);
 
     //On met les cases utilisées à empty=false (en gros on place les instectes dans la map)
     for (int i=0;i<maptest.GetLength();i++){
@@ -34,6 +35,9 @@ int main(int argc,char* argv[])
             }
 
             if((maptest.GetListCase()[i][j].GetPosition()[0]==2)&&(maptest.GetListCase()[i][j].GetPosition()[1]==1)){
+                maptest.SetListCase(Case({i,j},false),i,j);
+            }
+            if((maptest.GetListCase()[i][j].GetPosition()[0]==2)&&(maptest.GetListCase()[i][j].GetPosition()[1]==2)){
                 maptest.SetListCase(Case({i,j},false),i,j);
             }
 
@@ -63,10 +67,10 @@ int main(int argc,char* argv[])
 
 
     vector<Insect> listins;
-    listins.push_back(spidy);
+    listins.push_back(blue);
     listins.push_back(testbee2);
     listins.push_back(testbee3);
-
+    listins.push_back(testbee4);
 
     //Copie de maptest.GetListCase() pour en faire une liste de Case qui peut être e argument de Possible_Placement_Insect
     vector<Case> listcasetemp;
@@ -80,7 +84,7 @@ int main(int argc,char* argv[])
 
 
     //vector<vector<int>> coordpossibles=testbee.Possible_Placement_Insect(listins,listcasetemp);
-    vector<vector<int>> coordpossibles=spidy.Possible_Deplacement_Insect(listins,listcasetemp);
+    vector<vector<int>> coordpossibles=blue.Possible_Deplacement_Insect(listins,listcasetemp);
 
 
 for (int i=0;i<coordpossibles.size();i++){

@@ -24,7 +24,7 @@ CMake Error at C:/Program Files/JetBrains/CLion 2022.2.4/bin/cmake/win/share/cma
 
     Change Dir: //wsl$/Ubuntu/home/ali/plt/cmake-build-debug/CMakeFiles/CMakeTmp
     
-    Run Build Command(s):C:/Program Files/JetBrains/CLion 2022.2.4/bin/ninja/win/ninja.exe cmTC_1490a && ninja: error: '//wsl$/Ubuntu/home/ali/plt/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c', needed by 'CMakeFiles/cmTC_1490a.dir/testCCompiler.c.obj', missing and no known rule to make it
+    Run Build Command(s):C:/Program Files/JetBrains/CLion 2022.2.4/bin/ninja/win/ninja.exe cmTC_3b142 && ninja: error: '//wsl$/Ubuntu/home/ali/plt/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c', needed by 'CMakeFiles/cmTC_3b142.dir/testCCompiler.c.obj', missing and no known rule to make it
     
     
 
