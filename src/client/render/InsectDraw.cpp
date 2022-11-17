@@ -10,7 +10,7 @@ render::InsectDraw::InsectDraw() = default;
 render::InsectDraw::InsectDraw(std::vector<std::vector<sf::Vector2f>> mapPixel, std::vector<std::vector<sf::Vector2f>> mapPixelRemaining) {
     this->mapPixelPosition = mapPixel; //On recupere la map
     this->mapPixelRemainingPosition = mapPixelRemaining;
-    loadInsectTexture();
+    //loadInsectTexture();
 }
 
 void render::InsectDraw::drawInsect(sf::RenderWindow &window, state::Game state) { //affichage des pions insects
@@ -20,7 +20,6 @@ void render::InsectDraw::drawInsect(sf::RenderWindow &window, state::Game state)
                                                       mapPixelPosition[j.Get_Position()[0]][j.Get_Position()[1]].y);
              //std :: cout << j.GetName() << std::endl;
              //std :: cout << insectHex[j.GetName()].getTexture() << std :: endl;
-             //this->insectHex[j.GetName()].setTexture(&grasshopper_b);
              window.draw(this->insectHex[j.GetName()]);
          }
         if(i.GetColor() == "White"){
@@ -30,12 +29,12 @@ void render::InsectDraw::drawInsect(sf::RenderWindow &window, state::Game state)
                                                          mapPixelRemainingPosition[k][0].y);
                 //std :: cout << j.GetName() << std::endl;
                 //std :: cout << insectHex[j.GetName()].getTexture() << std :: endl;
-                //this->insectHex[j.GetName()].setTexture(&bee_w);
                 window.draw(this->insectHex[j.GetName()]);
                 k++;
             }
         }
     }
+
     //test attribut de type map (à commenter)
     /*sf::Texture bee_b;
     bee_b.loadFromFile("/home/ensea/CLionProjects/plt/res/pion/grasshopper_b.png");
@@ -61,29 +60,29 @@ void render::InsectDraw::loadInsectTexture() {
     //TEXTURE
 
     //sf::Texture bee_b;
-    sf::Texture ant_b; sf::Texture beetle_b;
+    //sf::Texture ant_b; sf::Texture beetle_b;
     //sf::Texture grasshopper_b;
-    sf::Texture ladybug_b;
-    sf::Texture moskito_b; sf::Texture spider_b;
-    //sf::Texture bee_w;
-    sf::Texture ant_w; sf::Texture beetle_w; sf::Texture grasshopper_w; sf::Texture ladybug_w;
-    sf::Texture moskito_w; sf::Texture spider_w;
+    //sf::Texture ladybug_b;
+    //sf::Texture moskito_b; sf::Texture spider_b;
+    ////sf::Texture bee_w;
+    //sf::Texture ant_w; sf::Texture beetle_w; sf::Texture grasshopper_w; sf::Texture ladybug_w;
+    //sf::Texture moskito_w; sf::Texture spider_w;
 
-    bee_b.loadFromFile("/home/ensea/CLionProjects/plt/res/pion/abeille2.png");
-    ant_b.loadFromFile("/home/ensea/CLionProjects/plt/res/pion/ant_b.png");
-    beetle_b.loadFromFile("/home/ensea/CLionProjects/plt/res/pion/beetle_b.png");
-    grasshopper_b.loadFromFile("/home/ensea/CLionProjects/plt/res/pion/ant_b.png");
-    ladybug_b.loadFromFile("/home/ensea/CLionProjects/plt/res/pion/ladybug_b.png");
-    moskito_b.loadFromFile("/home/ensea/CLionProjects/plt/res/pion/moskito_b.png");
-    spider_b.loadFromFile("/home/ensea/CLionProjects/plt/res/pion/spider_b.png");
+    bee_b.loadFromFile("./res/pion/bee_b.png");
+    ant_b.loadFromFile("./res/pion/ant_b.png");
+    beetle_b.loadFromFile("./res/pion/beetle_b.png");
+    grasshopper_b.loadFromFile("./res/pion/grasshopper_b.png");
+    ladybug_b.loadFromFile("./res/pion/ladybug_b.png");
+    mosquito_b.loadFromFile("./res/pion/moskito_b.png");
+    spider_b.loadFromFile("./res/pion/spider_b.png");
 
-    bee_w.loadFromFile("/home/ensea/CLionProjects/plt/res/pion/bee_w.png");
-    ant_w.loadFromFile("/home/ensea/CLionProjects/plt/res/pion/ant_w.png");
-    beetle_w.loadFromFile("/home/ensea/CLionProjects/plt/res/pion/beetle_w.png");
-    grasshopper_w.loadFromFile("/home/ensea/CLionProjects/plt/res/pion/grasshopper_w.png");
-    ladybug_w.loadFromFile("/home/ensea/CLionProjects/plt/res/pion/ladybug_w.png");
-    moskito_w.loadFromFile("/home/ensea/CLionProjects/plt/res/pion/mosquito_w.png");
-    spider_w.loadFromFile("/home/ensea/CLionProjects/plt/res/pion/spider_w.png");
+    bee_w.loadFromFile("./res/pion/bee_w.png");
+    ant_w.loadFromFile("./res/pion/ant_w.png");
+    beetle_w.loadFromFile("./res/pion/beetle_w.png");
+    grasshopper_w.loadFromFile("./res/pion/grasshopper_w.png");
+    ladybug_w.loadFromFile("./res/pion/ladybug_w.png");
+    moskito_w.loadFromFile("./res/pion/mosquito_w.png");
+    spider_w.loadFromFile("./res/pion/spider_w.png");
 
     //WHITE TILES
     std::vector<sf::CircleShape*> temp;//Liste permettant d'appliquer les méthodes
@@ -125,7 +124,7 @@ void render::InsectDraw::loadInsectTexture() {
     Ant_A2.setTexture(&ant_b);
     Ant_A3.setTexture(&ant_b);
     Ladybug_A.setTexture(&ladybug_b);
-    Mosquito_A.setTexture(&bee_b);
+    Mosquito_A.setTexture(&mosquito_b);
     Grasshopper_A1.setTexture(&grasshopper_b);
     Grasshopper_A2.setTexture(&grasshopper_b);
     Grasshopper_A3.setTexture(&grasshopper_b);
@@ -144,8 +143,8 @@ void render::InsectDraw::loadInsectTexture() {
     this->insectHex["Grasshopper_A1"] = Grasshopper_A1;
     this->insectHex["Grasshopper_A2"] = Grasshopper_A2;
     this->insectHex["Grasshopper_A3"] = Grasshopper_A3;
-    this->insectHex["Bee_A"].setTexture(&bee_b);
 
+/******************************************************************/
     //BLACK TILES
     std::vector<sf::CircleShape*> temp2;
     sf::CircleShape Bee_B(24, 6);
@@ -162,6 +161,23 @@ void render::InsectDraw::loadInsectTexture() {
     sf::CircleShape Grasshopper_B2(24, 6);
     sf::CircleShape Grasshopper_B3(24, 6);
 
+
+    temp2.push_back(&Bee_B);
+    temp2.push_back(&Spider_B1); temp2.push_back(&Spider_B2);
+    temp2.push_back(&Beetle_B1); temp2.push_back(&Beetle_B2);
+    temp2.push_back(&Ant_B1); temp2.push_back(&Ant_B2); temp2.push_back(&Ant_B3);
+    temp2.push_back(&Ladybug_B);
+    temp2.push_back(&Mosquito_B);
+    temp2.push_back(&Grasshopper_B1); temp2.push_back(&Grasshopper_B2);  temp2.push_back(&Grasshopper_B3);
+
+
+    for( auto &i : temp2){
+        i->setOutlineThickness(2);
+        i->setOutlineColor(sf::Color:: Black);
+        i->setOrigin({ i->getRadius(), i->getRadius()});
+        i->rotate(90);
+    }
+
     Bee_B.setTexture(&bee_w);
     Spider_B1.setTexture(&spider_w);
     Spider_B2.setTexture(&spider_w);
@@ -176,25 +192,7 @@ void render::InsectDraw::loadInsectTexture() {
     Grasshopper_B2.setTexture(&grasshopper_w);
     Grasshopper_B3.setTexture(&grasshopper_w);
 
-    temp2.push_back(&Bee_B);
-    temp2.push_back(&Spider_B1); temp2.push_back(&Spider_B2);
-    temp2.push_back(&Beetle_B1); temp2.push_back(&Beetle_B2);
-    temp2.push_back(&Ant_B1); temp2.push_back(&Ant_B2); temp2.push_back(&Ant_B3);
-    temp2.push_back(&Ladybug_B);
-    temp2.push_back(&Mosquito_B);
-    temp2.push_back(&Grasshopper_B1); temp2.push_back(&Grasshopper_B2);  temp2.push_back(&Grasshopper_B3);
-
-
-    for( auto i : temp2){
-        i->setOutlineThickness(2);
-        i->setOutlineColor(sf::Color:: Black);
-        i->setFillColor(sf::Color::Black);
-        i->setOrigin({ i->getRadius(), i->getRadius() });
-        i->rotate(90);
-    }
-
     this->insectHex["Bee_B"] = Bee_B;
-    this->insectHex["Bee_B"].setTexture(&bee_w);
     this->insectHex["Spider_B1"] = Spider_B1;
     this->insectHex["Spider_B2"] = Spider_B2;
     this->insectHex["Beetle_B1"] = Beetle_B1;
@@ -207,20 +205,6 @@ void render::InsectDraw::loadInsectTexture() {
     this->insectHex["Grasshopper_B1"] = Grasshopper_B1;
     this->insectHex["Grasshopper_B2"] = Grasshopper_B2;
     this->insectHex["Grasshopper_B3"] = Grasshopper_B3;
-
-    this->insectHex["Bee_A"].setTexture(&bee_b);
-    this->insectHex["Spider_A1"].setTexture(&bee_b);
-    this->insectHex["Spider_A2"].setTexture(&bee_b);
-    this->insectHex["Beetle_A1"].setTexture(&bee_b);
-    this->insectHex["Beetle_A2"].setTexture(&bee_b);
-    this->insectHex["Ant_A1"].setTexture(&bee_b);
-    this->insectHex["Ant_A2"].setTexture(&bee_b);
-    this->insectHex["Ant_A3"].setTexture(&bee_b);
-    this->insectHex["Ladybug_A"].setTexture(&bee_b);
-    this->insectHex["Mosquito_A"].setTexture(&bee_b);
-    this->insectHex["Grasshopper_A1"].setTexture(&bee_b);
-    this->insectHex["Grasshopper_A2"].setTexture(&bee_b);
-    this->insectHex["Grasshopper_A3"].setTexture(&bee_b);
 
 }
 

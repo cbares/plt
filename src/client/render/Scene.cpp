@@ -6,7 +6,8 @@
 render::Scene::Scene(state::Game state) {
     this->mapDraw = MapDraw();
     this->insectDraw = InsectDraw(this->mapDraw.mapPixelPosition,this->mapDraw.mapPixelRemainingPosition);
-    this->textDraw = TextDraw(state);
+    this->insectDraw.loadInsectTexture();
+    this->textDraw = TextDraw();
 }
 
 void render::Scene::drawScene(state::Game state, sf::RenderWindow &window) {

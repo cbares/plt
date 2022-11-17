@@ -22,94 +22,92 @@ using namespace render;
 
 int main(int argc,char* argv[]){
 
+    if ((string)argv[argc-1]=="hello"){
+        cout << "Hello World !" << endl;
+    }
+    else if ((string)argv[argc-1]=="render"){
+        sf::RenderWindow window(sf::VideoMode(1080, 720), "HIVE",sf::Style::Close | sf::Style::Titlebar);
+        Game state = Game();
+
+        Scene scene = Scene(state);
+
+        Player Benzema = Player("Benzema","White");
+        Player Giroud =  Player("Giroud", "Black");
+
+        std::vector<Insect*> temp;
+        std::vector<Insect*> temp2;
+        Bee Bee_B = Bee("Bee_B", "White", {7,5},0);temp2.push_back(&Bee_B);
+        Bee Bee_A = Bee("Bee_A", "Black", {6,5},0); temp.push_back(&Bee_A);
+        Bee Ant_B = Bee("Ant_B1", "White", {7,4},0);temp2.push_back(&Ant_B);
+        Bee Ant_A = Bee("Ant_A1", "Black", {6,6},0);temp.push_back(&Ant_A);
+        Bee Grasshopper_B = Bee("Grasshopper_B1", "White", {6,3},0);temp2.push_back(&Grasshopper_B);
+        Bee Grasshopper_A = Bee("Grasshopper_A1", "Black", {6,7},0);temp.push_back(&Grasshopper_A);
+        Bee Spider_B = Bee("Spider_B1", "White", {7,3},0);temp2.push_back(&Spider_B);
+        Bee Spider_A = Bee("Spider_A1", "Black", {5,7},0);temp.push_back(&Spider_A);
+
+        std::vector<Insect*> temp3;
+        std::vector<Insect*> temp4;
+
+        Bee Ant_B2 = Bee("Ant_B2", "White", {7,4},0);temp4.push_back(&Ant_B);
+        Bee Ant_A2 = Bee("Ant_A2", "Black", {6,6},0);temp3.push_back(&Ant_A);
+        Bee Grasshopper_B2 = Bee("Grasshopper_B2", "White", {6,3},0);temp4.push_back(&Grasshopper_B);
+        Bee Grasshopper_A2 = Bee("Grasshopper_A2", "Black", {6,7},0);temp3.push_back(&Grasshopper_A);
+        Bee Spider_B2 = Bee("Spider_B2", "White", {7,3},0);temp4.push_back(&Spider_B);
+        Bee Spider_A2 = Bee("Spider_A2", "Black", {5,7},0);temp3.push_back(&Spider_A);
 
 
-    sf::RenderWindow window(sf::VideoMode(1080, 720), "HIVE",sf::Style::Close | sf::Style::Titlebar);
-    Game state = Game();
-
-    /*MapDraw mapdraw = MapDraw();
-    InsectDraw insectdraw = InsectDraw(mapdraw.mapPixelPosition,mapdraw.mapPixelRemainingPosition);
-    //cout << mapdraw.mapPixelPosition[5][4].x << endl;
-
-    sf::CircleShape temphexa(24, 6);
-    temphexa.rotate(90);
-    temphexa.setOrigin({ temphexa.getRadius(), temphexa.getRadius() });
-
-    std::vector<std::vector<sf::Vector2f>> maptest;
-
-    for (int y = 0; y < 17 ; ++y) {
-        std::vector<sf::Vector2f> temp;
-        for (int x = 0; x < 10; ++x) {
-            temphexa.setPosition(200 + y * 40.f , (y % 2 ? 50 : 75) + x * 50.f + 50);
-            temp.push_back(temphexa.getPosition());
+        for(auto &i : temp){
+            Giroud.Add_Insect_Played(*i);
         }
-        maptest.push_back(temp);
-    }
-    cout << maptest[5][4].x << endl;*/
-
-    Scene scene = Scene(state);
-
-    Player Benzema = Player("Benzema","Black");
-    Player Giroud =  Player("Giroud", "White");
-
-    std::vector<Insect*> temp;
-    std::vector<Insect*> temp2;
-    Bee Bee_B = Bee("Bee_B", "White", {7,5},0);temp2.push_back(&Bee_B);
-    Bee Bee_A = Bee("Bee_A", "Black", {6,5},0); temp.push_back(&Bee_A);
-    Bee Ant_B = Bee("Ant_B1", "White", {7,4},0);temp2.push_back(&Ant_B);
-    Bee Ant_A = Bee("Ant_A1", "Black", {6,6},0);temp.push_back(&Ant_A);
-    Bee Grasshopper_B = Bee("Grasshopper_B1", "White", {6,3},0);temp2.push_back(&Grasshopper_B);
-    Bee Grasshopper_A = Bee("Grasshopper_A1", "Black", {6,7},0);temp.push_back(&Grasshopper_A);
-    Bee Spider_B = Bee("Spider_B1", "White", {7,3},0);temp2.push_back(&Spider_B);
-    Bee Spider_A = Bee("Spider_A1", "Black", {5,7},0);temp.push_back(&Spider_A);
-
-    std::vector<Insect*> temp3;
-    std::vector<Insect*> temp4;
-
-    Bee Ant_B2 = Bee("Ant_B2", "White", {7,4},0);temp4.push_back(&Ant_B);
-    Bee Ant_A2 = Bee("Ant_A2", "Black", {6,6},0);temp3.push_back(&Ant_A);
-    Bee Grasshopper_B2 = Bee("Grasshopper_B2", "White", {6,3},0);temp4.push_back(&Grasshopper_B);
-    Bee Grasshopper_A2 = Bee("Grasshopper_A2", "Black", {6,7},0);temp3.push_back(&Grasshopper_A);
-    Bee Spider_B2 = Bee("Spider_B2", "White", {7,3},0);temp4.push_back(&Spider_B);
-    Bee Spider_A2 = Bee("Spider_A2", "Black", {5,7},0);temp3.push_back(&Spider_A);
-
-
-    std::map<string,sf::CircleShape> insectHextest;
-    sf::Texture bee_b;
-    bee_b.loadFromFile("/home/ensea/CLionProjects/plt/res/pion/grasshopper_b.png");
-    sf::CircleShape Bee_Test(24, 6);
-    Bee_Test.setTexture(&bee_b);
-    insectHextest["Bee_A"] = Bee_Test;
-
-    for(auto &i : temp){
-        Giroud.Add_Insect_Played(*i);
-    }
-    for(auto &j : temp2){
-        Benzema.Add_Insect_Played(*j);
-    }
-
-    for(auto &i : temp3){
-        Giroud.Add_Insect_Remaining(*i);
-    }
-    for(auto &j : temp4){
-        Benzema.Add_Insect_Remaining(*j);
-    }
-    state.AppendListJoueur(Giroud);
-    state.AppendListJoueur(Benzema);
-
-    while (window.isOpen()) {
-        sf::Event event;
-        while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed)
-                window.close();
+        for(auto &j : temp2){
+            Benzema.Add_Insect_Played(*j);
         }
-        window.clear();
-        scene.drawScene(state, window);
-        //window.draw(insectHextest["Bee_A"]);
-        window.display();
+        for(auto &i : temp3){
+            Giroud.Add_Insect_Remaining(*i);
+        }
+        for(auto &j : temp4){
+            Benzema.Add_Insect_Remaining(*j);
+        }
+        state.AppendListJoueur(Giroud);
+        state.AppendListJoueur(Benzema);
+
+        while (window.isOpen()) {
+            sf::Event event;
+            while (window.pollEvent(event)) {
+                if (event.type == sf::Event::Closed)
+                    window.close();
+            }
+            window.clear();
+            scene.drawScene(state, window);
+            //window.draw(insectHextest["Bee_A"]);
+            window.display();
+        }
     }
+    else {
+        cout << "It works !" << endl;
+    }
+
     return 0;
 }
+/*MapDraw mapdraw = MapDraw();
+   InsectDraw insectdraw = InsectDraw(mapdraw.mapPixelPosition,mapdraw.mapPixelRemainingPosition);
+   //cout << mapdraw.mapPixelPosition[5][4].x << endl;
+
+   sf::CircleShape temphexa(24, 6);
+   temphexa.rotate(90);
+   temphexa.setOrigin({ temphexa.getRadius(), temphexa.getRadius() });
+
+   std::vector<std::vector<sf::Vector2f>> maptest;
+
+   for (int y = 0; y < 17 ; ++y) {
+       std::vector<sf::Vector2f> temp;
+       for (int x = 0; x < 10; ++x) {
+           temphexa.setPosition(200 + y * 40.f , (y % 2 ? 50 : 75) + x * 50.f + 50);
+           temp.push_back(temphexa.getPosition());
+       }
+       maptest.push_back(temp);
+   }
+   cout << maptest[5][4].x << endl;*/
 
 /*
    sf::RenderWindow window(sf::VideoMode(1080, 720), "HIVE",sf::Style::Close | sf::Style::Titlebar);
@@ -221,6 +219,7 @@ int main(int argc,char* argv[]){
 
    }
 */
+
 /*
     sf::RenderWindow window({1080, 720}, "Hexagons", sf::Style::Default);
 
@@ -268,8 +267,6 @@ int main(int argc,char* argv[]){
         window.display();
     }*/
 
-
-
 /*
     Bee benzema = Bee("Benzema", "White", {-1,-1},0);
     Player naruto = Player("naruto","blanc");
@@ -285,7 +282,6 @@ else {
         cout << "It works !" << endl;
 }
 */
-
 
 /*
 Map maptest = Map(5,3);

@@ -45,7 +45,7 @@ void render::MapDraw::setTilesShape() {
 }
 
 int render::MapDraw::setBackground() {
-    if (!background.loadFromFile("/home/ensea/CLionProjects/plt/res/backgroundqs.jpg"))
+    if (!background.loadFromFile("./res/backgroundqs.jpg"))
         return EXIT_FAILURE;
 }
 
