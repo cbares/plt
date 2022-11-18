@@ -26,7 +26,7 @@ int main(int argc,char* argv[]){
         cout << "Hello World !" << endl;
     }
     else if ((string)argv[argc-1]=="render"){
-        sf::RenderWindow window(sf::VideoMode(1080, 720), "HIVE",sf::Style::Close | sf::Style::Titlebar);
+        sf::RenderWindow window(sf::VideoMode(1080, 720), "HIVE",sf::Style::Close | sf::Style::Titlebar | sf::Style::Resize);
         Game state = Game();
 
         Scene scene = Scene(state);
