@@ -1,3 +1,7 @@
+
+//
+// Created by ensea on 13/11/22.
+//
 #include "Game.hpp"
 
 
@@ -18,7 +22,9 @@ int state::Game::GetIteration() {
 }
 
 void state::Game::SetIteration(int param) {
-this->nbIteration=param;
+
+    this->nbIteration=param;
+
 }
 
 std::vector<state::Insect> state::Game::GetAllInsects() {
@@ -26,7 +32,9 @@ std::vector<state::Insect> state::Game::GetAllInsects() {
 }
 
 void state::Game::AppendListInsect(state::Insect insect) {
-this->ListeAllInsect.push_back(insect);
+
+    this->ListeAllInsect.push_back(insect);
+
 }
 
 
@@ -89,6 +97,17 @@ state::Game::Game() {
 state::Map state::Game::GetMap() {
     return this->GameMap;
 }
+
+
+void state::Game::AppendListJoueur(state::Player player) {
+    this->listPlayer.push_back(player);
+}
+
+std::vector<state::Player> state::Game::GetListPlayer() {
+    return this->listPlayer;
+}
+
+
 
 
 

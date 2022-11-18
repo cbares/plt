@@ -6,6 +6,7 @@
 #include <iterator>
 #include <iomanip>
 #include <algorithm>
+
 using namespace std;
 
 void state::Insect::Update_Coord(std::vector<int> coord) {
@@ -65,12 +66,14 @@ std::vector<std::vector<int>> state::Insect::Possible_Placement_Insect(vector<In
 
 
     //Recherche des insectes alliés
+
         for (Insect temp : list_insect_placed){
             if(temp.GetColor()==this->Color) {
                 Allies_Insect.push_back(temp);
 
             }
         }
+
 
 
     //Si aucun insecte allié est posé
@@ -195,6 +198,7 @@ std::vector<std::vector<int>> state::Insect::Possible_Placement_Insect(vector<In
     }
 
 
+
    /* for (vector<int> uniquemember: list_possible_placement_unique) {
 
         cout << "new loop" << endl;
@@ -218,6 +222,7 @@ std::vector<std::vector<int>> state::Insect::Possible_Placement_Insect(vector<In
 
 
    vector<int> indicetosup;
+
     vector<vector<int>> list_possible_placement_unique=list_possible_placement;
     for (int i=0;i<list_possible_placement.size()-1;i++){
         for (int j=i+1;j<list_possible_placement.size();j++){
@@ -251,13 +256,4 @@ state::Insect::Insect(std::string name, std::string color, std::vector<int> coor
     this->Name=name;this->Color=color;this->Coord=coord;this->Level=level;this->IsPlaced=false;
 
 }
-
-
-
-
-
-
-
-
-
 
