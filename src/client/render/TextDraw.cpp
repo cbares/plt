@@ -5,7 +5,7 @@
 #include <sstream>
 
 render::TextDraw::TextDraw() {
-    font.loadFromFile("/home/ensea/CLionProjects/plt/res/arial.ttf");
+    font.loadFromFile("./res/arial.ttf");
 
    /* this->nbtour = sf::Text();
     nbtour.setCharacterSize(20);
