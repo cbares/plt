@@ -16,7 +16,7 @@ using namespace state;
 int main(int argc,char* argv[])
 {
 //Créer la map
-    Map maptest = Map(10,12);
+    Map maptest = Map(10,17);
 
 //On crée les insectes
     Grasshooper blue = Grasshooper("test","White",{2,1},0);
@@ -38,6 +38,12 @@ int main(int argc,char* argv[])
                 maptest.SetListCase(Case({i,j},false),i,j);
             }
             if((maptest.GetListCase()[i][j].GetPosition()[0]==2)&&(maptest.GetListCase()[i][j].GetPosition()[1]==2)){
+                maptest.SetListCase(Case({i,j},false),i,j);
+            }
+            if((maptest.GetListCase()[i][j].GetPosition()[0]==3)&&(maptest.GetListCase()[i][j].GetPosition()[1]==3)){
+                maptest.SetListCase(Case({i,j},false),i,j);
+            }
+            if((maptest.GetListCase()[i][j].GetPosition()[0]==1)&&(maptest.GetListCase()[i][j].GetPosition()[1]==0)){
                 maptest.SetListCase(Case({i,j},false),i,j);
             }
 
