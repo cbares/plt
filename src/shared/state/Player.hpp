@@ -27,9 +27,11 @@ namespace state {
     Player (std::string name, std::string color);
     std::string GetName ();
     std::string GetColor ();
-    std::vector<Insect> Get_List_Insect (std::vector<Insect> list);
-    void Add_Insect (Insect insecte, std::vector<Insect> list);
-    void Remove_Insect (Insect insecte, std::vector<Insect> list);
+    std::vector<Insect> Get_List_Insect_Remaining ();
+    std::vector<Insect> Get_List_Insect_Played ();
+    void Add_Insect_Played (Insect insecte);
+    void Remove_Insect_Remaining (Insect insecte);
+    void Add_Insect_Remaining (Insect insecte);
     // Setters and Getters
   };
 
