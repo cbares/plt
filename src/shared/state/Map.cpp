@@ -20,7 +20,7 @@ state::Map::Map(int length, int width) {
         vector<Case> temp;
         for(int j=0;j<width;j++) {
 
-            temp.push_back(Case({i,j},false));
+            temp.push_back(Case({i,j},true));
 
 
         }

@@ -1,6 +1,3 @@
-//
-// Created by ensea on 31/10/22.
-//
 
 #include "Bee.hpp"
 #include "vector"
@@ -21,11 +18,13 @@ state::Bee::Possible_Deplacement_Insect(vector<Insect> list_insect_placed, vecto
 
     std::vector<std::vector<int>> list_possible_placement;
 
-    //Parité de la colonne
+
+        //Parité de la colonne
     if (j_depart%2==0){
 
 
-        for (Case casetemp:list_case){
+    for (Case casetemp:list_case){
+
 
             if((casetemp.GetPosition()[0]==i_depart)&&(casetemp.GetPosition()[1]==j_depart-1)&&(casetemp.GetEmpty()== true)) {
 
@@ -555,4 +554,6 @@ state::Bee::Possible_Deplacement_Insect(vector<Insect> list_insect_placed, vecto
 
 
     return list_possible_placement_unique;
+
 }
+

@@ -1,3 +1,4 @@
+
 //
 // Created by ensea on 28/10/22.
 //
@@ -47,4 +48,5 @@ void Player::Remove_Insect_Remaining(Insect insecte) {//Efface
 void Player::Add_Insect_Remaining(Insect insecte) {
         ListInsectRemaining.push_back(insecte);//Ajout de l'élément à la dernière place
 }
+
 

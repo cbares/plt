@@ -11,16 +11,19 @@ void testSFML() {
 // Fin test SFML
 
 #include <state.hpp>
+
 #include <list>
 #include <sstream>
 #include <render.hpp>
 #include <unordered_map>
+
 
 using namespace std;
 using namespace state;
 using namespace render;
 
 int main(int argc,char* argv[]){
+
 
     if ((string)argv[argc-1]=="hello"){
         cout << "Hello World !" << endl;
@@ -67,6 +70,7 @@ int main(int argc,char* argv[]){
         }
         for(auto &j : temp4){
             Benzema.Add_Insect_Remaining(*j);
+
         }
         state.AppendListJoueur(Giroud);
         state.AppendListJoueur(Benzema);
@@ -97,7 +101,9 @@ int main(int argc,char* argv[]){
    temphexa.rotate(90);
    temphexa.setOrigin({ temphexa.getRadius(), temphexa.getRadius() });
 
+
    std::vector<std::vector<sf::Vector2f>> maptest;
+
 
    for (int y = 0; y < 17 ; ++y) {
        std::vector<sf::Vector2f> temp;
@@ -108,6 +114,7 @@ int main(int argc,char* argv[]){
        maptest.push_back(temp);
    }
    cout << maptest[5][4].x << endl;*/
+
 
 /*
    sf::RenderWindow window(sf::VideoMode(1080, 720), "HIVE",sf::Style::Close | sf::Style::Titlebar);
@@ -121,6 +128,7 @@ int main(int argc,char* argv[]){
        return EXIT_FAILURE;
    sf::Text text("Hello SFML", font, 20);
    text.setPosition(1000,600);
+
 
 
    sf::Color ruche = sf::Color(255,130,65,255);
@@ -279,9 +287,11 @@ if ((string)argv[argc-1]=="hello"){
         cout << "Hello World !" << endl;
     }
 else {
+
         cout << "It works !" << endl;
 }
 */
+
 
 /*
 Map maptest = Map(5,3);

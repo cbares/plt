@@ -1,4 +1,4 @@
-# Install script for directory: /home/ali/CLionProjects/plt
+# Install script for directory: /home/ali/plt
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -37,18 +37,13 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set default install directory permissions.
-if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
-endif()
-
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/ali/CLionProjects/plt/cmake-build-debug/extern/dia2code/cmake_install.cmake")
-  include("/home/ali/CLionProjects/plt/cmake-build-debug/src/shared/cmake_install.cmake")
-  include("/home/ali/CLionProjects/plt/cmake-build-debug/src/client/cmake_install.cmake")
-  include("/home/ali/CLionProjects/plt/cmake-build-debug/rapport/cmake_install.cmake")
-  include("/home/ali/CLionProjects/plt/cmake-build-debug/test/cmake_install.cmake")
+  include("/home/ali/plt/cmake-build-debug/extern/dia2code/cmake_install.cmake")
+  include("/home/ali/plt/cmake-build-debug/src/shared/cmake_install.cmake")
+  include("/home/ali/plt/cmake-build-debug/src/client/cmake_install.cmake")
+  include("/home/ali/plt/cmake-build-debug/rapport/cmake_install.cmake")
+  include("/home/ali/plt/cmake-build-debug/test/cmake_install.cmake")
 
 endif()
 
@@ -60,5 +55,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ali/CLionProjects/plt/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ali/plt/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
