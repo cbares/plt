@@ -7,12 +7,16 @@
 #include "Player.hpp"
 
 
+
 using namespace std;
 using namespace state;
 
 Player:: Player(string name, string color) {
     this->Name = name;
     this->Color = color; //couleur de ses pions
+
+
+
 }
 
 //Getters

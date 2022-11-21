@@ -3,6 +3,10 @@
 // Created by ensea on 13/11/22.
 //
 #include "Game.hpp"
+#include "Bee.hpp"
+#include "Spider.hpp"
+#include "Grasshooper.hpp"
+#include "Beetle.hpp"
 
 
 void state::Game::UpdateState(state::GameStatus state) {
@@ -82,6 +86,31 @@ state::Game::Game() {
 //Création des joueurs
     Player player_white = Player("player_white","White");
     Player player_black = Player("player_black","Black");
+    //Création des insectes
+    //White
+    Bee bee_white= Bee("Bee_White","White",{-99,-99},0);
+    Spider spider_1_white=Spider("Spider_1_White","White",{-99,-99},0);
+    Grasshooper grasshooper_1_white=Grasshooper("Grasshooper_1_White","White",{-99,-99},0);
+    Beetle beetle_1_white=Beetle("Beetle_1_White","White",{-99,-99},0);
+    //Black
+    Bee bee_black= Bee("Bee_Black","Black",{-99,-99},0);
+    Spider spider_1_black=Spider("Spider_1_Black","Black",{-99,-99},0);
+    Grasshooper grasshooper_1_black=Grasshooper("Grasshooper_1_Black","Black",{-99,-99},0);
+    Beetle beetle_1_black=Beetle("Beetle_1_Black","Black",{-99,-99},0);
+
+    //Remplissage de la liste des insectes par joueur
+
+    player_black.Add_Insect_Remaining(bee_black);
+    player_black.Add_Insect_Remaining(spider_1_black);
+    player_black.Add_Insect_Remaining(grasshooper_1_black);
+    player_black.Add_Insect_Remaining(beetle_1_black);
+
+    player_white.Add_Insect_Remaining(bee_white);
+    player_white.Add_Insect_Remaining(spider_1_white);
+    player_white.Add_Insect_Remaining(grasshooper_1_white);
+    player_white.Add_Insect_Remaining(beetle_1_white);
+
+
 
 //Remplissage de ListAllInsect
     for (int i=0; i<player_black.Get_List_Insect_Remaining().size();i++){
@@ -90,6 +119,14 @@ state::Game::Game() {
     for (int i=0; i<player_white.Get_List_Insect_Remaining().size();i++){
         ListeAllInsect.push_back(player_white.Get_List_Insect_Remaining()[i]);
     }
+
+
+    //Remplissage de ListPlayer
+    this->listPlayer.push_back(player_white);
+    this->listPlayer.push_back(player_black);
+
+
+
 
 
 }

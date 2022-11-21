@@ -11,7 +11,7 @@ void testSFML() {
 // Fin test SFML
 
 #include <state.hpp>
-
+#include <engine.hpp>
 #include <list>
 #include <sstream>
 #include <render.hpp>
@@ -21,75 +21,32 @@ void testSFML() {
 using namespace std;
 using namespace state;
 using namespace render;
+using namespace engine;
 
 int main(int argc,char* argv[]){
 
+Game game = Game();
+Engine engine = Engine(game);
+//engine.setState(game);
 
-    if ((string)argv[argc-1]=="hello"){
-        cout << "Hello World !" << endl;
-    }
-    else if ((string)argv[argc-1]=="render"){
-        sf::RenderWindow window(sf::VideoMode(1080, 720), "HIVE",sf::Style::Close | sf::Style::Titlebar | sf::Style::Resize);
-        Game state = Game();
+PlacementCommand place_com = PlacementCommand(Player_A_playing,{1,1},game.GetListPlayer()[0].Get_List_Insect_Remaining()[0],PLACEMENT,game.GetListPlayer()[0]);
+    cout<<place_com.position[0]<<endl;
 
-        Scene scene = Scene(state);
+    cout << "Placement avant commande : " <<  game.GetListPlayer()[0].Get_List_Insect_Remaining()[0].Get_Position()[0]<<" " <<
+         game.GetListPlayer()[0].Get_List_Insect_Remaining()[0].Get_Position()[1]<< endl;
 
-        Player Benzema = Player("Benzema","White");
-        Player Giroud =  Player("Giroud", "Black");
+bool res=place_com.execute(engine);
 
-        std::vector<Insect*> temp;
-        std::vector<Insect*> temp2;
-        Bee Bee_B = Bee("Bee_B", "White", {7,5},0);temp2.push_back(&Bee_B);
-        Bee Bee_A = Bee("Bee_A", "Black", {6,5},0); temp.push_back(&Bee_A);
-        Bee Ant_B = Bee("Ant_B1", "White", {7,4},0);temp2.push_back(&Ant_B);
-        Bee Ant_A = Bee("Ant_A1", "Black", {6,6},0);temp.push_back(&Ant_A);
-        Bee Grasshopper_B = Bee("Grasshopper_B1", "White", {6,3},0);temp2.push_back(&Grasshopper_B);
-        Bee Grasshopper_A = Bee("Grasshopper_A1", "Black", {6,7},0);temp.push_back(&Grasshopper_A);
-        Bee Spider_B = Bee("Spider_B1", "White", {7,3},0);temp2.push_back(&Spider_B);
-        Bee Spider_A = Bee("Spider_A1", "Black", {5,7},0);temp.push_back(&Spider_A);
+if (res){cout<<"OK"<<endl;}
+else {
+    cout << "ERR" << endl;
+}
 
-        std::vector<Insect*> temp3;
-        std::vector<Insect*> temp4;
-
-        Bee Ant_B2 = Bee("Ant_B2", "White", {7,4},0);temp4.push_back(&Ant_B);
-        Bee Ant_A2 = Bee("Ant_A2", "Black", {6,6},0);temp3.push_back(&Ant_A);
-        Bee Grasshopper_B2 = Bee("Grasshopper_B2", "White", {6,3},0);temp4.push_back(&Grasshopper_B);
-        Bee Grasshopper_A2 = Bee("Grasshopper_A2", "Black", {6,7},0);temp3.push_back(&Grasshopper_A);
-        Bee Spider_B2 = Bee("Spider_B2", "White", {7,3},0);temp4.push_back(&Spider_B);
-        Bee Spider_A2 = Bee("Spider_A2", "Black", {5,7},0);temp3.push_back(&Spider_A);
+    cout << "Placement apres commande : " <<  game.GetListPlayer()[0].Get_List_Insect_Remaining()[0].Get_Position()[0]<<" " <<
+                                                                                                                      game.GetListPlayer()[0].Get_List_Insect_Remaining()[0].Get_Position()[1]<< endl;
 
 
-        for(auto &i : temp){
-            Giroud.Add_Insect_Played(*i);
-        }
-        for(auto &j : temp2){
-            Benzema.Add_Insect_Played(*j);
-        }
-        for(auto &i : temp3){
-            Giroud.Add_Insect_Remaining(*i);
-        }
-        for(auto &j : temp4){
-            Benzema.Add_Insect_Remaining(*j);
 
-        }
-        state.AppendListJoueur(Giroud);
-        state.AppendListJoueur(Benzema);
-
-        while (window.isOpen()) {
-            sf::Event event;
-            while (window.pollEvent(event)) {
-                if (event.type == sf::Event::Closed)
-                    window.close();
-            }
-            window.clear();
-            scene.drawScene(state, window);
-            //window.draw(insectHextest["Bee_A"]);
-            window.display();
-        }
-    }
-    else {
-        cout << "It works !" << endl;
-    }
 
     return 0;
 }

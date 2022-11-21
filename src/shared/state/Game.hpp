@@ -5,15 +5,15 @@
 #include <vector>
 
 namespace state {
-  class Player;
   class Insect;
   class Map;
+  class Player;
 }
 
-#include "Player.hpp"
 #include "GameStatus.hpp"
 #include "Insect.hpp"
 #include "Map.hpp"
+#include "Player.hpp"
 
 namespace state {
 
@@ -21,13 +21,12 @@ namespace state {
   class Game {
     // Associations
     // Attributes
-  public:
-    std::vector<Player> listPlayer;
   private:
     GameStatus state;
     int nbIteration;
     std::vector<Insect> ListeAllInsect;
     Map GameMap     = Map(0,0);
+    std::vector<Player> listPlayer;
     // Operations
   public:
     bool IsBeeCircled (Player player);

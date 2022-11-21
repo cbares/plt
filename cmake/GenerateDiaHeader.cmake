@@ -1,4 +1,3 @@
-
 # Global cmake target responsible for the generation of all the cpp headers
 add_custom_target(generate-headers)
 

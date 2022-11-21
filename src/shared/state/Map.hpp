@@ -9,7 +9,6 @@ namespace state {
 }
 
 #include "Case.hpp"
-#include "GameStatus.hpp"
 
 namespace state {
 
