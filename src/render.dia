@@ -1062,7 +1062,7 @@
         <dia:point val="31.1585,32.4267"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="30.4085,31.6667;41.7224,35.8811"/>
+        <dia:rectangle val="30.4085,31.6767;41.7224,35.8961"/>
       </dia:attribute>
       <dia:attribute name="meta">
         <dia:composite type="dict"/>
@@ -2366,7 +2366,7 @@
             <dia:string>#listPlayer#</dia:string>
           </dia:attribute>
           <dia:attribute name="type">
-            <dia:string>#std::vector&lt;state::Player&gt;#</dia:string>
+            <dia:string>#std::vector&lt;state::Player*&gt;#</dia:string>
           </dia:attribute>
           <dia:attribute name="value">
             <dia:string>##</dia:string>

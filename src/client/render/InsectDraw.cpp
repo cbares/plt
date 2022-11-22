@@ -15,21 +15,21 @@ render::InsectDraw::InsectDraw(std::vector<std::vector<sf::Vector2f>> mapPixel, 
 
 void render::InsectDraw::drawInsect(sf::RenderWindow &window, state::Game state) { //affichage des pions insects
     for( auto i : state.GetListPlayer()){
-        for(auto j : i.Get_List_Insect_Played()){
-             this->insectHex[j.GetName()].setPosition(mapPixelPosition[j.Get_Position()[0]][j.Get_Position()[1]].x,
-                                                      mapPixelPosition[j.Get_Position()[0]][j.Get_Position()[1]].y);
+        for(auto j : i->Get_List_Insect_Played()){
+             this->insectHex[j->GetName()].setPosition(mapPixelPosition[j->Get_Position()[0]][j->Get_Position()[1]].x,
+                                                      mapPixelPosition[j->Get_Position()[0]][j->Get_Position()[1]].y);
              //std :: cout << j.GetName() << std::endl;
              //std :: cout << insectHex[j.GetName()].getTexture() << std :: endl;
-             window.draw(this->insectHex[j.GetName()]);
+             window.draw(this->insectHex[j->GetName()]);
          }
-        if(i.GetColor() == "White"){
+        if(i->GetColor() == "White"){
             int k = 0;
-            for(auto j : i.Get_List_Insect_Remaining()){
-                this->insectHex[j.GetName()].setPosition(mapPixelRemainingPosition[k][0].x,
+            for(auto j : i->Get_List_Insect_Remaining()){
+                this->insectHex[j->GetName()].setPosition(mapPixelRemainingPosition[k][0].x,
                                                          mapPixelRemainingPosition[k][0].y);
                 //std :: cout << j.GetName() << std::endl;
                 //std :: cout << insectHex[j.GetName()].getTexture() << std :: endl;
-                window.draw(this->insectHex[j.GetName()]);
+                window.draw(this->insectHex[j->GetName()]);
                 k++;
             }
         }

@@ -25,12 +25,12 @@ using namespace engine;
 
 int main(int argc,char* argv[]){
 
-Game game = Game();
+/*Game game = Game();
 Engine engine = Engine(game);
 //engine.setState(game);
 
 PlacementCommand place_com = PlacementCommand(Player_A_playing,{1,1},game.GetListPlayer()[0].Get_List_Insect_Remaining()[0],PLACEMENT,game.GetListPlayer()[0]);
-    cout<<place_com.position[0]<<endl;
+
 
     cout << "Placement avant commande : " <<  game.GetListPlayer()[0].Get_List_Insect_Remaining()[0].Get_Position()[0]<<" " <<
          game.GetListPlayer()[0].Get_List_Insect_Remaining()[0].Get_Position()[1]<< endl;
@@ -44,6 +44,18 @@ else {
 
     cout << "Placement apres commande : " <<  game.GetListPlayer()[0].Get_List_Insect_Remaining()[0].Get_Position()[0]<<" " <<
                                                                                                                       game.GetListPlayer()[0].Get_List_Insect_Remaining()[0].Get_Position()[1]<< endl;
+*/
+
+    Bee bee_white= *new Bee("Bee_White","White",{-99,-99},0);
+    Spider spider_1_white=Spider("Spider_1_White","White",{-99,-99},0);
+
+    vector<Insect*> listins;
+    listins.push_back(&bee_white);
+    listins.push_back(&spider_1_white);
+
+    listins[0]->SetPosition({1,1});
+
+    cout << bee_white.Get_Position()[0]<< endl;
 
 
 

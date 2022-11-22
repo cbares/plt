@@ -31,11 +31,11 @@ void state::Game::SetIteration(int param) {
 
 }
 
-std::vector<state::Insect> state::Game::GetAllInsects() {
+std::vector<state::Insect*> state::Game::GetAllInsects() {
     return this->ListeAllInsect;
 }
 
-void state::Game::AppendListInsect(state::Insect insect) {
+void state::Game::AppendListInsect(state::Insect* insect) {
 
     this->ListeAllInsect.push_back(insect);
 
@@ -48,10 +48,10 @@ bool state::Game::IsBeeCircled(state::Player player) {
     bool result;
 
     if (player.GetColor()=="White"){
-        for (Insect bee : player.Get_List_Insect_Played()){
-            if (bee.GetName()=="Bee_W"){
-                int i = bee.Get_Position()[0];int j=bee.Get_Position()[1];
-                if((GameMap.GetListCase()[i-1][j].GetEmpty()== false)&&(GameMap.GetListCase()[i-1][j+1].GetEmpty()== false)&&(GameMap.GetListCase()[i][j-1].GetEmpty()== false)&&(GameMap.GetListCase()[i][j+1].GetEmpty()== false)&&(GameMap.GetListCase()[i+1][j].GetEmpty()== false)&&(GameMap.GetListCase()[i][j+1].GetEmpty()== false)){
+        for (Insect* bee : player.Get_List_Insect_Played()){
+            if (bee->GetName()=="Bee_W"){
+                int i = bee->Get_Position()[0];int j=bee->Get_Position()[1];
+                if((GameMap.GetListCase()[i-1][j]->GetEmpty()== false)&&(GameMap.GetListCase()[i-1][j+1]->GetEmpty()== false)&&(GameMap.GetListCase()[i][j-1]->GetEmpty()== false)&&(GameMap.GetListCase()[i][j+1]->GetEmpty()== false)&&(GameMap.GetListCase()[i+1][j]->GetEmpty()== false)&&(GameMap.GetListCase()[i][j+1]->GetEmpty()== false)){
                     result = true;
                 }
                 else {
@@ -62,10 +62,10 @@ bool state::Game::IsBeeCircled(state::Player player) {
     }
 
     if (player.GetColor()=="Black"){
-        for (Insect bee : player.Get_List_Insect_Played()){
-            if (bee.GetName()=="Bee_B"){
-                int i = bee.Get_Position()[0];int j=bee.Get_Position()[1];
-                if((GameMap.GetListCase()[i-1][j].GetEmpty()== false)&&(GameMap.GetListCase()[i-1][j+1].GetEmpty()== false)&&(GameMap.GetListCase()[i][j-1].GetEmpty()== false)&&(GameMap.GetListCase()[i][j+1].GetEmpty()== false)&&(GameMap.GetListCase()[i+1][j].GetEmpty()== false)&&(GameMap.GetListCase()[i][j+1].GetEmpty()== false)){
+        for (Insect* bee : player.Get_List_Insect_Played()){
+            if (bee->GetName()=="Bee_B"){
+                int i = bee->Get_Position()[0];int j=bee->Get_Position()[1];
+                if((GameMap.GetListCase()[i-1][j]->GetEmpty()== false)&&(GameMap.GetListCase()[i-1][j+1]->GetEmpty()== false)&&(GameMap.GetListCase()[i][j-1]->GetEmpty()== false)&&(GameMap.GetListCase()[i][j+1]->GetEmpty()== false)&&(GameMap.GetListCase()[i+1][j]->GetEmpty()== false)&&(GameMap.GetListCase()[i][j+1]->GetEmpty()== false)){
                     result = true;
                 }
                 else {
@@ -84,31 +84,31 @@ state::Game::Game() {
     this->GameMap=Map(10,10); //Map de 10 x 10 cases
 
 //Création des joueurs
-    Player player_white = Player("player_white","White");
-    Player player_black = Player("player_black","Black");
+    Player player_white = *new Player("player_white","White");
+    Player player_black = *new Player("player_black","Black");
     //Création des insectes
     //White
-    Bee bee_white= Bee("Bee_White","White",{-99,-99},0);
-    Spider spider_1_white=Spider("Spider_1_White","White",{-99,-99},0);
-    Grasshooper grasshooper_1_white=Grasshooper("Grasshooper_1_White","White",{-99,-99},0);
-    Beetle beetle_1_white=Beetle("Beetle_1_White","White",{-99,-99},0);
+    Bee bee_white= *new Bee("Bee_White","White",{-99,-99},0);
+    Spider spider_1_white=*new Spider("Spider_1_White","White",{-99,-99},0);
+    Grasshooper grasshooper_1_white=*new Grasshooper("Grasshooper_1_White","White",{-99,-99},0);
+    Beetle beetle_1_white=*new Beetle("Beetle_1_White","White",{-99,-99},0);
     //Black
-    Bee bee_black= Bee("Bee_Black","Black",{-99,-99},0);
-    Spider spider_1_black=Spider("Spider_1_Black","Black",{-99,-99},0);
-    Grasshooper grasshooper_1_black=Grasshooper("Grasshooper_1_Black","Black",{-99,-99},0);
-    Beetle beetle_1_black=Beetle("Beetle_1_Black","Black",{-99,-99},0);
+    Bee bee_black=*new Bee("Bee_Black","Black",{-99,-99},0);
+    Spider spider_1_black=*new Spider("Spider_1_Black","Black",{-99,-99},0);
+    Grasshooper grasshooper_1_black=*new Grasshooper("Grasshooper_1_Black","Black",{-99,-99},0);
+    Beetle beetle_1_black=*new Beetle("Beetle_1_Black","Black",{-99,-99},0);
 
     //Remplissage de la liste des insectes par joueur
 
-    player_black.Add_Insect_Remaining(bee_black);
-    player_black.Add_Insect_Remaining(spider_1_black);
-    player_black.Add_Insect_Remaining(grasshooper_1_black);
-    player_black.Add_Insect_Remaining(beetle_1_black);
+    player_black.Add_Insect_Remaining(&bee_black);
+    player_black.Add_Insect_Remaining(&spider_1_black);
+    player_black.Add_Insect_Remaining(&grasshooper_1_black);
+    player_black.Add_Insect_Remaining(&beetle_1_black);
 
-    player_white.Add_Insect_Remaining(bee_white);
-    player_white.Add_Insect_Remaining(spider_1_white);
-    player_white.Add_Insect_Remaining(grasshooper_1_white);
-    player_white.Add_Insect_Remaining(beetle_1_white);
+    player_white.Add_Insect_Remaining(&bee_white);
+    player_white.Add_Insect_Remaining(&spider_1_white);
+    player_white.Add_Insect_Remaining(&grasshooper_1_white);
+    player_white.Add_Insect_Remaining(&beetle_1_white);
 
 
 
@@ -122,8 +122,8 @@ state::Game::Game() {
 
 
     //Remplissage de ListPlayer
-    this->listPlayer.push_back(player_white);
-    this->listPlayer.push_back(player_black);
+    this->listPlayer.push_back(&player_white);
+    this->listPlayer.push_back(&player_black);
 
 
 
@@ -136,11 +136,11 @@ state::Map state::Game::GetMap() {
 }
 
 
-void state::Game::AppendListJoueur(state::Player player) {
+void state::Game::AppendListJoueur(state::Player* player) {
     this->listPlayer.push_back(player);
 }
 
-std::vector<state::Player> state::Game::GetListPlayer() {
+std::vector<state::Player*> state::Game::GetListPlayer() {
     return this->listPlayer;
 }
 
