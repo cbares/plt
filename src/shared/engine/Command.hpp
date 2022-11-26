@@ -12,7 +12,6 @@ namespace engine {
 
 #include "CommandTypeId.hpp"
 #include "state/GameStatus.hpp"
-#include "state/Player.hpp"
 #include "Engine.hpp"
 
 namespace engine {
@@ -23,18 +22,18 @@ namespace engine {
   protected:
     CommandTypeId commandTypeId;
     state::GameStatus playing;
-    state::Player player     = state::Player("def","White");;
+    state::Player* player;
     // Operations
   public:
     Command ();
     CommandTypeId getCommandTypeId ();
-    virtual void execute ();
+    virtual bool execute ();
     // Setters and Getters
     void setCommandTypeId(CommandTypeId commandTypeId);
     state::GameStatus getPlaying() const;
     void setPlaying(state::GameStatus playing);
-    const state::Player& getPlayer() const;
-    void setPlayer(const state::Player& player);
+    const state::Player*& getPlayer() const;
+    void setPlayer(const state::Player*& player);
   };
 
 };

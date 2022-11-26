@@ -13,14 +13,14 @@ state::Map::Map(int length, int width) {
   this->Length=length;
   this->Width=width;
 
-  vector<vector<Case*>> templistcase;
+  vector<vector<Case>> templistcase;
 
 
     for (int i=0;i<length;i++){
-        vector<Case*> temp;
+        vector<Case> temp;
         for(int j=0;j<width;j++) {
 
-            temp.push_back(new Case({i,j},true));
+            temp.push_back(Case({i,j},true));
 
 
         }
@@ -37,11 +37,15 @@ int state::Map::GetWidth() {
     return this->Width;
 }
 
-vector<vector<state::Case*>> state::Map::GetListCase() {
+vector<vector<state::Case>> state::Map::GetListCase() {
     return this->ListCase;
 }
 
-void state::Map::SetListCase(state::Case* case1, int i, int j) {
+void state::Map::SetListCase(state::Case case1, int i, int j) {
     this->ListCase[i][j]= case1;
+}
+
+void state::Map::SetEmptyCase(bool empty,int i ,int j) {
+this->ListCase[i][j].SetEmpty(empty);
 }
 

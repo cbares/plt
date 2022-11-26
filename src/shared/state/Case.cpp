@@ -16,3 +16,11 @@ bool state::Case::GetEmpty() {
 void state::Case::SetEmpty(bool state) {
 this->empty=state;
 }
+
+int state::Case::Get_i() {
+    return this->position[0];
+}
+
+int state::Case::Get_j() {
+    return this->position[1];
+}

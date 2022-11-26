@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ali/plt_render_test
+CMAKE_SOURCE_DIR = /home/ali/plt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ali/plt_render_test/cmake-build-debug
+CMAKE_BINARY_DIR = /home/ali/plt/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include src/client/CMakeFiles/client_static.dir/depend.make
@@ -59,68 +59,68 @@ include src/client/CMakeFiles/client_static.dir/flags.make
 
 src/client/CMakeFiles/client_static.dir/client/Exemple.cpp.o: src/client/CMakeFiles/client_static.dir/flags.make
 src/client/CMakeFiles/client_static.dir/client/Exemple.cpp.o: ../src/client/client/Exemple.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt_render_test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/client/CMakeFiles/client_static.dir/client/Exemple.cpp.o"
-	cd /home/ali/plt_render_test/cmake-build-debug/src/client && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client_static.dir/client/Exemple.cpp.o -c /home/ali/plt_render_test/src/client/client/Exemple.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/client/CMakeFiles/client_static.dir/client/Exemple.cpp.o"
+	cd /home/ali/plt/cmake-build-debug/src/client && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client_static.dir/client/Exemple.cpp.o -c /home/ali/plt/src/client/client/Exemple.cpp
 
 src/client/CMakeFiles/client_static.dir/client/Exemple.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client_static.dir/client/Exemple.cpp.i"
-	cd /home/ali/plt_render_test/cmake-build-debug/src/client && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ali/plt_render_test/src/client/client/Exemple.cpp > CMakeFiles/client_static.dir/client/Exemple.cpp.i
+	cd /home/ali/plt/cmake-build-debug/src/client && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ali/plt/src/client/client/Exemple.cpp > CMakeFiles/client_static.dir/client/Exemple.cpp.i
 
 src/client/CMakeFiles/client_static.dir/client/Exemple.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client_static.dir/client/Exemple.cpp.s"
-	cd /home/ali/plt_render_test/cmake-build-debug/src/client && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ali/plt_render_test/src/client/client/Exemple.cpp -o CMakeFiles/client_static.dir/client/Exemple.cpp.s
+	cd /home/ali/plt/cmake-build-debug/src/client && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ali/plt/src/client/client/Exemple.cpp -o CMakeFiles/client_static.dir/client/Exemple.cpp.s
 
 src/client/CMakeFiles/client_static.dir/render/InsectDraw.cpp.o: src/client/CMakeFiles/client_static.dir/flags.make
 src/client/CMakeFiles/client_static.dir/render/InsectDraw.cpp.o: ../src/client/render/InsectDraw.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt_render_test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/client/CMakeFiles/client_static.dir/render/InsectDraw.cpp.o"
-	cd /home/ali/plt_render_test/cmake-build-debug/src/client && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client_static.dir/render/InsectDraw.cpp.o -c /home/ali/plt_render_test/src/client/render/InsectDraw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/client/CMakeFiles/client_static.dir/render/InsectDraw.cpp.o"
+	cd /home/ali/plt/cmake-build-debug/src/client && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client_static.dir/render/InsectDraw.cpp.o -c /home/ali/plt/src/client/render/InsectDraw.cpp
 
 src/client/CMakeFiles/client_static.dir/render/InsectDraw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client_static.dir/render/InsectDraw.cpp.i"
-	cd /home/ali/plt_render_test/cmake-build-debug/src/client && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ali/plt_render_test/src/client/render/InsectDraw.cpp > CMakeFiles/client_static.dir/render/InsectDraw.cpp.i
+	cd /home/ali/plt/cmake-build-debug/src/client && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ali/plt/src/client/render/InsectDraw.cpp > CMakeFiles/client_static.dir/render/InsectDraw.cpp.i
 
 src/client/CMakeFiles/client_static.dir/render/InsectDraw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client_static.dir/render/InsectDraw.cpp.s"
-	cd /home/ali/plt_render_test/cmake-build-debug/src/client && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ali/plt_render_test/src/client/render/InsectDraw.cpp -o CMakeFiles/client_static.dir/render/InsectDraw.cpp.s
+	cd /home/ali/plt/cmake-build-debug/src/client && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ali/plt/src/client/render/InsectDraw.cpp -o CMakeFiles/client_static.dir/render/InsectDraw.cpp.s
 
 src/client/CMakeFiles/client_static.dir/render/MapDraw.cpp.o: src/client/CMakeFiles/client_static.dir/flags.make
 src/client/CMakeFiles/client_static.dir/render/MapDraw.cpp.o: ../src/client/render/MapDraw.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt_render_test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/client/CMakeFiles/client_static.dir/render/MapDraw.cpp.o"
-	cd /home/ali/plt_render_test/cmake-build-debug/src/client && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client_static.dir/render/MapDraw.cpp.o -c /home/ali/plt_render_test/src/client/render/MapDraw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/client/CMakeFiles/client_static.dir/render/MapDraw.cpp.o"
+	cd /home/ali/plt/cmake-build-debug/src/client && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client_static.dir/render/MapDraw.cpp.o -c /home/ali/plt/src/client/render/MapDraw.cpp
 
 src/client/CMakeFiles/client_static.dir/render/MapDraw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client_static.dir/render/MapDraw.cpp.i"
-	cd /home/ali/plt_render_test/cmake-build-debug/src/client && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ali/plt_render_test/src/client/render/MapDraw.cpp > CMakeFiles/client_static.dir/render/MapDraw.cpp.i
+	cd /home/ali/plt/cmake-build-debug/src/client && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ali/plt/src/client/render/MapDraw.cpp > CMakeFiles/client_static.dir/render/MapDraw.cpp.i
 
 src/client/CMakeFiles/client_static.dir/render/MapDraw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client_static.dir/render/MapDraw.cpp.s"
-	cd /home/ali/plt_render_test/cmake-build-debug/src/client && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ali/plt_render_test/src/client/render/MapDraw.cpp -o CMakeFiles/client_static.dir/render/MapDraw.cpp.s
+	cd /home/ali/plt/cmake-build-debug/src/client && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ali/plt/src/client/render/MapDraw.cpp -o CMakeFiles/client_static.dir/render/MapDraw.cpp.s
 
 src/client/CMakeFiles/client_static.dir/render/Scene.cpp.o: src/client/CMakeFiles/client_static.dir/flags.make
 src/client/CMakeFiles/client_static.dir/render/Scene.cpp.o: ../src/client/render/Scene.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt_render_test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/client/CMakeFiles/client_static.dir/render/Scene.cpp.o"
-	cd /home/ali/plt_render_test/cmake-build-debug/src/client && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client_static.dir/render/Scene.cpp.o -c /home/ali/plt_render_test/src/client/render/Scene.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/client/CMakeFiles/client_static.dir/render/Scene.cpp.o"
+	cd /home/ali/plt/cmake-build-debug/src/client && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client_static.dir/render/Scene.cpp.o -c /home/ali/plt/src/client/render/Scene.cpp
 
 src/client/CMakeFiles/client_static.dir/render/Scene.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client_static.dir/render/Scene.cpp.i"
-	cd /home/ali/plt_render_test/cmake-build-debug/src/client && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ali/plt_render_test/src/client/render/Scene.cpp > CMakeFiles/client_static.dir/render/Scene.cpp.i
+	cd /home/ali/plt/cmake-build-debug/src/client && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ali/plt/src/client/render/Scene.cpp > CMakeFiles/client_static.dir/render/Scene.cpp.i
 
 src/client/CMakeFiles/client_static.dir/render/Scene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client_static.dir/render/Scene.cpp.s"
-	cd /home/ali/plt_render_test/cmake-build-debug/src/client && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ali/plt_render_test/src/client/render/Scene.cpp -o CMakeFiles/client_static.dir/render/Scene.cpp.s
+	cd /home/ali/plt/cmake-build-debug/src/client && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ali/plt/src/client/render/Scene.cpp -o CMakeFiles/client_static.dir/render/Scene.cpp.s
 
 src/client/CMakeFiles/client_static.dir/render/TextDraw.cpp.o: src/client/CMakeFiles/client_static.dir/flags.make
 src/client/CMakeFiles/client_static.dir/render/TextDraw.cpp.o: ../src/client/render/TextDraw.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt_render_test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/client/CMakeFiles/client_static.dir/render/TextDraw.cpp.o"
-	cd /home/ali/plt_render_test/cmake-build-debug/src/client && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client_static.dir/render/TextDraw.cpp.o -c /home/ali/plt_render_test/src/client/render/TextDraw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/client/CMakeFiles/client_static.dir/render/TextDraw.cpp.o"
+	cd /home/ali/plt/cmake-build-debug/src/client && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/client_static.dir/render/TextDraw.cpp.o -c /home/ali/plt/src/client/render/TextDraw.cpp
 
 src/client/CMakeFiles/client_static.dir/render/TextDraw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client_static.dir/render/TextDraw.cpp.i"
-	cd /home/ali/plt_render_test/cmake-build-debug/src/client && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ali/plt_render_test/src/client/render/TextDraw.cpp > CMakeFiles/client_static.dir/render/TextDraw.cpp.i
+	cd /home/ali/plt/cmake-build-debug/src/client && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ali/plt/src/client/render/TextDraw.cpp > CMakeFiles/client_static.dir/render/TextDraw.cpp.i
 
 src/client/CMakeFiles/client_static.dir/render/TextDraw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client_static.dir/render/TextDraw.cpp.s"
-	cd /home/ali/plt_render_test/cmake-build-debug/src/client && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ali/plt_render_test/src/client/render/TextDraw.cpp -o CMakeFiles/client_static.dir/render/TextDraw.cpp.s
+	cd /home/ali/plt/cmake-build-debug/src/client && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ali/plt/src/client/render/TextDraw.cpp -o CMakeFiles/client_static.dir/render/TextDraw.cpp.s
 
 # Object files for target client_static
 client_static_OBJECTS = \
@@ -140,9 +140,9 @@ src/client/libclient_static.a: src/client/CMakeFiles/client_static.dir/render/Sc
 src/client/libclient_static.a: src/client/CMakeFiles/client_static.dir/render/TextDraw.cpp.o
 src/client/libclient_static.a: src/client/CMakeFiles/client_static.dir/build.make
 src/client/libclient_static.a: src/client/CMakeFiles/client_static.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ali/plt_render_test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libclient_static.a"
-	cd /home/ali/plt_render_test/cmake-build-debug/src/client && $(CMAKE_COMMAND) -P CMakeFiles/client_static.dir/cmake_clean_target.cmake
-	cd /home/ali/plt_render_test/cmake-build-debug/src/client && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/client_static.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libclient_static.a"
+	cd /home/ali/plt/cmake-build-debug/src/client && $(CMAKE_COMMAND) -P CMakeFiles/client_static.dir/cmake_clean_target.cmake
+	cd /home/ali/plt/cmake-build-debug/src/client && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/client_static.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/client/CMakeFiles/client_static.dir/build: src/client/libclient_static.a
@@ -150,10 +150,10 @@ src/client/CMakeFiles/client_static.dir/build: src/client/libclient_static.a
 .PHONY : src/client/CMakeFiles/client_static.dir/build
 
 src/client/CMakeFiles/client_static.dir/clean:
-	cd /home/ali/plt_render_test/cmake-build-debug/src/client && $(CMAKE_COMMAND) -P CMakeFiles/client_static.dir/cmake_clean.cmake
+	cd /home/ali/plt/cmake-build-debug/src/client && $(CMAKE_COMMAND) -P CMakeFiles/client_static.dir/cmake_clean.cmake
 .PHONY : src/client/CMakeFiles/client_static.dir/clean
 
 src/client/CMakeFiles/client_static.dir/depend:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ali/plt_render_test /home/ali/plt_render_test/src/client /home/ali/plt_render_test/cmake-build-debug /home/ali/plt_render_test/cmake-build-debug/src/client /home/ali/plt_render_test/cmake-build-debug/src/client/CMakeFiles/client_static.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ali/plt/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ali/plt /home/ali/plt/src/client /home/ali/plt/cmake-build-debug /home/ali/plt/cmake-build-debug/src/client /home/ali/plt/cmake-build-debug/src/client/CMakeFiles/client_static.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/client/CMakeFiles/client_static.dir/depend
 

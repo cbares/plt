@@ -28,4 +28,4 @@ src/client/CMakeFiles/client.dir/main.cpp.o
  ../src/shared/state/Mosquito.hpp
  ../src/shared/state/Player.hpp
  ../src/shared/state/Spider.hpp
- /home/ali/plt_render_test/src/client/main.cpp
+ /home/ali/plt/src/client/main.cpp

@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/shared_static.dir/engine/Command.cpp.o"
+  "CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.o"
   "CMakeFiles/shared_static.dir/engine/Engine.cpp.o"
   "CMakeFiles/shared_static.dir/engine/PlacementCommand.cpp.o"
   "CMakeFiles/shared_static.dir/state/Bee.cpp.o"

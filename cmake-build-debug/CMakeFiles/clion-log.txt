@@ -1,4 +1,4 @@
-C:\windows\system32\wsl.exe --distribution Ubuntu --exec /bin/bash -c "export CMAKE_COLOR_DIAGNOSTICS=ON && export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /home/ali/plt_render_test/cmake-build-debug && /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G 'CodeBlocks - Unix Makefiles' -S /home/ali/plt_render_test -B /home/ali/plt_render_test/cmake-build-debug"
+C:\windows\system32\wsl.exe --distribution Ubuntu --exec /bin/bash -c "export CMAKE_COLOR_DIAGNOSTICS=ON && export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /home/ali/plt/cmake-build-debug && /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G 'CodeBlocks - Unix Makefiles' -S /home/ali/plt -B /home/ali/plt/cmake-build-debug"
 -- Build type: Debug
 -- Code coverage: ON
 -- Appending code coverage compiler flags: -g --coverage -fprofile-arcs -ftest-coverage
@@ -12,4 +12,4 @@ CMake Warning at rapport/CMakeLists.txt:51 (message):
 -- Boost include directory: /usr/include
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/ali/plt_render_test/cmake-build-debug
+-- Build files have been written to: /home/ali/plt/cmake-build-debug

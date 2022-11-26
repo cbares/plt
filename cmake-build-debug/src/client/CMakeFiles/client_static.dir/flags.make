@@ -6,5 +6,5 @@ CXX_FLAGS =  -Wall -std=c++11 -pthread -g -g --coverage -fprofile-arcs -ftest-co
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ali/plt_render_test/src/client -I/home/ali/plt_render_test/src/shared 
+CXX_INCLUDES = -I/home/ali/plt/src/client -I/home/ali/plt/src/shared 
 

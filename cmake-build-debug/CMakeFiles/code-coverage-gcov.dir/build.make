@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ali/plt_render_test
+CMAKE_SOURCE_DIR = /home/ali/plt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ali/plt_render_test/cmake-build-debug
+CMAKE_BINARY_DIR = /home/ali/plt/cmake-build-debug
 
 # Utility rule file for code-coverage-gcov.
 
@@ -54,9 +54,9 @@ CMAKE_BINARY_DIR = /home/ali/plt_render_test/cmake-build-debug
 include CMakeFiles/code-coverage-gcov.dir/progress.make
 
 CMakeFiles/code-coverage-gcov: run_test.sh
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ali/plt_render_test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running gcovr to produce Cobertura code coverage report."
-	sh /home/ali/plt_render_test/cmake-build-debug/run_test.sh
-	/usr/bin/gcovr --xml -r /home/ali/plt_render_test -e /usr/ -e /home/ali/plt_render_test/test/ -e /home/ali/plt_render_test/extern/ --object-directory=/home/ali/plt_render_test/cmake-build-debug -o code-coverage-gcov.xml
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running gcovr to produce Cobertura code coverage report."
+	sh /home/ali/plt/cmake-build-debug/run_test.sh
+	/usr/bin/gcovr --xml -r /home/ali/plt -e /usr/ -e /home/ali/plt/test/ -e /home/ali/plt/extern/ --object-directory=/home/ali/plt/cmake-build-debug -o code-coverage-gcov.xml
 
 code-coverage-gcov: CMakeFiles/code-coverage-gcov
 code-coverage-gcov: CMakeFiles/code-coverage-gcov.dir/build.make
@@ -73,6 +73,6 @@ CMakeFiles/code-coverage-gcov.dir/clean:
 .PHONY : CMakeFiles/code-coverage-gcov.dir/clean
 
 CMakeFiles/code-coverage-gcov.dir/depend:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ali/plt_render_test /home/ali/plt_render_test /home/ali/plt_render_test/cmake-build-debug /home/ali/plt_render_test/cmake-build-debug /home/ali/plt_render_test/cmake-build-debug/CMakeFiles/code-coverage-gcov.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ali/plt/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ali/plt /home/ali/plt /home/ali/plt/cmake-build-debug /home/ali/plt/cmake-build-debug /home/ali/plt/cmake-build-debug/CMakeFiles/code-coverage-gcov.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/code-coverage-gcov.dir/depend
 

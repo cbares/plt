@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ali/plt_render_test
+CMAKE_SOURCE_DIR = /home/ali/plt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ali/plt_render_test/cmake-build-debug
+CMAKE_BINARY_DIR = /home/ali/plt/cmake-build-debug
 
 # Utility rule file for generate-header-state.
 
@@ -57,11 +57,11 @@ src/shared/CMakeFiles/generate-header-state: generate_header_state.stamp
 
 
 generate_header_state.stamp: ../src/state.dia
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ali/plt_render_test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating ../../generate_header_state.stamp"
-	cd /home/ali/plt_render_test/cmake-build-debug/src/shared && rm -vf /home/ali/plt_render_test/src/*/state.h
-	cd /home/ali/plt_render_test/cmake-build-debug/src/shared && rm -vf /home/ali/plt_render_test/src/*/state/*.h
-	cd /home/ali/plt_render_test/cmake-build-debug/src/shared && ../../../bin/dia2code -ns state -d /home/ali/plt_render_test/src/shared -t cpp /home/ali/plt_render_test/src/shared/../state.dia -ext hpp
-	cd /home/ali/plt_render_test/cmake-build-debug/src/shared && /usr/bin/cmake -E touch /home/ali/plt_render_test/cmake-build-debug/generate_header_state.stamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating ../../generate_header_state.stamp"
+	cd /home/ali/plt/cmake-build-debug/src/shared && rm -vf /home/ali/plt/src/*/state.h
+	cd /home/ali/plt/cmake-build-debug/src/shared && rm -vf /home/ali/plt/src/*/state/*.h
+	cd /home/ali/plt/cmake-build-debug/src/shared && ../../../bin/dia2code -ns state -d /home/ali/plt/src/shared -t cpp /home/ali/plt/src/shared/../state.dia -ext hpp
+	cd /home/ali/plt/cmake-build-debug/src/shared && /usr/bin/cmake -E touch /home/ali/plt/cmake-build-debug/generate_header_state.stamp
 
 generate-header-state: src/shared/CMakeFiles/generate-header-state
 generate-header-state: generate_header_state.stamp
@@ -75,10 +75,10 @@ src/shared/CMakeFiles/generate-header-state.dir/build: generate-header-state
 .PHONY : src/shared/CMakeFiles/generate-header-state.dir/build
 
 src/shared/CMakeFiles/generate-header-state.dir/clean:
-	cd /home/ali/plt_render_test/cmake-build-debug/src/shared && $(CMAKE_COMMAND) -P CMakeFiles/generate-header-state.dir/cmake_clean.cmake
+	cd /home/ali/plt/cmake-build-debug/src/shared && $(CMAKE_COMMAND) -P CMakeFiles/generate-header-state.dir/cmake_clean.cmake
 .PHONY : src/shared/CMakeFiles/generate-header-state.dir/clean
 
 src/shared/CMakeFiles/generate-header-state.dir/depend:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ali/plt_render_test /home/ali/plt_render_test/src/shared /home/ali/plt_render_test/cmake-build-debug /home/ali/plt_render_test/cmake-build-debug/src/shared /home/ali/plt_render_test/cmake-build-debug/src/shared/CMakeFiles/generate-header-state.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ali/plt/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ali/plt /home/ali/plt/src/shared /home/ali/plt/cmake-build-debug /home/ali/plt/cmake-build-debug/src/shared /home/ali/plt/cmake-build-debug/src/shared/CMakeFiles/generate-header-state.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/shared/CMakeFiles/generate-header-state.dir/depend
 

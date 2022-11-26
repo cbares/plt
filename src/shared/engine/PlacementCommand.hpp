@@ -23,10 +23,11 @@ namespace engine {
     // Attributes
   public:
     std::vector<int> position;
-    state::Insect insect     = state::Insect("defaut","White",{0,0},0);
+    state::Insect* insect;
+    std::vector<std::vector<int>> placement_possible;
     // Operations
   public:
-    PlacementCommand (state::GameStatus gamestatus, std::vector<int> position_insect, state::Insect& insect, CommandTypeId commandId, state::Player& player);
+    PlacementCommand (state::GameStatus gamestatus, std::vector<int> position_insect, state::Insect& insect, CommandTypeId commandId, state::Player& player, std::vector<std::vector<int>> placement_possible);
     bool execute (engine::Engine& engine);
     // Setters and Getters
   };

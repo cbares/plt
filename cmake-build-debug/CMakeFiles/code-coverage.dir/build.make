@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ali/plt_render_test
+CMAKE_SOURCE_DIR = /home/ali/plt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ali/plt_render_test/cmake-build-debug
+CMAKE_BINARY_DIR = /home/ali/plt/cmake-build-debug
 
 # Utility rule file for code-coverage.
 
@@ -54,16 +54,16 @@ CMAKE_BINARY_DIR = /home/ali/plt_render_test/cmake-build-debug
 include CMakeFiles/code-coverage.dir/progress.make
 
 CMakeFiles/code-coverage: run_test.sh
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ali/plt_render_test/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Resetting code coverage counters to zero."
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Resetting code coverage counters to zero."
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Processing code coverage counters and generating report."
 	/usr/bin/lcov --gcov-tool /usr/bin/gcov -directory . --zerocounters
 	/usr/bin/lcov --gcov-tool /usr/bin/gcov -c -i -d . -o code-coverage.base
-	sh /home/ali/plt_render_test/cmake-build-debug/run_test.sh
+	sh /home/ali/plt/cmake-build-debug/run_test.sh
 	/usr/bin/lcov --gcov-tool /usr/bin/gcov --directory . --capture --output-file code-coverage.info
 	/usr/bin/lcov --gcov-tool /usr/bin/gcov -a code-coverage.base -a code-coverage.info --output-file code-coverage.total
-	/usr/bin/lcov --gcov-tool /usr/bin/gcov --remove code-coverage.total '/usr/*' '/home/ali/plt_render_test/test/*' '/home/ali/plt_render_test/extern/*' --output-file /home/ali/plt_render_test/cmake-build-debug/code-coverage.info.cleaned
-	/usr/bin/genhtml -o code-coverage /home/ali/plt_render_test/cmake-build-debug/code-coverage.info.cleaned
-	/usr/bin/cmake -E remove code-coverage.base code-coverage.total /home/ali/plt_render_test/cmake-build-debug/code-coverage.info.cleaned
+	/usr/bin/lcov --gcov-tool /usr/bin/gcov --remove code-coverage.total '/usr/*' '/home/ali/plt/test/*' '/home/ali/plt/extern/*' --output-file /home/ali/plt/cmake-build-debug/code-coverage.info.cleaned
+	/usr/bin/genhtml -o code-coverage /home/ali/plt/cmake-build-debug/code-coverage.info.cleaned
+	/usr/bin/cmake -E remove code-coverage.base code-coverage.total /home/ali/plt/cmake-build-debug/code-coverage.info.cleaned
 
 code-coverage: CMakeFiles/code-coverage
 code-coverage: CMakeFiles/code-coverage.dir/build.make
@@ -81,6 +81,6 @@ CMakeFiles/code-coverage.dir/clean:
 .PHONY : CMakeFiles/code-coverage.dir/clean
 
 CMakeFiles/code-coverage.dir/depend:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ali/plt_render_test /home/ali/plt_render_test /home/ali/plt_render_test/cmake-build-debug /home/ali/plt_render_test/cmake-build-debug /home/ali/plt_render_test/cmake-build-debug/CMakeFiles/code-coverage.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ali/plt/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ali/plt /home/ali/plt /home/ali/plt/cmake-build-debug /home/ali/plt/cmake-build-debug /home/ali/plt/cmake-build-debug/CMakeFiles/code-coverage.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/code-coverage.dir/depend
 

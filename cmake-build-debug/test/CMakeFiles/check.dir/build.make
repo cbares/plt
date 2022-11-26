@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ali/plt_render_test
+CMAKE_SOURCE_DIR = /home/ali/plt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ali/plt_render_test/cmake-build-debug
+CMAKE_BINARY_DIR = /home/ali/plt/cmake-build-debug
 
 # Utility rule file for check.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/ali/plt_render_test/cmake-build-debug
 include test/CMakeFiles/check.dir/progress.make
 
 test/CMakeFiles/check:
-	cd /home/ali/plt_render_test/cmake-build-debug/test && /usr/bin/ctest --output-on-failure
+	cd /home/ali/plt/cmake-build-debug/test && /usr/bin/ctest --output-on-failure
 
 check: test/CMakeFiles/check
 check: test/CMakeFiles/check.dir/build.make
@@ -67,10 +67,10 @@ test/CMakeFiles/check.dir/build: check
 .PHONY : test/CMakeFiles/check.dir/build
 
 test/CMakeFiles/check.dir/clean:
-	cd /home/ali/plt_render_test/cmake-build-debug/test && $(CMAKE_COMMAND) -P CMakeFiles/check.dir/cmake_clean.cmake
+	cd /home/ali/plt/cmake-build-debug/test && $(CMAKE_COMMAND) -P CMakeFiles/check.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/check.dir/clean
 
 test/CMakeFiles/check.dir/depend:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ali/plt_render_test /home/ali/plt_render_test/test /home/ali/plt_render_test/cmake-build-debug /home/ali/plt_render_test/cmake-build-debug/test /home/ali/plt_render_test/cmake-build-debug/test/CMakeFiles/check.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ali/plt/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ali/plt /home/ali/plt/test /home/ali/plt/cmake-build-debug /home/ali/plt/cmake-build-debug/test /home/ali/plt/cmake-build-debug/test/CMakeFiles/check.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/CMakeFiles/check.dir/depend
 

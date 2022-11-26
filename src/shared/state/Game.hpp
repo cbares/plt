@@ -11,8 +11,8 @@ namespace state {
 }
 
 #include "GameStatus.hpp"
-#include "Map.hpp"
 #include "Player.hpp"
+#include "Map.hpp"
 
 namespace state {
 
@@ -24,7 +24,7 @@ namespace state {
     GameStatus state;
     int nbIteration;
     std::vector<Insect*> ListeAllInsect;
-    Map GameMap     = Map(0,0);
+    Map* GameMap;
     std::vector<Player*> listPlayer;
     // Operations
   public:
@@ -35,11 +35,12 @@ namespace state {
     int GetIteration ();
     void SetIteration (int param);
     std::vector<Insect*> GetAllInsects ();
-    void AppendListInsect (Insect* insect);
+    void AppendListInsect (Insect& insect);
     Game ();
-    Map GetMap ();
-    void AppendListJoueur (Player* player);
+    Map* GetMap ();
+    void AppendListJoueur (Player& player);
     std::vector<state::Player*> GetListPlayer ();
+    std::vector<Insect> GetAllInsect_placed ();
     // Setters and Getters
   };
 

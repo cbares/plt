@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ali/plt_render_test
+CMAKE_SOURCE_DIR = /home/ali/plt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ali/plt_render_test/cmake-build-debug
+CMAKE_BINARY_DIR = /home/ali/plt/cmake-build-debug
 
 # Utility rule file for unittest.
 
@@ -67,10 +67,10 @@ test/CMakeFiles/unittest.dir/build: unittest
 .PHONY : test/CMakeFiles/unittest.dir/build
 
 test/CMakeFiles/unittest.dir/clean:
-	cd /home/ali/plt_render_test/cmake-build-debug/test && $(CMAKE_COMMAND) -P CMakeFiles/unittest.dir/cmake_clean.cmake
+	cd /home/ali/plt/cmake-build-debug/test && $(CMAKE_COMMAND) -P CMakeFiles/unittest.dir/cmake_clean.cmake
 .PHONY : test/CMakeFiles/unittest.dir/clean
 
 test/CMakeFiles/unittest.dir/depend:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ali/plt_render_test /home/ali/plt_render_test/test /home/ali/plt_render_test/cmake-build-debug /home/ali/plt_render_test/cmake-build-debug/test /home/ali/plt_render_test/cmake-build-debug/test/CMakeFiles/unittest.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ali/plt/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ali/plt /home/ali/plt/test /home/ali/plt/cmake-build-debug /home/ali/plt/cmake-build-debug/test /home/ali/plt/cmake-build-debug/test/CMakeFiles/unittest.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : test/CMakeFiles/unittest.dir/depend
 

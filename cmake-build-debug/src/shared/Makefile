@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ali/plt_render_test
+CMAKE_SOURCE_DIR = /home/ali/plt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ali/plt_render_test/cmake-build-debug
+CMAKE_BINARY_DIR = /home/ali/plt/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ali/plt_render_test/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt_render_test/cmake-build-debug/CMakeFiles /home/ali/plt_render_test/cmake-build-debug/src/shared/CMakeFiles/progress.marks
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/shared/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt_render_test/cmake-build-debug/CMakeFiles 0
+	cd /home/ali/plt/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles /home/ali/plt/cmake-build-debug/src/shared/CMakeFiles/progress.marks
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/shared/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/shared/clean
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/shared/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/shared/preinstall
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/shared/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/shared/preinstall
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/shared/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ali/plt/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/shared/CMakeFiles/shared_static.dir/rule:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/shared/CMakeFiles/shared_static.dir/rule
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/shared/CMakeFiles/shared_static.dir/rule
 .PHONY : src/shared/CMakeFiles/shared_static.dir/rule
 
 # Convenience name for target.
@@ -122,12 +122,12 @@ shared_static: src/shared/CMakeFiles/shared_static.dir/rule
 
 # fast build rule for target.
 shared_static/fast:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/build
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/build
 .PHONY : shared_static/fast
 
 # Convenience name for target.
 src/shared/CMakeFiles/generate-header-engine.dir/rule:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/shared/CMakeFiles/generate-header-engine.dir/rule
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/shared/CMakeFiles/generate-header-engine.dir/rule
 .PHONY : src/shared/CMakeFiles/generate-header-engine.dir/rule
 
 # Convenience name for target.
@@ -137,12 +137,12 @@ generate-header-engine: src/shared/CMakeFiles/generate-header-engine.dir/rule
 
 # fast build rule for target.
 generate-header-engine/fast:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/generate-header-engine.dir/build.make src/shared/CMakeFiles/generate-header-engine.dir/build
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/generate-header-engine.dir/build.make src/shared/CMakeFiles/generate-header-engine.dir/build
 .PHONY : generate-header-engine/fast
 
 # Convenience name for target.
 src/shared/CMakeFiles/generate-header-state.dir/rule:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/shared/CMakeFiles/generate-header-state.dir/rule
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/shared/CMakeFiles/generate-header-state.dir/rule
 .PHONY : src/shared/CMakeFiles/generate-header-state.dir/rule
 
 # Convenience name for target.
@@ -152,7 +152,7 @@ generate-header-state: src/shared/CMakeFiles/generate-header-state.dir/rule
 
 # fast build rule for target.
 generate-header-state/fast:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/generate-header-state.dir/build.make src/shared/CMakeFiles/generate-header-state.dir/build
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/generate-header-state.dir/build.make src/shared/CMakeFiles/generate-header-state.dir/build
 .PHONY : generate-header-state/fast
 
 engine/Command.o: engine/Command.cpp.o
@@ -161,7 +161,7 @@ engine/Command.o: engine/Command.cpp.o
 
 # target to build an object file
 engine/Command.cpp.o:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/engine/Command.cpp.o
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/engine/Command.cpp.o
 .PHONY : engine/Command.cpp.o
 
 engine/Command.i: engine/Command.cpp.i
@@ -170,7 +170,7 @@ engine/Command.i: engine/Command.cpp.i
 
 # target to preprocess a source file
 engine/Command.cpp.i:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/engine/Command.cpp.i
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/engine/Command.cpp.i
 .PHONY : engine/Command.cpp.i
 
 engine/Command.s: engine/Command.cpp.s
@@ -179,8 +179,35 @@ engine/Command.s: engine/Command.cpp.s
 
 # target to generate assembly for a file
 engine/Command.cpp.s:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/engine/Command.cpp.s
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/engine/Command.cpp.s
 .PHONY : engine/Command.cpp.s
+
+engine/DeplacementCommand.o: engine/DeplacementCommand.cpp.o
+
+.PHONY : engine/DeplacementCommand.o
+
+# target to build an object file
+engine/DeplacementCommand.cpp.o:
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.o
+.PHONY : engine/DeplacementCommand.cpp.o
+
+engine/DeplacementCommand.i: engine/DeplacementCommand.cpp.i
+
+.PHONY : engine/DeplacementCommand.i
+
+# target to preprocess a source file
+engine/DeplacementCommand.cpp.i:
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.i
+.PHONY : engine/DeplacementCommand.cpp.i
+
+engine/DeplacementCommand.s: engine/DeplacementCommand.cpp.s
+
+.PHONY : engine/DeplacementCommand.s
+
+# target to generate assembly for a file
+engine/DeplacementCommand.cpp.s:
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.s
+.PHONY : engine/DeplacementCommand.cpp.s
 
 engine/Engine.o: engine/Engine.cpp.o
 
@@ -188,7 +215,7 @@ engine/Engine.o: engine/Engine.cpp.o
 
 # target to build an object file
 engine/Engine.cpp.o:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o
 .PHONY : engine/Engine.cpp.o
 
 engine/Engine.i: engine/Engine.cpp.i
@@ -197,7 +224,7 @@ engine/Engine.i: engine/Engine.cpp.i
 
 # target to preprocess a source file
 engine/Engine.cpp.i:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.i
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.i
 .PHONY : engine/Engine.cpp.i
 
 engine/Engine.s: engine/Engine.cpp.s
@@ -206,7 +233,7 @@ engine/Engine.s: engine/Engine.cpp.s
 
 # target to generate assembly for a file
 engine/Engine.cpp.s:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.s
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.s
 .PHONY : engine/Engine.cpp.s
 
 engine/PlacementCommand.o: engine/PlacementCommand.cpp.o
@@ -215,7 +242,7 @@ engine/PlacementCommand.o: engine/PlacementCommand.cpp.o
 
 # target to build an object file
 engine/PlacementCommand.cpp.o:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/engine/PlacementCommand.cpp.o
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/engine/PlacementCommand.cpp.o
 .PHONY : engine/PlacementCommand.cpp.o
 
 engine/PlacementCommand.i: engine/PlacementCommand.cpp.i
@@ -224,7 +251,7 @@ engine/PlacementCommand.i: engine/PlacementCommand.cpp.i
 
 # target to preprocess a source file
 engine/PlacementCommand.cpp.i:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/engine/PlacementCommand.cpp.i
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/engine/PlacementCommand.cpp.i
 .PHONY : engine/PlacementCommand.cpp.i
 
 engine/PlacementCommand.s: engine/PlacementCommand.cpp.s
@@ -233,7 +260,7 @@ engine/PlacementCommand.s: engine/PlacementCommand.cpp.s
 
 # target to generate assembly for a file
 engine/PlacementCommand.cpp.s:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/engine/PlacementCommand.cpp.s
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/engine/PlacementCommand.cpp.s
 .PHONY : engine/PlacementCommand.cpp.s
 
 state/Bee.o: state/Bee.cpp.o
@@ -242,7 +269,7 @@ state/Bee.o: state/Bee.cpp.o
 
 # target to build an object file
 state/Bee.cpp.o:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Bee.cpp.o
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Bee.cpp.o
 .PHONY : state/Bee.cpp.o
 
 state/Bee.i: state/Bee.cpp.i
@@ -251,7 +278,7 @@ state/Bee.i: state/Bee.cpp.i
 
 # target to preprocess a source file
 state/Bee.cpp.i:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Bee.cpp.i
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Bee.cpp.i
 .PHONY : state/Bee.cpp.i
 
 state/Bee.s: state/Bee.cpp.s
@@ -260,7 +287,7 @@ state/Bee.s: state/Bee.cpp.s
 
 # target to generate assembly for a file
 state/Bee.cpp.s:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Bee.cpp.s
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Bee.cpp.s
 .PHONY : state/Bee.cpp.s
 
 state/Beetle.o: state/Beetle.cpp.o
@@ -269,7 +296,7 @@ state/Beetle.o: state/Beetle.cpp.o
 
 # target to build an object file
 state/Beetle.cpp.o:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Beetle.cpp.o
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Beetle.cpp.o
 .PHONY : state/Beetle.cpp.o
 
 state/Beetle.i: state/Beetle.cpp.i
@@ -278,7 +305,7 @@ state/Beetle.i: state/Beetle.cpp.i
 
 # target to preprocess a source file
 state/Beetle.cpp.i:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Beetle.cpp.i
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Beetle.cpp.i
 .PHONY : state/Beetle.cpp.i
 
 state/Beetle.s: state/Beetle.cpp.s
@@ -287,7 +314,7 @@ state/Beetle.s: state/Beetle.cpp.s
 
 # target to generate assembly for a file
 state/Beetle.cpp.s:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Beetle.cpp.s
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Beetle.cpp.s
 .PHONY : state/Beetle.cpp.s
 
 state/Case.o: state/Case.cpp.o
@@ -296,7 +323,7 @@ state/Case.o: state/Case.cpp.o
 
 # target to build an object file
 state/Case.cpp.o:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Case.cpp.o
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Case.cpp.o
 .PHONY : state/Case.cpp.o
 
 state/Case.i: state/Case.cpp.i
@@ -305,7 +332,7 @@ state/Case.i: state/Case.cpp.i
 
 # target to preprocess a source file
 state/Case.cpp.i:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Case.cpp.i
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Case.cpp.i
 .PHONY : state/Case.cpp.i
 
 state/Case.s: state/Case.cpp.s
@@ -314,7 +341,7 @@ state/Case.s: state/Case.cpp.s
 
 # target to generate assembly for a file
 state/Case.cpp.s:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Case.cpp.s
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Case.cpp.s
 .PHONY : state/Case.cpp.s
 
 state/Exemple.o: state/Exemple.cpp.o
@@ -323,7 +350,7 @@ state/Exemple.o: state/Exemple.cpp.o
 
 # target to build an object file
 state/Exemple.cpp.o:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Exemple.cpp.o
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Exemple.cpp.o
 .PHONY : state/Exemple.cpp.o
 
 state/Exemple.i: state/Exemple.cpp.i
@@ -332,7 +359,7 @@ state/Exemple.i: state/Exemple.cpp.i
 
 # target to preprocess a source file
 state/Exemple.cpp.i:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Exemple.cpp.i
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Exemple.cpp.i
 .PHONY : state/Exemple.cpp.i
 
 state/Exemple.s: state/Exemple.cpp.s
@@ -341,7 +368,7 @@ state/Exemple.s: state/Exemple.cpp.s
 
 # target to generate assembly for a file
 state/Exemple.cpp.s:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Exemple.cpp.s
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Exemple.cpp.s
 .PHONY : state/Exemple.cpp.s
 
 state/Game.o: state/Game.cpp.o
@@ -350,7 +377,7 @@ state/Game.o: state/Game.cpp.o
 
 # target to build an object file
 state/Game.cpp.o:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.o
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.o
 .PHONY : state/Game.cpp.o
 
 state/Game.i: state/Game.cpp.i
@@ -359,7 +386,7 @@ state/Game.i: state/Game.cpp.i
 
 # target to preprocess a source file
 state/Game.cpp.i:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.i
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.i
 .PHONY : state/Game.cpp.i
 
 state/Game.s: state/Game.cpp.s
@@ -368,7 +395,7 @@ state/Game.s: state/Game.cpp.s
 
 # target to generate assembly for a file
 state/Game.cpp.s:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.s
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.s
 .PHONY : state/Game.cpp.s
 
 state/Grasshooper.o: state/Grasshooper.cpp.o
@@ -377,7 +404,7 @@ state/Grasshooper.o: state/Grasshooper.cpp.o
 
 # target to build an object file
 state/Grasshooper.cpp.o:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Grasshooper.cpp.o
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Grasshooper.cpp.o
 .PHONY : state/Grasshooper.cpp.o
 
 state/Grasshooper.i: state/Grasshooper.cpp.i
@@ -386,7 +413,7 @@ state/Grasshooper.i: state/Grasshooper.cpp.i
 
 # target to preprocess a source file
 state/Grasshooper.cpp.i:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Grasshooper.cpp.i
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Grasshooper.cpp.i
 .PHONY : state/Grasshooper.cpp.i
 
 state/Grasshooper.s: state/Grasshooper.cpp.s
@@ -395,7 +422,7 @@ state/Grasshooper.s: state/Grasshooper.cpp.s
 
 # target to generate assembly for a file
 state/Grasshooper.cpp.s:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Grasshooper.cpp.s
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Grasshooper.cpp.s
 .PHONY : state/Grasshooper.cpp.s
 
 state/Insect.o: state/Insect.cpp.o
@@ -404,7 +431,7 @@ state/Insect.o: state/Insect.cpp.o
 
 # target to build an object file
 state/Insect.cpp.o:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Insect.cpp.o
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Insect.cpp.o
 .PHONY : state/Insect.cpp.o
 
 state/Insect.i: state/Insect.cpp.i
@@ -413,7 +440,7 @@ state/Insect.i: state/Insect.cpp.i
 
 # target to preprocess a source file
 state/Insect.cpp.i:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Insect.cpp.i
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Insect.cpp.i
 .PHONY : state/Insect.cpp.i
 
 state/Insect.s: state/Insect.cpp.s
@@ -422,7 +449,7 @@ state/Insect.s: state/Insect.cpp.s
 
 # target to generate assembly for a file
 state/Insect.cpp.s:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Insect.cpp.s
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Insect.cpp.s
 .PHONY : state/Insect.cpp.s
 
 state/Map.o: state/Map.cpp.o
@@ -431,7 +458,7 @@ state/Map.o: state/Map.cpp.o
 
 # target to build an object file
 state/Map.cpp.o:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Map.cpp.o
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Map.cpp.o
 .PHONY : state/Map.cpp.o
 
 state/Map.i: state/Map.cpp.i
@@ -440,7 +467,7 @@ state/Map.i: state/Map.cpp.i
 
 # target to preprocess a source file
 state/Map.cpp.i:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Map.cpp.i
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Map.cpp.i
 .PHONY : state/Map.cpp.i
 
 state/Map.s: state/Map.cpp.s
@@ -449,7 +476,7 @@ state/Map.s: state/Map.cpp.s
 
 # target to generate assembly for a file
 state/Map.cpp.s:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Map.cpp.s
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Map.cpp.s
 .PHONY : state/Map.cpp.s
 
 state/Player.o: state/Player.cpp.o
@@ -458,7 +485,7 @@ state/Player.o: state/Player.cpp.o
 
 # target to build an object file
 state/Player.cpp.o:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Player.cpp.o
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Player.cpp.o
 .PHONY : state/Player.cpp.o
 
 state/Player.i: state/Player.cpp.i
@@ -467,7 +494,7 @@ state/Player.i: state/Player.cpp.i
 
 # target to preprocess a source file
 state/Player.cpp.i:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Player.cpp.i
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Player.cpp.i
 .PHONY : state/Player.cpp.i
 
 state/Player.s: state/Player.cpp.s
@@ -476,7 +503,7 @@ state/Player.s: state/Player.cpp.s
 
 # target to generate assembly for a file
 state/Player.cpp.s:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Player.cpp.s
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Player.cpp.s
 .PHONY : state/Player.cpp.s
 
 state/Spider.o: state/Spider.cpp.o
@@ -485,7 +512,7 @@ state/Spider.o: state/Spider.cpp.o
 
 # target to build an object file
 state/Spider.cpp.o:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Spider.cpp.o
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Spider.cpp.o
 .PHONY : state/Spider.cpp.o
 
 state/Spider.i: state/Spider.cpp.i
@@ -494,7 +521,7 @@ state/Spider.i: state/Spider.cpp.i
 
 # target to preprocess a source file
 state/Spider.cpp.i:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Spider.cpp.i
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Spider.cpp.i
 .PHONY : state/Spider.cpp.i
 
 state/Spider.s: state/Spider.cpp.s
@@ -503,7 +530,7 @@ state/Spider.s: state/Spider.cpp.s
 
 # target to generate assembly for a file
 state/Spider.cpp.s:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Spider.cpp.s
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/state/Spider.cpp.s
 .PHONY : state/Spider.cpp.s
 
 # Help Target
@@ -520,6 +547,9 @@ help:
 	@echo "... engine/Command.o"
 	@echo "... engine/Command.i"
 	@echo "... engine/Command.s"
+	@echo "... engine/DeplacementCommand.o"
+	@echo "... engine/DeplacementCommand.i"
+	@echo "... engine/DeplacementCommand.s"
 	@echo "... engine/Engine.o"
 	@echo "... engine/Engine.i"
 	@echo "... engine/Engine.s"
@@ -567,6 +597,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ali/plt/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

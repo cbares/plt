@@ -8,78 +8,78 @@
 		<Option virtualFolders="CMake Files\;CMake Files\extern\;CMake Files\extern\dia2code\;CMake Files\cmake\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\usr\;CMake Files\..\..\..\usr\lib\;CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\;CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Boost-1.71.0\;CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_headers-1.71.0\;CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_unit_test_framework-1.71.0\;CMake Files\src\;CMake Files\src\shared\;CMake Files\src\client\;CMake Files\rapport\;CMake Files\test\;CMake Files\test\shared\;CMake Files\test\client\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/ali/plt_render_test/cmake-build-debug"/>
+				<Option working_dir="/home/ali/plt/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/ali/plt_render_test/cmake-build-debug"/>
+				<Option working_dir="/home/ali/plt/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="code-coverage">
-				<Option working_dir="/home/ali/plt_render_test/cmake-build-debug"/>
+				<Option working_dir="/home/ali/plt/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 code-coverage"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 code-coverage"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="clean-headers">
-				<Option working_dir="/home/ali/plt_render_test/cmake-build-debug"/>
+				<Option working_dir="/home/ali/plt/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean-headers"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean-headers"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/ali/plt_render_test/cmake-build-debug"/>
+				<Option working_dir="/home/ali/plt/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="code-coverage-gcov">
-				<Option working_dir="/home/ali/plt_render_test/cmake-build-debug"/>
+				<Option working_dir="/home/ali/plt/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 code-coverage-gcov"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 code-coverage-gcov"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="generate-headers">
-				<Option working_dir="/home/ali/plt_render_test/cmake-build-debug"/>
+				<Option working_dir="/home/ali/plt/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 generate-headers"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 generate-headers"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="dia2code">
-				<Option output="/home/ali/plt_render_test/bin/dia2code" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ali/plt_render_test/extern/dia2code/../../bin"/>
+				<Option output="/home/ali/plt/bin/dia2code" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ali/plt/extern/dia2code/../../bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -94,15 +94,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/extern/dia2code/Makefile&quot;  VERBOSE=1 dia2code"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/extern/dia2code/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/extern/dia2code/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/extern/dia2code/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/extern/dia2code/Makefile&quot;  VERBOSE=1 dia2code"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/extern/dia2code/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/extern/dia2code/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/extern/dia2code/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="dia2code/fast">
-				<Option output="/home/ali/plt_render_test/bin/dia2code" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ali/plt_render_test/extern/dia2code/../../bin"/>
+				<Option output="/home/ali/plt/bin/dia2code" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ali/plt/extern/dia2code/../../bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -117,20 +117,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/extern/dia2code/Makefile&quot;  VERBOSE=1 dia2code/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/extern/dia2code/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/extern/dia2code/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/extern/dia2code/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/extern/dia2code/Makefile&quot;  VERBOSE=1 dia2code/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/extern/dia2code/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/extern/dia2code/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/extern/dia2code/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="shared_static">
-				<Option output="/home/ali/plt_render_test/cmake-build-debug/src/shared/libshared_static.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ali/plt_render_test/cmake-build-debug/src/shared"/>
+				<Option output="/home/ali/plt/cmake-build-debug/src/shared/libshared_static.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ali/plt/cmake-build-debug/src/shared"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/ali/plt_render_test/src/shared"/>
+					<Add directory="/home/ali/plt/src/shared"/>
 					<Add directory="/usr/include/c++/9"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
 					<Add directory="/usr/include/c++/9/backward"/>
@@ -140,20 +140,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 shared_static"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 shared_static"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="shared_static/fast">
-				<Option output="/home/ali/plt_render_test/cmake-build-debug/src/shared/libshared_static.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ali/plt_render_test/cmake-build-debug/src/shared"/>
+				<Option output="/home/ali/plt/cmake-build-debug/src/shared/libshared_static.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ali/plt/cmake-build-debug/src/shared"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/ali/plt_render_test/src/shared"/>
+					<Add directory="/home/ali/plt/src/shared"/>
 					<Add directory="/usr/include/c++/9"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
 					<Add directory="/usr/include/c++/9/backward"/>
@@ -163,41 +163,41 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 shared_static/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 shared_static/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="generate-header-engine">
-				<Option working_dir="/home/ali/plt_render_test/cmake-build-debug/src/shared"/>
+				<Option working_dir="/home/ali/plt/cmake-build-debug/src/shared"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 generate-header-engine"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 generate-header-engine"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="generate-header-state">
-				<Option working_dir="/home/ali/plt_render_test/cmake-build-debug/src/shared"/>
+				<Option working_dir="/home/ali/plt/cmake-build-debug/src/shared"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 generate-header-state"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 generate-header-state"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="client">
-				<Option output="/home/ali/plt_render_test/bin/client" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ali/plt_render_test/bin"/>
+				<Option output="/home/ali/plt/bin/client" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ali/plt/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/ali/plt_render_test/src/client"/>
-					<Add directory="/home/ali/plt_render_test/src/shared"/>
+					<Add directory="/home/ali/plt/src/client"/>
+					<Add directory="/home/ali/plt/src/shared"/>
 					<Add directory="/usr/include/c++/9"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
 					<Add directory="/usr/include/c++/9/backward"/>
@@ -207,21 +207,21 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 client"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 client"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="client/fast">
-				<Option output="/home/ali/plt_render_test/bin/client" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ali/plt_render_test/bin"/>
+				<Option output="/home/ali/plt/bin/client" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ali/plt/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/ali/plt_render_test/src/client"/>
-					<Add directory="/home/ali/plt_render_test/src/shared"/>
+					<Add directory="/home/ali/plt/src/client"/>
+					<Add directory="/home/ali/plt/src/shared"/>
 					<Add directory="/usr/include/c++/9"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
 					<Add directory="/usr/include/c++/9/backward"/>
@@ -231,21 +231,21 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 client/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 client/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="client_static">
-				<Option output="/home/ali/plt_render_test/cmake-build-debug/src/client/libclient_static.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ali/plt_render_test/cmake-build-debug/src/client"/>
+				<Option output="/home/ali/plt/cmake-build-debug/src/client/libclient_static.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ali/plt/cmake-build-debug/src/client"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/ali/plt_render_test/src/client"/>
-					<Add directory="/home/ali/plt_render_test/src/shared"/>
+					<Add directory="/home/ali/plt/src/client"/>
+					<Add directory="/home/ali/plt/src/shared"/>
 					<Add directory="/usr/include/c++/9"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
 					<Add directory="/usr/include/c++/9/backward"/>
@@ -255,21 +255,21 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 client_static"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 client_static"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="client_static/fast">
-				<Option output="/home/ali/plt_render_test/cmake-build-debug/src/client/libclient_static.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ali/plt_render_test/cmake-build-debug/src/client"/>
+				<Option output="/home/ali/plt/cmake-build-debug/src/client/libclient_static.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ali/plt/cmake-build-debug/src/client"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/ali/plt_render_test/src/client"/>
-					<Add directory="/home/ali/plt_render_test/src/shared"/>
+					<Add directory="/home/ali/plt/src/client"/>
+					<Add directory="/home/ali/plt/src/shared"/>
 					<Add directory="/usr/include/c++/9"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
 					<Add directory="/usr/include/c++/9/backward"/>
@@ -279,55 +279,55 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 client_static/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 client_static/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="generate-header-render">
-				<Option working_dir="/home/ali/plt_render_test/cmake-build-debug/src/client"/>
+				<Option working_dir="/home/ali/plt/cmake-build-debug/src/client"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 generate-header-render"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 generate-header-render"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="generate-header-client">
-				<Option working_dir="/home/ali/plt_render_test/cmake-build-debug/src/client"/>
+				<Option working_dir="/home/ali/plt/cmake-build-debug/src/client"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 generate-header-client"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 generate-header-client"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/client/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="unittest">
-				<Option working_dir="/home/ali/plt_render_test/cmake-build-debug/test"/>
+				<Option working_dir="/home/ali/plt/cmake-build-debug/test"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 unittest"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 unittest"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="check">
-				<Option working_dir="/home/ali/plt_render_test/cmake-build-debug/test"/>
+				<Option working_dir="/home/ali/plt/cmake-build-debug/test"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 check"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 check"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="test_shared_dummy">
-				<Option output="/home/ali/plt_render_test/cmake-build-debug/test/shared/test_shared_dummy" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ali/plt_render_test/bin"/>
+				<Option output="/home/ali/plt/cmake-build-debug/test/shared/test_shared_dummy" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ali/plt/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -337,8 +337,8 @@
 					<Add option="-DBOOST_TEST_MODULE=shared_dummy"/>
 					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
 					<Add option="-DBOOST_ALL_NO_LIB"/>
-					<Add directory="/home/ali/plt_render_test/src/shared"/>
-					<Add directory="/home/ali/plt_render_test/src/client"/>
+					<Add directory="/home/ali/plt/src/shared"/>
+					<Add directory="/home/ali/plt/src/client"/>
 					<Add directory="/usr/include/c++/9"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
 					<Add directory="/usr/include/c++/9/backward"/>
@@ -348,15 +348,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/test/shared/Makefile&quot;  VERBOSE=1 test_shared_dummy"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/test/shared/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/test/shared/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/test/shared/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/test/shared/Makefile&quot;  VERBOSE=1 test_shared_dummy"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/test/shared/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/test/shared/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/test/shared/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="test_shared_dummy/fast">
-				<Option output="/home/ali/plt_render_test/cmake-build-debug/test/shared/test_shared_dummy" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ali/plt_render_test/bin"/>
+				<Option output="/home/ali/plt/cmake-build-debug/test/shared/test_shared_dummy" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ali/plt/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -366,8 +366,8 @@
 					<Add option="-DBOOST_TEST_MODULE=shared_dummy"/>
 					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
 					<Add option="-DBOOST_ALL_NO_LIB"/>
-					<Add directory="/home/ali/plt_render_test/src/shared"/>
-					<Add directory="/home/ali/plt_render_test/src/client"/>
+					<Add directory="/home/ali/plt/src/shared"/>
+					<Add directory="/home/ali/plt/src/client"/>
 					<Add directory="/usr/include/c++/9"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
 					<Add directory="/usr/include/c++/9/backward"/>
@@ -377,15 +377,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/test/shared/Makefile&quot;  VERBOSE=1 test_shared_dummy/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/test/shared/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/test/shared/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/test/shared/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/test/shared/Makefile&quot;  VERBOSE=1 test_shared_dummy/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/test/shared/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/test/shared/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/test/shared/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="test_client_dummy">
-				<Option output="/home/ali/plt_render_test/cmake-build-debug/test/client/test_client_dummy" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ali/plt_render_test/bin"/>
+				<Option output="/home/ali/plt/cmake-build-debug/test/client/test_client_dummy" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ali/plt/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -395,8 +395,8 @@
 					<Add option="-DBOOST_TEST_MODULE=client_dummy"/>
 					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
 					<Add option="-DBOOST_ALL_NO_LIB"/>
-					<Add directory="/home/ali/plt_render_test/src/shared"/>
-					<Add directory="/home/ali/plt_render_test/src/client"/>
+					<Add directory="/home/ali/plt/src/shared"/>
+					<Add directory="/home/ali/plt/src/client"/>
 					<Add directory="/usr/include/c++/9"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
 					<Add directory="/usr/include/c++/9/backward"/>
@@ -406,15 +406,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/test/client/Makefile&quot;  VERBOSE=1 test_client_dummy"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/test/client/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/test/client/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/test/client/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/test/client/Makefile&quot;  VERBOSE=1 test_client_dummy"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/test/client/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/test/client/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/test/client/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="test_client_dummy/fast">
-				<Option output="/home/ali/plt_render_test/cmake-build-debug/test/client/test_client_dummy" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ali/plt_render_test/bin"/>
+				<Option output="/home/ali/plt/cmake-build-debug/test/client/test_client_dummy" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ali/plt/bin"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -424,8 +424,8 @@
 					<Add option="-DBOOST_TEST_MODULE=client_dummy"/>
 					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
 					<Add option="-DBOOST_ALL_NO_LIB"/>
-					<Add directory="/home/ali/plt_render_test/src/shared"/>
-					<Add directory="/home/ali/plt_render_test/src/client"/>
+					<Add directory="/home/ali/plt/src/shared"/>
+					<Add directory="/home/ali/plt/src/client"/>
 					<Add directory="/usr/include/c++/9"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
 					<Add directory="/usr/include/c++/9/backward"/>
@@ -435,269 +435,272 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/test/client/Makefile&quot;  VERBOSE=1 test_client_dummy/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/test/client/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/test/client/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt_render_test/cmake-build-debug/test/client/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/test/client/Makefile&quot;  VERBOSE=1 test_client_dummy/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/test/client/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/test/client/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/test/client/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/ali/plt_render_test/extern/dia2code/src/comment_helper.c">
+		<Unit filename="/home/ali/plt/extern/dia2code/src/comment_helper.c">
 			<Option target="dia2code"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/extern/dia2code/src/comment_helper.h">
+		<Unit filename="/home/ali/plt/extern/dia2code/src/comment_helper.h">
 			<Option target="dia2code"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/extern/dia2code/src/decls.c">
+		<Unit filename="/home/ali/plt/extern/dia2code/src/decls.c">
 			<Option target="dia2code"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/extern/dia2code/src/decls.h">
+		<Unit filename="/home/ali/plt/extern/dia2code/src/decls.h">
 			<Option target="dia2code"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/extern/dia2code/src/dia2code.c">
+		<Unit filename="/home/ali/plt/extern/dia2code/src/dia2code.c">
 			<Option target="dia2code"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/extern/dia2code/src/dia2code.h">
+		<Unit filename="/home/ali/plt/extern/dia2code/src/dia2code.h">
 			<Option target="dia2code"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/extern/dia2code/src/generate_code_cpp.c">
+		<Unit filename="/home/ali/plt/extern/dia2code/src/generate_code_cpp.c">
 			<Option target="dia2code"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/extern/dia2code/src/includes.c">
+		<Unit filename="/home/ali/plt/extern/dia2code/src/includes.c">
 			<Option target="dia2code"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/extern/dia2code/src/includes.h">
+		<Unit filename="/home/ali/plt/extern/dia2code/src/includes.h">
 			<Option target="dia2code"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/extern/dia2code/src/main.c">
+		<Unit filename="/home/ali/plt/extern/dia2code/src/main.c">
 			<Option target="dia2code"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/extern/dia2code/src/parse_diagram.c">
+		<Unit filename="/home/ali/plt/extern/dia2code/src/parse_diagram.c">
 			<Option target="dia2code"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/extern/dia2code/src/parse_diagram.h">
+		<Unit filename="/home/ali/plt/extern/dia2code/src/parse_diagram.h">
 			<Option target="dia2code"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/extern/dia2code/src/scan_tree.c">
+		<Unit filename="/home/ali/plt/extern/dia2code/src/scan_tree.c">
 			<Option target="dia2code"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/extern/dia2code/src/source_parser.c">
+		<Unit filename="/home/ali/plt/extern/dia2code/src/source_parser.c">
 			<Option target="dia2code"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/extern/dia2code/src/source_parser.h">
+		<Unit filename="/home/ali/plt/extern/dia2code/src/source_parser.h">
 			<Option target="dia2code"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/client/client/Exemple.cpp">
+		<Unit filename="/home/ali/plt/src/client/client/Exemple.cpp">
 			<Option target="client_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/client/client/Exemple.hpp">
+		<Unit filename="/home/ali/plt/src/client/client/Exemple.hpp">
 			<Option target="client_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/client/main.cpp">
+		<Unit filename="/home/ali/plt/src/client/main.cpp">
 			<Option target="client"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/client/render/InsectDraw.cpp">
+		<Unit filename="/home/ali/plt/src/client/render/InsectDraw.cpp">
 			<Option target="client_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/client/render/InsectDraw.hpp">
+		<Unit filename="/home/ali/plt/src/client/render/InsectDraw.hpp">
 			<Option target="client_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/client/render/MapDraw.cpp">
+		<Unit filename="/home/ali/plt/src/client/render/MapDraw.cpp">
 			<Option target="client_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/client/render/MapDraw.hpp">
+		<Unit filename="/home/ali/plt/src/client/render/MapDraw.hpp">
 			<Option target="client_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/client/render/Scene.cpp">
+		<Unit filename="/home/ali/plt/src/client/render/Scene.cpp">
 			<Option target="client_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/client/render/Scene.hpp">
+		<Unit filename="/home/ali/plt/src/client/render/Scene.hpp">
 			<Option target="client_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/client/render/TextDraw.cpp">
+		<Unit filename="/home/ali/plt/src/client/render/TextDraw.cpp">
 			<Option target="client_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/client/render/TextDraw.hpp">
+		<Unit filename="/home/ali/plt/src/client/render/TextDraw.hpp">
 			<Option target="client_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/engine.hpp">
+		<Unit filename="/home/ali/plt/src/shared/engine.hpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/engine/Command.cpp">
+		<Unit filename="/home/ali/plt/src/shared/engine/Command.cpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/engine/Command.hpp">
+		<Unit filename="/home/ali/plt/src/shared/engine/Command.hpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/engine/CommandTypeId.hpp">
+		<Unit filename="/home/ali/plt/src/shared/engine/CommandTypeId.hpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/engine/DeplacementCommand.hpp">
+		<Unit filename="/home/ali/plt/src/shared/engine/DeplacementCommand.cpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/engine/Engine.cpp">
+		<Unit filename="/home/ali/plt/src/shared/engine/DeplacementCommand.hpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/engine/Engine.hpp">
+		<Unit filename="/home/ali/plt/src/shared/engine/Engine.cpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/engine/PlacementCommand.cpp">
+		<Unit filename="/home/ali/plt/src/shared/engine/Engine.hpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/engine/PlacementCommand.hpp">
+		<Unit filename="/home/ali/plt/src/shared/engine/PlacementCommand.cpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state.hpp">
+		<Unit filename="/home/ali/plt/src/shared/engine/PlacementCommand.hpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state/Ant.hpp">
+		<Unit filename="/home/ali/plt/src/shared/state.hpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state/Bee.cpp">
+		<Unit filename="/home/ali/plt/src/shared/state/Ant.hpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state/Bee.hpp">
+		<Unit filename="/home/ali/plt/src/shared/state/Bee.cpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state/Beetle.cpp">
+		<Unit filename="/home/ali/plt/src/shared/state/Bee.hpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state/Beetle.hpp">
+		<Unit filename="/home/ali/plt/src/shared/state/Beetle.cpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state/Case.cpp">
+		<Unit filename="/home/ali/plt/src/shared/state/Beetle.hpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state/Case.hpp">
+		<Unit filename="/home/ali/plt/src/shared/state/Case.cpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state/Cricket.hpp">
+		<Unit filename="/home/ali/plt/src/shared/state/Case.hpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state/Exemple.cpp">
+		<Unit filename="/home/ali/plt/src/shared/state/Cricket.hpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state/Game.cpp">
+		<Unit filename="/home/ali/plt/src/shared/state/Exemple.cpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state/Game.hpp">
+		<Unit filename="/home/ali/plt/src/shared/state/Game.cpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state/GameStatus.hpp">
+		<Unit filename="/home/ali/plt/src/shared/state/Game.hpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state/Grasshooper.cpp">
+		<Unit filename="/home/ali/plt/src/shared/state/GameStatus.hpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state/Grasshooper.hpp">
+		<Unit filename="/home/ali/plt/src/shared/state/Grasshooper.cpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state/Insect.cpp">
+		<Unit filename="/home/ali/plt/src/shared/state/Grasshooper.hpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state/Insect.hpp">
+		<Unit filename="/home/ali/plt/src/shared/state/Insect.cpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state/Ladybug.hpp">
+		<Unit filename="/home/ali/plt/src/shared/state/Insect.hpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state/Map.cpp">
+		<Unit filename="/home/ali/plt/src/shared/state/Ladybug.hpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state/Map.hpp">
+		<Unit filename="/home/ali/plt/src/shared/state/Map.cpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state/Mosquito.hpp">
+		<Unit filename="/home/ali/plt/src/shared/state/Map.hpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state/Player.cpp">
+		<Unit filename="/home/ali/plt/src/shared/state/Mosquito.hpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state/Player.hpp">
+		<Unit filename="/home/ali/plt/src/shared/state/Player.cpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state/Spider.cpp">
+		<Unit filename="/home/ali/plt/src/shared/state/Player.hpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/state/Spider.hpp">
+		<Unit filename="/home/ali/plt/src/shared/state/Spider.cpp">
 			<Option target="shared_static"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/test/client/test_client_dummy.cpp">
+		<Unit filename="/home/ali/plt/src/shared/state/Spider.hpp">
+			<Option target="shared_static"/>
+		</Unit>
+		<Unit filename="/home/ali/plt/test/client/test_client_dummy.cpp">
 			<Option target="test_client_dummy"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/test/shared/test_shared_dummy.cpp">
+		<Unit filename="/home/ali/plt/test/shared/test_shared_dummy.cpp">
 			<Option target="test_shared_dummy"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/CMakeLists.txt">
+		<Unit filename="/home/ali/plt/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/extern/dia2code/CMakeLists.txt">
+		<Unit filename="/home/ali/plt/extern/dia2code/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\extern\dia2code\"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/cmake/CodeCoverage.cmake">
+		<Unit filename="/home/ali/plt/cmake/CodeCoverage.cmake">
 			<Option virtualFolder="CMake Files\cmake\"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/cmake/GenerateDiaHeader.cmake">
+		<Unit filename="/home/ali/plt/cmake/GenerateDiaHeader.cmake">
 			<Option virtualFolder="CMake Files\cmake\"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/../../../usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.71.0.cmake">
+		<Unit filename="/home/ali/plt/../../../usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.71.0.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfig.cmake">
+		<Unit filename="/home/ali/plt/../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfig.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigDependencies.cmake">
+		<Unit filename="/home/ali/plt/../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigDependencies.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigVersion.cmake">
+		<Unit filename="/home/ali/plt/../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets-none.cmake">
+		<Unit filename="/home/ali/plt/../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets-none.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets.cmake">
+		<Unit filename="/home/ali/plt/../../../usr/lib/x86_64-linux-gnu/cmake/SFML/SFMLSharedTargets.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SFML\"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/../../../usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake">
+		<Unit filename="/home/ali/plt/../../../usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Boost-1.71.0\"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/../../../usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfigVersion.cmake">
+		<Unit filename="/home/ali/plt/../../../usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Boost-1.71.0\"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/../../../usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake">
+		<Unit filename="/home/ali/plt/../../../usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_headers-1.71.0\"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/../../../usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config.cmake">
+		<Unit filename="/home/ali/plt/../../../usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_headers-1.71.0\"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/../../../usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0/boost_unit_test_framework-config-version.cmake">
+		<Unit filename="/home/ali/plt/../../../usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0/boost_unit_test_framework-config-version.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_unit_test_framework-1.71.0\"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/../../../usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0/boost_unit_test_framework-config.cmake">
+		<Unit filename="/home/ali/plt/../../../usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0/boost_unit_test_framework-config.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_unit_test_framework-1.71.0\"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/../../../usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0/libboost_unit_test_framework-variant-shared.cmake">
+		<Unit filename="/home/ali/plt/../../../usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0/libboost_unit_test_framework-variant-shared.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_unit_test_framework-1.71.0\"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/../../../usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0/libboost_unit_test_framework-variant-static.cmake">
+		<Unit filename="/home/ali/plt/../../../usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0/libboost_unit_test_framework-variant-static.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_unit_test_framework-1.71.0\"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/shared/CMakeLists.txt">
+		<Unit filename="/home/ali/plt/src/shared/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\src\shared\"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/src/client/CMakeLists.txt">
+		<Unit filename="/home/ali/plt/src/client/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\src\client\"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/rapport/CMakeLists.txt">
+		<Unit filename="/home/ali/plt/rapport/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\rapport\"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/test/CMakeLists.txt">
+		<Unit filename="/home/ali/plt/test/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\test\"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/test/shared/CMakeLists.txt">
+		<Unit filename="/home/ali/plt/test/shared/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\test\shared\"/>
 		</Unit>
-		<Unit filename="/home/ali/plt_render_test/test/client/CMakeLists.txt">
+		<Unit filename="/home/ali/plt/test/client/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\test\client\"/>
 		</Unit>
 	</Project>

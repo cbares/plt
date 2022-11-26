@@ -19,14 +19,15 @@ namespace state {
   private:
     int Length;
     int Width;
-    std::vector<std::vector<Case*>> ListCase;
+    std::vector<std::vector<Case>> ListCase;
     // Operations
   public:
     Map (int length, int width);
     int GetLength ();
     int GetWidth ();
-    std::vector<std::vector<Case*>> GetListCase ();
-    void SetListCase (Case* case1, int i, int j);
+    std::vector<std::vector<Case>> GetListCase ();
+    void SetListCase (Case case1, int i, int j);
+    void SetEmptyCase (bool empty, int i, int j);
     // Setters and Getters
   };
 

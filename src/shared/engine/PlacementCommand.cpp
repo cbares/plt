@@ -1,69 +1,33 @@
+//
+// Created by Alith on 25/11/2022.
+//
 #include "PlacementCommand.hpp"
-#include <iostream>
+#include "iostream"
+
 using namespace std;
 
 engine::PlacementCommand::PlacementCommand(state::GameStatus gamestatus, std::vector<int> position_insect,
-                                           state::Insect& insect, engine::CommandTypeId commandId,state::Player& player) {
-    this->insect=insect;
-    this->commandTypeId=commandId;
-    this->playing=gamestatus;
+                                           state::Insect& insect, CommandTypeId commandId, state::Player& player,vector<vector<int>> placement_possible) {
     this->position=position_insect;
-    this->player=player;
-
+    this->insect=&insect;
+    this->player=&player;
+    this->playing=gamestatus;
+    this->commandTypeId=commandId;
+    this->placement_possible=placement_possible;
 }
 
-bool engine::PlacementCommand::execute(engine::Engine& engine) {
+bool engine::PlacementCommand::execute(engine::Engine &engine) {
 
-    state::Insect& insect_to_move = this->insect;
-
-    std::vector<state::Case> listCase;
-    std::vector<std::vector<state::Case*>>CaseVector=engine.getState().GetMap().GetListCase();
-    for (int i=0;i<engine.getState().GetMap().GetLength();i++){
-        for (int j=0;j<engine.getState().GetMap().GetWidth();j++){
-            listCase.push_back(*CaseVector[i][j]);
+    for (auto cas_temp : this->placement_possible){
+        if((this->position[0]==cas_temp[0])&&(this->position[1]==cas_temp[1])&&(this->insect->GetIsPlaced()==false)){
+            engine.UpdateState(*engine.getState(), 0, *insect, this->position,*this->player);
+            return 1;
         }
     }
+    return 0;
 
-    std::vector<state::Insect*> allinsects = engine.getState().GetAllInsects();
-    std::vector<state::Insect> allinsects_placed;
-    for (int i =0;i<allinsects.size();i++){
-        if(allinsects[i]->GetIsPlaced()){
-            allinsects_placed.push_back(*allinsects[i]);
-        }
-    }
-
-
-
-    std::vector<std::vector<int>> listcoordpossible = insect_to_move.Possible_Placement_Insect(allinsects_placed,listCase);
-
-    bool authorisation_placement=0;
-    for(std::vector<int> temp : listcoordpossible){
-        if((temp[0]==this->position[0])&&(temp[1]==this->position[1])){
-            authorisation_placement=1;
-            break;
-        }
-    }
-
-
-    if (authorisation_placement){
-        cout<<"Nouvelle position : " <<position[0] <<" " <<position[1] <<endl;
-        insect.SetPosition(this->position);
-        cout<<"Position de l'insecte : " <<insect.Get_Position()[0] <<" " <<insect.Get_Position()[1] <<endl;
-        engine.getState().GetMap().SetListCase( new state::Case({position[0],position[1]},0),position[0],position[1]);
-
-
-        //Vider la liste insecte remaining du joueur
-        this->player.Remove_Insect_Remaining(&insect);
-
-        //Remplir la liste insecte placed du joueur
-        this->player.Add_Insect_Played(&insect);
-
-        return true;
-    }
-    else{
-        return false;
-    }
-
-
-
+    //engine.UpdateState(*engine.getState(), 0,(state::Insect&) this->insect, this->position);
 }
+
+
+

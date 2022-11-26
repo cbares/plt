@@ -18,6 +18,8 @@ namespace state {
     Case  (std::vector<int> coord, bool empty);
     bool GetEmpty ();
     void SetEmpty (bool state);
+    int Get_i ();
+    int Get_j ();
     // Setters and Getters
   };
 

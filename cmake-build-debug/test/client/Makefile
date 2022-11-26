@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ali/plt_render_test
+CMAKE_SOURCE_DIR = /home/ali/plt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ali/plt_render_test/cmake-build-debug
+CMAKE_BINARY_DIR = /home/ali/plt/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ali/plt_render_test/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt_render_test/cmake-build-debug/CMakeFiles /home/ali/plt_render_test/cmake-build-debug/test/client/CMakeFiles/progress.marks
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 test/client/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt_render_test/cmake-build-debug/CMakeFiles 0
+	cd /home/ali/plt/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles /home/ali/plt/cmake-build-debug/test/client/CMakeFiles/progress.marks
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 test/client/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 test/client/clean
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 test/client/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 test/client/preinstall
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 test/client/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 test/client/preinstall
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 test/client/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ali/plt/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 test/client/CMakeFiles/test_client_dummy.dir/rule:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 test/client/CMakeFiles/test_client_dummy.dir/rule
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 test/client/CMakeFiles/test_client_dummy.dir/rule
 .PHONY : test/client/CMakeFiles/test_client_dummy.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ test_client_dummy: test/client/CMakeFiles/test_client_dummy.dir/rule
 
 # fast build rule for target.
 test_client_dummy/fast:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f test/client/CMakeFiles/test_client_dummy.dir/build.make test/client/CMakeFiles/test_client_dummy.dir/build
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f test/client/CMakeFiles/test_client_dummy.dir/build.make test/client/CMakeFiles/test_client_dummy.dir/build
 .PHONY : test_client_dummy/fast
 
 test_client_dummy.o: test_client_dummy.cpp.o
@@ -131,7 +131,7 @@ test_client_dummy.o: test_client_dummy.cpp.o
 
 # target to build an object file
 test_client_dummy.cpp.o:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f test/client/CMakeFiles/test_client_dummy.dir/build.make test/client/CMakeFiles/test_client_dummy.dir/test_client_dummy.cpp.o
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f test/client/CMakeFiles/test_client_dummy.dir/build.make test/client/CMakeFiles/test_client_dummy.dir/test_client_dummy.cpp.o
 .PHONY : test_client_dummy.cpp.o
 
 test_client_dummy.i: test_client_dummy.cpp.i
@@ -140,7 +140,7 @@ test_client_dummy.i: test_client_dummy.cpp.i
 
 # target to preprocess a source file
 test_client_dummy.cpp.i:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f test/client/CMakeFiles/test_client_dummy.dir/build.make test/client/CMakeFiles/test_client_dummy.dir/test_client_dummy.cpp.i
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f test/client/CMakeFiles/test_client_dummy.dir/build.make test/client/CMakeFiles/test_client_dummy.dir/test_client_dummy.cpp.i
 .PHONY : test_client_dummy.cpp.i
 
 test_client_dummy.s: test_client_dummy.cpp.s
@@ -149,7 +149,7 @@ test_client_dummy.s: test_client_dummy.cpp.s
 
 # target to generate assembly for a file
 test_client_dummy.cpp.s:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f test/client/CMakeFiles/test_client_dummy.dir/build.make test/client/CMakeFiles/test_client_dummy.dir/test_client_dummy.cpp.s
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f test/client/CMakeFiles/test_client_dummy.dir/build.make test/client/CMakeFiles/test_client_dummy.dir/test_client_dummy.cpp.s
 .PHONY : test_client_dummy.cpp.s
 
 # Help Target
@@ -175,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ali/plt/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

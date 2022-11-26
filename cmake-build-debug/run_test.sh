@@ -1,2 +1,2 @@
-cd "/home/ali/plt_render_test/cmake-build-debug/test"
+cd "/home/ali/plt/cmake-build-debug/test"
 ctest --timeout 300 ||/bin/true

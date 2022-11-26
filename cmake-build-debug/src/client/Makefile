@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ali/plt_render_test
+CMAKE_SOURCE_DIR = /home/ali/plt
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ali/plt_render_test/cmake-build-debug
+CMAKE_BINARY_DIR = /home/ali/plt/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ali/plt_render_test/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt_render_test/cmake-build-debug/CMakeFiles /home/ali/plt_render_test/cmake-build-debug/src/client/CMakeFiles/progress.marks
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/client/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt_render_test/cmake-build-debug/CMakeFiles 0
+	cd /home/ali/plt/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles /home/ali/plt/cmake-build-debug/src/client/CMakeFiles/progress.marks
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/client/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/client/clean
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/client/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/client/preinstall
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/client/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/client/preinstall
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/client/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ali/plt/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/client/CMakeFiles/client.dir/rule:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/client/CMakeFiles/client.dir/rule
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/client/CMakeFiles/client.dir/rule
 .PHONY : src/client/CMakeFiles/client.dir/rule
 
 # Convenience name for target.
@@ -122,12 +122,12 @@ client: src/client/CMakeFiles/client.dir/rule
 
 # fast build rule for target.
 client/fast:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/build
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/build
 .PHONY : client/fast
 
 # Convenience name for target.
 src/client/CMakeFiles/client_static.dir/rule:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/client/CMakeFiles/client_static.dir/rule
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/client/CMakeFiles/client_static.dir/rule
 .PHONY : src/client/CMakeFiles/client_static.dir/rule
 
 # Convenience name for target.
@@ -137,12 +137,12 @@ client_static: src/client/CMakeFiles/client_static.dir/rule
 
 # fast build rule for target.
 client_static/fast:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/build
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/build
 .PHONY : client_static/fast
 
 # Convenience name for target.
 src/client/CMakeFiles/generate-header-render.dir/rule:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/client/CMakeFiles/generate-header-render.dir/rule
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/client/CMakeFiles/generate-header-render.dir/rule
 .PHONY : src/client/CMakeFiles/generate-header-render.dir/rule
 
 # Convenience name for target.
@@ -152,12 +152,12 @@ generate-header-render: src/client/CMakeFiles/generate-header-render.dir/rule
 
 # fast build rule for target.
 generate-header-render/fast:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/generate-header-render.dir/build.make src/client/CMakeFiles/generate-header-render.dir/build
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/generate-header-render.dir/build.make src/client/CMakeFiles/generate-header-render.dir/build
 .PHONY : generate-header-render/fast
 
 # Convenience name for target.
 src/client/CMakeFiles/generate-header-client.dir/rule:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/client/CMakeFiles/generate-header-client.dir/rule
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/client/CMakeFiles/generate-header-client.dir/rule
 .PHONY : src/client/CMakeFiles/generate-header-client.dir/rule
 
 # Convenience name for target.
@@ -167,7 +167,7 @@ generate-header-client: src/client/CMakeFiles/generate-header-client.dir/rule
 
 # fast build rule for target.
 generate-header-client/fast:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/generate-header-client.dir/build.make src/client/CMakeFiles/generate-header-client.dir/build
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/generate-header-client.dir/build.make src/client/CMakeFiles/generate-header-client.dir/build
 .PHONY : generate-header-client/fast
 
 client/Exemple.o: client/Exemple.cpp.o
@@ -176,7 +176,7 @@ client/Exemple.o: client/Exemple.cpp.o
 
 # target to build an object file
 client/Exemple.cpp.o:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/client/Exemple.cpp.o
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/client/Exemple.cpp.o
 .PHONY : client/Exemple.cpp.o
 
 client/Exemple.i: client/Exemple.cpp.i
@@ -185,7 +185,7 @@ client/Exemple.i: client/Exemple.cpp.i
 
 # target to preprocess a source file
 client/Exemple.cpp.i:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/client/Exemple.cpp.i
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/client/Exemple.cpp.i
 .PHONY : client/Exemple.cpp.i
 
 client/Exemple.s: client/Exemple.cpp.s
@@ -194,7 +194,7 @@ client/Exemple.s: client/Exemple.cpp.s
 
 # target to generate assembly for a file
 client/Exemple.cpp.s:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/client/Exemple.cpp.s
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/client/Exemple.cpp.s
 .PHONY : client/Exemple.cpp.s
 
 main.o: main.cpp.o
@@ -203,7 +203,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/main.cpp.o
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -212,7 +212,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/main.cpp.i
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -221,7 +221,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/main.cpp.s
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client.dir/build.make src/client/CMakeFiles/client.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 render/InsectDraw.o: render/InsectDraw.cpp.o
@@ -230,7 +230,7 @@ render/InsectDraw.o: render/InsectDraw.cpp.o
 
 # target to build an object file
 render/InsectDraw.cpp.o:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/render/InsectDraw.cpp.o
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/render/InsectDraw.cpp.o
 .PHONY : render/InsectDraw.cpp.o
 
 render/InsectDraw.i: render/InsectDraw.cpp.i
@@ -239,7 +239,7 @@ render/InsectDraw.i: render/InsectDraw.cpp.i
 
 # target to preprocess a source file
 render/InsectDraw.cpp.i:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/render/InsectDraw.cpp.i
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/render/InsectDraw.cpp.i
 .PHONY : render/InsectDraw.cpp.i
 
 render/InsectDraw.s: render/InsectDraw.cpp.s
@@ -248,7 +248,7 @@ render/InsectDraw.s: render/InsectDraw.cpp.s
 
 # target to generate assembly for a file
 render/InsectDraw.cpp.s:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/render/InsectDraw.cpp.s
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/render/InsectDraw.cpp.s
 .PHONY : render/InsectDraw.cpp.s
 
 render/MapDraw.o: render/MapDraw.cpp.o
@@ -257,7 +257,7 @@ render/MapDraw.o: render/MapDraw.cpp.o
 
 # target to build an object file
 render/MapDraw.cpp.o:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/render/MapDraw.cpp.o
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/render/MapDraw.cpp.o
 .PHONY : render/MapDraw.cpp.o
 
 render/MapDraw.i: render/MapDraw.cpp.i
@@ -266,7 +266,7 @@ render/MapDraw.i: render/MapDraw.cpp.i
 
 # target to preprocess a source file
 render/MapDraw.cpp.i:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/render/MapDraw.cpp.i
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/render/MapDraw.cpp.i
 .PHONY : render/MapDraw.cpp.i
 
 render/MapDraw.s: render/MapDraw.cpp.s
@@ -275,7 +275,7 @@ render/MapDraw.s: render/MapDraw.cpp.s
 
 # target to generate assembly for a file
 render/MapDraw.cpp.s:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/render/MapDraw.cpp.s
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/render/MapDraw.cpp.s
 .PHONY : render/MapDraw.cpp.s
 
 render/Scene.o: render/Scene.cpp.o
@@ -284,7 +284,7 @@ render/Scene.o: render/Scene.cpp.o
 
 # target to build an object file
 render/Scene.cpp.o:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/render/Scene.cpp.o
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/render/Scene.cpp.o
 .PHONY : render/Scene.cpp.o
 
 render/Scene.i: render/Scene.cpp.i
@@ -293,7 +293,7 @@ render/Scene.i: render/Scene.cpp.i
 
 # target to preprocess a source file
 render/Scene.cpp.i:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/render/Scene.cpp.i
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/render/Scene.cpp.i
 .PHONY : render/Scene.cpp.i
 
 render/Scene.s: render/Scene.cpp.s
@@ -302,7 +302,7 @@ render/Scene.s: render/Scene.cpp.s
 
 # target to generate assembly for a file
 render/Scene.cpp.s:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/render/Scene.cpp.s
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/render/Scene.cpp.s
 .PHONY : render/Scene.cpp.s
 
 render/TextDraw.o: render/TextDraw.cpp.o
@@ -311,7 +311,7 @@ render/TextDraw.o: render/TextDraw.cpp.o
 
 # target to build an object file
 render/TextDraw.cpp.o:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/render/TextDraw.cpp.o
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/render/TextDraw.cpp.o
 .PHONY : render/TextDraw.cpp.o
 
 render/TextDraw.i: render/TextDraw.cpp.i
@@ -320,7 +320,7 @@ render/TextDraw.i: render/TextDraw.cpp.i
 
 # target to preprocess a source file
 render/TextDraw.cpp.i:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/render/TextDraw.cpp.i
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/render/TextDraw.cpp.i
 .PHONY : render/TextDraw.cpp.i
 
 render/TextDraw.s: render/TextDraw.cpp.s
@@ -329,7 +329,7 @@ render/TextDraw.s: render/TextDraw.cpp.s
 
 # target to generate assembly for a file
 render/TextDraw.cpp.s:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/render/TextDraw.cpp.s
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/render/TextDraw.cpp.s
 .PHONY : render/TextDraw.cpp.s
 
 # Help Target
@@ -373,6 +373,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ali/plt_render_test/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ali/plt/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/ali/plt_render_test/src/shared
+# Install script for directory: /home/ali/plt/src/shared
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

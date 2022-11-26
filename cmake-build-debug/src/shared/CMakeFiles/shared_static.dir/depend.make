@@ -12,12 +12,33 @@ src/shared/CMakeFiles/shared_static.dir/engine/Command.cpp.o: ../src/shared/engi
 src/shared/CMakeFiles/shared_static.dir/engine/Command.cpp.o: ../src/shared/engine/CommandTypeId.hpp
 src/shared/CMakeFiles/shared_static.dir/engine/Command.cpp.o: ../src/shared/engine/Engine.hpp
 
+src/shared/CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.o: ../src/shared/state/Case.hpp
+src/shared/CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.o: ../src/shared/state/Game.hpp
+src/shared/CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.o: ../src/shared/state/GameStatus.hpp
+src/shared/CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.o: ../src/shared/state/Insect.hpp
+src/shared/CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.o: ../src/shared/state/Map.hpp
+src/shared/CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.o: ../src/shared/state/Player.hpp
+src/shared/CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.o: ../src/shared/engine/Command.hpp
+src/shared/CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.o: ../src/shared/engine/CommandTypeId.hpp
+src/shared/CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.o: ../src/shared/engine/DeplacementCommand.cpp
+src/shared/CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.o: ../src/shared/engine/DeplacementCommand.hpp
+src/shared/CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.o: ../src/shared/engine/Engine.hpp
+
+src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o: ../src/shared/state.hpp
+src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o: ../src/shared/state/Ant.hpp
+src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o: ../src/shared/state/Bee.hpp
+src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o: ../src/shared/state/Beetle.hpp
 src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o: ../src/shared/state/Case.hpp
+src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o: ../src/shared/state/Cricket.hpp
 src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o: ../src/shared/state/Game.hpp
 src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o: ../src/shared/state/GameStatus.hpp
+src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o: ../src/shared/state/Grasshooper.hpp
 src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o: ../src/shared/state/Insect.hpp
+src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o: ../src/shared/state/Ladybug.hpp
 src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o: ../src/shared/state/Map.hpp
+src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o: ../src/shared/state/Mosquito.hpp
 src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o: ../src/shared/state/Player.hpp
+src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o: ../src/shared/state/Spider.hpp
 src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o: ../src/shared/engine/Command.hpp
 src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o: ../src/shared/engine/CommandTypeId.hpp
 src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o: ../src/shared/engine/Engine.cpp
@@ -51,16 +72,13 @@ src/shared/CMakeFiles/shared_static.dir/state/Case.cpp.o: ../src/shared/state/Ca
 src/shared/CMakeFiles/shared_static.dir/state/Exemple.cpp.o: ../src/shared/state/Exemple.cpp
 
 src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.o: ../src/shared/state/Bee.hpp
-src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.o: ../src/shared/state/Beetle.hpp
 src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.o: ../src/shared/state/Case.hpp
 src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.o: ../src/shared/state/Game.cpp
 src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.o: ../src/shared/state/Game.hpp
 src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.o: ../src/shared/state/GameStatus.hpp
-src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.o: ../src/shared/state/Grasshooper.hpp
 src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.o: ../src/shared/state/Insect.hpp
 src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.o: ../src/shared/state/Map.hpp
 src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.o: ../src/shared/state/Player.hpp
-src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.o: ../src/shared/state/Spider.hpp
 
 src/shared/CMakeFiles/shared_static.dir/state/Grasshooper.cpp.o: ../src/shared/state/Case.hpp
 src/shared/CMakeFiles/shared_static.dir/state/Grasshooper.cpp.o: ../src/shared/state/Grasshooper.cpp

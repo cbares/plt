@@ -9,10 +9,13 @@ namespace state {
 };
 namespace engine {
   class Command;
+};
+namespace state {
+  class Player;
 }
 
-#include "state/Game.hpp"
 #include "Command.hpp"
+#include "state/Game.hpp"
 
 namespace engine {
 
@@ -20,15 +23,15 @@ namespace engine {
   class Engine {
     // Attributes
   public:
-    state::Game currentState;
+    state::Game* currentGame;
     std::vector<Command> listCommands;
     // Operations
   public:
     Engine (state::Game& game);
     void init ();
-    state::Game getState ();
+    state::Game* getState ();
     void addCommand (Command ptr_cmd);
-    void setState (state::Game& game);
+    void UpdateState (state::Game& game, int commandid, state::Insect& insect_moving, std::vector<int> pos_target, state::Player& player);
     // Setters and Getters
   };
 

@@ -43,6 +43,7 @@ namespace render {
     InsectDraw (std::vector<std::vector<sf::Vector2f>> mapPixel, std::vector<std::vector<sf::Vector2f>> mapPixelRemaining);
     InsectDraw ();
     void loadInsectTexture ();
+    std::string getPressedInsect (int xt, int yt);
     // Setters and Getters
   };
 

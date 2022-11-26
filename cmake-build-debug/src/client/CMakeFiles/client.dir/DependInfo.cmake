@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ali/plt_render_test/src/client/main.cpp" "/home/ali/plt_render_test/cmake-build-debug/src/client/CMakeFiles/client.dir/main.cpp.o"
+  "/home/ali/plt/src/client/main.cpp" "/home/ali/plt/cmake-build-debug/src/client/CMakeFiles/client.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -16,8 +16,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/ali/plt_render_test/cmake-build-debug/src/client/CMakeFiles/client_static.dir/DependInfo.cmake"
-  "/home/ali/plt_render_test/cmake-build-debug/src/shared/CMakeFiles/shared_static.dir/DependInfo.cmake"
+  "/home/ali/plt/cmake-build-debug/src/client/CMakeFiles/client_static.dir/DependInfo.cmake"
+  "/home/ali/plt/cmake-build-debug/src/shared/CMakeFiles/shared_static.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

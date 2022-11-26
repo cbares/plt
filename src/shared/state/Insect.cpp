@@ -257,3 +257,10 @@ state::Insect::Insect(std::string name, std::string color, std::vector<int> coor
 
 }
 
+int state::Insect::Get_i() {
+    return this->Coord[0];
+}
+
+int state::Insect::Get_j() {
+    return this->Coord[1];
+}

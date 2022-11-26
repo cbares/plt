@@ -24,7 +24,7 @@ namespace render {
   class Scene {
     // Associations
     // Attributes
-  private:
+  public:
     MapDraw mapDraw;
     InsectDraw insectDraw;
     TextDraw textDraw;

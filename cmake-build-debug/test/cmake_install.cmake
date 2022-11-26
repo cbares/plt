@@ -1,4 +1,4 @@
-# Install script for directory: /home/ali/plt_render_test/test
+# Install script for directory: /home/ali/plt/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,8 +39,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/ali/plt_render_test/cmake-build-debug/test/shared/cmake_install.cmake")
-  include("/home/ali/plt_render_test/cmake-build-debug/test/client/cmake_install.cmake")
+  include("/home/ali/plt/cmake-build-debug/test/shared/cmake_install.cmake")
+  include("/home/ali/plt/cmake-build-debug/test/client/cmake_install.cmake")
 
 endif()
 

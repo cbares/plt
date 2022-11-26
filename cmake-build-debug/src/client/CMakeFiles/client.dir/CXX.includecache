@@ -246,7 +246,7 @@ Insect.hpp
 Case.hpp
 ../src/shared/state/Case.hpp
 
-/home/ali/plt_render_test/src/client/main.cpp
+/home/ali/plt/src/client/main.cpp
 iostream
 -
 SFML/Graphics.hpp
@@ -257,11 +257,11 @@ state.hpp
 -
 engine.hpp
 -
+render.hpp
+-
 list
 -
 sstream
--
-render.hpp
 -
 unordered_map
 -

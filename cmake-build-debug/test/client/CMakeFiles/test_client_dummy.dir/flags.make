@@ -6,5 +6,5 @@ CXX_FLAGS =  -Wall -std=c++11 -pthread -g -g --coverage -fprofile-arcs -ftest-co
 
 CXX_DEFINES = -DBOOST_ALL_NO_LIB -DBOOST_TEST_DYN_LINK -DBOOST_TEST_MAIN -DBOOST_TEST_MODULE=client_dummy -DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK
 
-CXX_INCLUDES = -I/home/ali/plt_render_test/src/shared -I/home/ali/plt_render_test/src/client 
+CXX_INCLUDES = -I/home/ali/plt/src/shared -I/home/ali/plt/src/client 
 

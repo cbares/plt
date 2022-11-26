@@ -46,15 +46,15 @@ vector
 Insect.hpp
 ../src/shared/state/Insect.hpp
 
-/home/ali/plt_render_test/src/client/client/Exemple.cpp
+/home/ali/plt/src/client/client/Exemple.cpp
 
-/home/ali/plt_render_test/src/client/render/InsectDraw.cpp
+/home/ali/plt/src/client/render/InsectDraw.cpp
 iostream
 -
 InsectDraw.hpp
-/home/ali/plt_render_test/src/client/render/InsectDraw.hpp
+/home/ali/plt/src/client/render/InsectDraw.hpp
 
-/home/ali/plt_render_test/src/client/render/InsectDraw.hpp
+/home/ali/plt/src/client/render/InsectDraw.hpp
 vector
 -
 SFML/Graphics.hpp
@@ -64,49 +64,49 @@ string
 map
 -
 state/Game.hpp
-/home/ali/plt_render_test/src/client/render/state/Game.hpp
+/home/ali/plt/src/client/render/state/Game.hpp
 
-/home/ali/plt_render_test/src/client/render/MapDraw.cpp
+/home/ali/plt/src/client/render/MapDraw.cpp
+iostream
+-
 MapDraw.hpp
-/home/ali/plt_render_test/src/client/render/MapDraw.hpp
+/home/ali/plt/src/client/render/MapDraw.hpp
 
-/home/ali/plt_render_test/src/client/render/MapDraw.hpp
+/home/ali/plt/src/client/render/MapDraw.hpp
 vector
 -
 SFML/Graphics.hpp
 -
 
-/home/ali/plt_render_test/src/client/render/Scene.cpp
+/home/ali/plt/src/client/render/Scene.cpp
 Scene.hpp
-/home/ali/plt_render_test/src/client/render/Scene.hpp
+/home/ali/plt/src/client/render/Scene.hpp
 
-/home/ali/plt_render_test/src/client/render/Scene.hpp
+/home/ali/plt/src/client/render/Scene.hpp
 SFML/Graphics.hpp
 -
 MapDraw.hpp
-/home/ali/plt_render_test/src/client/render/MapDraw.hpp
+/home/ali/plt/src/client/render/MapDraw.hpp
 InsectDraw.hpp
-/home/ali/plt_render_test/src/client/render/InsectDraw.hpp
+/home/ali/plt/src/client/render/InsectDraw.hpp
 TextDraw.hpp
-/home/ali/plt_render_test/src/client/render/TextDraw.hpp
+/home/ali/plt/src/client/render/TextDraw.hpp
 state/Game.hpp
-/home/ali/plt_render_test/src/client/render/state/Game.hpp
+/home/ali/plt/src/client/render/state/Game.hpp
 
-/home/ali/plt_render_test/src/client/render/TextDraw.cpp
+/home/ali/plt/src/client/render/TextDraw.cpp
 TextDraw.hpp
-/home/ali/plt_render_test/src/client/render/TextDraw.hpp
+/home/ali/plt/src/client/render/TextDraw.hpp
 sstream
 -
 
-/home/ali/plt_render_test/src/client/render/TextDraw.hpp
+/home/ali/plt/src/client/render/TextDraw.hpp
 string
 -
 vector
 -
 SFML/Graphics.hpp
 -
-state/Player.hpp
-/home/ali/plt_render_test/src/client/render/state/Player.hpp
 state/Game.hpp
-/home/ali/plt_render_test/src/client/render/state/Game.hpp
+/home/ali/plt/src/client/render/state/Game.hpp
 
