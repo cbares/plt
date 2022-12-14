@@ -6,6 +6,9 @@ src/client/CMakeFiles/client.dir/main.cpp.o: ../src/client/render/InsectDraw.hpp
 src/client/CMakeFiles/client.dir/main.cpp.o: ../src/client/render/MapDraw.hpp
 src/client/CMakeFiles/client.dir/main.cpp.o: ../src/client/render/Scene.hpp
 src/client/CMakeFiles/client.dir/main.cpp.o: ../src/client/render/TextDraw.hpp
+src/client/CMakeFiles/client.dir/main.cpp.o: ../src/shared/ai.hpp
+src/client/CMakeFiles/client.dir/main.cpp.o: ../src/shared/ai/AI.hpp
+src/client/CMakeFiles/client.dir/main.cpp.o: ../src/shared/ai/RandomAI.hpp
 src/client/CMakeFiles/client.dir/main.cpp.o: ../src/shared/engine.hpp
 src/client/CMakeFiles/client.dir/main.cpp.o: ../src/shared/engine/Command.hpp
 src/client/CMakeFiles/client.dir/main.cpp.o: ../src/shared/engine/CommandTypeId.hpp

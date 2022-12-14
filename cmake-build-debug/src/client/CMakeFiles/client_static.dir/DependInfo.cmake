@@ -4,7 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ali/plt/src/client/client/Exemple.cpp" "/home/ali/plt/cmake-build-debug/src/client/CMakeFiles/client_static.dir/client/Exemple.cpp.o"
   "/home/ali/plt/src/client/render/InsectDraw.cpp" "/home/ali/plt/cmake-build-debug/src/client/CMakeFiles/client_static.dir/render/InsectDraw.cpp.o"
   "/home/ali/plt/src/client/render/MapDraw.cpp" "/home/ali/plt/cmake-build-debug/src/client/CMakeFiles/client_static.dir/render/MapDraw.cpp.o"
   "/home/ali/plt/src/client/render/Scene.cpp" "/home/ali/plt/cmake-build-debug/src/client/CMakeFiles/client_static.dir/render/Scene.cpp.o"

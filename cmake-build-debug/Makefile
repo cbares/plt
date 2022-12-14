@@ -189,6 +189,19 @@ shared_static/fast:
 .PHONY : shared_static/fast
 
 #=============================================================================
+# Target rules for targets named generate-header-ai
+
+# Build rule for target.
+generate-header-ai: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 generate-header-ai
+.PHONY : generate-header-ai
+
+# fast build rule for target.
+generate-header-ai/fast:
+	$(MAKE) -f src/shared/CMakeFiles/generate-header-ai.dir/build.make src/shared/CMakeFiles/generate-header-ai.dir/build
+.PHONY : generate-header-ai/fast
+
+#=============================================================================
 # Target rules for targets named generate-header-engine
 
 # Build rule for target.
@@ -332,6 +345,7 @@ help:
 	@echo "... generate-headers"
 	@echo "... dia2code"
 	@echo "... shared_static"
+	@echo "... generate-header-ai"
 	@echo "... generate-header-engine"
 	@echo "... generate-header-state"
 	@echo "... client"

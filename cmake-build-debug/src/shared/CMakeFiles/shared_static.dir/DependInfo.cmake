@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/ali/plt/src/shared/ai/AI.cpp" "/home/ali/plt/cmake-build-debug/src/shared/CMakeFiles/shared_static.dir/ai/AI.cpp.o"
+  "/home/ali/plt/src/shared/ai/RandomAI.cpp" "/home/ali/plt/cmake-build-debug/src/shared/CMakeFiles/shared_static.dir/ai/RandomAI.cpp.o"
   "/home/ali/plt/src/shared/engine/Command.cpp" "/home/ali/plt/cmake-build-debug/src/shared/CMakeFiles/shared_static.dir/engine/Command.cpp.o"
   "/home/ali/plt/src/shared/engine/DeplacementCommand.cpp" "/home/ali/plt/cmake-build-debug/src/shared/CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.o"
   "/home/ali/plt/src/shared/engine/Engine.cpp" "/home/ali/plt/cmake-build-debug/src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o"

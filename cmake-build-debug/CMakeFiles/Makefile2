@@ -156,6 +156,7 @@ src/shared/preinstall:
 
 # Recursive "clean" directory target.
 src/shared/clean: src/shared/CMakeFiles/shared_static.dir/clean
+src/shared/clean: src/shared/CMakeFiles/generate-header-ai.dir/clean
 src/shared/clean: src/shared/CMakeFiles/generate-header-engine.dir/clean
 src/shared/clean: src/shared/CMakeFiles/generate-header-state.dir/clean
 
@@ -229,12 +230,12 @@ CMakeFiles/code-coverage.dir/all: test/shared/CMakeFiles/test_shared_dummy.dir/a
 CMakeFiles/code-coverage.dir/all: test/client/CMakeFiles/test_client_dummy.dir/all
 	$(MAKE) -f CMakeFiles/code-coverage.dir/build.make CMakeFiles/code-coverage.dir/depend
 	$(MAKE) -f CMakeFiles/code-coverage.dir/build.make CMakeFiles/code-coverage.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=9 "Built target code-coverage"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=8 "Built target code-coverage"
 .PHONY : CMakeFiles/code-coverage.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/code-coverage.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 42
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 44
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/code-coverage.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/code-coverage.dir/rule
@@ -284,12 +285,12 @@ CMakeFiles/code-coverage-gcov.dir/all: test/shared/CMakeFiles/test_shared_dummy.
 CMakeFiles/code-coverage-gcov.dir/all: test/client/CMakeFiles/test_client_dummy.dir/all
 	$(MAKE) -f CMakeFiles/code-coverage-gcov.dir/build.make CMakeFiles/code-coverage-gcov.dir/depend
 	$(MAKE) -f CMakeFiles/code-coverage-gcov.dir/build.make CMakeFiles/code-coverage-gcov.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=10 "Built target code-coverage-gcov"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=9 "Built target code-coverage-gcov"
 .PHONY : CMakeFiles/code-coverage-gcov.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/code-coverage-gcov.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 40
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 42
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/code-coverage-gcov.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/code-coverage-gcov.dir/rule
@@ -308,6 +309,7 @@ CMakeFiles/code-coverage-gcov.dir/clean:
 # Target rules for target CMakeFiles/generate-headers.dir
 
 # All Build rule for target.
+CMakeFiles/generate-headers.dir/all: src/shared/CMakeFiles/generate-header-ai.dir/all
 CMakeFiles/generate-headers.dir/all: src/shared/CMakeFiles/generate-header-engine.dir/all
 CMakeFiles/generate-headers.dir/all: src/shared/CMakeFiles/generate-header-state.dir/all
 CMakeFiles/generate-headers.dir/all: src/client/CMakeFiles/generate-header-render.dir/all
@@ -319,7 +321,7 @@ CMakeFiles/generate-headers.dir/all: src/client/CMakeFiles/generate-header-clien
 
 # Build rule for subdir invocation for target.
 CMakeFiles/generate-headers.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/generate-headers.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/generate-headers.dir/rule
@@ -341,7 +343,7 @@ CMakeFiles/generate-headers.dir/clean:
 extern/dia2code/CMakeFiles/dia2code.dir/all:
 	$(MAKE) -f extern/dia2code/CMakeFiles/dia2code.dir/build.make extern/dia2code/CMakeFiles/dia2code.dir/depend
 	$(MAKE) -f extern/dia2code/CMakeFiles/dia2code.dir/build.make extern/dia2code/CMakeFiles/dia2code.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=11,12,13,14,15,16,17,18,19,20 "Built target dia2code"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=10,11,12,13,14,15,16,17,18,19 "Built target dia2code"
 .PHONY : extern/dia2code/CMakeFiles/dia2code.dir/all
 
 # Build rule for subdir invocation for target.
@@ -368,12 +370,12 @@ extern/dia2code/CMakeFiles/dia2code.dir/clean:
 src/shared/CMakeFiles/shared_static.dir/all: CMakeFiles/generate-headers.dir/all
 	$(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/depend
 	$(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=25,26,27,28,29,30,31,32,33,34,35,36,37,38,39 "Built target shared_static"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41 "Built target shared_static"
 .PHONY : src/shared/CMakeFiles/shared_static.dir/all
 
 # Build rule for subdir invocation for target.
 src/shared/CMakeFiles/shared_static.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 29
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 32
 	$(MAKE) -f CMakeFiles/Makefile2 src/shared/CMakeFiles/shared_static.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 0
 .PHONY : src/shared/CMakeFiles/shared_static.dir/rule
@@ -387,6 +389,33 @@ shared_static: src/shared/CMakeFiles/shared_static.dir/rule
 src/shared/CMakeFiles/shared_static.dir/clean:
 	$(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/clean
 .PHONY : src/shared/CMakeFiles/shared_static.dir/clean
+
+#=============================================================================
+# Target rules for target src/shared/CMakeFiles/generate-header-ai.dir
+
+# All Build rule for target.
+src/shared/CMakeFiles/generate-header-ai.dir/all: extern/dia2code/CMakeFiles/dia2code.dir/all
+	$(MAKE) -f src/shared/CMakeFiles/generate-header-ai.dir/build.make src/shared/CMakeFiles/generate-header-ai.dir/depend
+	$(MAKE) -f src/shared/CMakeFiles/generate-header-ai.dir/build.make src/shared/CMakeFiles/generate-header-ai.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=20 "Built target generate-header-ai"
+.PHONY : src/shared/CMakeFiles/generate-header-ai.dir/all
+
+# Build rule for subdir invocation for target.
+src/shared/CMakeFiles/generate-header-ai.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 11
+	$(MAKE) -f CMakeFiles/Makefile2 src/shared/CMakeFiles/generate-header-ai.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 0
+.PHONY : src/shared/CMakeFiles/generate-header-ai.dir/rule
+
+# Convenience name for target.
+generate-header-ai: src/shared/CMakeFiles/generate-header-ai.dir/rule
+
+.PHONY : generate-header-ai
+
+# clean rule for target.
+src/shared/CMakeFiles/generate-header-ai.dir/clean:
+	$(MAKE) -f src/shared/CMakeFiles/generate-header-ai.dir/build.make src/shared/CMakeFiles/generate-header-ai.dir/clean
+.PHONY : src/shared/CMakeFiles/generate-header-ai.dir/clean
 
 #=============================================================================
 # Target rules for target src/shared/CMakeFiles/generate-header-engine.dir
@@ -455,7 +484,7 @@ src/client/CMakeFiles/client.dir/all: src/client/CMakeFiles/client_static.dir/al
 
 # Build rule for subdir invocation for target.
 src/client/CMakeFiles/client.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 37
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 39
 	$(MAKE) -f CMakeFiles/Makefile2 src/client/CMakeFiles/client.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 0
 .PHONY : src/client/CMakeFiles/client.dir/rule
@@ -478,12 +507,12 @@ src/client/CMakeFiles/client_static.dir/all: CMakeFiles/generate-headers.dir/all
 src/client/CMakeFiles/client_static.dir/all: src/shared/CMakeFiles/shared_static.dir/all
 	$(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/depend
 	$(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=3,4,5,6,7,8 "Built target client_static"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=3,4,5,6,7 "Built target client_static"
 .PHONY : src/client/CMakeFiles/client_static.dir/all
 
 # Build rule for subdir invocation for target.
 src/client/CMakeFiles/client_static.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 35
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 37
 	$(MAKE) -f CMakeFiles/Makefile2 src/client/CMakeFiles/client_static.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 0
 .PHONY : src/client/CMakeFiles/client_static.dir/rule
@@ -615,12 +644,12 @@ test/shared/CMakeFiles/test_shared_dummy.dir/all: src/shared/CMakeFiles/shared_s
 test/shared/CMakeFiles/test_shared_dummy.dir/all: src/client/CMakeFiles/client_static.dir/all
 	$(MAKE) -f test/shared/CMakeFiles/test_shared_dummy.dir/build.make test/shared/CMakeFiles/test_shared_dummy.dir/depend
 	$(MAKE) -f test/shared/CMakeFiles/test_shared_dummy.dir/build.make test/shared/CMakeFiles/test_shared_dummy.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=42,43 "Built target test_shared_dummy"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=44,45 "Built target test_shared_dummy"
 .PHONY : test/shared/CMakeFiles/test_shared_dummy.dir/all
 
 # Build rule for subdir invocation for target.
 test/shared/CMakeFiles/test_shared_dummy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 37
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 39
 	$(MAKE) -f CMakeFiles/Makefile2 test/shared/CMakeFiles/test_shared_dummy.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 0
 .PHONY : test/shared/CMakeFiles/test_shared_dummy.dir/rule
@@ -644,12 +673,12 @@ test/client/CMakeFiles/test_client_dummy.dir/all: src/shared/CMakeFiles/shared_s
 test/client/CMakeFiles/test_client_dummy.dir/all: src/client/CMakeFiles/client_static.dir/all
 	$(MAKE) -f test/client/CMakeFiles/test_client_dummy.dir/build.make test/client/CMakeFiles/test_client_dummy.dir/depend
 	$(MAKE) -f test/client/CMakeFiles/test_client_dummy.dir/build.make test/client/CMakeFiles/test_client_dummy.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=40,41 "Built target test_client_dummy"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=42,43 "Built target test_client_dummy"
 .PHONY : test/client/CMakeFiles/test_client_dummy.dir/all
 
 # Build rule for subdir invocation for target.
 test/client/CMakeFiles/test_client_dummy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 37
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 39
 	$(MAKE) -f CMakeFiles/Makefile2 test/client/CMakeFiles/test_client_dummy.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ali/plt/cmake-build-debug/CMakeFiles 0
 .PHONY : test/client/CMakeFiles/test_client_dummy.dir/rule

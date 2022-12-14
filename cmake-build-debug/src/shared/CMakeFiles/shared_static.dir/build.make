@@ -57,9 +57,35 @@ include src/shared/CMakeFiles/shared_static.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/shared/CMakeFiles/shared_static.dir/flags.make
 
+src/shared/CMakeFiles/shared_static.dir/ai/AI.cpp.o: src/shared/CMakeFiles/shared_static.dir/flags.make
+src/shared/CMakeFiles/shared_static.dir/ai/AI.cpp.o: ../src/shared/ai/AI.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/shared/CMakeFiles/shared_static.dir/ai/AI.cpp.o"
+	cd /home/ali/plt/cmake-build-debug/src/shared && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/shared_static.dir/ai/AI.cpp.o -c /home/ali/plt/src/shared/ai/AI.cpp
+
+src/shared/CMakeFiles/shared_static.dir/ai/AI.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/shared_static.dir/ai/AI.cpp.i"
+	cd /home/ali/plt/cmake-build-debug/src/shared && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ali/plt/src/shared/ai/AI.cpp > CMakeFiles/shared_static.dir/ai/AI.cpp.i
+
+src/shared/CMakeFiles/shared_static.dir/ai/AI.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/shared_static.dir/ai/AI.cpp.s"
+	cd /home/ali/plt/cmake-build-debug/src/shared && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ali/plt/src/shared/ai/AI.cpp -o CMakeFiles/shared_static.dir/ai/AI.cpp.s
+
+src/shared/CMakeFiles/shared_static.dir/ai/RandomAI.cpp.o: src/shared/CMakeFiles/shared_static.dir/flags.make
+src/shared/CMakeFiles/shared_static.dir/ai/RandomAI.cpp.o: ../src/shared/ai/RandomAI.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/shared/CMakeFiles/shared_static.dir/ai/RandomAI.cpp.o"
+	cd /home/ali/plt/cmake-build-debug/src/shared && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/shared_static.dir/ai/RandomAI.cpp.o -c /home/ali/plt/src/shared/ai/RandomAI.cpp
+
+src/shared/CMakeFiles/shared_static.dir/ai/RandomAI.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/shared_static.dir/ai/RandomAI.cpp.i"
+	cd /home/ali/plt/cmake-build-debug/src/shared && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ali/plt/src/shared/ai/RandomAI.cpp > CMakeFiles/shared_static.dir/ai/RandomAI.cpp.i
+
+src/shared/CMakeFiles/shared_static.dir/ai/RandomAI.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/shared_static.dir/ai/RandomAI.cpp.s"
+	cd /home/ali/plt/cmake-build-debug/src/shared && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ali/plt/src/shared/ai/RandomAI.cpp -o CMakeFiles/shared_static.dir/ai/RandomAI.cpp.s
+
 src/shared/CMakeFiles/shared_static.dir/engine/Command.cpp.o: src/shared/CMakeFiles/shared_static.dir/flags.make
 src/shared/CMakeFiles/shared_static.dir/engine/Command.cpp.o: ../src/shared/engine/Command.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/shared/CMakeFiles/shared_static.dir/engine/Command.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/shared/CMakeFiles/shared_static.dir/engine/Command.cpp.o"
 	cd /home/ali/plt/cmake-build-debug/src/shared && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/shared_static.dir/engine/Command.cpp.o -c /home/ali/plt/src/shared/engine/Command.cpp
 
 src/shared/CMakeFiles/shared_static.dir/engine/Command.cpp.i: cmake_force
@@ -72,7 +98,7 @@ src/shared/CMakeFiles/shared_static.dir/engine/Command.cpp.s: cmake_force
 
 src/shared/CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.o: src/shared/CMakeFiles/shared_static.dir/flags.make
 src/shared/CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.o: ../src/shared/engine/DeplacementCommand.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/shared/CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/shared/CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.o"
 	cd /home/ali/plt/cmake-build-debug/src/shared && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.o -c /home/ali/plt/src/shared/engine/DeplacementCommand.cpp
 
 src/shared/CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.i: cmake_force
@@ -85,7 +111,7 @@ src/shared/CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.s: cmake_f
 
 src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o: src/shared/CMakeFiles/shared_static.dir/flags.make
 src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o: ../src/shared/engine/Engine.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o"
 	cd /home/ali/plt/cmake-build-debug/src/shared && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/shared_static.dir/engine/Engine.cpp.o -c /home/ali/plt/src/shared/engine/Engine.cpp
 
 src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.i: cmake_force
@@ -98,7 +124,7 @@ src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.s: cmake_force
 
 src/shared/CMakeFiles/shared_static.dir/engine/PlacementCommand.cpp.o: src/shared/CMakeFiles/shared_static.dir/flags.make
 src/shared/CMakeFiles/shared_static.dir/engine/PlacementCommand.cpp.o: ../src/shared/engine/PlacementCommand.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/shared/CMakeFiles/shared_static.dir/engine/PlacementCommand.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/shared/CMakeFiles/shared_static.dir/engine/PlacementCommand.cpp.o"
 	cd /home/ali/plt/cmake-build-debug/src/shared && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/shared_static.dir/engine/PlacementCommand.cpp.o -c /home/ali/plt/src/shared/engine/PlacementCommand.cpp
 
 src/shared/CMakeFiles/shared_static.dir/engine/PlacementCommand.cpp.i: cmake_force
@@ -111,7 +137,7 @@ src/shared/CMakeFiles/shared_static.dir/engine/PlacementCommand.cpp.s: cmake_for
 
 src/shared/CMakeFiles/shared_static.dir/state/Bee.cpp.o: src/shared/CMakeFiles/shared_static.dir/flags.make
 src/shared/CMakeFiles/shared_static.dir/state/Bee.cpp.o: ../src/shared/state/Bee.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/shared/CMakeFiles/shared_static.dir/state/Bee.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/shared/CMakeFiles/shared_static.dir/state/Bee.cpp.o"
 	cd /home/ali/plt/cmake-build-debug/src/shared && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/shared_static.dir/state/Bee.cpp.o -c /home/ali/plt/src/shared/state/Bee.cpp
 
 src/shared/CMakeFiles/shared_static.dir/state/Bee.cpp.i: cmake_force
@@ -124,7 +150,7 @@ src/shared/CMakeFiles/shared_static.dir/state/Bee.cpp.s: cmake_force
 
 src/shared/CMakeFiles/shared_static.dir/state/Beetle.cpp.o: src/shared/CMakeFiles/shared_static.dir/flags.make
 src/shared/CMakeFiles/shared_static.dir/state/Beetle.cpp.o: ../src/shared/state/Beetle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/shared/CMakeFiles/shared_static.dir/state/Beetle.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/shared/CMakeFiles/shared_static.dir/state/Beetle.cpp.o"
 	cd /home/ali/plt/cmake-build-debug/src/shared && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/shared_static.dir/state/Beetle.cpp.o -c /home/ali/plt/src/shared/state/Beetle.cpp
 
 src/shared/CMakeFiles/shared_static.dir/state/Beetle.cpp.i: cmake_force
@@ -137,7 +163,7 @@ src/shared/CMakeFiles/shared_static.dir/state/Beetle.cpp.s: cmake_force
 
 src/shared/CMakeFiles/shared_static.dir/state/Case.cpp.o: src/shared/CMakeFiles/shared_static.dir/flags.make
 src/shared/CMakeFiles/shared_static.dir/state/Case.cpp.o: ../src/shared/state/Case.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/shared/CMakeFiles/shared_static.dir/state/Case.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/shared/CMakeFiles/shared_static.dir/state/Case.cpp.o"
 	cd /home/ali/plt/cmake-build-debug/src/shared && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/shared_static.dir/state/Case.cpp.o -c /home/ali/plt/src/shared/state/Case.cpp
 
 src/shared/CMakeFiles/shared_static.dir/state/Case.cpp.i: cmake_force
@@ -150,7 +176,7 @@ src/shared/CMakeFiles/shared_static.dir/state/Case.cpp.s: cmake_force
 
 src/shared/CMakeFiles/shared_static.dir/state/Exemple.cpp.o: src/shared/CMakeFiles/shared_static.dir/flags.make
 src/shared/CMakeFiles/shared_static.dir/state/Exemple.cpp.o: ../src/shared/state/Exemple.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/shared/CMakeFiles/shared_static.dir/state/Exemple.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/shared/CMakeFiles/shared_static.dir/state/Exemple.cpp.o"
 	cd /home/ali/plt/cmake-build-debug/src/shared && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/shared_static.dir/state/Exemple.cpp.o -c /home/ali/plt/src/shared/state/Exemple.cpp
 
 src/shared/CMakeFiles/shared_static.dir/state/Exemple.cpp.i: cmake_force
@@ -163,7 +189,7 @@ src/shared/CMakeFiles/shared_static.dir/state/Exemple.cpp.s: cmake_force
 
 src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.o: src/shared/CMakeFiles/shared_static.dir/flags.make
 src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.o: ../src/shared/state/Game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.o"
 	cd /home/ali/plt/cmake-build-debug/src/shared && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/shared_static.dir/state/Game.cpp.o -c /home/ali/plt/src/shared/state/Game.cpp
 
 src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.i: cmake_force
@@ -176,7 +202,7 @@ src/shared/CMakeFiles/shared_static.dir/state/Game.cpp.s: cmake_force
 
 src/shared/CMakeFiles/shared_static.dir/state/Grasshooper.cpp.o: src/shared/CMakeFiles/shared_static.dir/flags.make
 src/shared/CMakeFiles/shared_static.dir/state/Grasshooper.cpp.o: ../src/shared/state/Grasshooper.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/shared/CMakeFiles/shared_static.dir/state/Grasshooper.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/shared/CMakeFiles/shared_static.dir/state/Grasshooper.cpp.o"
 	cd /home/ali/plt/cmake-build-debug/src/shared && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/shared_static.dir/state/Grasshooper.cpp.o -c /home/ali/plt/src/shared/state/Grasshooper.cpp
 
 src/shared/CMakeFiles/shared_static.dir/state/Grasshooper.cpp.i: cmake_force
@@ -189,7 +215,7 @@ src/shared/CMakeFiles/shared_static.dir/state/Grasshooper.cpp.s: cmake_force
 
 src/shared/CMakeFiles/shared_static.dir/state/Insect.cpp.o: src/shared/CMakeFiles/shared_static.dir/flags.make
 src/shared/CMakeFiles/shared_static.dir/state/Insect.cpp.o: ../src/shared/state/Insect.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/shared/CMakeFiles/shared_static.dir/state/Insect.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/shared/CMakeFiles/shared_static.dir/state/Insect.cpp.o"
 	cd /home/ali/plt/cmake-build-debug/src/shared && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/shared_static.dir/state/Insect.cpp.o -c /home/ali/plt/src/shared/state/Insect.cpp
 
 src/shared/CMakeFiles/shared_static.dir/state/Insect.cpp.i: cmake_force
@@ -202,7 +228,7 @@ src/shared/CMakeFiles/shared_static.dir/state/Insect.cpp.s: cmake_force
 
 src/shared/CMakeFiles/shared_static.dir/state/Map.cpp.o: src/shared/CMakeFiles/shared_static.dir/flags.make
 src/shared/CMakeFiles/shared_static.dir/state/Map.cpp.o: ../src/shared/state/Map.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/shared/CMakeFiles/shared_static.dir/state/Map.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object src/shared/CMakeFiles/shared_static.dir/state/Map.cpp.o"
 	cd /home/ali/plt/cmake-build-debug/src/shared && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/shared_static.dir/state/Map.cpp.o -c /home/ali/plt/src/shared/state/Map.cpp
 
 src/shared/CMakeFiles/shared_static.dir/state/Map.cpp.i: cmake_force
@@ -215,7 +241,7 @@ src/shared/CMakeFiles/shared_static.dir/state/Map.cpp.s: cmake_force
 
 src/shared/CMakeFiles/shared_static.dir/state/Player.cpp.o: src/shared/CMakeFiles/shared_static.dir/flags.make
 src/shared/CMakeFiles/shared_static.dir/state/Player.cpp.o: ../src/shared/state/Player.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/shared/CMakeFiles/shared_static.dir/state/Player.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object src/shared/CMakeFiles/shared_static.dir/state/Player.cpp.o"
 	cd /home/ali/plt/cmake-build-debug/src/shared && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/shared_static.dir/state/Player.cpp.o -c /home/ali/plt/src/shared/state/Player.cpp
 
 src/shared/CMakeFiles/shared_static.dir/state/Player.cpp.i: cmake_force
@@ -228,7 +254,7 @@ src/shared/CMakeFiles/shared_static.dir/state/Player.cpp.s: cmake_force
 
 src/shared/CMakeFiles/shared_static.dir/state/Spider.cpp.o: src/shared/CMakeFiles/shared_static.dir/flags.make
 src/shared/CMakeFiles/shared_static.dir/state/Spider.cpp.o: ../src/shared/state/Spider.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object src/shared/CMakeFiles/shared_static.dir/state/Spider.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object src/shared/CMakeFiles/shared_static.dir/state/Spider.cpp.o"
 	cd /home/ali/plt/cmake-build-debug/src/shared && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/shared_static.dir/state/Spider.cpp.o -c /home/ali/plt/src/shared/state/Spider.cpp
 
 src/shared/CMakeFiles/shared_static.dir/state/Spider.cpp.i: cmake_force
@@ -241,6 +267,8 @@ src/shared/CMakeFiles/shared_static.dir/state/Spider.cpp.s: cmake_force
 
 # Object files for target shared_static
 shared_static_OBJECTS = \
+"CMakeFiles/shared_static.dir/ai/AI.cpp.o" \
+"CMakeFiles/shared_static.dir/ai/RandomAI.cpp.o" \
 "CMakeFiles/shared_static.dir/engine/Command.cpp.o" \
 "CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.o" \
 "CMakeFiles/shared_static.dir/engine/Engine.cpp.o" \
@@ -259,6 +287,8 @@ shared_static_OBJECTS = \
 # External object files for target shared_static
 shared_static_EXTERNAL_OBJECTS =
 
+src/shared/libshared_static.a: src/shared/CMakeFiles/shared_static.dir/ai/AI.cpp.o
+src/shared/libshared_static.a: src/shared/CMakeFiles/shared_static.dir/ai/RandomAI.cpp.o
 src/shared/libshared_static.a: src/shared/CMakeFiles/shared_static.dir/engine/Command.cpp.o
 src/shared/libshared_static.a: src/shared/CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.o
 src/shared/libshared_static.a: src/shared/CMakeFiles/shared_static.dir/engine/Engine.cpp.o
@@ -275,7 +305,7 @@ src/shared/libshared_static.a: src/shared/CMakeFiles/shared_static.dir/state/Pla
 src/shared/libshared_static.a: src/shared/CMakeFiles/shared_static.dir/state/Spider.cpp.o
 src/shared/libshared_static.a: src/shared/CMakeFiles/shared_static.dir/build.make
 src/shared/libshared_static.a: src/shared/CMakeFiles/shared_static.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX static library libshared_static.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ali/plt/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX static library libshared_static.a"
 	cd /home/ali/plt/cmake-build-debug/src/shared && $(CMAKE_COMMAND) -P CMakeFiles/shared_static.dir/cmake_clean_target.cmake
 	cd /home/ali/plt/cmake-build-debug/src/shared && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/shared_static.dir/link.txt --verbose=$(VERBOSE)
 

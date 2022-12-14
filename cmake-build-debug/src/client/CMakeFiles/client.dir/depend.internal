@@ -7,6 +7,9 @@ src/client/CMakeFiles/client.dir/main.cpp.o
  ../src/client/render/MapDraw.hpp
  ../src/client/render/Scene.hpp
  ../src/client/render/TextDraw.hpp
+ ../src/shared/ai.hpp
+ ../src/shared/ai/AI.hpp
+ ../src/shared/ai/RandomAI.hpp
  ../src/shared/engine.hpp
  ../src/shared/engine/Command.hpp
  ../src/shared/engine/CommandTypeId.hpp

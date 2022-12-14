@@ -58,6 +58,24 @@ state/Player.hpp
 state/Game.hpp
 ../src/client/render/state/Game.hpp
 
+../src/shared/ai.hpp
+ai/AI.hpp
+../src/shared/ai/AI.hpp
+ai/RandomAI.hpp
+../src/shared/ai/RandomAI.hpp
+
+../src/shared/ai/AI.hpp
+vector
+-
+state/Game.hpp
+../src/shared/ai/state/Game.hpp
+
+../src/shared/ai/RandomAI.hpp
+vector
+-
+AI.hpp
+../src/shared/ai/AI.hpp
+
 ../src/shared/engine.hpp
 engine/CommandTypeId.hpp
 ../src/shared/engine/CommandTypeId.hpp
@@ -258,6 +276,8 @@ state.hpp
 engine.hpp
 -
 render.hpp
+-
+ai.hpp
 -
 list
 -

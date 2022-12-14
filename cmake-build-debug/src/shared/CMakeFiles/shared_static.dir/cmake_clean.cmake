@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/shared_static.dir/ai/AI.cpp.o"
+  "CMakeFiles/shared_static.dir/ai/RandomAI.cpp.o"
   "CMakeFiles/shared_static.dir/engine/Command.cpp.o"
   "CMakeFiles/shared_static.dir/engine/DeplacementCommand.cpp.o"
   "CMakeFiles/shared_static.dir/engine/Engine.cpp.o"

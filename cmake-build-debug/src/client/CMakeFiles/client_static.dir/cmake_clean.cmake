@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/client_static.dir/client/Exemple.cpp.o"
   "CMakeFiles/client_static.dir/render/InsectDraw.cpp.o"
   "CMakeFiles/client_static.dir/render/MapDraw.cpp.o"
   "CMakeFiles/client_static.dir/render/Scene.cpp.o"

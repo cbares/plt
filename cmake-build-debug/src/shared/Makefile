@@ -126,6 +126,21 @@ shared_static/fast:
 .PHONY : shared_static/fast
 
 # Convenience name for target.
+src/shared/CMakeFiles/generate-header-ai.dir/rule:
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/shared/CMakeFiles/generate-header-ai.dir/rule
+.PHONY : src/shared/CMakeFiles/generate-header-ai.dir/rule
+
+# Convenience name for target.
+generate-header-ai: src/shared/CMakeFiles/generate-header-ai.dir/rule
+
+.PHONY : generate-header-ai
+
+# fast build rule for target.
+generate-header-ai/fast:
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/generate-header-ai.dir/build.make src/shared/CMakeFiles/generate-header-ai.dir/build
+.PHONY : generate-header-ai/fast
+
+# Convenience name for target.
 src/shared/CMakeFiles/generate-header-engine.dir/rule:
 	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/shared/CMakeFiles/generate-header-engine.dir/rule
 .PHONY : src/shared/CMakeFiles/generate-header-engine.dir/rule
@@ -154,6 +169,60 @@ generate-header-state: src/shared/CMakeFiles/generate-header-state.dir/rule
 generate-header-state/fast:
 	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/generate-header-state.dir/build.make src/shared/CMakeFiles/generate-header-state.dir/build
 .PHONY : generate-header-state/fast
+
+ai/AI.o: ai/AI.cpp.o
+
+.PHONY : ai/AI.o
+
+# target to build an object file
+ai/AI.cpp.o:
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/ai/AI.cpp.o
+.PHONY : ai/AI.cpp.o
+
+ai/AI.i: ai/AI.cpp.i
+
+.PHONY : ai/AI.i
+
+# target to preprocess a source file
+ai/AI.cpp.i:
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/ai/AI.cpp.i
+.PHONY : ai/AI.cpp.i
+
+ai/AI.s: ai/AI.cpp.s
+
+.PHONY : ai/AI.s
+
+# target to generate assembly for a file
+ai/AI.cpp.s:
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/ai/AI.cpp.s
+.PHONY : ai/AI.cpp.s
+
+ai/RandomAI.o: ai/RandomAI.cpp.o
+
+.PHONY : ai/RandomAI.o
+
+# target to build an object file
+ai/RandomAI.cpp.o:
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/ai/RandomAI.cpp.o
+.PHONY : ai/RandomAI.cpp.o
+
+ai/RandomAI.i: ai/RandomAI.cpp.i
+
+.PHONY : ai/RandomAI.i
+
+# target to preprocess a source file
+ai/RandomAI.cpp.i:
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/ai/RandomAI.cpp.i
+.PHONY : ai/RandomAI.cpp.i
+
+ai/RandomAI.s: ai/RandomAI.cpp.s
+
+.PHONY : ai/RandomAI.s
+
+# target to generate assembly for a file
+ai/RandomAI.cpp.s:
+	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/shared/CMakeFiles/shared_static.dir/build.make src/shared/CMakeFiles/shared_static.dir/ai/RandomAI.cpp.s
+.PHONY : ai/RandomAI.cpp.s
 
 engine/Command.o: engine/Command.cpp.o
 
@@ -542,8 +611,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... shared_static"
+	@echo "... generate-header-ai"
 	@echo "... generate-header-engine"
 	@echo "... generate-header-state"
+	@echo "... ai/AI.o"
+	@echo "... ai/AI.i"
+	@echo "... ai/AI.s"
+	@echo "... ai/RandomAI.o"
+	@echo "... ai/RandomAI.i"
+	@echo "... ai/RandomAI.s"
 	@echo "... engine/Command.o"
 	@echo "... engine/Command.i"
 	@echo "... engine/Command.s"

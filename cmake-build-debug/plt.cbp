@@ -169,6 +169,16 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="generate-header-ai">
+				<Option working_dir="/home/ali/plt/cmake-build-debug/src/shared"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 generate-header-ai"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ali/plt/cmake-build-debug/src/shared/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="generate-header-engine">
 				<Option working_dir="/home/ali/plt/cmake-build-debug/src/shared"/>
 				<Option type="4"/>
@@ -487,12 +497,6 @@
 		<Unit filename="/home/ali/plt/extern/dia2code/src/source_parser.h">
 			<Option target="dia2code"/>
 		</Unit>
-		<Unit filename="/home/ali/plt/src/client/client/Exemple.cpp">
-			<Option target="client_static"/>
-		</Unit>
-		<Unit filename="/home/ali/plt/src/client/client/Exemple.hpp">
-			<Option target="client_static"/>
-		</Unit>
 		<Unit filename="/home/ali/plt/src/client/main.cpp">
 			<Option target="client"/>
 		</Unit>
@@ -519,6 +523,21 @@
 		</Unit>
 		<Unit filename="/home/ali/plt/src/client/render/TextDraw.hpp">
 			<Option target="client_static"/>
+		</Unit>
+		<Unit filename="/home/ali/plt/src/shared/ai.hpp">
+			<Option target="shared_static"/>
+		</Unit>
+		<Unit filename="/home/ali/plt/src/shared/ai/AI.cpp">
+			<Option target="shared_static"/>
+		</Unit>
+		<Unit filename="/home/ali/plt/src/shared/ai/AI.hpp">
+			<Option target="shared_static"/>
+		</Unit>
+		<Unit filename="/home/ali/plt/src/shared/ai/RandomAI.cpp">
+			<Option target="shared_static"/>
+		</Unit>
+		<Unit filename="/home/ali/plt/src/shared/ai/RandomAI.hpp">
+			<Option target="shared_static"/>
 		</Unit>
 		<Unit filename="/home/ali/plt/src/shared/engine.hpp">
 			<Option target="shared_static"/>

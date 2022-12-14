@@ -92,6 +92,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/generate-headers.dir/DependInfo.cmake"
   "extern/dia2code/CMakeFiles/dia2code.dir/DependInfo.cmake"
   "src/shared/CMakeFiles/shared_static.dir/DependInfo.cmake"
+  "src/shared/CMakeFiles/generate-header-ai.dir/DependInfo.cmake"
   "src/shared/CMakeFiles/generate-header-engine.dir/DependInfo.cmake"
   "src/shared/CMakeFiles/generate-header-state.dir/DependInfo.cmake"
   "src/client/CMakeFiles/client.dir/DependInfo.cmake"

@@ -10,6 +10,7 @@
 /home/ali/plt/cmake-build-debug/src/shared/CMakeFiles/edit_cache.dir
 /home/ali/plt/cmake-build-debug/src/shared/CMakeFiles/rebuild_cache.dir
 /home/ali/plt/cmake-build-debug/src/shared/CMakeFiles/shared_static.dir
+/home/ali/plt/cmake-build-debug/src/shared/CMakeFiles/generate-header-ai.dir
 /home/ali/plt/cmake-build-debug/src/shared/CMakeFiles/generate-header-engine.dir
 /home/ali/plt/cmake-build-debug/src/shared/CMakeFiles/generate-header-state.dir
 /home/ali/plt/cmake-build-debug/src/client/CMakeFiles/rebuild_cache.dir

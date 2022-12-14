@@ -170,33 +170,6 @@ generate-header-client/fast:
 	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/generate-header-client.dir/build.make src/client/CMakeFiles/generate-header-client.dir/build
 .PHONY : generate-header-client/fast
 
-client/Exemple.o: client/Exemple.cpp.o
-
-.PHONY : client/Exemple.o
-
-# target to build an object file
-client/Exemple.cpp.o:
-	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/client/Exemple.cpp.o
-.PHONY : client/Exemple.cpp.o
-
-client/Exemple.i: client/Exemple.cpp.i
-
-.PHONY : client/Exemple.i
-
-# target to preprocess a source file
-client/Exemple.cpp.i:
-	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/client/Exemple.cpp.i
-.PHONY : client/Exemple.cpp.i
-
-client/Exemple.s: client/Exemple.cpp.s
-
-.PHONY : client/Exemple.s
-
-# target to generate assembly for a file
-client/Exemple.cpp.s:
-	cd /home/ali/plt/cmake-build-debug && $(MAKE) -f src/client/CMakeFiles/client_static.dir/build.make src/client/CMakeFiles/client_static.dir/client/Exemple.cpp.s
-.PHONY : client/Exemple.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -344,9 +317,6 @@ help:
 	@echo "... client_static"
 	@echo "... generate-header-render"
 	@echo "... generate-header-client"
-	@echo "... client/Exemple.o"
-	@echo "... client/Exemple.i"
-	@echo "... client/Exemple.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
