@@ -244,6 +244,76 @@ std::vector<std::vector<int>> state::Insect::Possible_Placement_Insect(vector<In
 
 
     cout <<"OK FINAL"<< endl;
+    cout <<"Taille de list_placement_possible : "<< list_possible_placement_unique.size() << endl;
+    int index=0;
+    vector<int> indicetosup2;
+    for (vector<int> temp: list_possible_placement_unique){
+        int i = temp[0];
+        int j = temp[1];
+
+        cout <<"TOUR : "<< index << endl;
+        //Parité de j
+        if (j%2==0){
+            for (Insect casetemp:list_insect_placed){
+                if(casetemp.GetColor()!=this->Color){
+
+                    if((casetemp.Get_i()==i)&&(casetemp.Get_j()==j-1)){
+                        indicetosup2.push_back(index);
+                    }
+                    else if((casetemp.Get_i()==i)&&(casetemp.Get_j()==j+1)){
+                        indicetosup2.push_back(index);
+                    }
+                    else if ((casetemp.Get_i()==i-1)&&(casetemp.Get_j()==j)){
+                        indicetosup2.push_back(index);
+                    }
+                    else if ((casetemp.Get_i()==i+1)&&(casetemp.Get_j()==j-1)){
+                        indicetosup2.push_back(index);
+                    }
+                    else if ((casetemp.Get_i()==i+1)&&(casetemp.Get_j()==j)){
+                        indicetosup2.push_back(index);
+                    }
+                    else if ((casetemp.Get_i()==i+1)&&(casetemp.Get_j()==j+1)){
+                        indicetosup2.push_back(index);
+                    }
+
+                }
+
+            }
+        }
+        else {
+
+            for (Insect casetemp:list_insect_placed){
+                if(casetemp.GetColor()!=this->Color) {
+                    if ((casetemp.Get_i() == i - 1) && (casetemp.Get_j() == j)) {
+                        indicetosup2.push_back(index);
+                    } else if ((casetemp.Get_i() == i - 1) && (casetemp.Get_j() == j + 1)) {
+                        indicetosup2.push_back(index);
+                    } else if ((casetemp.Get_i() == i) && (casetemp.Get_j() == j - 1)) {
+                        indicetosup2.push_back(index);
+                    } else if ((casetemp.Get_i() == i) && (casetemp.Get_j() == j + 1)) {
+                        indicetosup2.push_back(index);
+                    } else if ((casetemp.Get_i() == i + 1) && (casetemp.Get_j() == j)) {
+                        indicetosup2.push_back(index);
+                    } else if ((casetemp.Get_i() == i - 1) && (casetemp.Get_j() == j - 1)) {
+                        indicetosup2.push_back(index);
+                    }
+                }
+            }
+        }
+    index++;
+    }
+
+    std::sort(indicetosup2.begin(), indicetosup2.end());
+    std::unique(indicetosup2.begin(), indicetosup2.end());
+    for (int i=0;i<indicetosup2.size();i++){
+        list_possible_placement_unique.erase(list_possible_placement_unique.begin()+indicetosup2[i]-i);
+    }
+
+
+
+    cout <<"RETURN !" << endl;
+
+
     return list_possible_placement_unique;
 }
 
