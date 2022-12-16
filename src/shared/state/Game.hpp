@@ -5,14 +5,13 @@
 #include <vector>
 
 namespace state {
-  class Player;
   class Insect;
   class Map;
+  class Player;
 }
 
-#include "Player.hpp"
 #include "GameStatus.hpp"
-#include "Insect.hpp"
+#include "Player.hpp"
 #include "Map.hpp"
 
 namespace state {
@@ -21,13 +20,12 @@ namespace state {
   class Game {
     // Associations
     // Attributes
-  public:
-    std::vector<Player> listPlayer;
   private:
     GameStatus state;
     int nbIteration;
-    std::vector<Insect> ListeAllInsect;
-    Map GameMap     = Map(0,0);
+    std::vector<Insect*> ListeAllInsect;
+    Map* GameMap;
+    std::vector<Player*> listPlayer;
     // Operations
   public:
     bool IsBeeCircled (Player player);
@@ -36,12 +34,13 @@ namespace state {
     GameStatus GetState ();
     int GetIteration ();
     void SetIteration (int param);
-    std::vector<Insect> GetAllInsects ();
-    void AppendListInsect (Insect insect);
+    std::vector<Insect*> GetAllInsects ();
+    void AppendListInsect (Insect& insect);
     Game ();
-    Map GetMap ();
-    void AppendListJoueur (Player player);
-    std::vector<state::Player> GetListPlayer ();
+    Map* GetMap ();
+    void AppendListJoueur (Player& player);
+    std::vector<state::Player*> GetListPlayer ();
+    std::vector<Insect> GetAllInsect_placed ();
     // Setters and Getters
   };
 

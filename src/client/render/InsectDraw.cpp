@@ -10,63 +10,30 @@ render::InsectDraw::InsectDraw() = default;
 render::InsectDraw::InsectDraw(std::vector<std::vector<sf::Vector2f>> mapPixel, std::vector<std::vector<sf::Vector2f>> mapPixelRemaining) {
     this->mapPixelPosition = mapPixel; //On recupere la map
     this->mapPixelRemainingPosition = mapPixelRemaining;
-    //loadInsectTexture();
 }
 
 void render::InsectDraw::drawInsect(sf::RenderWindow &window, state::Game state) { //affichage des pions insects
     for( auto i : state.GetListPlayer()){
-        for(auto j : i.Get_List_Insect_Played()){
-             this->insectHex[j.GetName()].setPosition(mapPixelPosition[j.Get_Position()[0]][j.Get_Position()[1]].x,
-                                                      mapPixelPosition[j.Get_Position()[0]][j.Get_Position()[1]].y);
-             //std :: cout << j.GetName() << std::endl;
-             //std :: cout << insectHex[j.GetName()].getTexture() << std :: endl;
-             window.draw(this->insectHex[j.GetName()]);
+        for(auto j : i->Get_List_Insect_Played()){
+             this->insectHex[j->GetName()].setPosition(mapPixelPosition[j->Get_Position()[0]][j->Get_Position()[1]].x,
+                                                      mapPixelPosition[j->Get_Position()[0]][j->Get_Position()[1]].y);
+             window.draw(this->insectHex[j->GetName()]);
          }
-        if(i.GetColor() == "White"){
+        if(i->GetColor() == "White"){
             int k = 0;
-            for(auto j : i.Get_List_Insect_Remaining()){
-                this->insectHex[j.GetName()].setPosition(mapPixelRemainingPosition[k][0].x,
+            for(auto j : i->Get_List_Insect_Remaining()){
+                this->insectHex[j->GetName()].setPosition(mapPixelRemainingPosition[k][0].x,
                                                          mapPixelRemainingPosition[k][0].y);
-                //std :: cout << j.GetName() << std::endl;
-                //std :: cout << insectHex[j.GetName()].getTexture() << std :: endl;
-                window.draw(this->insectHex[j.GetName()]);
+                window.draw(this->insectHex[j->GetName()]);
                 k++;
             }
         }
     }
-
-    //test attribut de type map (à commenter)
-    /*sf::Texture bee_b;
-    bee_b.loadFromFile("/home/ensea/CLionProjects/plt/res/pion/grasshopper_b.png");
-    sf::CircleShape Bee_Test(24, 6);
-    Bee_Test.setTexture(&bee_b);
-    insectHex["Bee_test"] = Bee_Test;
-    insectHex["Bee_test"].setTexture(&bee_b);
-    window.draw(insectHex["Bee_test"]);
-
-    sf::Texture grasshopper;
-    grasshopper.loadFromFile("/home/ensea/CLionProjects/plt/res/pion/grasshopper_b.png");
-    sf::CircleShape Gh_test(24, 6);
-    Gh_test.setTexture(&grasshopper);
-    Gh_test.setPosition(10,50);
-    insectHex["Grasshopper"] = Gh_test;
-    //insectHex["Bee_test"].setTexture(&bee_w);
-    window.draw(insectHex["Grasshopper"]);
-    insectHex["Grasshopper"].setPosition(400,250);
-    window.draw(insectHex["Grasshopper"]);*/
 }
 
 void render::InsectDraw::loadInsectTexture() {
     //TEXTURE
 
-    //sf::Texture bee_b;
-    //sf::Texture ant_b; sf::Texture beetle_b;
-    //sf::Texture grasshopper_b;
-    //sf::Texture ladybug_b;
-    //sf::Texture moskito_b; sf::Texture spider_b;
-    ////sf::Texture bee_w;
-    //sf::Texture ant_w; sf::Texture beetle_w; sf::Texture grasshopper_w; sf::Texture ladybug_w;
-    //sf::Texture moskito_w; sf::Texture spider_w;
 
     bee_b.loadFromFile("./res/pion/bee_b.png");
     ant_b.loadFromFile("./res/pion/ant_b.png");
@@ -205,6 +172,28 @@ void render::InsectDraw::loadInsectTexture() {
     this->insectHex["Grasshopper_B1"] = Grasshopper_B1;
     this->insectHex["Grasshopper_B2"] = Grasshopper_B2;
     this->insectHex["Grasshopper_B3"] = Grasshopper_B3;
+
+}
+
+std::string render::InsectDraw::getPressedInsect(int xt, int yt) {
+    //std::cout << xt << "-" << yt << std::endl;
+
+    for(auto  i : this->insectHex){
+            std::string name = i.first;
+            sf::CircleShape shape = i.second;
+            sf::Vector2f pos = shape.getPosition();
+            int x = pos.x;
+            int y = pos.y;
+
+            //std::cout << pos.x << "-" << pos.y  << std::endl;
+
+            if ((xt < x + 10) && (xt > x - 10) && (yt < y + 10) && (yt > y - 10)) {
+                std::cout << name << std::endl;
+                return std::string(name);
+            }
+        }
+
+    return {};
 
 }
 

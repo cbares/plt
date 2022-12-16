@@ -45,3 +45,7 @@ void state::Map::SetListCase(state::Case case1, int i, int j) {
     this->ListCase[i][j]= case1;
 }
 
+void state::Map::SetEmptyCase(bool empty,int i ,int j) {
+this->ListCase[i][j].SetEmpty(empty);
+}
+

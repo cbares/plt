@@ -1,10 +1,12 @@
 //
 // Created by ensea on 13/11/22.
 //
+#include <iostream>
 #include "MapDraw.hpp"
 
 
 void render::MapDraw::generateMapPixel() {
+    /* generate 2D matrix of cell's center */
     sf::CircleShape temphexa(24, 6);
     temphexa.rotate(90);
     temphexa.setOrigin({ temphexa.getRadius(), temphexa.getRadius() });
@@ -73,6 +75,52 @@ void render::MapDraw::initMapDraw(sf::RenderWindow &window) {
         }
     }
 }
+
+void render::MapDraw::getPressedTiles(int posx, int posy, sf::RenderWindow& window) {
+
+    int R, C;
+    int X, Y;
+    std::cout<<"DEBUT LECTURE\n"<<std::endl;
+    for (int i = 0; i < 17 ; ++i) {
+        for (int j = 0; j < 10; ++j) {
+
+            R = this->mapPixelPosition[i][j].x;
+            C = this->mapPixelPosition[i][j].y;
+
+            if(posx<R+10 && posx>R-10 && posy<C+10 && posy>C-10){
+                X = i;
+                Y = j;
+                std::cout << R <<","<<C<<std::endl;
+                std::cout << X <<","<<Y<<std::endl;
+            }
+        }
+    }
+    std::cout<<"FIN LECTURE\n"<<std::endl;
+
+
+
+    /*sf::CircleShape selected_tiles(24, 6);
+    selected_tiles.setOutlineColor(sf::Color::White);
+    selected_tiles.setOutlineThickness(2);
+    selected_tiles.setFillColor(sf::Color::Blue);
+    selected_tiles.rotate(90);
+    selected_tiles.setOrigin({ selected_tiles.getRadius(), selected_tiles.getRadius() });
+
+    int R, C;
+    for (int i = 0; i < 17 ; ++i) {
+        for (int j = 0; j < 10; ++j) {
+            R = this->mapPixelPosition[i][j].x;
+            C = this->mapPixelPosition[i][j].y;
+
+            if(R+10<posx && posx>R-10 && C+10<posy && posy>C-10){
+             std::cout << i << " " << j << std::endl;
+             selected_tiles.setPosition(R,C);
+             window.draw(selected_tiles);
+            }
+        }
+    }*/
+}
+
 
 
 

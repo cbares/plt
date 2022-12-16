@@ -46,8 +46,8 @@ void render::TextDraw::drawText(sf::RenderWindow &window, state::Game state) {
 
 void render::TextDraw::getPlayerName(state::Game state) {
     this->listPlayer = state.GetListPlayer();
-    p1 = listPlayer[0].GetName();
-    p2 = listPlayer[1].GetName();
+    p1 = listPlayer[0]->GetName();
+    p2 = listPlayer[1]->GetName();
 }
 
 render::TextDraw::TextDraw(state::Game state) {

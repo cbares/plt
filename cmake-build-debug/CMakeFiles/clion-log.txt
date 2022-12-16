@@ -1,4 +1,4 @@
-C:\windows\system32\wsl.exe --distribution Ubuntu --exec /bin/bash -c "export CMAKE_COLOR_DIAGNOSTICS=ON && export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /home/ali/plt/cmake-build-debug && /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -S /home/ali/plt -B /home/ali/plt/cmake-build-debug"
+C:\windows\system32\wsl.exe --distribution Ubuntu --exec /bin/bash -c "export CMAKE_COLOR_DIAGNOSTICS=ON && export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /home/ali/plt/cmake-build-debug && /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G 'CodeBlocks - Unix Makefiles' -S /home/ali/plt -B /home/ali/plt/cmake-build-debug"
 -- Build type: Debug
 -- Code coverage: ON
 -- Appending code coverage compiler flags: -g --coverage -fprofile-arcs -ftest-coverage

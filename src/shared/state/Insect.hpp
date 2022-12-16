@@ -38,6 +38,8 @@ namespace state {
     Insect (std::string name, std::string color, std::vector<int> coord, int level);
     bool GetIsPlaced ();
     void SetIsPlaced (bool state);
+    int Get_i ();
+    int Get_j ();
     // Setters and Getters
     const std::string& getName() const;
     void setName(const std::string& Name);

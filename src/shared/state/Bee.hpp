@@ -20,9 +20,7 @@ namespace state {
     // Operations
   public:
     Bee (std::string name, std::string color, std::vector<int> coord, int level);
-
     std::vector<std::vector<int>> Possible_Deplacement_Insect (std::vector<Insect> list_insect_placed, std::vector<Case> list_case);
-
     // Setters and Getters
   };
 
