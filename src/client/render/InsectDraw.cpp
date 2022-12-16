@@ -15,11 +15,12 @@ render::InsectDraw::InsectDraw(std::vector<std::vector<sf::Vector2f>> mapPixel, 
 void render::InsectDraw::drawInsect(sf::RenderWindow &window, state::Game state) { //affichage des pions insects
     for( auto i : state.GetListPlayer()){
         for(auto j : i->Get_List_Insect_Played()){
+
              this->insectHex[j->GetName()].setPosition(mapPixelPosition[j->Get_Position()[0]][j->Get_Position()[1]].x,
                                                       mapPixelPosition[j->Get_Position()[0]][j->Get_Position()[1]].y);
              window.draw(this->insectHex[j->GetName()]);
          }
-        if(i->GetColor() == "White"){
+        if(i->GetColor() == "Black"){
             int k = 0;
             for(auto j : i->Get_List_Insect_Remaining()){
                 this->insectHex[j->GetName()].setPosition(mapPixelRemainingPosition[k][0].x,
@@ -188,12 +189,13 @@ std::string render::InsectDraw::getPressedInsect(int xt, int yt) {
             //std::cout << pos.x << "-" << pos.y  << std::endl;
 
             if ((xt < x + 10) && (xt > x - 10) && (yt < y + 10) && (yt > y - 10)) {
-                std::cout << name << std::endl;
-                return std::string(name);
+                //std::cout << name << std::endl;
+                return name;
             }
         }
 
-    return {};
+    std::cout<< "test" <<std::endl;
+    return std::string{"nothing"};
 
 }
 
