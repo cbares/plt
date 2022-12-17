@@ -6,7 +6,6 @@
 
 
 void render::MapDraw::generateMapPixel() {
-    /* generate 2D matrix of cell's center */
     sf::CircleShape temphexa(24, 6);
     temphexa.rotate(90);
     temphexa.setOrigin({ temphexa.getRadius(), temphexa.getRadius() });
