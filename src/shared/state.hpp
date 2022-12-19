@@ -16,4 +16,5 @@
 #include "state/Grasshooper.hpp"
 #include "state/Mosquito.hpp"
 #include "state/Ant.hpp"
+#include "state/BrokenChain.hpp"
 #endif

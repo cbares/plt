@@ -3,6 +3,7 @@
 #define STATE__ANT__H
 
 #include <vector>
+#include "BrokenChain.hpp"
 
 namespace state {
   class Insect;

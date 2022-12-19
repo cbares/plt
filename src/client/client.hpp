@@ -2,4 +2,5 @@
 #ifndef __CLIENT__H
 #define __CLIENT__H
 
+#include "client/Exemple.hpp"
 #endif

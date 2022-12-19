@@ -259,21 +259,22 @@ std::vector<std::vector<int>> state::Insect::Possible_Placement_Insect(vector<In
 
                     if((casetemp.Get_i()==i)&&(casetemp.Get_j()==j-1)){
                         indicetosup2.push_back(index);
+                        break;
                     }
                     else if((casetemp.Get_i()==i)&&(casetemp.Get_j()==j+1)){
-                        indicetosup2.push_back(index);
+                        indicetosup2.push_back(index);break;
                     }
                     else if ((casetemp.Get_i()==i-1)&&(casetemp.Get_j()==j)){
-                        indicetosup2.push_back(index);
+                        indicetosup2.push_back(index);break;
                     }
                     else if ((casetemp.Get_i()==i+1)&&(casetemp.Get_j()==j-1)){
-                        indicetosup2.push_back(index);
+                        indicetosup2.push_back(index);break;
                     }
                     else if ((casetemp.Get_i()==i+1)&&(casetemp.Get_j()==j)){
-                        indicetosup2.push_back(index);
+                        indicetosup2.push_back(index);break;
                     }
                     else if ((casetemp.Get_i()==i+1)&&(casetemp.Get_j()==j+1)){
-                        indicetosup2.push_back(index);
+                        indicetosup2.push_back(index);break;
                     }
 
                 }
@@ -285,23 +286,31 @@ std::vector<std::vector<int>> state::Insect::Possible_Placement_Insect(vector<In
             for (Insect casetemp:list_insect_placed){
                 if(casetemp.GetColor()!=this->Color) {
                     if ((casetemp.Get_i() == i - 1) && (casetemp.Get_j() == j)) {
-                        indicetosup2.push_back(index);
+                        indicetosup2.push_back(index);break;
                     } else if ((casetemp.Get_i() == i - 1) && (casetemp.Get_j() == j + 1)) {
-                        indicetosup2.push_back(index);
+                        indicetosup2.push_back(index);break;
                     } else if ((casetemp.Get_i() == i) && (casetemp.Get_j() == j - 1)) {
-                        indicetosup2.push_back(index);
+                        indicetosup2.push_back(index);break;
                     } else if ((casetemp.Get_i() == i) && (casetemp.Get_j() == j + 1)) {
-                        indicetosup2.push_back(index);
+                        indicetosup2.push_back(index);break;
                     } else if ((casetemp.Get_i() == i + 1) && (casetemp.Get_j() == j)) {
-                        indicetosup2.push_back(index);
+                        indicetosup2.push_back(index);break;
                     } else if ((casetemp.Get_i() == i - 1) && (casetemp.Get_j() == j - 1)) {
-                        indicetosup2.push_back(index);
+                        indicetosup2.push_back(index);break;
                     }
                 }
             }
         }
     index++;
     }
+
+    for(int te : indicetosup2){
+
+        cout<<"Index à supp : "<< te<<endl;
+    }
+
+
+
 
     std::sort(indicetosup2.begin(), indicetosup2.end());
     std::unique(indicetosup2.begin(), indicetosup2.end());
