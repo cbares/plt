@@ -105,7 +105,8 @@ int main(int argc,char* argv[]){
         float xo = window.getSize().x;
         float yo = window.getSize().y;
         float sx = 1.0, sy = 1.0;
-
+        int posx;
+        int posy;
         int etat = 0;
         vector<vector<int>> temp_coord;
         vector<int> temp_selected;
@@ -144,10 +145,10 @@ int main(int argc,char* argv[]){
 
                 if (event.type == sf::Event::MouseButtonPressed) {
 
-                    if (event.mouseButton.button == sf::Mouse::Right) {
+                    if (event.mouseButton.button == sf::Mouse::Left) {
 
-                        int posx = int(event.mouseButton.x * (xo / X));
-                        int posy = int(event.mouseButton.y * (yo / Y));
+                         posx = int(event.mouseButton.x * (xo / X));
+                         posy = int(event.mouseButton.y * (yo / Y));
 
                         string insect_selected = scene.insectDraw.getPressedInsect(posx, posy,game_test);
 
@@ -189,7 +190,12 @@ int main(int argc,char* argv[]){
                                 temp_coord = insect_moving->Possible_Deplacement_Insect(game_test.GetAllInsect_placed(),
                                                                                         list_case);
                             }
-                            etat = 2;
+                            if(temp_coord.size() != 0){
+                                etat = 2;
+                            }else {
+                                etat = 4;
+                                cout<<"Aucune solution\n"<<endl;
+                            }
                         }
                         else if (etat == 2) {
                             temp_selected = scene.mapDraw.getPressedTiles(posx, posy);
@@ -218,6 +224,9 @@ int main(int argc,char* argv[]){
                                 player_temp = &Giroud;
                             }
 
+                            etat = 0;
+                        }
+                        else if(etat == 4){
                             etat = 0;
                         }
                     }
@@ -376,7 +385,6 @@ int main(int argc,char* argv[]){
             if (etat == 3){
                 if(!temp_selected.empty()){
                     temphexa.setPosition(mapPixelPosition[temp_selected[0]][temp_selected[1]]);
-                    //cout<<temp_selected[0]<<","<<temp_selected[1]<<"\n"<<endl;
                     window.draw(temphexa);
                 }
             }
