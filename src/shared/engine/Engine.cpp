@@ -39,6 +39,14 @@ void engine::Engine::UpdateState(state::Game &game, int commandid, state::Insect
         auto *play = &player;
         play->Add_Insect_Played(*ins);
         play->Remove_Insect_Remaining(*ins);
+
+        if(game.GetState() == state::Player_A_playing){
+            game.UpdateState(state::Player_B_playing);
+        }
+        else if(game.GetState() == state::Player_B_playing){
+            game.UpdateState(state::Player_A_playing);
+        }
+        game.SetIteration(game.GetIteration() + 1);
     }
     else if(commandid==1) {
         //DEPLACEMENT
@@ -51,11 +59,17 @@ void engine::Engine::UpdateState(state::Game &game, int commandid, state::Insect
 
         ins->SetPosition(pos_target);
 
+        if(game.GetState() == state::Player_A_playing){
+            game.UpdateState(state::Player_B_playing);
+        }
+        else if(game.GetState() == state::Player_B_playing){
+            game.UpdateState(state::Player_A_playing);
+        }
+        game.SetIteration(game.GetIteration() + 1);
+
     }
 
-
-
-    }
+}
 
 
 
