@@ -64,7 +64,8 @@ int main(int argc,char* argv[]){
         temp4.push_back(&Spider_B2);
         Spider Spider_A2 = Spider("Spider_A2", "Black", {-99, -99}, 0);
         temp3.push_back(&Spider_A2);
-
+        Ant Ant_B2 = Ant("Ant_B2", "White", {7,4},0);temp4.push_back(&Ant_B2);
+        Ant Ant_A2 = Ant("Ant_A2", "Black", {6,6},0);temp3.push_back(&Ant_A2);
 
         for (auto &i: temp3) {
             Giroud.Add_Insect_Remaining(*i);
@@ -83,6 +84,8 @@ int main(int argc,char* argv[]){
         game_test.AppendListInsect(Grasshopper_A2);
         game_test.AppendListInsect(Spider_B2);
         game_test.AppendListInsect(Spider_A2);
+        game_test.AppendListInsect(Ant_B2);
+        game_test.AppendListInsect(Ant_A2);
 
         /*---------------------------------------------RENDER--INIT------------------------------------------------------------------*/
         sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "HIVE",
@@ -404,7 +407,6 @@ int main(int argc,char* argv[]){
 
         }
 
-   // }
     else if ((string)argv[argc-1]=="render"){
 
 
@@ -551,9 +553,9 @@ int main(int argc,char* argv[]){
 
         std::vector<Insect *> temp3;
         std::vector<Insect *> temp4;
-        Bee Bee_B2 = Bee("Bee_B2", "White", {-99, -99}, 0);
+        Bee Bee_B2 = Bee("Bee_B", "White", {-99, -99}, 0);
         temp4.push_back(&Bee_B2);
-        Bee Bee_A2 = Bee("Bee_A2", "Black", {-99, -99}, 0);
+        Bee Bee_A2 = Bee("Bee_A", "Black", {-99, -99}, 0);
         temp3.push_back(&Bee_A2);
         Grasshooper Grasshopper_B2 = Grasshooper("Grasshopper_B2", "White", {-99, -99}, 0);
         temp4.push_back(&Grasshopper_B2);
@@ -563,7 +565,10 @@ int main(int argc,char* argv[]){
         temp4.push_back(&Spider_B2);
         Spider Spider_A2 = Spider("Spider_A2", "Black", {-99, -99}, 0);
         temp3.push_back(&Spider_A2);
-
+        Ant Ant_B2 = Ant("Ant_B2", "White", {-99, -99}, 0);
+        temp4.push_back(&Ant_B2);
+        Ant Ant_A2 = Ant("Ant_A2", "Black", {-99, -99}, 0);
+        temp3.push_back(&Ant_A2);
 
         for (auto &i: temp4) {
             Giroud.Add_Insect_Remaining(*i);
@@ -581,6 +586,8 @@ int main(int argc,char* argv[]){
         game_test.AppendListInsect(Grasshopper_A2);
         game_test.AppendListInsect(Spider_B2);
         game_test.AppendListInsect(Spider_A2);
+        game_test.AppendListInsect(Ant_B2);
+        game_test.AppendListInsect(Ant_A2);
 
         Engine engine_test = *new Engine(game_test);
         RandomAI ai_test = *new RandomAI(game_test);
@@ -629,6 +636,13 @@ int main(int argc,char* argv[]){
                     vector<vector<int>> temp_coord_AI;
                     vector<int> command_list = ai_test.runAI();
                     cout<<"FIN RUN AI\n"<<endl;
+
+
+                    cout<<"DEBUT TRAITEMENT RETOURNE PAR AI\n"<<endl;
+
+                    cout<<"Contenu de command list: "<<command_list[0]<<" , "<<command_list[1]<<" , "<<command_list[2]<<" , "<<command_list[3]<<endl;
+
+
 
                     Insect *insect_moving = game_test.GetAllInsects()[command_list[3]];
                     vector<Case> list_case;

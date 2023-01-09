@@ -159,6 +159,7 @@ vector<Insect> Look_For_Neighbour(vector<Insect> list_insect_placed, vector<Case
 }
 
 
+
 bool Test_Broken_Chain(vector<Insect> list_insect_placed, vector<Case> list_case){
 
     vector<Insect> result_neighbour;
@@ -195,9 +196,6 @@ bool Test_Broken_Chain(vector<Insect> list_insect_placed, vector<Case> list_case
         }
         cout<<"Nb de voisins : "<<result_neighbour.size()<<endl;
 
-
-
-
     }
 
 
@@ -219,14 +217,7 @@ bool Test_Broken_Chain(vector<Insect> list_insect_placed, vector<Case> list_case
 
         }
 
-
-
         u++;
-
-
-
-
-
 
         for(Insect test : insect_queue){
             cout<<"Insecte étudié dans la file d'attente : "<< test.GetName()<<endl;
@@ -297,7 +288,7 @@ bool Test_Broken_Chain(vector<Insect> list_insect_placed, vector<Case> list_case
 
     insect_treated=insect_treated_unique;
 
-cout<<"TAILLE DE TREATED : "<< insect_treated.size() << endl;
+    cout<<"TAILLE DE TREATED : "<< insect_treated.size() << endl;
 
 
 
@@ -305,7 +296,7 @@ cout<<"TAILLE DE TREATED : "<< insect_treated.size() << endl;
     if (insect_treated.size()!=list_insect_placed.size()){
         return true;
     }
-else{
+    else{
 
         return false;
 }

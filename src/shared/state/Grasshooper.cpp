@@ -279,11 +279,11 @@ std::vector<std::vector<int>> state::Grasshooper::Possible_Deplacement_Insect(ve
             if ((case_premier.GetPosition()[0] == i_depart - 1) && (case_premier.GetPosition()[1] == j_depart - 1)&& (case_premier.GetEmpty() == false)) {
                 Case next_case = case_premier;
 
-                while ((next_case.GetEmpty() == false)&& ((next_case.GetPosition()[0]-1) >=  0)) {
+                while ((next_case.GetEmpty() == false)&& ((next_case.GetPosition()[0]-1) >=  0)&& ((next_case.GetPosition()[1]-1) >=  0)) {
 
                     if (next_case.GetPosition()[1]%2==0){
                         for (Case casetemp: list_case) {
-                            if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]+1) &&
+                            if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]) &&
                                 (casetemp.GetPosition()[1] == next_case.GetPosition()[1]-1)) {
                                 next_case = casetemp;
                                 break;
