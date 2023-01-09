@@ -3,6 +3,7 @@
 #include "iostream"
 #include "random"
 #include <engine.hpp>
+#include <cstdlib>
 
 using namespace std;
 using namespace state;
@@ -17,7 +18,7 @@ std::vector<int> ai::RandomAI::runAI() {
 
     vector<int> result;
 
-
+    srand((unsigned int)time(0));
     int choix_op;
     vector<int> list_choice_insect;
     int i = 0;
@@ -37,12 +38,10 @@ std::vector<int> ai::RandomAI::runAI() {
 
 
 
-    random_device rd;   // non-deterministic generator
-    mt19937 gen(rd());  // to seed mersenne twister.
-    uniform_int_distribution<> dist(0, list_choice_insect.size() -1); // distribute results between 1 and list_choice_insect.size()-1 inclusive.
-    int rand=dist(gen);
-    auto choice_insect = ai->GetAllInsects()[list_choice_insect[rand]];
-    index_insect = list_choice_insect[rand];
+    int random_choice_insect=rand()%(list_choice_insect.size());
+    index_insect=list_choice_insect[random_choice_insect];
+    auto choice_insect = ai->GetAllInsects()[index_insect];
+
     cout << "Insecte choisi : " << choice_insect->GetName() << endl;
 
     vector<Case> list_case;
@@ -65,12 +64,9 @@ std::vector<int> ai::RandomAI::runAI() {
 
     while (temp_coord.size() == 0) {
 
-        random_device rd;   // non-deterministic generator
-        mt19937 gen(rd());  // to seed mersenne twister.
-        uniform_int_distribution<> dist(0, list_choice_insect.size() -
-                                           1); // distribute results between 1 and list_choice_insect.size()-1 inclusive.
-
-        auto choice_insect = ai->GetAllInsects()[list_choice_insect[dist(gen)]];
+        srand((unsigned int)time(0));
+        random_choice_insect=rand()%(list_choice_insect.size());
+        auto choice_insect = ai->GetAllInsects()[random_choice_insect];
 
         cout << "INSECTE : L'IA A CHOISI : " << choice_insect->GetName() << endl;
 
@@ -97,9 +93,12 @@ std::vector<int> ai::RandomAI::runAI() {
         h++;
     }
 
-    uniform_int_distribution<> dist2(0, list_choice_insect.size() -
-                                        1); // distribute results between 1 and list_choice_insect.size()-1 inclusive.
-    auto choice_coord = temp_coord[dist2(gen)];
+    /*uniform_int_distribution<> dist2(0, list_choice_insect.size() -
+                                        1); // distribute results between 1 and list_choice_insect.size()-1 inclusive.*/
+
+    int random_coord=rand()%(list_choice_insect.size());
+
+    auto choice_coord = temp_coord[random_coord];
 
     cout << "POSITION : L'IA A CHOISI : [" << choice_coord[0] << " , " << choice_coord[1] << "]\n" << endl;
 

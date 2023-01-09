@@ -3,7 +3,7 @@
 //
 #include <iostream>
 #include "InsectDraw.hpp"
-
+#include <regex>
 
 render::InsectDraw::InsectDraw() = default;
 
@@ -20,11 +20,20 @@ void render::InsectDraw::drawInsect(sf::RenderWindow &window, state::Game state)
                                                       mapPixelPosition[j->Get_Position()[0]][j->Get_Position()[1]].y);
              window.draw(this->insectHex[j->GetName()]);
          }
-        if(i->GetColor() == "Black"){
+        if(i->GetColor() == "White" && state.GetState() == state::Player_A_playing){
             int k = 0;
             for(auto j : i->Get_List_Insect_Remaining()){
                 this->insectHex[j->GetName()].setPosition(mapPixelRemainingPosition[k][0].x,
                                                          mapPixelRemainingPosition[k][0].y);
+                window.draw(this->insectHex[j->GetName()]);
+                k++;
+            }
+        }
+        else if(i->GetColor() == "Black" && state.GetState() == state::Player_B_playing){
+            int k = 0;
+            for(auto j : i->Get_List_Insect_Remaining()){
+                this->insectHex[j->GetName()].setPosition(mapPixelRemainingPosition[k][0].x,
+                                                          mapPixelRemainingPosition[k][0].y);
                 window.draw(this->insectHex[j->GetName()]);
                 k++;
             }
@@ -176,21 +185,27 @@ void render::InsectDraw::loadInsectTexture() {
 
 }
 
-std::string render::InsectDraw::getPressedInsect(int xt, int yt) {
-    //std::cout << xt << "-" << yt << std::endl;
+std::string render::InsectDraw::getPressedInsect(int xt, int yt,state::Game state) {
+
+    auto const regex_B = std::regex("_B");
+    auto const regex_A = std::regex("_A");
 
     for(auto  i : this->insectHex){
             std::string name = i.first;
-            sf::CircleShape shape = i.second;
-            sf::Vector2f pos = shape.getPosition();
-            int x = pos.x;
-            int y = pos.y;
 
-            //std::cout << pos.x << "-" << pos.y  << std::endl;
+            if((state.GetState() == state::Player_B_playing && std::regex_search(name,regex_A)) ||
+                (state.GetState() == state::Player_A_playing && std::regex_search(name,regex_B))) {
+                sf::CircleShape shape = i.second;
+                sf::Vector2f pos = shape.getPosition();
+                int x = pos.x;
+                int y = pos.y;
 
-            if ((xt < x + 10) && (xt > x - 10) && (yt < y + 10) && (yt > y - 10)) {
-                //std::cout << name << std::endl;
-                return name;
+                //std::cout << pos.x << "-" << pos.y  << std::endl;
+
+                if ((xt < x + 10) && (xt > x - 10) && (yt < y + 10) && (yt > y - 10)) {
+                    //std::cout << name << std::endl;
+                    return name;
+                }
             }
         }
 

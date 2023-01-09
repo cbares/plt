@@ -26,7 +26,7 @@ namespace render {
     void generateMapPixelRemaining ();
     int setBackground ();
     void initMapDraw (sf::RenderWindow& window);
-    void getPressedTiles (int posx, int posy, sf::RenderWindow& window);
+    std::vector<int> getPressedTiles (int posx, int posy);
     // Setters and Getters
   };
 

@@ -1,5 +1,7 @@
 
 #include "Bee.hpp"
+#include "BrokenChain.hpp"
+
 #include "vector"
 #include <iostream>
 #include <algorithm>
@@ -534,7 +536,10 @@ state::Bee::Possible_Deplacement_Insect(vector<Insect> list_insect_placed, vecto
         }
     }
 
-//RECHERCHE DES DOUBLONS DANS LA LISTES DES COORDONNEES POSSIBLES
+
+
+
+    //RECHERCHE DES DOUBLONS DANS LA LISTES DES COORDONNEES POSSIBLES
     vector<int> indicetosup;
     vector<vector<int>> list_possible_placement_unique=list_possible_placement;
     for (int i=0;i<list_possible_placement.size()-1;i++){
@@ -546,10 +551,75 @@ state::Bee::Possible_Deplacement_Insect(vector<Insect> list_insect_placed, vecto
             }
         }
     }
+
+
     std::sort(indicetosup.begin(), indicetosup.end());
-    std::unique(indicetosup.begin(), indicetosup.end());
+
+    auto listo=std::unique(indicetosup.begin(), indicetosup.end());
+    indicetosup.resize(distance(indicetosup.begin(),listo));
+
     for (int i=0;i<indicetosup.size();i++){
         list_possible_placement_unique.erase(list_possible_placement_unique.begin()+indicetosup[i]-i);
+    }
+
+
+
+    for(vector<int>pos_to_test : list_possible_placement_unique){
+
+        cout<<"Coord possibles uniques :"<<pos_to_test[0] <<" , "<<pos_to_test[1] <<endl;
+
+    }
+
+
+    //VERIFICATION DE CASSAGE DE CHAINE
+    vector<int> index_chain;
+    int ind=0;
+    for (vector<int> pos_to_test: list_possible_placement_unique){
+        cout<<"VERIF POUR :"<<pos_to_test[0] <<" , "<<pos_to_test[1] <<endl;
+        vector<Insect> list_insect_placed_modified = list_insect_placed;
+
+
+        int index_ins=0;
+        for(Insect tmp : list_insect_placed_modified){
+            if(tmp.GetName()==this->GetName()){
+                break;
+            }
+            index_ins++;
+        }
+
+        list_insect_placed_modified[index_ins].SetPosition({pos_to_test[0],pos_to_test[1]});
+
+
+        int ind_generic=0;
+        int ind_old;
+        int ind_new;
+
+
+        vector<Case> list_case_modified = list_case;
+        for(Case tmp : list_case_modified){
+            if((tmp.Get_i()==this->Get_i())&&(tmp.Get_j()==this->Get_j())){
+               ind_old=ind_generic;
+            }
+            else if((tmp.Get_i()==pos_to_test[0])&&(tmp.Get_j()==pos_to_test[1])){
+                ind_new=ind_generic;
+            }
+            ind_generic++;
+        }
+        list_case_modified[ind_new].SetEmpty(false);
+        list_case_modified[ind_old].SetEmpty(true);
+
+        bool resultat_chain = Test_Broken_Chain(list_insect_placed_modified,list_case_modified);
+        if(resultat_chain){
+            index_chain.push_back(ind);
+            cout<<"COORD IMPOSSIBLES : "<< pos_to_test[0]<<" , "<<pos_to_test[1] <<endl;
+        }
+        ind++;
+    }
+
+    std::sort(index_chain.begin(), index_chain.end());
+    std::unique(index_chain.begin(), index_chain.end());
+    for (int i=0;i<index_chain.size();i++){
+        list_possible_placement_unique.erase(list_possible_placement_unique.begin()+index_chain[i]-i);
     }
 
 

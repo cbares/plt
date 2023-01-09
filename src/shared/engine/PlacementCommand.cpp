@@ -25,9 +25,6 @@ bool engine::PlacementCommand::execute(engine::Engine &engine) {
         }
     }
 
-
-
-
     return 0;
 
     //engine.UpdateState(*engine.getState(), 0,(state::Insect&) this->insect, this->position);
