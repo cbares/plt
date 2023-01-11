@@ -4,7 +4,6 @@
 
 #include <string>
 #include <vector>
-#include "BrokenChain.hpp"
 
 namespace state {
   class Insect;

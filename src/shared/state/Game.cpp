@@ -47,8 +47,9 @@ bool state::Game::IsBeeCircled(state::Player player) {
     bool result;
 
     if (player.GetColor()=="White"){
+
         for (auto bee : player.Get_List_Insect_Played()){
-            if (bee->GetName()=="Bee_W"){
+            if (bee->GetName()=="Bee_B"){
                 int i = bee->Get_Position()[0];int j=bee->Get_Position()[1];
                 if((GameMap->GetListCase()[i-1][j].GetEmpty()== false)&&(GameMap->GetListCase()[i-1][j+1].GetEmpty()== false)&&(GameMap->GetListCase()[i][j-1].GetEmpty()== false)&&(GameMap->GetListCase()[i][j+1].GetEmpty()== false)&&(GameMap->GetListCase()[i+1][j].GetEmpty()== false)&&(GameMap->GetListCase()[i][j+1].GetEmpty()== false)){
                     result = true;
@@ -62,9 +63,11 @@ bool state::Game::IsBeeCircled(state::Player player) {
 
     if (player.GetColor()=="Black"){
         for (auto bee : player.Get_List_Insect_Played()){
-            if (bee->GetName()=="Bee_B"){
+            if (bee->GetName()=="Bee_A"){
                 int i = bee->Get_Position()[0];int j=bee->Get_Position()[1];
-                if((GameMap->GetListCase()[i-1][j].GetEmpty()== false)&&(GameMap->GetListCase()[i-1][j+1].GetEmpty()== false)&&(GameMap->GetListCase()[i][j-1].GetEmpty()== false)&&(GameMap->GetListCase()[i][j+1].GetEmpty()== false)&&(GameMap->GetListCase()[i+1][j].GetEmpty()== false)&&(GameMap->GetListCase()[i][j+1].GetEmpty()== false)){
+                if((GameMap->GetListCase()[i-1][j].GetEmpty()== false)&&(GameMap->GetListCase()[i-1][j+1].GetEmpty()== false)&&
+                (GameMap->GetListCase()[i][j-1].GetEmpty()== false)&&(GameMap->GetListCase()[i][j+1].GetEmpty()== false)
+                &&(GameMap->GetListCase()[i+1][j].GetEmpty()== false)&&(GameMap->GetListCase()[i][j+1].GetEmpty()== false)){
                     result = true;
                 }
                 else {

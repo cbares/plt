@@ -5,12 +5,10 @@
 using namespace std;
 using namespace state;
 
+int tour = 0;
 
 engine::Engine::Engine(state::Game &game) {
-
     this->currentGame=&game;
-
-
 }
 
 state::Game *engine::Engine::getState() {
@@ -28,45 +26,42 @@ void engine::Engine::UpdateState(state::Game &game, int commandid, state::Insect
         //PLACEMENT
 
         game.GetMap()->SetEmptyCase(0, pos_target[0], pos_target[1]);
-
         //game.GetMap()->SetEmptyCase(1, insect_moving.Get_i(), insect_moving.Get_j());
-
         auto *ins = &insect_moving;
-
         ins->SetPosition(pos_target);
         ins->SetIsPlaced(true);
-
         auto *play = &player;
         play->Add_Insect_Played(*ins);
         play->Remove_Insect_Remaining(*ins);
-
-        if(game.GetState() == state::Player_A_playing){
-            game.UpdateState(state::Player_B_playing);
-        }
-        else if(game.GetState() == state::Player_B_playing){
-            game.UpdateState(state::Player_A_playing);
-        }
-        game.SetIteration(game.GetIteration() + 1);
+        tour+=1;
     }
     else if(commandid==1) {
         //DEPLACEMENT
-
         game.GetMap()->SetEmptyCase(0, pos_target[0], pos_target[1]);
-
         game.GetMap()->SetEmptyCase(1, insect_moving.Get_i(), insect_moving.Get_j());
-
         auto *ins = &insect_moving;
-
         ins->SetPosition(pos_target);
-
-        if(game.GetState() == state::Player_A_playing){
-            game.UpdateState(state::Player_B_playing);
-        }
-        else if(game.GetState() == state::Player_B_playing){
-            game.UpdateState(state::Player_A_playing);
-        }
+        tour+=1;
+    }
+    if(!(tour%2)){
         game.SetIteration(game.GetIteration() + 1);
-
+        tour = 0;
+    }
+    if(game.IsBeeCircled(*game.GetListPlayer()[0])){
+        game.UpdateState(state::Player_B_won);
+        std::string playerB = game.GetListPlayer()[1]->GetName();
+        cout<<playerB<<" win \n"<<endl;
+    }
+    else if(game.IsBeeCircled(*game.GetListPlayer()[1])){
+        game.UpdateState(state::Player_A_won);
+        std::string playerA = game.GetListPlayer()[0]->GetName();
+        cout<<playerA<<" win \n"<<endl;
+    }
+    else if(game.GetState() == state::Player_A_playing){
+        game.UpdateState(state::Player_B_playing);
+    }
+    else if(game.GetState() == state::Player_B_playing){
+        game.UpdateState(state::Player_A_playing);
     }
 
 }

@@ -16,14 +16,36 @@ engine::DeplacementCommand::DeplacementCommand(state::GameStatus gamestatus, std
 
 bool engine::DeplacementCommand::execute(engine::Engine &engine) {
 
-    for (auto cas_temp : this->placement_possible){
-        if((this->position[0]==cas_temp[0])&&(this->position[1]==cas_temp[1])&&(this->insect->GetIsPlaced()==true)){
-            engine.UpdateState(*engine.getState(), 1, *insect, this->position,*this->player);
-            return 1;
+    state::Game game = *engine.getState();
+    state::GameStatus state = game.GetState();
+    std::string playerColor;
+    int placed = 0;
+
+    if(state == state::Player_A_playing){
+        playerColor = game.GetListPlayer()[1]->GetColor();
+    }else if (state == state::Player_B_playing){
+        playerColor = game.GetListPlayer()[0]->GetColor();
+    }
+
+    for(auto ins : game.GetAllInsect_placed()){
+        if(playerColor == "White" && ins.GetName() == "Bee_B"){
+            placed = 1;
+        } else if(playerColor == "Black" && ins.GetName() == "Bee_A"){
+            placed = 1;
         }
     }
-    return 0;
 
+    if(placed){
+        for (auto cas_temp : this->placement_possible){
+            if((this->position[0]==cas_temp[0])&&(this->position[1]==cas_temp[1])&&(this->insect->GetIsPlaced()==true)){
+                engine.UpdateState(*engine.getState(), 1, *insect, this->position,*this->player);
+                return 1;
+            }
+        }
+        placed = 0;
+    }
+
+    return 0;
 
 
     return false;
