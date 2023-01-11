@@ -51,9 +51,17 @@ bool state::Game::IsBeeCircled(state::Player player) {
         for (auto bee : player.Get_List_Insect_Played()){
             if (bee->GetName()=="Bee_B"){
                 int i = bee->Get_Position()[0];int j=bee->Get_Position()[1];
-                if((GameMap->GetListCase()[i-1][j].GetEmpty()== false)&&(GameMap->GetListCase()[i-1][j+1].GetEmpty()== false)&&(GameMap->GetListCase()[i][j-1].GetEmpty()== false)&&(GameMap->GetListCase()[i][j+1].GetEmpty()== false)&&(GameMap->GetListCase()[i+1][j].GetEmpty()== false)&&(GameMap->GetListCase()[i][j+1].GetEmpty()== false)){
-                    result = true;
+                if(j%2==0){
+                    if((GameMap->GetListCase()[i][j-1].GetEmpty()== false)&&(GameMap->GetListCase()[i][j+1].GetEmpty()== false)&&(GameMap->GetListCase()[i-1][j].GetEmpty()== false)&&(GameMap->GetListCase()[i+1][j-1].GetEmpty()== false)&&(GameMap->GetListCase()[i+1][j].GetEmpty()== false)&&(GameMap->GetListCase()[i+1][j+1].GetEmpty()== false)){
+                        result = true;
+                    }
                 }
+                else{
+                    if((GameMap->GetListCase()[i-1][j].GetEmpty()== false)&&(GameMap->GetListCase()[i-1][j+1].GetEmpty()== false)&&(GameMap->GetListCase()[i][j-1].GetEmpty()== false)&&(GameMap->GetListCase()[i][j+1].GetEmpty()== false)&&(GameMap->GetListCase()[i+1][j].GetEmpty()== false)&&(GameMap->GetListCase()[i][j+1].GetEmpty()== false)){
+                        result = true;
+                    }
+                }
+
                 else {
                     result= false;
                 }
@@ -65,11 +73,17 @@ bool state::Game::IsBeeCircled(state::Player player) {
         for (auto bee : player.Get_List_Insect_Played()){
             if (bee->GetName()=="Bee_A"){
                 int i = bee->Get_Position()[0];int j=bee->Get_Position()[1];
-                if((GameMap->GetListCase()[i-1][j].GetEmpty()== false)&&(GameMap->GetListCase()[i-1][j+1].GetEmpty()== false)&&
-                (GameMap->GetListCase()[i][j-1].GetEmpty()== false)&&(GameMap->GetListCase()[i][j+1].GetEmpty()== false)
-                &&(GameMap->GetListCase()[i+1][j].GetEmpty()== false)&&(GameMap->GetListCase()[i][j+1].GetEmpty()== false)){
-                    result = true;
+                if(j%2==0){
+                    if((GameMap->GetListCase()[i][j-1].GetEmpty()== false)&&(GameMap->GetListCase()[i][j+1].GetEmpty()== false)&&(GameMap->GetListCase()[i-1][j].GetEmpty()== false)&&(GameMap->GetListCase()[i+1][j-1].GetEmpty()== false)&&(GameMap->GetListCase()[i+1][j].GetEmpty()== false)&&(GameMap->GetListCase()[i+1][j+1].GetEmpty()== false)){
+                        result = true;
+                    }
                 }
+                else{
+                    if((GameMap->GetListCase()[i-1][j].GetEmpty()== false)&&(GameMap->GetListCase()[i-1][j+1].GetEmpty()== false)&&(GameMap->GetListCase()[i][j-1].GetEmpty()== false)&&(GameMap->GetListCase()[i][j+1].GetEmpty()== false)&&(GameMap->GetListCase()[i+1][j].GetEmpty()== false)&&(GameMap->GetListCase()[i][j+1].GetEmpty()== false)){
+                        result = true;
+                    }
+                }
+
                 else {
                     result= false;
                 }
