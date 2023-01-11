@@ -24,6 +24,8 @@ namespace render {
     sf::Text playerName;
     std::string p1;
     std::string p2;
+    std::string state;
+    sf::Text stateText;
   private:
     std::vector<state::Player*> listPlayer;
     // Operations
@@ -32,6 +34,7 @@ namespace render {
     void drawText (sf::RenderWindow& window, state::Game state);
     void getPlayerName (state::Game state);
     TextDraw (state::Game state);
+    std::string getStateString (state::Game state);
     // Setters and Getters
   };
 

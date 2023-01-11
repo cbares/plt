@@ -11,9 +11,12 @@ render::Scene::Scene(state::Game state) {
 }
 
 void render::Scene::drawScene(state::Game state, sf::RenderWindow &window) {
-    this->mapDraw.initMapDraw(window);
-    this->insectDraw.drawInsect(window,state);
-    this->textDraw.drawText(window,state);
+    /*if (state.GetState() == state::GameStatus::Player_B_playing ||
+        state.GetState() == state::GameStatus::Player_A_playing) {*/
+       this->mapDraw.initMapDraw(window);
+        this->insectDraw.drawInsect(window, state);
+        this->textDraw.drawText(window, state);
+   // }
 }
 
 

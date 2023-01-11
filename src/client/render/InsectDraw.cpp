@@ -202,7 +202,7 @@ std::string render::InsectDraw::getPressedInsect(int xt, int yt,state::Game stat
 
                 //std::cout << pos.x << "-" << pos.y  << std::endl;
 
-                if ((xt < x + 10) && (xt > x - 10) && (yt < y + 10) && (yt > y - 10)) {
+                if ((xt < x + 13) && (xt > x - 13) && (yt < y + 13) && (yt > y - 13)) {
                     //std::cout << name << std::endl;
                     return name;
                 }

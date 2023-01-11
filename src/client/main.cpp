@@ -52,14 +52,22 @@ int main(int argc,char* argv[]){
         std::vector<Insect *> temp3;
         std::vector<Insect *> temp4;
 
-        Bee Bee_B2 = Bee("Bee_B", "White", {-99, -99}, 0);
-        temp4.push_back(&Bee_B2);
-        Bee Bee_A2 = Bee("Bee_A", "Black", {-99, -99}, 0);
-        temp3.push_back(&Bee_A2);
+        Bee Bee_B = Bee("Bee_B", "White", {-99, -99}, 0);
+        temp4.push_back(&Bee_B);
+        Bee Bee_A = Bee("Bee_A", "Black", {-99, -99}, 0);
+        temp3.push_back(&Bee_A);
         Grasshooper Grasshopper_B2 = Grasshooper("Grasshopper_B2", "White", {-99, -99}, 0);
         temp4.push_back(&Grasshopper_B2);
         Grasshooper Grasshopper_A2 = Grasshooper("Grasshopper_A2", "Black", {-99, -99}, 0);
         temp3.push_back(&Grasshopper_A2);
+        Grasshooper Grasshopper_B1 = Grasshooper("Grasshopper_B1", "White", {-99, -99}, 0);
+        temp4.push_back(&Grasshopper_B1);
+        Grasshooper Grasshopper_A1 = Grasshooper("Grasshopper_A1", "Black", {-99, -99}, 0);
+        temp3.push_back(&Grasshopper_A1);
+        Grasshooper Grasshopper_B3 = Grasshooper("Grasshopper_B3", "White", {-99, -99}, 0);
+        temp4.push_back(&Grasshopper_B3);
+        Grasshooper Grasshopper_A3 = Grasshooper("Grasshopper_A3", "Black", {-99, -99}, 0);
+        temp3.push_back(&Grasshopper_A3);
         Spider Spider_B2 = Spider("Spider_B2", "White", {-99, -99}, 0);
         temp4.push_back(&Spider_B2);
         Spider Spider_A2 = Spider("Spider_A2", "Black", {-99, -99}, 0);
@@ -78,10 +86,14 @@ int main(int argc,char* argv[]){
         game_test.AppendListJoueur(Benzema);
 
 
-        game_test.AppendListInsect(Bee_B2);
-        game_test.AppendListInsect(Bee_A2);
+        game_test.AppendListInsect(Bee_B);
+        game_test.AppendListInsect(Bee_A);
         game_test.AppendListInsect(Grasshopper_B2);
         game_test.AppendListInsect(Grasshopper_A2);
+        game_test.AppendListInsect(Grasshopper_B1);
+        game_test.AppendListInsect(Grasshopper_A1);
+        game_test.AppendListInsect(Grasshopper_B3);
+        game_test.AppendListInsect(Grasshopper_A3);
         game_test.AppendListInsect(Spider_B2);
         game_test.AppendListInsect(Spider_A2);
         game_test.AppendListInsect(Ant_B2);
@@ -206,7 +218,7 @@ int main(int argc,char* argv[]){
                         }
                         else if (etat == 3) {
 
-                            cout <<"etat3"<<" "<<temp_selected[0]<<","<<temp_selected[1]<<endl;
+                            //cout <<"etat3"<<" "<<temp_selected[0]<<","<<temp_selected[1]<<endl;
 
                             if (!insect_moving->GetIsPlaced()) {
                                 PlacementCommand plac = PlacementCommand(game_test.GetState(), temp_selected, *insect_moving,
@@ -234,6 +246,7 @@ int main(int argc,char* argv[]){
                         }
                     }
                 }
+
             }
             int xi = int((xmouse) * (xo / X));
             int yi = int((ymouse) * (yo / Y));
@@ -241,136 +254,6 @@ int main(int argc,char* argv[]){
             std::stringstream ss;
             ss << "X " << xi << "\n"
                << "Y " << yi << "\n";
-
-            //text.setString(ss.str());
-            //window.draw(text);
-            //scene.drawScene(game_test, window);
-            //window.display();
-
-
-            /*cout<<"---------------------TOUR N."<<nbTour <<" ---------------------"<<endl;
-            cout<<"---------------------ETAT DU JEU : "<<game_test.GetState() <<" ---------------------"<<endl;
-
-             for(auto player_test : game_test.GetListPlayer()) {
-                 cout << "---------------------C'EST AU TOUR DE : " << player_test->GetName()
-                      << " ---------------------" << endl;
-                 int choix;
-                 int i = 0;
-                 int choice_x, choice_y;
-                 for (auto &ins: game_test.GetAllInsects()) {
-
-                     if (ins->GetColor() == player_test->GetColor()) {
-                         cout << "I= " << i << " -->  " << ins->GetName() << "  |  " << ins->GetColor() << "  |  ["
-                              << ins->Get_Position()[0] << ";" << ins->Get_Position()[1] << "] "
-                              << ins->GetIsPlaced() << " \n";;
-                     }
-                     i++;
-                 }
-                 cout << "Choix de l'insecte à modifier :";
-                 cin >> i;
-
-                 while ((i > game_test.GetAllInsects().size() - 1) ||
-                        (game_test.GetAllInsects()[i]->GetColor() != player_test->GetColor())) {
-                     cout << "Choix de l'insecte à placer :";
-                     cin >> i;
-                 }
-                 Insect *insect_moving = game_test.GetAllInsects()[i];
-                 cout << "Vous avez choisi : " << insect_moving->GetName() << "\n";
-
-                 cout << "[ 0 : Placement ] ou [1 : Deplacement ]\n";
-                 cin >> choix;
-
-                 while ((choix != 0) && (choix != 1)) {
-                     cout << "[ 0 : Placement ] ou [1 : Deplacement ]\n";
-                     cin >> choix;
-                 }
-
-                 vector<Case> list_case;
-                 for (int i = 0; i < game_test.GetMap()->GetLength(); i++) {
-                     for (int j = 0; j < game_test.GetMap()->GetWidth(); j++) {
-                         list_case.push_back(game_test.GetMap()->GetListCase()[i][j]);
-                     }
-                 }
-                 vector<vector<int>> temp_coord;
-                 if (choix == 0) {
-                     temp_coord = insect_moving->Possible_Placement_Insect(game_test.GetAllInsect_placed(),
-                                                                           list_case);
-                 } else {
-                     temp_coord = insect_moving->Possible_Deplacement_Insect(game_test.GetAllInsect_placed(),
-                                                                             list_case);
-                 }
-
-                 int h = 0;
-                 cout << "Coordonnées possibles :\n " << endl;
-                 if (temp_coord.size() == 0) {
-                     cout << "Aucunen option " << endl;
-                 } else {
-                     for (auto case_temp: temp_coord) {
-                         cout << "I= " << h << " -->  " << " [" << case_temp[0] << ";" << case_temp[1] << "]\n";
-                         h++;
-                     }
-                 }
-
-                 cout << "Coordonnées ?\nx=";
-                 cin >> choice_x;
-                 cout << "y=";
-                 cin >> choice_y;
-                 cout << "Vous avez choisi : " << choix << endl;
-
-
-                 bool resultat;
-                 if (choix == 0) {
-                     PlacementCommand plac = PlacementCommand(game_test.GetState(), {choice_x, choice_y},
-                                                              *insect_moving,
-                                                              PLACEMENT, *player_test, temp_coord);
-                     resultat = plac.execute(engine_test);
-                 } else {
-                     DeplacementCommand deplac = DeplacementCommand(game_test.GetState(), {choice_x, choice_y},
-                                                                    *insect_moving,
-                                                                    DEPLACEMENT, *player_test, temp_coord);
-                     resultat = deplac.execute(engine_test);
-                 }
-
-
-                 if (resultat) { cout << "Placement effectué" << endl; }
-                 else {
-                     cout << "Placement non effectué" << endl;
-                     while (resultat == false) {
-                         cout << "Coordonnées ?\nx=";
-                         cin >> choice_x;
-                         cout << "y=";
-                         cin >> choice_y;
-                         cout << "Vous avez choisi : " << choix << endl;
-
-
-                         PlacementCommand plac = PlacementCommand(game_test.GetState(), {choice_y, choice_x},
-                                                                  *insect_moving,
-                                                                  PLACEMENT, *player_test, temp_coord);
-                         resultat = plac.execute(engine_test);
-                     }
-                     cout << "Placement effectué" << endl;
-                 }
-
-
-                 i = 0;
-
-                 for (auto &ins: game_test.GetAllInsects()) {
-                     cout << "I= " << i << " -->  " << ins->GetName() << "  |  " << ins->GetColor() << "  |  ["
-                          << ins->Get_Position()[0] << ";" << ins->Get_Position()[1] << "]\n";
-                     i++;
-                 }
-
-                 //AFFICHAGE DE LA MAP
-                 for (int a = 0; a < game_test.GetMap()->GetLength(); a++) {
-                     for (int b = 0; b < game_test.GetMap()->GetWidth(); b++) {
-                         cout << "  [" << game_test.GetMap()->GetListCase()[a][b].Get_i() << "|"
-                              << game_test.GetMap()->GetListCase()[a][b].Get_j() << "|"
-                              << game_test.GetMap()->GetListCase()[a][b].GetEmpty() << "]";
-                         if (b == game_test.GetMap()->GetWidth() - 1) {
-                             cout << "\n" << endl;
-                         }
-                     }
-                 }*/
 
 
             window.clear();
@@ -380,6 +263,7 @@ int main(int argc,char* argv[]){
             scene.drawScene(game_test, window);
 
             if (etat == 2) {
+                cout<<"nombre de coordonnée dispo : "<<temp_coord.size()<<"\n"<<endl;
                 for (auto i: temp_coord) {
                     temphexa.setPosition(mapPixelPosition[i[0]][i[1]]);
                     window.draw(temphexa);
@@ -392,15 +276,6 @@ int main(int argc,char* argv[]){
                 }
             }
             window.display();
-
-
-                //int xi = int(xmouse * sx);
-                //int yi = int(ymouse * sy);
-
-                //}
-                //nbTour++;
-
-
 
             }
 

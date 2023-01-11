@@ -80,7 +80,7 @@ std::vector<int> render::MapDraw::getPressedTiles(int posx, int posy) {
     int R, C;
     int X,Y;
 
-    std::cout<<"DEBUT LECTURE\n"<<std::endl;
+    //std::cout<<"DEBUT LECTURE\n"<<std::endl;
     for (int i = 0; i < 10 ; ++i) {
         for (int j = 0; j < 17; ++j) {
 
@@ -90,13 +90,13 @@ std::vector<int> render::MapDraw::getPressedTiles(int posx, int posy) {
             if(posx<R+10 && posx>R-10 && posy<C+10 && posy>C-10){
                 X = i;
                 Y = j;
-                std::cout << R <<","<<C<<std::endl;
-                std::cout << X <<","<<Y<<std::endl;
+                //std::cout << R <<","<<C<<std::endl;
+                //std::cout << X <<","<<Y<<std::endl;
                 return {X,Y};
             }
         }
     }
-    std::cout<<"FIN LECTURE\n"<<std::endl;
+    //std::cout<<"FIN LECTURE\n"<<std::endl;
     return {-1,-1};
 }
 
