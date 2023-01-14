@@ -567,6 +567,9 @@ std::vector<std::vector<int>> state::Spider::Possible_Deplacement_Insect(vector<
         }
     }
 
+    if(list_possible_placement.size()==0){cout<<"AUCUNE POSSIBILITE"<<endl;return list_possible_placement;}
+
+
 //RECHERCHE DES DOUBLONS DANS LA LISTES DES COORDONNEES POSSIBLES
     vector<int> indicetosup;
     vector<vector<int>> list_possible_placement_unique=list_possible_placement;
@@ -593,7 +596,7 @@ std::vector<std::vector<int>> state::Spider::Possible_Deplacement_Insect(vector<
     vector<int> index_chain;
     int ind=0;
     for (vector<int> pos_to_test: list_possible_placement_unique){
-        cout<<"VERIF POUR :"<<pos_to_test[0] <<" , "<<pos_to_test[1] <<endl;
+
         vector<Insect> list_insect_placed_modified = list_insect_placed;
 
 
@@ -629,7 +632,6 @@ std::vector<std::vector<int>> state::Spider::Possible_Deplacement_Insect(vector<
         bool resultat_chain = Test_Broken_Chain(list_insect_placed_modified,list_case_modified);
         if(resultat_chain){
             index_chain.push_back(ind);
-            cout<<"COORD IMPOSSIBLES : "<< pos_to_test[0]<<" , "<<pos_to_test[1] <<endl;
         }
         ind++;
     }

@@ -188,37 +188,6 @@ std::vector<std::vector<int>> state::Insect::Possible_Placement_Insect(vector<In
     }
 
 //RECHERCHE DES DOUBLONS DANS LA LISTES DES COORDONNEES POSSIBLES
-    //vector<vector<int>> list_possible_placement_unique;
-    //list_possible_placement_unique.push_back(list_possible_placement[0]);
-
-
-
-    for (int i=0;i<list_possible_placement.size();i++){
-        cout << "Coord dispos :"<<list_possible_placement[i][0]<<" "<<list_possible_placement[i][1] << endl;
-    }
-
-
-
-   /* for (vector<int> uniquemember: list_possible_placement_unique) {
-
-        cout << "new loop" << endl;
-
-        for (int i = 0; i < list_possible_placement_unique.size(); i++) {
-            cout << "Etat d'unique :" << list_possible_placement_unique[i][0] << " "
-                 << list_possible_placement_unique[i][1] << endl;
-        }
-
-        for (vector<int> temp: list_possible_placement) {
-            cout << "temp = " << temp[0] << temp[1] << endl;
-            cout << "candidat1 = " << uniquemember[0] << uniquemember[1] << endl;
-
-            if ((temp[0] != uniquemember[0]) || (temp[1] != uniquemember[1])) {
-                cout << "IF OK" << endl;
-                list_possible_placement_unique.push_back(temp);
-                cout << "ajout de = " << temp[0] << temp[1] << endl;
-            }
-        }
-    }*/
 
 
    vector<int> indicetosup;
@@ -235,23 +204,23 @@ std::vector<std::vector<int>> state::Insect::Possible_Placement_Insect(vector<In
         }
 
     }
+
+
     std::sort(indicetosup.begin(), indicetosup.end());
-    std::unique(indicetosup.begin(), indicetosup.end());
+
+    indicetosup.erase(std::unique(indicetosup.begin(), indicetosup.end()), indicetosup.end());
+
     for (int i=0;i<indicetosup.size();i++){
         list_possible_placement_unique.erase(list_possible_placement_unique.begin()+indicetosup[i]-i);
     }
 
 
-
-    cout <<"OK FINAL"<< endl;
-    cout <<"Taille de list_placement_possible : "<< list_possible_placement_unique.size() << endl;
     int index=0;
     vector<int> indicetosup2;
     for (vector<int> temp: list_possible_placement_unique){
         int i = temp[0];
         int j = temp[1];
 
-        cout <<"TOUR : "<< index << endl;
         //Parité de j
         if (j%2==0){
             for (Insect casetemp:list_insect_placed){
@@ -304,24 +273,11 @@ std::vector<std::vector<int>> state::Insect::Possible_Placement_Insect(vector<In
     index++;
     }
 
-    for(int te : indicetosup2){
-
-        cout<<"Index à supp : "<< te<<endl;
-    }
-
-
-
-
     std::sort(indicetosup2.begin(), indicetosup2.end());
     std::unique(indicetosup2.begin(), indicetosup2.end());
     for (int i=0;i<indicetosup2.size();i++){
         list_possible_placement_unique.erase(list_possible_placement_unique.begin()+indicetosup2[i]-i);
     }
-
-
-
-    cout <<"RETURN !" << endl;
-
 
     return list_possible_placement_unique;
 }

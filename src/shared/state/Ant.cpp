@@ -75,17 +75,10 @@ Ant::Possible_Deplacement_Insect(std::vector<Insect> list_insect_placed, std::ve
 
 
 
-
-
-
-
-
-
     std::vector<std::vector<int>> list_possible_placement;
     for(auto tmp : list_insect_placed) {
         if (tmp.GetName() != this->GetName()) {
 
-            cout<<"Test pour : "<< tmp.GetName()<< endl;
 
             int i_depart = tmp.Get_i(), j_depart = tmp.Get_j(),i_to_avoid=this->Get_i(),j_to_avoid=this->Get_j();
 
@@ -154,12 +147,8 @@ Ant::Possible_Deplacement_Insect(std::vector<Insect> list_insect_placed, std::ve
         }
     }
 
-    for(auto tmp : list_possible_placement){
-        cout<<"[ "<< tmp[0]<<" ; "<<tmp[1]<<" ]"<<endl;
 
-    }
-
-
+    if(list_possible_placement.size()==0){cout<<"AUCUNE POSSIBILITE"<<endl;return list_possible_placement;}
 
 
     //RECHERCHE DES DOUBLONS DANS LA LISTES DES COORDONNEES POSSIBLES
@@ -192,7 +181,7 @@ Ant::Possible_Deplacement_Insect(std::vector<Insect> list_insect_placed, std::ve
     vector<int> index_chain;
     int ind=0;
     for (vector<int> pos_to_test: list_possible_placement_unique){
-        cout<<"VERIF POUR :"<<pos_to_test[0] <<" , "<<pos_to_test[1] <<endl;
+
         vector<Insect> list_insect_placed_modified = list_insect_placed;
 
 
@@ -228,7 +217,6 @@ Ant::Possible_Deplacement_Insect(std::vector<Insect> list_insect_placed, std::ve
         bool resultat_chain = Test_Broken_Chain(list_insect_placed_modified,list_case_modified);
         if(resultat_chain){
             index_chain.push_back(ind);
-            cout<<"COORD IMPOSSIBLES : "<< pos_to_test[0]<<" , "<<pos_to_test[1] <<endl;
         }
         ind++;
     }

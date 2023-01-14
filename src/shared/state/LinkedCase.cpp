@@ -65,18 +65,12 @@ vector<vector<int>> Linked_To_Ant(vector<vector<int>> list_case_possibilities,ve
 
     coord_queue.push_back(ant_coord);
 
-    int u=0;
+
 
     while(coord_queue.size()!=0){
 
-        for (auto ins: coord_queue) {
-            cout << "QUEUE= " << u << " -->  " << ins[0]<< "  |  " << ins[1] << "]\n";
-        }
-
-        u++;
 
         for(vector<int> test : coord_queue){
-            cout<<"Coordonnées étudiées dans la file d'attente :[ "<< test[0] << " | "<<test[1]<< " ]"<<endl;
 
             vector<vector<int>> neighbours = Linked_Cases(list_case_possibilities,test);
             for(vector<int> next : neighbours){
@@ -101,10 +95,6 @@ vector<vector<int>> Linked_To_Ant(vector<vector<int>> list_case_possibilities,ve
 
             coord_treated.push_back(test);
 
-            for (auto ins: coord_treated) {
-                cout << "TREATED= " << u << " -->  "  << ins[0]<< "  |  " << ins[1] << "]\n";
-
-            }
 
 
 
@@ -144,9 +134,6 @@ vector<vector<int>> Linked_To_Ant(vector<vector<int>> list_case_possibilities,ve
     }
 
     coord_treated=coord_treated_unique;
-
-    cout<<"TAILLE DE TREATED : "<< coord_treated.size() << endl;
-
 
 
     indicetosup.clear();

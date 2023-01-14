@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 3.18)
+cmake_minimum_required (VERSION 3.16)
 project (plt)
 
 # CMP0074 policy enable find_* to use <PackageName>_ROOT variables to find
@@ -57,10 +57,9 @@ if(BUILD_CODE_COVERAGE)
     "${PROJECT_SOURCE_DIR}/extern/")
   # Create script to run tests for code coverage
   set(test_runner "${CMAKE_CURRENT_BINARY_DIR}/run_test.sh")
-  file(CONFIGURE
-          OUTPUT ${test_runner}
-          CONTENT
-          "cd \"${CMAKE_CURRENT_BINARY_DIR}/test\" && ctest --timeout 300 ||/bin/true\n"
+  file(WRITE ${test_runner}
+          "cd \"${CMAKE_CURRENT_BINARY_DIR}/test\"\n"
+          "ctest --timeout 300 ||/bin/true"
           )
   # Create target for code coverage
   SETUP_TARGET_FOR_COVERAGE_LCOV(

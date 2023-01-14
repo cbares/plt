@@ -51,6 +51,7 @@ bool engine::PlacementCommand::execute(engine::Engine &engine) {
     //Regle : On doit poser les abeilles avant le tour 4
     if ((state==state::Player_A_playing && !placedB && tour == 3 && (this->insect->GetName() != "Bee_B")) ||
         (state==state::Player_B_playing && !placedA && tour == 3 && (this->insect->GetName() != "Bee_A"))){
+        cout<<"Erreur : il faut placer l'abeille"<<endl;
         return 0;
     }
     else {

@@ -538,7 +538,7 @@ state::Bee::Possible_Deplacement_Insect(vector<Insect> list_insect_placed, vecto
 
 
 
-
+    if(list_possible_placement.size()==0){cout<<"AUCUNE POSSIBILITE"<<endl;return list_possible_placement;}
     //RECHERCHE DES DOUBLONS DANS LA LISTES DES COORDONNEES POSSIBLES
     vector<int> indicetosup;
     vector<vector<int>> list_possible_placement_unique=list_possible_placement;
@@ -564,18 +564,11 @@ state::Bee::Possible_Deplacement_Insect(vector<Insect> list_insect_placed, vecto
 
 
 
-    for(vector<int>pos_to_test : list_possible_placement_unique){
-
-        cout<<"Coord possibles uniques :"<<pos_to_test[0] <<" , "<<pos_to_test[1] <<endl;
-
-    }
-
-
     //VERIFICATION DE CASSAGE DE CHAINE
     vector<int> index_chain;
     int ind=0;
     for (vector<int> pos_to_test: list_possible_placement_unique){
-        cout<<"VERIF POUR :"<<pos_to_test[0] <<" , "<<pos_to_test[1] <<endl;
+
         vector<Insect> list_insect_placed_modified = list_insect_placed;
 
 
@@ -611,7 +604,6 @@ state::Bee::Possible_Deplacement_Insect(vector<Insect> list_insect_placed, vecto
         bool resultat_chain = Test_Broken_Chain(list_insect_placed_modified,list_case_modified);
         if(resultat_chain){
             index_chain.push_back(ind);
-            cout<<"COORD IMPOSSIBLES : "<< pos_to_test[0]<<" , "<<pos_to_test[1] <<endl;
         }
         ind++;
     }

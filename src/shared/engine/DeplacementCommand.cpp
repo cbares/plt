@@ -47,6 +47,4 @@ bool engine::DeplacementCommand::execute(engine::Engine &engine) {
 
     return 0;
 
-
-    return false;
 }

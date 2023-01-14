@@ -27,6 +27,7 @@ std::vector<std::vector<int>> state::Grasshooper::Possible_Deplacement_Insect(ve
 
     if (j_depart % 2 == 0) {
         //DEBUT
+
         for (Case case_premier: list_case) {
             //*****************************************1.1********** I;J-1**********************************************//
             if ((case_premier.GetPosition()[0] == i_depart) && (case_premier.GetPosition()[1] == j_depart - 1) &&
@@ -36,38 +37,44 @@ std::vector<std::vector<int>> state::Grasshooper::Possible_Deplacement_Insect(ve
                 while (next_case.GetEmpty() == false) {
 
                     if (next_case.GetPosition()[1]%2==0){
-                        for (Case casetemp: list_case) {
-                            if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]) &&
-                                (casetemp.GetPosition()[1] == next_case.GetPosition()[1] - 1)) {
-                                next_case = casetemp;
-                                break;
-                            }
-                        }
-                        if (next_case.GetPosition()[1]-1<0){
+
+                        if ((next_case.GetPosition()[1]-1<0)||(next_case.GetPosition()[0]-1<0)){
+
                             break;
                         }
+                        else{
+                            for (Case casetemp: list_case) {
+                                if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]) &&
+                                    (casetemp.GetPosition()[1] == next_case.GetPosition()[1] - 1)) {
 
+                                    next_case = casetemp;
+                                    break;
+                                }
+                            }
+                        }
                     }
                     else {
-                        for (Case casetemp: list_case) {
-                            if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]-1) &&
-                                (casetemp.GetPosition()[1] == next_case.GetPosition()[1] - 1)) {
-                                next_case = casetemp;
-                                break;
-                            }
-                        }
+
                         if ((next_case.GetPosition()[1]-1<0)||(next_case.GetPosition()[0]-1<0)){
+
                             break;
                         }
-                    }
+                        else{
+                            for (Case casetemp: list_case) {
+                                if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]-1) &&
+                                    (casetemp.GetPosition()[1] == next_case.GetPosition()[1] - 1)) {
 
+                                    next_case = casetemp;
+                                    break;
+                                }
+                            }
+                        }
+                    }
                 }
                 if (next_case.GetEmpty() != false){
-
                     list_possible_placement.push_back(next_case.GetPosition());
                 }
             }
-
             //***********************************************FIN 1.1****************************************************//
 
             //*****************************************1.2********** I;J+1**********************************************//
@@ -78,28 +85,36 @@ std::vector<std::vector<int>> state::Grasshooper::Possible_Deplacement_Insect(ve
                 while (next_case.GetEmpty() == false) {
 
                     if (next_case.GetPosition()[1]%2==0){
-                        for (Case casetemp: list_case) {
-                            if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]) &&
-                                (casetemp.GetPosition()[1] == next_case.GetPosition()[1] + 1)) {
-                                next_case = casetemp;
-                                break;
-                            }
-                        }
-                        if (next_case.GetPosition()[1]+1>16){
+                        if ((next_case.GetPosition()[1]+1>16)){
+
                             break;
                         }
+                        else{
+                            for (Case casetemp: list_case) {
+                                if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]) &&
+                                    (casetemp.GetPosition()[1] == next_case.GetPosition()[1] + 1)) {
 
+                                    next_case = casetemp;
+                                    break;
+                                }
+                            }
+                        }
                     }
                     else {
-                        for (Case casetemp: list_case) {
-                            if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]-1) &&
-                                (casetemp.GetPosition()[1] == next_case.GetPosition()[1]+1)) {
-                                next_case = casetemp;
-                                break;
-                            }
-                        }
+
                         if ((next_case.GetPosition()[1]+1>16)||(next_case.GetPosition()[0]-1<0)){
+
                             break;
+                        }
+                        else{
+                            for (Case casetemp: list_case) {
+                                if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]-1) &&
+                                    (casetemp.GetPosition()[1] == next_case.GetPosition()[1]+1)) {
+
+                                    next_case = casetemp;
+                                    break;
+                                }
+                            }
                         }
                     }
                 }
@@ -117,31 +132,20 @@ std::vector<std::vector<int>> state::Grasshooper::Possible_Deplacement_Insect(ve
                 Case next_case = case_premier;
                 while (next_case.GetEmpty() == false) {
 
-                    if (next_case.GetPosition()[1]%2==0){
-                        for (Case casetemp: list_case) {
-                            if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]-1) &&
-                                (casetemp.GetPosition()[1] == next_case.GetPosition()[1])) {
-                                next_case = casetemp;
-                                break;
-                            }
-                        }
                         if ((next_case.GetPosition()[0]-1<0)){
-                            break;
-                        }
 
-                    }
-                    else {
-                        for (Case casetemp: list_case) {
-                            if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]-1) &&
-                                (casetemp.GetPosition()[1] == next_case.GetPosition()[1])) {
-                                next_case = casetemp;
-                                break;
-                            }
-                        }
-                        if ((next_case.GetPosition()[0]-1<0)){
                             break;
                         }
-                    }
+                        else{
+                            for (Case casetemp: list_case) {
+                                if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]-1) &&
+                                    (casetemp.GetPosition()[1] == next_case.GetPosition()[1])) {
+
+                                    next_case = casetemp;
+                                    break;
+                                }
+                            }
+                        }
                 }
                 if (next_case.GetEmpty() != false){
 
@@ -153,36 +157,44 @@ std::vector<std::vector<int>> state::Grasshooper::Possible_Deplacement_Insect(ve
             //*****************************************1.4********** I+1;J-1**********************************************//
             if ((case_premier.GetPosition()[0] == i_depart + 1) && (case_premier.GetPosition()[1] == j_depart - 1) &&
                 (case_premier.GetEmpty() == false)) {
-                cout << "Case occupée : "<<case_premier.GetPosition()[0]<<" " << case_premier.GetPosition()[1] << endl;
+
                 Case next_case = case_premier;
                 while (next_case.GetEmpty() == false) {
 
                     if (next_case.GetPosition()[1]%2==0){
-                        for (Case casetemp: list_case) {
-                            if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]+1) &&
-                                (casetemp.GetPosition()[1] == next_case.GetPosition()[1]-1)) {
-                                next_case = casetemp;
-                                break;
-                            }
-                        }
+
                         if ((next_case.GetPosition()[0]+1>16)||(next_case.GetPosition()[1]-1<0)){
+
                             break;
                         }
+                        else{
+                            for (Case casetemp: list_case) {
+                                if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]+1) &&
+                                    (casetemp.GetPosition()[1] == next_case.GetPosition()[1]-1)) {
 
+                                    next_case = casetemp;
+                                    break;
+                                }
+                            }
+                        }
                     }
                     else {
-                        for (Case casetemp: list_case) {
-                            if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]) &&
-                                (casetemp.GetPosition()[1] == next_case.GetPosition()[1]-1)) {
-                                next_case = casetemp;
-                                break;
-                            }
-                        }
+
                         if ((next_case.GetPosition()[1]-1<0)){
+
                             break;
                         }
-                    }
+                        else{
+                            for (Case casetemp: list_case) {
+                                if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]) &&
+                                    (casetemp.GetPosition()[1] == next_case.GetPosition()[1]-1)) {
 
+                                    next_case = casetemp;
+                                    break;
+                                }
+                            }
+                        }
+                    }
                 }
                 if (next_case.GetEmpty() != false){
 
@@ -199,28 +211,19 @@ std::vector<std::vector<int>> state::Grasshooper::Possible_Deplacement_Insect(ve
                 while (next_case.GetEmpty() == false) {
 
                     if (next_case.GetPosition()[1]%2==0){
-                        for (Case casetemp: list_case) {
-                            if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]+1) &&
-                                (casetemp.GetPosition()[1] == next_case.GetPosition()[1])) {
-                                next_case = casetemp;
-                                break;
-                            }
-                        }
                         if ((next_case.GetPosition()[0]+1>16)){
-                            break;
-                        }
 
-                    }
-                    else {
-                        for (Case casetemp: list_case) {
-                            if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]+1) &&
-                                (casetemp.GetPosition()[1] == next_case.GetPosition()[1])) {
-                                next_case = casetemp;
-                                break;
-                            }
-                        }
-                        if ((next_case.GetPosition()[0]+1>16)){
                             break;
+                        }
+                        else{
+                            for (Case casetemp: list_case) {
+                                if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]+1) &&
+                                    (casetemp.GetPosition()[1] == next_case.GetPosition()[1])) {
+
+                                    next_case = casetemp;
+                                    break;
+                                }
+                            }
                         }
                     }
                 }
@@ -239,28 +242,37 @@ std::vector<std::vector<int>> state::Grasshooper::Possible_Deplacement_Insect(ve
                 while (next_case.GetEmpty() == false) {
 
                     if (next_case.GetPosition()[1]%2==0){
-                        for (Case casetemp: list_case) {
-                            if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]+1) &&
-                                (casetemp.GetPosition()[1] == next_case.GetPosition()[1]+1)) {
-                                next_case = casetemp;
-                                break;
-                            }
-                        }
+
                         if ((next_case.GetPosition()[0]+1>16)||(next_case.GetPosition()[1]+1>16)){
+
                             break;
                         }
+                        else{
+                            for (Case casetemp: list_case) {
+                                if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]+1) &&
+                                    (casetemp.GetPosition()[1] == next_case.GetPosition()[1]+1)) {
 
+                                    next_case = casetemp;
+                                    break;
+                                }
+                            }
+                        }
                     }
                     else {
-                        for (Case casetemp: list_case) {
-                            if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]) &&
-                                (casetemp.GetPosition()[1] == next_case.GetPosition()[1]+1)) {
-                                next_case = casetemp;
-                                break;
-                            }
-                        }
+
                         if ((next_case.GetPosition()[1]+1>16)){
+
                             break;
+                        }
+                        else{
+                            for (Case casetemp: list_case) {
+                                if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]) &&
+                                    (casetemp.GetPosition()[1] == next_case.GetPosition()[1]+1)) {
+
+                                    next_case = casetemp;
+                                    break;
+                                }
+                            }
                         }
                     }
                 }
@@ -274,36 +286,46 @@ std::vector<std::vector<int>> state::Grasshooper::Possible_Deplacement_Insect(ve
         }
     }
     else {
+
         for (Case case_premier: list_case) {
             //*****************************************1.1********** I-1;J-1**********************************************//
             if ((case_premier.GetPosition()[0] == i_depart - 1) && (case_premier.GetPosition()[1] == j_depart - 1)&& (case_premier.GetEmpty() == false)) {
                 Case next_case = case_premier;
 
-                while ((next_case.GetEmpty() == false)&& ((next_case.GetPosition()[0]-1) >=  0)&& ((next_case.GetPosition()[1]-1) >=  0)) {
+                while (next_case.GetEmpty() == false) {
 
                     if (next_case.GetPosition()[1]%2==0){
-                        for (Case casetemp: list_case) {
-                            if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]) &&
-                                (casetemp.GetPosition()[1] == next_case.GetPosition()[1]-1)) {
-                                next_case = casetemp;
-                                break;
-                            }
-                        }
-                        if ((next_case.GetPosition()[0]+1>16)||(next_case.GetPosition()[1]-1<0)){
+
+                        if ((next_case.GetPosition()[1]-1<0)){
+
                             break;
                         }
+                        else{
+                            for (Case casetemp: list_case) {
+                                if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]) &&
+                                    (casetemp.GetPosition()[1] == next_case.GetPosition()[1]-1)) {
 
+                                    next_case = casetemp;
+                                    break;
+                                }
+                            }
+                        }
                     }
                     else {
-                        for (Case casetemp: list_case) {
-                            if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]) &&
-                                (casetemp.GetPosition()[1] == next_case.GetPosition()[1]-1)) {
-                                next_case = casetemp;
-                                break;
-                            }
-                        }
-                        if ((next_case.GetPosition()[1]-1<0)){
+
+                        if ((next_case.GetPosition()[0]-1<0)||(next_case.GetPosition()[1]-1<0)){
+
                             break;
+                        }
+                        else{
+                            for (Case casetemp: list_case) {
+                                if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]-1) &&
+                                    (casetemp.GetPosition()[1] == next_case.GetPosition()[1]-1)) {
+
+                                    next_case = casetemp;
+                                    break;
+                                }
+                            }
                         }
                     }
                 }
@@ -318,30 +340,20 @@ std::vector<std::vector<int>> state::Grasshooper::Possible_Deplacement_Insect(ve
 
             //*****************************************1.2********** I-1;J**********************************************//
             if ((case_premier.GetPosition()[0] == i_depart - 1) && (case_premier.GetPosition()[1] == j_depart)&& (case_premier.GetEmpty() == false)) {
+
                 Case next_case = case_premier;
-                while ((next_case.GetEmpty() == false) && ((next_case.GetPosition()[0]-1) >=  0) ) {
-                    if ((next_case.GetPosition()[0] - 1) >= 0) {
-                        if (next_case.GetPosition()[1] % 2 == 0) {
-                            for (Case casetemp: list_case) {
-                                if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0] - 1) &&
-                                    (casetemp.GetPosition()[1] == next_case.GetPosition()[1])) {
-                                    next_case = casetemp;
-                                    break;
-                                }
-                            }
-                            if ((next_case.GetPosition()[0]-1<0)){
-                                break;
-                            }
-                        }
-                        else {
-                            for (Case casetemp: list_case) {
-                                if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0] - 1) &&
-                                    (casetemp.GetPosition()[1] == next_case.GetPosition()[1])) {
-                                    next_case = casetemp;
-                                    break;
-                                }
-                            }
-                            if ((next_case.GetPosition()[0]-1<0)){
+                while (next_case.GetEmpty() == false) {
+
+                    if ((next_case.GetPosition()[0] - 1) < 0) {
+
+                        break;
+                    }
+                    else {
+                        for (Case casetemp: list_case) {
+                            if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0] - 1) &&
+                                (casetemp.GetPosition()[1] == next_case.GetPosition()[1])) {
+
+                                next_case = casetemp;
                                 break;
                             }
                         }
@@ -365,28 +377,37 @@ std::vector<std::vector<int>> state::Grasshooper::Possible_Deplacement_Insect(ve
                 while (next_case.GetEmpty() == false) {
 
                     if (next_case.GetPosition()[1]%2==0){
-                        for (Case casetemp: list_case) {
-                            if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]) &&
-                                (casetemp.GetPosition()[1] == next_case.GetPosition()[1] + 1)) {
-                                next_case = casetemp;
-                                break;
-                            }
-                        }
+
                         if ((next_case.GetPosition()[1]+1>16)){
+
                             break;
                         }
+                        else{
+                            for (Case casetemp: list_case) {
+                                if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]) &&
+                                    (casetemp.GetPosition()[1] == next_case.GetPosition()[1] + 1)) {
 
+                                    next_case = casetemp;
+                                    break;
+                                }
+                            }
+                        }
                     }
                     else {
-                        for (Case casetemp: list_case) {
-                            if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]-1) &&
-                                (casetemp.GetPosition()[1] == next_case.GetPosition()[1]+1)) {
-                                next_case = casetemp;
-                                break;
-                            }
-                        }
+
                         if ((next_case.GetPosition()[0]-1<0)||(next_case.GetPosition()[1]+1>16)){
+
                             break;
+                        }
+                        else{
+                            for (Case casetemp: list_case) {
+                                if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]-1) &&
+                                    (casetemp.GetPosition()[1] == next_case.GetPosition()[1]+1)) {
+
+                                    next_case = casetemp;
+                                    break;
+                                }
+                            }
                         }
                     }
                 }
@@ -405,28 +426,37 @@ std::vector<std::vector<int>> state::Grasshooper::Possible_Deplacement_Insect(ve
                 while (next_case.GetEmpty() == false) {
 
                     if (next_case.GetPosition()[1]%2==0){
-                        for (Case casetemp: list_case) {
-                            if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]+1) &&
-                                (casetemp.GetPosition()[1] == next_case.GetPosition()[1]-1)) {
-                                next_case = casetemp;
-                                break;
-                            }
-                        }
+
                         if ((next_case.GetPosition()[0]+1>16)||(next_case.GetPosition()[1]-1<0)){
+
                             break;
                         }
+                        else{
+                            for (Case casetemp: list_case) {
+                                if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]+1) &&
+                                    (casetemp.GetPosition()[1] == next_case.GetPosition()[1]-1)) {
 
+                                    next_case = casetemp;
+                                    break;
+                                }
+                            }
+                        }
                     }
                     else {
-                        for (Case casetemp: list_case) {
-                            if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]) &&
-                                (casetemp.GetPosition()[1] == next_case.GetPosition()[1]-1)) {
-                                next_case = casetemp;
-                                break;
-                            }
-                        }
+
                         if ((next_case.GetPosition()[1]-1<0)){
+
                             break;
+                        }
+                        else{
+                            for (Case casetemp: list_case) {
+                                if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]) &&
+                                    (casetemp.GetPosition()[1] == next_case.GetPosition()[1]-1)) {
+
+                                    next_case = casetemp;
+                                    break;
+                                }
+                            }
                         }
                     }
                 }
@@ -445,31 +475,36 @@ std::vector<std::vector<int>> state::Grasshooper::Possible_Deplacement_Insect(ve
 
                     if (next_case.GetPosition()[1]%2==0){
 
-                        for (Case casetemp: list_case) {
-                            if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]+1) &&
-                                (casetemp.GetPosition()[1] == next_case.GetPosition()[1]+1)) {
-                                next_case = casetemp;
-                                cout << "Prochaine case à étudier :"<<next_case.GetPosition()[0]<<" "<<next_case.GetPosition()[1] << endl;
-                                break;
-                            }
-                        }
-                        if ((next_case.GetPosition()[0]+1>16)||(next_case.GetPosition()[1]-1<0)){
+                        if ((next_case.GetPosition()[0]+1>16)||(next_case.GetPosition()[1]+1>16)){
+
                             break;
                         }
+                        else{
+                            for (Case casetemp: list_case) {
+                                if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]+1) &&
+                                    (casetemp.GetPosition()[1] == next_case.GetPosition()[1]+1)) {
 
+                                    next_case = casetemp;
+                                    break;
+                                }
+                            }
+                        }
                     }
                     else {
 
-                        for (Case casetemp: list_case) {
-                            if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]) &&
-                                (casetemp.GetPosition()[1] == next_case.GetPosition()[1]+1)) {
-                                next_case = casetemp;
-
-                                break;
-                            }
-                        }
                         if ((next_case.GetPosition()[1]+1>16)){
+
                             break;
+                        }
+                        else{
+                            for (Case casetemp: list_case) {
+                                if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]) &&
+                                    (casetemp.GetPosition()[1] == next_case.GetPosition()[1]+1)) {
+
+                                    next_case = casetemp;
+                                    break;
+                                }
+                            }
                         }
                     }
                 }
@@ -487,29 +522,18 @@ std::vector<std::vector<int>> state::Grasshooper::Possible_Deplacement_Insect(ve
 
                 while (next_case.GetEmpty() == false) {
 
-                    if (next_case.GetPosition()[1]%2==0){
-                        for (Case casetemp: list_case) {
-                            if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]+1) &&
-                                (casetemp.GetPosition()[1] == next_case.GetPosition()[1])) {
-                                next_case = casetemp;
-                                break;
-                            }
-                        }
                         if ((next_case.GetPosition()[0]+1>16)){
-                            break;
-                        }
 
-                    }
-                    else {
+                            break;
+                        }
+                        else{
                         for (Case casetemp: list_case) {
                             if ((casetemp.GetPosition()[0] == next_case.GetPosition()[0]+1) &&
                                 (casetemp.GetPosition()[1] == next_case.GetPosition()[1])) {
+
                                 next_case = casetemp;
                                 break;
                             }
-                        }
-                        if ((next_case.GetPosition()[0]+1>16)){
-                            break;
                         }
                     }
                 }
@@ -521,6 +545,8 @@ std::vector<std::vector<int>> state::Grasshooper::Possible_Deplacement_Insect(ve
             //***********************************************FIN 1.6****************************************************//
         }
     }
+    if(list_possible_placement.size()==0){cout<<"AUCUNE POSSIBILITE"<<endl;return list_possible_placement;}
+
 
     //RECHERCHE DES DOUBLONS DANS LA LISTES DES COORDONNEES POSSIBLES
     vector<int> indicetosup;
@@ -544,11 +570,13 @@ std::vector<std::vector<int>> state::Grasshooper::Possible_Deplacement_Insect(ve
     for (int i=0;i<indicetosup.size();i++){
         list_possible_placement_unique.erase(list_possible_placement_unique.begin()+indicetosup[i]-i);
     }
+
+
 //VERIFICATION DE CASSAGE DE CHAINE
     vector<int> index_chain;
     int ind=0;
     for (vector<int> pos_to_test: list_possible_placement_unique){
-        cout<<"VERIF POUR :"<<pos_to_test[0] <<" , "<<pos_to_test[1] <<endl;
+
         vector<Insect> list_insect_placed_modified = list_insect_placed;
 
 
@@ -584,7 +612,6 @@ std::vector<std::vector<int>> state::Grasshooper::Possible_Deplacement_Insect(ve
         bool resultat_chain = Test_Broken_Chain(list_insect_placed_modified,list_case_modified);
         if(resultat_chain){
             index_chain.push_back(ind);
-            cout<<"COORD IMPOSSIBLES : "<< pos_to_test[0]<<" , "<<pos_to_test[1] <<endl;
         }
         ind++;
     }

@@ -263,7 +263,6 @@ int main(int argc,char* argv[]){
             scene.drawScene(game_test, window);
 
             if (etat == 2) {
-                cout<<"nombre de coordonnée dispo : "<<temp_coord.size()<<"\n"<<endl;
                 for (auto i: temp_coord) {
                     temphexa.setPosition(mapPixelPosition[i[0]][i[1]]);
                     window.draw(temphexa);
@@ -592,19 +591,13 @@ int main(int argc,char* argv[]){
 
                     while ((i > game_test.GetAllInsects().size() - 1) ||
                            (game_test.GetAllInsects()[i]->GetColor() != player_test->GetColor())) {
-                        cout << "Choix de l'insecte à placer :";
+                        cout << "Choix de l'insecte :";
                         cin >> i;
                     }
                     Insect *insect_moving = game_test.GetAllInsects()[i];
                     cout << "Vous avez choisi : " << insect_moving->GetName() << "\n";
 
-                    cout << "[ 0 : Placement ] ou [1 : Deplacement ]\n";
-                    cin >> choix;
-
-                    while ((choix != 0) && (choix != 1)) {
-                        cout << "[ 0 : Placement ] ou [1 : Deplacement ]\n";
-                        cin >> choix;
-                    }
+                    vector<vector<int>> temp_coord;
 
                     vector<Case> list_case;
                     for (int i = 0; i < game_test.GetMap()->GetLength(); i++) {
@@ -612,19 +605,24 @@ int main(int argc,char* argv[]){
                             list_case.push_back(game_test.GetMap()->GetListCase()[i][j]);
                         }
                     }
-                    vector<vector<int>> temp_coord;
-                    if (choix == 0) {
-                        temp_coord = insect_moving->Possible_Placement_Insect(game_test.GetAllInsect_placed(),
-                                                                              list_case);
-                    } else {
+
+
+                    if(insect_moving->GetIsPlaced()==true){
+                        choix=1;
                         temp_coord = insect_moving->Possible_Deplacement_Insect(game_test.GetAllInsect_placed(),
                                                                                 list_case);
                     }
+                    else{
+                        choix=0;
+                        temp_coord = insect_moving->Possible_Placement_Insect(game_test.GetAllInsect_placed(),
+                                                                              list_case);
+                    }
+
 
                     int h = 0;
                     cout << "Coordonnées possibles :\n " << endl;
                     if (temp_coord.size() == 0) {
-                        cout << "Aucunen option " << endl;
+                        cout << "Aucune option " << endl;
                     } else {
                         for (auto case_temp: temp_coord) {
                             cout << "I= " << h << " -->  " << " [" << case_temp[0] << ";" << case_temp[1] << "]\n";
@@ -706,7 +704,322 @@ int main(int argc,char* argv[]){
 
         }
 
+    else if ((string)argv[argc-1]=="engine_ai") {
 
+        Game game_test = *new Game();
+
+
+        Player Benzema = *new Player("Benzema", "White");
+        Player Giroud =  *new Player("Giroud", "Black");
+
+        std::vector<Insect *> temp3;
+        std::vector<Insect *> temp4;
+
+        Bee Bee_B = Bee("Bee_B", "White", {-99, -99}, 0);
+        temp4.push_back(&Bee_B);
+        Bee Bee_A = Bee("Bee_A", "Black", {-99, -99}, 0);
+        temp3.push_back(&Bee_A);
+        Grasshooper Grasshopper_B2 = Grasshooper("Grasshopper_B2", "White", {-99, -99}, 0);
+        temp4.push_back(&Grasshopper_B2);
+        Grasshooper Grasshopper_A2 = Grasshooper("Grasshopper_A2", "Black", {-99, -99}, 0);
+        temp3.push_back(&Grasshopper_A2);
+        Grasshooper Grasshopper_B1 = Grasshooper("Grasshopper_B1", "White", {-99, -99}, 0);
+        temp4.push_back(&Grasshopper_B1);
+        Grasshooper Grasshopper_A1 = Grasshooper("Grasshopper_A1", "Black", {-99, -99}, 0);
+        temp3.push_back(&Grasshopper_A1);
+        Grasshooper Grasshopper_B3 = Grasshooper("Grasshopper_B3", "White", {-99, -99}, 0);
+        temp4.push_back(&Grasshopper_B3);
+        Grasshooper Grasshopper_A3 = Grasshooper("Grasshopper_A3", "Black", {-99, -99}, 0);
+        temp3.push_back(&Grasshopper_A3);
+        Spider Spider_B2 = Spider("Spider_B2", "White", {-99, -99}, 0);
+        temp4.push_back(&Spider_B2);
+        Spider Spider_A2 = Spider("Spider_A2", "Black", {-99, -99}, 0);
+        temp3.push_back(&Spider_A2);
+        Ant Ant_B2 = Ant("Ant_B2", "White", {7,4},0);temp4.push_back(&Ant_B2);
+        Ant Ant_A2 = Ant("Ant_A2", "Black", {6,6},0);temp3.push_back(&Ant_A2);
+
+        for (auto &i: temp3) {
+            Giroud.Add_Insect_Remaining(*i);
+        }
+        for (auto &j: temp4) {
+            Benzema.Add_Insect_Remaining(*j);
+        }
+
+        game_test.AppendListJoueur(Giroud);
+        game_test.AppendListJoueur(Benzema);
+
+
+        game_test.AppendListInsect(Bee_B);
+        game_test.AppendListInsect(Bee_A);
+        game_test.AppendListInsect(Grasshopper_B2);
+        game_test.AppendListInsect(Grasshopper_A2);
+        game_test.AppendListInsect(Grasshopper_B1);
+        game_test.AppendListInsect(Grasshopper_A1);
+        game_test.AppendListInsect(Grasshopper_B3);
+        game_test.AppendListInsect(Grasshopper_A3);
+        game_test.AppendListInsect(Spider_B2);
+        game_test.AppendListInsect(Spider_A2);
+        game_test.AppendListInsect(Ant_B2);
+        game_test.AppendListInsect(Ant_A2);
+
+        RandomAI ai_test = *new RandomAI(game_test);
+
+        /*---------------------------------------------RENDER--INIT------------------------------------------------------------------*/
+        sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "HIVE",
+                                sf::Style::Close | sf::Style::Titlebar | sf::Style::Resize);
+        Scene scene = Scene(game_test);
+        sf::Font font; //Police écriture
+        if (!font.loadFromFile("./res/arial.ttf"))
+            return EXIT_FAILURE;
+        sf::Text text("Hello SFML", font, 20);
+
+        sf::CircleShape temphexa(24, 6);
+        temphexa.rotate(90);
+        temphexa.setOrigin({temphexa.getRadius(), temphexa.getRadius()});
+        sf::Color selected(106,13,173);
+        temphexa.setFillColor(selected);
+        temphexa.setOutlineColor(sf::Color::White);
+
+        float X = window.getSize().x;
+        float Y = window.getSize().y;
+        float xo = window.getSize().x;
+        float yo = window.getSize().y;
+        float sx = 1.0, sy = 1.0;
+        int posx;
+        int posy;
+        int etat = 0;
+        vector<vector<int>> temp_coord;
+        vector<int> temp_selected;
+        Insect *insect_moving = nullptr;
+        Player *player_temp = &Benzema;
+
+        std::vector<std::vector<sf::Vector2f>> mapPixelPosition;
+        mapPixelPosition = scene.mapDraw.mapPixelPosition;
+
+        /*-----------------------------------------------FIN-RENDER---INIT----------------------------------------------------------*/
+
+        Engine engine_test = *new Engine(game_test);
+
+        cout << "---------------------DEBUT DU JEU---------------------" << endl;
+
+        int nbTour = 0;
+        int AI_turn=0;
+        while (window.isOpen()) {
+            window.clear();
+
+            if(AI_turn==0) {
+                cout << "AU TOUR DU JOUEUR" << endl;
+            }
+            else{
+                cout << "AU TOUR DE L'IA" << endl;
+            }
+
+            if(AI_turn==0) {
+
+
+                int xmouse = sf::Mouse::getPosition(window).x;
+                int ymouse = sf::Mouse::getPosition(window).y;
+
+
+                sf::Event event;
+                while (window.pollEvent(event)) {
+
+                    if (event.type == sf::Event::Closed)
+                        window.close();
+                    if (event.type == sf::Event::Resized) {
+                        //sx =   float(WIDTH/window.getSize().x) ;
+                        //sy =  float(HEIGHT/window.getSize().y);
+                        X = (window.getSize().x);
+                        Y = (window.getSize().y);
+
+                    }
+
+                    if (event.type == sf::Event::MouseButtonPressed) {
+
+                        if (event.mouseButton.button == sf::Mouse::Left) {
+
+                            posx = int(event.mouseButton.x * (xo / X));
+                            posy = int(event.mouseButton.y * (yo / Y));
+
+                            string insect_selected = scene.insectDraw.getPressedInsect(posx, posy, game_test);
+
+                            int i = 0;
+                            int number = 0;
+                            bool found = 0;
+
+                            if (etat == 0) {
+                                for (auto &ins: game_test.GetAllInsects()) {
+                                    if (found == false) {
+                                        if (ins->GetName() == insect_selected) {
+                                            found = true;
+                                            etat = 1;
+                                            number = i;
+                                        }
+                                        ++i;
+                                    }
+                                }
+                            }
+                            if (etat == 1) {
+                                insect_moving = game_test.GetAllInsects()[number];
+                                cout << "Vous avez choisi : " << insect_moving->GetName() << "\n";
+                                found = false;
+
+                                i = 0;
+                                vector<Case> list_case;
+
+                                for (int i = 0; i < game_test.GetMap()->GetLength(); i++) {
+                                    for (int j = 0; j < game_test.GetMap()->GetWidth(); j++) {
+                                        list_case.push_back(game_test.GetMap()->GetListCase()[i][j]);
+                                    }
+                                }
+                                if (!insect_moving->GetIsPlaced()) {
+                                    temp_coord = insect_moving->Possible_Placement_Insect(
+                                            game_test.GetAllInsect_placed(),
+                                            list_case);
+                                } else if (insect_moving->GetIsPlaced()) {
+                                    temp_coord = insect_moving->Possible_Deplacement_Insect(
+                                            game_test.GetAllInsect_placed(),
+                                            list_case);
+                                }
+                                if (temp_coord.size() != 0) {
+                                    etat = 2;
+                                } else {
+                                    etat = 4;
+                                    cout << "Aucune solution\n" << endl;
+                                }
+                            } else if (etat == 2) {
+                                temp_selected = scene.mapDraw.getPressedTiles(posx, posy);
+                                if (temp_selected[0] != -1) {
+                                    etat = 3;
+                                    cout << "confirmez\n";
+                                }
+                                else {
+                                    etat = 0;
+                                    cout << "reselectionnez\n";
+                                }
+                            } else if (etat == 3) {
+
+
+                                if (!insect_moving->GetIsPlaced()) {
+                                    PlacementCommand plac = PlacementCommand(game_test.GetState(), temp_selected,
+                                                                             *insect_moving,
+                                                                             PLACEMENT, *player_temp, temp_coord);
+                                    plac.execute(engine_test);
+                                } else if (insect_moving->GetIsPlaced()) {
+                                    DeplacementCommand deplac = DeplacementCommand(game_test.GetState(), temp_selected,
+                                                                                   *insect_moving,
+                                                                                   DEPLACEMENT, *player_temp,
+                                                                                   temp_coord);
+                                    deplac.execute(engine_test);
+                                }
+
+                                if (game_test.GetState() == state::Player_A_playing) {
+                                    player_temp = &Benzema;
+                                } else if (game_test.GetState() == state::Player_B_playing) {
+                                    player_temp = &Giroud;
+                                    AI_turn=1;
+                                }
+
+                                etat = 0;
+                            } else if (etat == 4) {
+                                etat = 0;
+                            }
+                        }
+
+                    }
+
+                }
+                int xi = int((xmouse) * (xo / X));
+                int yi = int((ymouse) * (yo / Y));
+
+                std::stringstream ss;
+                ss << "X " << xi << "\n"
+                   << "Y " << yi << "\n";
+
+
+                window.clear();
+                text.setString(ss.str());
+                window.draw(text);
+
+                scene.drawScene(game_test, window);
+
+                if (etat == 2) {
+                    for (auto i: temp_coord) {
+                        temphexa.setPosition(mapPixelPosition[i[0]][i[1]]);
+                        window.draw(temphexa);
+                    }
+                }
+                if (etat == 3) {
+                    if (!temp_selected.empty()) {
+                        temphexa.setPosition(mapPixelPosition[temp_selected[0]][temp_selected[1]]);
+                        window.draw(temphexa);
+                    }
+                }
+
+                window.display();
+            }
+            else {
+
+                bool resultat = false;
+
+                while (resultat == false) {
+                    vector<vector<int>> temp_coord_AI;
+                    vector<int> command_list = ai_test.runAI();
+                    cout << "FIN RUN AI\n" << endl;
+
+
+                    cout << "DEBUT TRAITEMENT RETOURNE PAR AI\n" << endl;
+
+                    cout << "Contenu de command list: " << command_list[0] << " , " << command_list[1] << " , "
+                         << command_list[2] << " , " << command_list[3] << endl;
+
+
+                    Insect *insect_moving = game_test.GetAllInsects()[command_list[3]];
+                    vector<Case> list_case;
+                    for (int i = 0; i < game_test.GetMap()->GetLength(); i++) {
+                        for (int j = 0; j < game_test.GetMap()->GetWidth(); j++) {
+                            list_case.push_back(game_test.GetMap()->GetListCase()[i][j]);
+                        }
+                    }
+
+
+                    if (command_list[0] == 0) {
+                        cout << "choix de placement\n" << endl;
+                        temp_coord_AI = insect_moving->Possible_Placement_Insect(game_test.GetAllInsect_placed(),
+                                                                                 list_case);
+                        PlacementCommand plac = PlacementCommand(game_test.GetState(),
+                                                                 {command_list[1], command_list[2]},
+                                                                 *insect_moving,
+                                                                 PLACEMENT, *player_temp, temp_coord_AI);
+                        bool resultat = plac.execute(engine_test);
+                        if (resultat) {
+                            cout << "Placement effectué" << endl;
+                            AI_turn = 0;
+                            cout << "FIN IA\n" << endl;
+                        }
+
+                    }
+                    else {
+                        cout << "choix de déplacement\n" << endl;
+                        temp_coord_AI = insect_moving->Possible_Deplacement_Insect(game_test.GetAllInsect_placed(),
+                                                                                   list_case);
+
+
+                        DeplacementCommand deplac = DeplacementCommand(game_test.GetState(),
+                                                                       {command_list[1], command_list[2]},
+                                                                       *insect_moving,
+                                                                       DEPLACEMENT, *player_temp, temp_coord_AI);
+                        resultat = deplac.execute(engine_test);
+                        if (resultat) {
+                            cout << "Déplacement effectué" << endl;
+                            AI_turn = 0;
+                            cout << "FIN IA\n" << endl;
+                        }
+                    }
+                }
+            }
+        }
+    }
     else {
         cout << "It works !" << endl;
     }

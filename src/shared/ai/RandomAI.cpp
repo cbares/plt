@@ -36,37 +36,16 @@ std::vector<int> ai::RandomAI::runAI() {
         i++;
     }
 
-
-
-    int random_choice_insect=rand()%(list_choice_insect.size());
-    index_insect=list_choice_insect[random_choice_insect];
-    auto choice_insect = ai->GetAllInsects()[index_insect];
-
-    cout << "Insecte choisi : " << choice_insect->GetName() << endl;
-
-    vector<Case> list_case;
-    for (int i = 0; i < ai->GetMap()->GetLength(); i++) {
-        for (int j = 0; j < ai->GetMap()->GetWidth(); j++) {
-            list_case.push_back(ai->GetMap()->GetListCase()[i][j]);
-        }
-    }
-
-
     vector<vector<int>> temp_coord;
-    if (choice_insect->GetIsPlaced() == 0) {
-        choix_op=0;
-        temp_coord = choice_insect->Possible_Placement_Insect(ai->GetAllInsect_placed(), list_case);
-    } else {
-        choix_op=1;
-        temp_coord = choice_insect->Possible_Deplacement_Insect(ai->GetAllInsect_placed(),
-                                                                list_case);
-    }
 
     while (temp_coord.size() == 0) {
+        cout << "Retirage car pas de coups possibles"<< endl;
 
         srand((unsigned int)time(0));
-        random_choice_insect=rand()%(list_choice_insect.size());
-        auto choice_insect = ai->GetAllInsects()[random_choice_insect];
+        int random_choice_insect=rand()%(list_choice_insect.size());
+        index_insect=list_choice_insect[random_choice_insect];
+        cout << "Nombre tiré par l'IA : " << index_insect<< endl;
+        auto choice_insect = ai->GetAllInsects()[list_choice_insect[random_choice_insect]];
 
         cout << "INSECTE : L'IA A CHOISI : " << choice_insect->GetName() << endl;
 
@@ -86,18 +65,15 @@ std::vector<int> ai::RandomAI::runAI() {
 
     }
 
-    cout << "Coordonnées possibles :\n " << endl;
+    cout << "Coordonnées possibles pour l'IA :\n " << endl;
     int h = 0;
     for (auto case_temp: temp_coord) {
         cout << "I= " << h << " -->  " << " [" << case_temp[0] << ";" << case_temp[1] << "]\n";
         h++;
     }
 
-    /*uniform_int_distribution<> dist2(0, list_choice_insect.size() -
-                                        1); // distribute results between 1 and list_choice_insect.size()-1 inclusive.*/
-
-    int random_coord=rand()%(list_choice_insect.size());
-
+    int random_coord=rand()%(temp_coord.size());
+    cout << "Nombre tiré par l'IA : " << random_coord<< endl;
     auto choice_coord = temp_coord[random_coord];
 
     cout << "POSITION : L'IA A CHOISI : [" << choice_coord[0] << " , " << choice_coord[1] << "]\n" << endl;

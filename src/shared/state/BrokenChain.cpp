@@ -165,16 +165,9 @@ bool Test_Broken_Chain(vector<Insect> list_insect_placed, vector<Case> list_case
     vector<Insect> result_neighbour;
     vector<Insect> insect_passed;
 
-    int i = 0;
-
-    for (auto ins: list_insect_placed) {
-        cout << "I= " << i << " -->  " << ins.GetName() << "  |  " << ins.GetColor() << "  |  ["
-             << ins.Get_Position()[0] << ";" << ins.Get_Position()[1] << "]\n";
-        i++;
-    }
 
     for(Insect insect_to_test : list_insect_placed){
-        cout<<"ETUDE DE L'INSECTE : "<<insect_to_test.GetName()<<" situé en : "<<insect_to_test.Get_i()<<" , "<<insect_to_test.Get_j()<<endl;
+
         result_neighbour= Look_For_Neighbour(list_insect_placed,list_case,insect_to_test);
 
         if((result_neighbour.size()==0)&&(list_insect_placed.size()>1)){
@@ -194,7 +187,7 @@ bool Test_Broken_Chain(vector<Insect> list_insect_placed, vector<Case> list_case
                 insect_passed.push_back(insect_to_test);
             }
         }
-        cout<<"Nb de voisins : "<<result_neighbour.size()<<endl;
+
 
     }
 
@@ -206,21 +199,14 @@ bool Test_Broken_Chain(vector<Insect> list_insect_placed, vector<Case> list_case
 
     insect_queue.push_back(list_insect_placed[0]);
 
-    int u=0;
+
 
 
     while(insect_queue.size()!=0){
 
-        for (auto ins: insect_queue) {
-            cout << "QUEUE= " << u << " -->  " << ins.GetName() << "  |  " << ins.GetColor() << "  |  ["
-                 << ins.Get_Position()[0] << ";" << ins.Get_Position()[1] << "]\n";
-
-        }
-
-        u++;
 
         for(Insect test : insect_queue){
-            cout<<"Insecte étudié dans la file d'attente : "<< test.GetName()<<endl;
+
 
             vector<Insect> neighbours = Look_For_Neighbour(list_insect_placed,list_case,test);
                 for(Insect next : neighbours){
@@ -242,15 +228,6 @@ bool Test_Broken_Chain(vector<Insect> list_insect_placed, vector<Case> list_case
                     }
                 }
                     insect_treated.push_back(test);
-
-            for (auto ins: insect_treated) {
-                cout << "TREATED= " << u << " -->  " << ins.GetName() << "  |  " << ins.GetColor() << "  |  ["
-                     << ins.Get_Position()[0] << ";" << ins.Get_Position()[1] << "]\n";
-
-            }
-
-
-
         }
 
         insect_queue.clear();
@@ -287,10 +264,6 @@ bool Test_Broken_Chain(vector<Insect> list_insect_placed, vector<Case> list_case
     }
 
     insect_treated=insect_treated_unique;
-
-    cout<<"TAILLE DE TREATED : "<< insect_treated.size() << endl;
-
-
 
 
     if (insect_treated.size()!=list_insect_placed.size()){

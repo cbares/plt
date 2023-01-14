@@ -47,14 +47,23 @@ void engine::Engine::UpdateState(state::Game &game, int commandid, state::Insect
         game.SetIteration(game.GetIteration() + 1);
         tour = 0;
     }
-    if(game.IsBeeCircled(*game.GetListPlayer()[0])){
+
+    bool test_white= game.IsBeeCircled(*game.GetListPlayer()[1]);
+    bool test_black =game.IsBeeCircled(*game.GetListPlayer()[0]);
+
+
+
+    if(test_white){
+
         game.UpdateState(state::Player_B_won);
-        std::string playerB = game.GetListPlayer()[1]->GetName();
+        std::string playerB = game.GetListPlayer()[0]->GetName();
         cout<<playerB<<" win \n"<<endl;
     }
-    else if(game.IsBeeCircled(*game.GetListPlayer()[1])){
+
+    if(test_black){
+
         game.UpdateState(state::Player_A_won);
-        std::string playerA = game.GetListPlayer()[0]->GetName();
+        std::string playerA = game.GetListPlayer()[1]->GetName();
         cout<<playerA<<" win \n"<<endl;
     }
     else if(game.GetState() == state::Player_A_playing){
