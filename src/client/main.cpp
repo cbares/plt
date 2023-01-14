@@ -807,12 +807,6 @@ int main(int argc,char* argv[]){
         while (window.isOpen()) {
             window.clear();
 
-            if(AI_turn==0) {
-                cout << "AU TOUR DU JOUEUR" << endl;
-            }
-            else{
-                cout << "AU TOUR DE L'IA" << endl;
-            }
 
             if(AI_turn==0) {
 
@@ -887,7 +881,8 @@ int main(int argc,char* argv[]){
                                     etat = 4;
                                     cout << "Aucune solution\n" << endl;
                                 }
-                            } else if (etat == 2) {
+                            }
+                            else if (etat == 2) {
                                 temp_selected = scene.mapDraw.getPressedTiles(posx, posy);
                                 if (temp_selected[0] != -1) {
                                     etat = 3;
@@ -897,7 +892,8 @@ int main(int argc,char* argv[]){
                                     etat = 0;
                                     cout << "reselectionnez\n";
                                 }
-                            } else if (etat == 3) {
+                            }
+                            else if (etat == 3) {
 
 
                                 if (!insect_moving->GetIsPlaced()) {
@@ -921,7 +917,8 @@ int main(int argc,char* argv[]){
                                 }
 
                                 etat = 0;
-                            } else if (etat == 4) {
+                            }
+                            else if (etat == 4) {
                                 etat = 0;
                             }
                         }
@@ -990,12 +987,13 @@ int main(int argc,char* argv[]){
                         PlacementCommand plac = PlacementCommand(game_test.GetState(),
                                                                  {command_list[1], command_list[2]},
                                                                  *insect_moving,
-                                                                 PLACEMENT, *player_temp, temp_coord_AI);
+                                                                 PLACEMENT, Giroud, temp_coord_AI);
                         bool resultat = plac.execute(engine_test);
                         if (resultat) {
                             cout << "Placement effectué" << endl;
                             AI_turn = 0;
                             cout << "FIN IA\n" << endl;
+                            break;
                         }
 
                     }
@@ -1008,12 +1006,13 @@ int main(int argc,char* argv[]){
                         DeplacementCommand deplac = DeplacementCommand(game_test.GetState(),
                                                                        {command_list[1], command_list[2]},
                                                                        *insect_moving,
-                                                                       DEPLACEMENT, *player_temp, temp_coord_AI);
+                                                                       DEPLACEMENT, Giroud, temp_coord_AI);
                         resultat = deplac.execute(engine_test);
                         if (resultat) {
                             cout << "Déplacement effectué" << endl;
                             AI_turn = 0;
                             cout << "FIN IA\n" << endl;
+                            break;
                         }
                     }
                 }

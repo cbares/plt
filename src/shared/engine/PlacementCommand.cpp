@@ -57,6 +57,7 @@ bool engine::PlacementCommand::execute(engine::Engine &engine) {
     else {
         for (auto cas_temp : this->placement_possible){
             if((this->position[0]==cas_temp[0])&&(this->position[1]==cas_temp[1])&&(this->insect->GetIsPlaced()==false)){
+                cout<<"CHANGEMENT DE STATE"<<endl;
                 engine.UpdateState(*engine.getState(), 0, *insect, this->position,*this->player);
                 return 1;
             }
@@ -65,7 +66,6 @@ bool engine::PlacementCommand::execute(engine::Engine &engine) {
 
     return 0;
 
-    //engine.UpdateState(*engine.getState(), 0,(state::Insect&) this->insect, this->position);
 }
 
 
