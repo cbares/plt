@@ -735,8 +735,8 @@ int main(int argc,char* argv[]){
         temp4.push_back(&Spider_B2);
         Spider Spider_A2 = Spider("Spider_A2", "Black", {-99, -99}, 0);
         temp3.push_back(&Spider_A2);
-        Ant Ant_B2 = Ant("Ant_B2", "White", {7,4},0);temp4.push_back(&Ant_B2);
-        Ant Ant_A2 = Ant("Ant_A2", "Black", {6,6},0);temp3.push_back(&Ant_A2);
+        Ant Ant_B2 = Ant("Ant_B2", "White", {-99, -99},0);temp4.push_back(&Ant_B2);
+        Ant Ant_A2 = Ant("Ant_A2", "Black", {-99, -99},0);temp3.push_back(&Ant_A2);
 
         for (auto &i: temp3) {
             Giroud.Add_Insect_Remaining(*i);
@@ -992,6 +992,7 @@ int main(int argc,char* argv[]){
                         if (resultat) {
                             cout << "Placement effectué" << endl;
                             AI_turn = 0;
+                            etat=0;
                             cout << "FIN IA\n" << endl;
                             break;
                         }
@@ -1011,6 +1012,7 @@ int main(int argc,char* argv[]){
                         if (resultat) {
                             cout << "Déplacement effectué" << endl;
                             AI_turn = 0;
+                            etat=0;
                             cout << "FIN IA\n" << endl;
                             break;
                         }

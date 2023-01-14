@@ -67,11 +67,11 @@ void engine::Engine::UpdateState(state::Game &game, int commandid, state::Insect
         cout<<playerA<<" win \n"<<endl;
     }
     else if(game.GetState() == state::Player_A_playing){
-        cout<<"PASSAGE DE A VERS B"<<endl;
+
         game.UpdateState(state::Player_B_playing);
     }
     else if(game.GetState() == state::Player_B_playing){
-        cout<<"PASSAGE DE B VERS A"<<endl;
+
         game.UpdateState(state::Player_A_playing);
     }
 
