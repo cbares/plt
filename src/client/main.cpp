@@ -992,7 +992,12 @@ int main(int argc,char* argv[]){
                         if (resultat) {
                             cout << "Placement effectué" << endl;
                             AI_turn = 0;
-                            etat=0;
+                            if (game_test.GetState() == state::Player_A_playing) {
+                                player_temp = &Benzema;
+                            } else if (game_test.GetState() == state::Player_B_playing) {
+                                player_temp = &Giroud;
+                                AI_turn=1;
+                            }
                             cout << "FIN IA\n" << endl;
                             break;
                         }
@@ -1012,7 +1017,12 @@ int main(int argc,char* argv[]){
                         if (resultat) {
                             cout << "Déplacement effectué" << endl;
                             AI_turn = 0;
-                            etat=0;
+                            if (game_test.GetState() == state::Player_A_playing) {
+                                player_temp = &Benzema;
+                            } else if (game_test.GetState() == state::Player_B_playing) {
+                                player_temp = &Giroud;
+                                AI_turn=1;
+                            }
                             cout << "FIN IA\n" << endl;
                             break;
                         }
