@@ -1,5 +1,4 @@
-
-# Add "test" target to make
+# Add "test" target to make
 enable_testing()
 
 # Custom "check" target that enable Boost unit test output on CTest failure.
