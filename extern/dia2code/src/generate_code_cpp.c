@@ -592,7 +592,7 @@ gen_decl (declaration *d)
                                                  umla->key.value);
 
     } else if (is_enum_stereo (stype)) {
-        print ("enum %s {\n", name);
+        print ("enum class %s {\n", name);
         indentlevel++;
         while (umla != NULL) {
             char *literal = umla->key.name;
