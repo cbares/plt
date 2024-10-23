@@ -601,7 +601,7 @@ gen_decl (declaration *d)
             char *literal = umla->key.name;
             check_umlattr (&umla->key, name);
             if (strlen (umla->key.type) > 0)
-                fprintf (stderr, "%s/%s: ignoring type\n", name, literal);
+                fprintf (stderr, "%s/%s: ignoring type\n", name, literal);²
             print ("%s", literal);
             if (strlen (umla->key.value) > 0)
                 print (" = %s", umla->key.value);
@@ -693,6 +693,8 @@ struct stdlib_includes {
    int stack;
    int queue;
    int deque;
+   int pair;
+   int tuple;
    int function;
    int array;   
    int thread;
@@ -764,7 +766,19 @@ void print_include_stdlib(struct stdlib_includes* si,char* name) {
            print ("#include <thread>\n");
            si->thread = 1;
        }
-       if (!si->queue
+        if (!si->pair && strstr(name,"std::pair")) {
+            print ("#include <utility>\n");
+            si->pair = 1;
+        }
+        if (!si->tuple && strstr(name,"std::tuple")) {
+            if(si->pair == 0) {
+                print("#include <utility>\n");
+                si->pair = 1;
+            }
+            print ("#include <tuple>\n");
+            si->tuple = 1;
+        }
+        if (!si->queue
        && (strstr(name,"std::queue")
        ||  strstr(name,"std::priority_queue"))) {
            print ("#include <queue>\n");
