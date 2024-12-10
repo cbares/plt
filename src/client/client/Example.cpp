@@ -1,12 +1,12 @@
-#include <state/Exemple.h>  // Included from library shared_static
-#include "Exemple.h"
+#include <state/Example.h>  // Included from library shared_static
+#include "Example.h"
 
 namespace client {
 
-void Exemple::setX (int x) {
+void Example::setX (int x) {
     // Create an object from "shared" library
-    state::Exemple y {};
-    y.setA(x);
+    state::Example y {};
+    //y.setA(x);
 
     this->x = x;
 }

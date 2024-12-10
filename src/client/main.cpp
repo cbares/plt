@@ -17,7 +17,9 @@ using namespace state;
 int main(int argc,char* argv[])
 {
     Example example;
-    example.setA(53);
+    ExampleA exampleA;
+    exampleA.setX(53);
+    example.setA(exampleA);
 
     cout << "It works !" << endl;
 
