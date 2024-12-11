@@ -25,9 +25,7 @@ namespace state {
         return *(this->b);
     }
 
-    void Example::setB(ExampleB &b) {
+    void Example::setB(const ExampleB &b) {
         this->b = &b;
     }
-
-
 }

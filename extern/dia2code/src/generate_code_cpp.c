@@ -326,7 +326,10 @@ gen_class (umlclassnode *node)
                 ref = find_by_name (gb->classlist, assoc->key->name);
                 print ("");
                 if (ref != NULL)
-                    emit ("%s", fqname (ref, !assoc->composite));
+                    if (assoc->composite)
+                        emit("%s", fqname (ref, !assoc->composite));
+                    else
+                        emit ("const %s", fqname (ref, !assoc->composite));
                 else
                     emit ("%s", cppname (assoc->key->name));
                 emit (" %s;\n", assoc->name);
@@ -478,11 +481,9 @@ gen_class (umlclassnode *node)
 
     print ("// Setters and Getters\n");
     if (node->associations != NULL) {
-        fprintf (stderr, "test\n");
         umlassoclist assoc = node->associations;
         while (assoc != NULL) {
             umlclassnode *ref;
-            fprintf (stderr, "test %s, %s\n", assoc->name, assoc->key->name);
             if (assoc->name[0] != '\0')
             {
                 add_setter_getter(node,assoc->key->name,assoc->name);

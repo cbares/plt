@@ -6,4 +6,6 @@ namespace state {
         this->y=y;
     }
 
+    ExampleB::ExampleB() = default;
+
 }

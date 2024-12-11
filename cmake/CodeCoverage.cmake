@@ -155,22 +155,31 @@ function(SETUP_TARGET_FOR_COVERAGE_LCOV)
         message(FATAL_ERROR "genhtml not found! Aborting...")
     endif() # NOT GENHTML_PATH
 
+
+    set(LCOV_EXCLUDES "")
+    foreach(EXCLUDE ${COVERAGE_GCOVR_EXCLUDES})
+        string(REPLACE "*" "\\*" EXCLUDE_REPLACED ${EXCLUDE})
+        list(APPEND LCOV_EXCLUDES "--exclude")
+        list(APPEND LCOV_EXCLUDES "${EXCLUDE_REPLACED}")
+    endforeach()
+    list(APPEND LCOV_EXCLUDES -ignore-errors mismatch,unused)
+
     # Setup target
     add_custom_target(${Coverage_NAME}
 
         # Cleanup lcov
         COMMAND ${LCOV_PATH} ${Coverage_LCOV_ARGS} --gcov-tool ${GCOV_PATH} -directory . --zerocounters
         # Create baseline to make sure untouched files show up in the report
-        COMMAND ${LCOV_PATH} ${Coverage_LCOV_ARGS} --gcov-tool ${GCOV_PATH} -c -i -d . -o ${Coverage_NAME}.base
+        COMMAND ${LCOV_PATH} ${Coverage_LCOV_ARGS} ${LCOV_EXCLUDES} --gcov-tool ${GCOV_PATH} -c -i -d . -o ${Coverage_NAME}.base
 
         # Run tests
         COMMAND ${Coverage_EXECUTABLE} ${Coverage_EXECUTABLE_ARGS}
 
         # Capturing lcov counters and generating report
-        COMMAND ${LCOV_PATH} ${Coverage_LCOV_ARGS} --gcov-tool ${GCOV_PATH} --directory . --capture --output-file ${Coverage_NAME}.info
+        COMMAND ${LCOV_PATH} ${Coverage_LCOV_ARGS} ${LCOV_EXCLUDES} --gcov-tool ${GCOV_PATH} --directory . --capture --output-file ${Coverage_NAME}.info
         # add baseline counters
         COMMAND ${LCOV_PATH} ${Coverage_LCOV_ARGS} --gcov-tool ${GCOV_PATH} -a ${Coverage_NAME}.base -a ${Coverage_NAME}.info --output-file ${Coverage_NAME}.total
-        COMMAND ${LCOV_PATH} ${Coverage_LCOV_ARGS} --gcov-tool ${GCOV_PATH} --remove ${Coverage_NAME}.total ${COVERAGE_LCOV_EXCLUDES} --output-file ${PROJECT_BINARY_DIR}/${Coverage_NAME}.info.cleaned
+        COMMAND ${LCOV_PATH} ${Coverage_LCOV_ARGS} --gcov-tool ${GCOV_PATH} --remove ${Coverage_NAME}.total --output-file ${PROJECT_BINARY_DIR}/${Coverage_NAME}.info.cleaned
         COMMAND ${GENHTML_PATH} ${Coverage_GENHTML_ARGS} -o ${Coverage_NAME} ${PROJECT_BINARY_DIR}/${Coverage_NAME}.info.cleaned
         COMMAND ${CMAKE_COMMAND} -E remove ${Coverage_NAME}.base ${Coverage_NAME}.total ${PROJECT_BINARY_DIR}/${Coverage_NAME}.info.cleaned
 
