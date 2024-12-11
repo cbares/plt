@@ -29,6 +29,12 @@
 
 #define eq  !strcmp
 
+#define INCLUDE_STD_HEADER(flag, tag, import) \
+    if (!(si->flag) && strstr(name, tag)) { \
+        print("#include <" import ">\n"); \
+        (si)->flag = 1; \
+    }
+
 static batch *gb;   /* The current batch being processed.  */
 
 /* Utilities.  */
@@ -229,6 +235,7 @@ add_setter_getter(umlclassnode *node, char* typename,char* varname)
     strcpy(setter,"set");
     strcat(setter,tmp);
     free(tmp);
+    emit("//%s / %s\n", getter, setter);
     if (node->key->operations != NULL) {
         umloplist umlo = node->key->operations;
         while (umlo != NULL) {
@@ -319,7 +326,10 @@ gen_class (umlclassnode *node)
                 ref = find_by_name (gb->classlist, assoc->key->name);
                 print ("");
                 if (ref != NULL)
-                    emit ("%s", fqname (ref, !assoc->composite));
+                    if (assoc->composite)
+                        emit("%s", fqname (ref, !assoc->composite));
+                    else
+                        emit ("const %s", fqname (ref, !assoc->composite));
                 else
                     emit ("%s", cppname (assoc->key->name));
                 emit (" %s;\n", assoc->name);
@@ -689,6 +699,9 @@ struct stdlib_includes {
    int unordered_set;
    int stack;
    int queue;
+   int deque;
+   int pair;
+   int tuple;
    int function;
    int array;   
    int thread;
@@ -698,108 +711,61 @@ struct stdlib_includes {
    int jsoncpp;
 };
 
-void print_include_stdlib(struct stdlib_includes* si,char* name) {
-    if ( strlen(name) > 0 ) {
-       if (!si->stdint 
-       && (strstr(name,"int8_t")
-       ||  strstr(name,"uint8_t")
-       ||  strstr(name,"int16_t")
-       ||  strstr(name,"uint16_t")
-       ||  strstr(name,"int32_t")
-       ||  strstr(name,"uint32_t")
-       ||  strstr(name,"int64_t")
-       ||  strstr(name,"uint64_t"))) {
-           print ("#include <stdint.h>\n");
-           si->stdint = 1;
-       }
-       if (!si->stdlib && strstr(name,"size_t")) {
-           print ("#include <stdlib.h>\n");
-           si->stdlib = 1;
-       }
-       if (!si->string && strstr(name,"std::string")) {
-           print ("#include <string>\n");
-           si->string = 1;
-       }
-       if (!si->array && strstr(name,"std::array")) {
-           print ("#include <array>\n");
-           si->array = 1;
-       }
-       if (!si->vector && strstr(name,"std::vector")) {
-           print ("#include <vector>\n");
-           si->vector = 1;
-       }
-       if (!si->map && strstr(name,"std::map")) {
-           print ("#include <map>\n");
-           si->map = 1;
-       }
-        if (!si->function && strstr(name,"std::function")) {
-            print ("#include <functional>\n");
-            si->function = 1;
-        }
-       if (!si->set && strstr(name,"std::set")) {
-           print ("#include <set>\n");
-           si->set = 1;
-       }
-       if (!si->limits && strstr(name,"std::numeric_limits")) {
-           print ("#include <limits>\n");
-           si->limits = 1;
-       }
-       if (!si->list && strstr(name,"std::list")) {
-           print ("#include <list>\n");
-           si->list = 1;
-       }
-       if (!si->stack && strstr(name,"std::stack")) {
-           print ("#include <stack>\n");
-           si->stack = 1;
-       }
-       if (!si->mutex && strstr(name,"std::mutex")) {
-           print ("#include <mutex>\n");
-           si->mutex = 1;
-       }
-       if (!si->thread && strstr(name,"std::thread")) {
-           print ("#include <thread>\n");
-           si->thread = 1;
-       }
-       if (!si->queue
-       && (strstr(name,"std::queue")
-       ||  strstr(name,"std::priority_queue"))) {
-           print ("#include <queue>\n");
-           si->queue = 1;
-       }
-       if (!si->unordered_map && strstr(name,"std::unordered_map")) {
-           print ("#include <unordered_map>\n");
-           si->unordered_map = 1;
-       }
-       if (!si->unordered_set && strstr(name,"std::unordered_set")) {
-           print ("#include <unordered_set>\n");
-           si->unordered_set = 1;
-       }
-       if (!si->memory 
-       && (strstr(name,"std::unique_ptr")
-       ||  strstr(name,"std::shared_ptr")
-       ||  strstr(name,"std::weak_ptr"))) {
-           print ("#include <memory>\n");
-           si->memory = 1;
-       }
-       if (!si->random 
-       && (strstr(name,"std::mt19937")
-       ||  strstr(name,"std::random_device")
-       ||  strstr(name,"std::uniform_int_distribution"))) {
-           print ("#include <random>\n");
-           si->random = 1;
-       }
-       if (!si->sfmlGraphics 
-       && (strstr(name,"sf::RenderWindow")
-       ||  strstr(name,"sf::VertexArray")
-       ||  strstr(name,"sf::Texture"))) {
-           print ("#include <SFML/Graphics.hpp>\n");
-           si->sfmlGraphics = 1;
-       }       
-       if (!si->jsoncpp
-       && (strstr(name,"Json::") == name)) {
-           print ("#include <json/json.h>\n");
-           si->jsoncpp = 1;
-       }       
+void print_include_stdlib(struct stdlib_includes* si, char* name) {
+    if ( name[0]!= '\0' ) {
+        INCLUDE_STD_HEADER(stdint, "int8_t", "cstdint")
+        INCLUDE_STD_HEADER(stdint, "uint8_t", "cstdint")
+        INCLUDE_STD_HEADER(stdint, "int16_t", "cstdint")
+        INCLUDE_STD_HEADER(stdint, "uint16_t", "cstdint")
+        INCLUDE_STD_HEADER(stdint, "int32_t", "cstdint")
+        INCLUDE_STD_HEADER(stdint, "uint32_t", "cstdint")
+        INCLUDE_STD_HEADER(stdint, "int64_t", "cstdint")
+        INCLUDE_STD_HEADER(stdint, "uint64_t", "cstdint")
+
+        INCLUDE_STD_HEADER(stdlib, "size_t", "cstdlib")
+
+        INCLUDE_STD_HEADER(string, "std::string", "string")
+        INCLUDE_STD_HEADER(array, "std::array", "array")
+        INCLUDE_STD_HEADER(vector, "std::vector", "vector")
+        INCLUDE_STD_HEADER(map, "std::map", "map")
+        INCLUDE_STD_HEADER(function, "std::function", "functional")
+        INCLUDE_STD_HEADER(set, "std::set", "set")
+        INCLUDE_STD_HEADER(limits, "std::numeric_limits", "limits")
+        INCLUDE_STD_HEADER(list, "std::list", "list")
+        INCLUDE_STD_HEADER(stack, "std::stack", "stack")
+
+        /* thread */
+        INCLUDE_STD_HEADER(mutex, "std::mutex", "mutex")
+        INCLUDE_STD_HEADER(thread, "std::thread", "thread")
+
+        INCLUDE_STD_HEADER(pair, "std::pair", "utility")
+        INCLUDE_STD_HEADER(pair, "std:tuple", "utility")
+        INCLUDE_STD_HEADER(tuple, "std::tuple", "tuple")
+
+        /* Collections */
+        INCLUDE_STD_HEADER(queue, "std::queue", "queue")
+        INCLUDE_STD_HEADER(queue, "std::priority_queue", "queue")
+        INCLUDE_STD_HEADER(deque, "std::deque", "deque")
+        INCLUDE_STD_HEADER(unordered_map, "std::unordered_map", "unordered_map")
+        INCLUDE_STD_HEADER(unordered_set, "std::unordered_set", "unordered_set")
+
+        /* Pointers */
+        INCLUDE_STD_HEADER(memory, "std::unique_ptr", "memory")
+        INCLUDE_STD_HEADER(memory, "std::shared_ptr", "memory")
+        INCLUDE_STD_HEADER(memory, "std::weak_ptr", "memory")
+
+        /* Randomness */
+        INCLUDE_STD_HEADER(random, "std::mt19937", "random")
+        INCLUDE_STD_HEADER(random, "std::random_device", "random")
+        INCLUDE_STD_HEADER(random, "std::uniform_int_distribution", "random")
+
+        /* SFML */
+        INCLUDE_STD_HEADER(sfmlGraphics, "sf::RenderWindow", "SFML/Graphics.hpp")
+        INCLUDE_STD_HEADER(sfmlGraphics, "sf::VertexArray", "SFML/Graphics.hpp")
+        INCLUDE_STD_HEADER(sfmlGraphics, "sf::Texture", "SFML/Graphics.hpp")
+
+        /* JSONCPP */
+        INCLUDE_STD_HEADER(jsoncpp, "Json::", "json/json.h")
     }
 }
 
@@ -863,9 +829,7 @@ gen_namespace(batch *b, declaration *nsd) {
             umlattrlist umla = d->u.this_class->key->attributes;
             while (umla != NULL) {
                 print_include_stdlib(&si, umla->key.type);
-                if (umla->key.value) {
-                    print_include_stdlib(&si, umla->key.value);
-                }
+                print_include_stdlib(&si, umla->key.value);
                 umla = umla->next;
             }
             // Methods
@@ -875,9 +839,7 @@ gen_namespace(batch *b, declaration *nsd) {
                 umlattrlist tmpa = umlo->key.parameters;
                 while (tmpa != NULL) {
                     print_include_stdlib(&si, tmpa->key.type);
-                    if (tmpa->key.value) {
-                        print_include_stdlib(&si, tmpa->key.value);
-                    }
+                    print_include_stdlib(&si, tmpa->key.value);
                     tmpa = tmpa->next;
                 }
                 umlo = umlo->next;

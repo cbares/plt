@@ -34,7 +34,7 @@ function(generate_dia_header dia_file)
     OUTPUT ${stamp}
     COMMAND rm -vf ${PROJECT_SOURCE_DIR}/src/*/${namespace}.h
     COMMAND rm -vf ${PROJECT_SOURCE_DIR}/src/*/${namespace}/*.h
-    COMMAND $<TARGET_FILE:dia2code> -ns ${namespace} -d ${output_dir} -t cpp ${dia_file}
+    COMMAND $<TARGET_FILE:dia2code> --debug 8 -ns ${namespace} -d ${output_dir} -t cpp ${dia_file}
     COMMAND ${CMAKE_COMMAND} -E touch ${stamp}
     DEPENDS ${dia_file}
     )
