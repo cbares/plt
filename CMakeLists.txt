@@ -6,6 +6,9 @@ project(plt)
 if(POLICY CMP0074)
   cmake_policy(SET CMP0074 NEW)
 endif()
+if(POLICY CMP0167)
+  cmake_policy(SET CMP0167 NEW)
+endif()
 
 # Include helper functions
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
