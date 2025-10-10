@@ -1,0 +1,9 @@
+services:
+  plt:
+    container_name: plt
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: plt-base
+    volumes:
+      - .:/app
