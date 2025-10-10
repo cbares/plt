@@ -11,7 +11,8 @@ if(POLICY CMP0167)
 endif()
 
 # Include helper functions
-set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
+list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
+list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake-modules)
 include(GenerateDiaHeader)
 
 # Export executables to "bin" directory
