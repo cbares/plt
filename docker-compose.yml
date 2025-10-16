@@ -4,7 +4,13 @@ services:
     working_dir: /app
     build:
       context: .
+      args:
+      - USERNAME=plt
+      - USER_UID= 1000 # $(id -u)
+      - USER_GID= 1000 # $(id -g)
       dockerfile: Dockerfile
+    # user: $(id -u):$(id -g)
+    user: $USER_UID:$USER_GID
     volumes:
       - ./CMakeLists.txt:/app/CMakeLists.txt
       - .gitignore:/app/.gitignore
@@ -15,12 +21,11 @@ services:
       - ./lib:/app/lib
       - ./test:/app/test
       - ./rapport:/app/rapport
-      - /run/user/${UID}/${WAYLAND_DISPLAY}:/run/${WAYLAND_DISPLAY}
+      - $XDG_RUNTIME_DIR/$WAYLAND_DISPLAY:/tmp/$WAYLAND_DISPLAY
     tty: true
     environment:
-      - XDG_RUNTIME_DIR=/run/user/${UID}
-      - WAYLAND_DISPLAY=${WAYLAND_DISPLAY}
-
+      - XDG_RUNTIME_DIR=/tmp
+      - WAYLAND_DISPLAY=$WAYLAND_DISPLAY
+      - GDK_BACKEND=wayland
+      - QT_QPA_PLATFORM=wayland
     stdin_open: true
-    command: /bin/bash
-

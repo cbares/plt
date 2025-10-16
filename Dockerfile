@@ -1,7 +1,14 @@
 FROM debian:stable-slim as plt-base
 
+ARG USERNAME
+ARG USER_UID
+ARG USER_GID
+
 # Set the working directory
 WORKDIR /app
+
+RUN groupadd --gid $USER_GID $USERNAME && \
+    useradd --uid $USER_UID --gid $USER_GID -m $USERNAME
 
 COPY ./src .
 COPY ./CMakeLists.txt .
@@ -42,4 +49,4 @@ RUN chmod +x entrypoint.sh
 
 # Run the application
 ENTRYPOINT [ "./entrypoint.sh" ]
-CMD ["./bin/client", "/bin/sh"]
+CMD ["tail", "-f", "/dev/null"]
