@@ -2,8 +2,13 @@
 
 [![Actions Status](https://github.com/cbares/plt/workflows/PLT%20build/badge.svg)](https://github.com/cbares/plt/actions)
 
+## Dépendances:
 
-Mise à jour depuis le template:
+```consle
+sudo apt install libboost-all-dev
+```
+
+## Mise à jour depuis le template:
 
 * Si votre dépôt ne dépend pas du template:
 ```console
