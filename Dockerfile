@@ -3,12 +3,17 @@ FROM debian:stable-slim as plt-base
 ARG USERNAME
 ARG USER_UID
 ARG USER_GID
+ARG DISPLAY
 
 # Set the working directory
 WORKDIR /app
 
 RUN groupadd --gid $USER_GID $USERNAME && \
     useradd --uid $USER_UID --gid $USER_GID -m $USERNAME
+
+RUN if [ -n "$DISPLAY" ]; then \
+        export DISPLAY=$DISPLAY; \
+    fi
 
 COPY ./src .
 COPY ./CMakeLists.txt .
