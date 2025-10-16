@@ -12,7 +12,7 @@ endif()
 
 # Include helper functions
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
-list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake-modules)
+list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/modules)
 include(GenerateDiaHeader)
 
 # Export executables to "bin" directory
@@ -61,7 +61,7 @@ if(BUILD_CODE_COVERAGE)
   file(CONFIGURE
           OUTPUT ${test_runner}
           CONTENT
-          "cd \"${CMAKE_CURRENT_BINARY_DIR}/test\" && ctest --timeout 300 ||/bin/true\n"
+          "cd \"${CMAKE_CURRENT_BINARY_DIR}/test\" && ${CMAKE_CTEST_COMMAND} --timeout 300 ||/bin/true\n"
           )
   # Create target for code coverage
   SETUP_TARGET_FOR_COVERAGE_LCOV(
@@ -79,7 +79,7 @@ endif()
 # Build dia2code
 add_subdirectory(extern/dia2code)
 
-find_package(Boost 1.74 REQUIRED COMPONENTS graph unit_test_framework)
+find_package(Boost 1.74...1.999 REQUIRED COMPONENTS graph unit_test_framework)
 message(STATUS "Boost libraries: ${Boost_LIBRARIES}")
 message(STATUS "Boost include directory: ${Boost_INCLUDE_DIRS}")
 
@@ -133,4 +133,3 @@ if(BUILD_TESTING)
 endif()
 
 # vim: set sw=2 sts=2 et:
-
