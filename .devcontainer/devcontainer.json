@@ -1,7 +1,7 @@
 {
     "name": "PLT",
     "privileged": false,
-    "remoteUser": "poetry",
+    "remoteUser": "developer",
     "service": "plt",
     "dockerComposeFile": "../docker-compose.yml",
     "workspaceFolder": "/app",
@@ -14,17 +14,8 @@
         },
         "vscode": {
             "extensions": [
-                "ms-python.python",
-                "ms-python.vscode-pylance",
-                "ms-python.debugpy",
-                "donjayamanne.python-extension-pack",
-                "eamodio.gitlens",
-                "ms-azuretools.vscode-docker",
-                "dbaeumer.vscode-eslint"
-            ],
-            "settings": {
-                "python.defaultInterpreterPath": "/opt/pysetup/.venv/bin/python"
-            }
+                "ms-vscode.cmake-tools"
+            ]
         }
     }
 }
