@@ -1,9 +1,21 @@
 services:
   plt:
     container_name: plt
+    working_dir: /app
     build:
       context: .
       dockerfile: Dockerfile
-      target: plt-base
     volumes:
-      - .:/app
+      - ./CMakeLists.txt:/app/CMakeLists.txt
+      - .gitignore:/app/.gitignore
+      - ./src:/app/src
+      - ./extern:/app/extern
+      - ./cmake:/app/cmake
+      - ./CMakeFiles:/app/CMakeFiles
+      - ./lib:/app/lib
+      - ./test:/app/test
+      - ./rapport:/app/rapport
+    tty: true
+    stdin_open: true
+    command: /bin/bash
+
