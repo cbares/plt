@@ -1,6 +1,7 @@
 *~
 build
 cmake-build-debug
+build-docker
 bin
 nbproject
 src/**/*.h
