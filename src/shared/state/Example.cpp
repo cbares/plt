@@ -10,6 +10,7 @@ namespace state {
 //    }
 
     Example::Example() {
+        this->b = new ExampleB();
 
     }
 
