@@ -4,30 +4,22 @@ services:
     working_dir: /app
     build:
       context: .
-      ipc: host
       args:
-      - USERNAME=plt
-      - USER_UID= 1000 # $(id -u)
-      - USER_GID= 1000 # $(id -g)
-      - DISPLAY= ${DISPLAY:-}
+        USERNAME: ${username:-plt}
+        USER_UID: ${USER_UID:-1000} # $(id -u)
+        USER_GID: ${USER_GID:-1000} # $(id -g)
+        DISPLAY: ${DISPLAY}
       dockerfile: Dockerfile
     # user: $(id -u):$(id -g)
     user: $USER_UID:$USER_GID
     volumes:
-      - ./CMakeLists.txt:/app/CMakeLists.txt
-      - .gitignore:/app/.gitignore
-      - ./src:/app/src
-      - ./extern:/app/extern
-      - ./cmake:/app/cmake
-      - ./CMakeFiles:/app/CMakeFiles
-      - ./lib:/app/lib
-      - ./test:/app/test
-      - ./rapport:/app/rapport
-      - $XDG_RUNTIME_DIR/$WAYLAND_DISPLAY:/tmp/$WAYLAND_DISPLAY
+      - ./:/app
+      - /tmp/($WAYLAND_DISPLAY-):/tmp/($WAYLAND_DISPLAY-):rw
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      # - /dev/dri:/dev/dri:cached
     tty: true
     environment:
-      - XDG_RUNTIME_DIR=/tmp
-      - WAYLAND_DISPLAY=$WAYLAND_DISPLAY
-      - GDK_BACKEND=wayland
-      - QT_QPA_PLATFORM=wayland
+      WAYLAND_DISPLAY: ${WAYLAND_DISPLAY:-}
+    env_file:
+      - .env
     stdin_open: true
