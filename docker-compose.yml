@@ -20,6 +20,7 @@ services:
     tty: true
     environment:
       WAYLAND_DISPLAY: ${WAYLAND_DISPLAY:-}
+      XDG_RUNTIME_DIR: /tmp
     env_file:
       - .env
     stdin_open: true
