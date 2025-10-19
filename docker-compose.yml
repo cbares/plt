@@ -10,6 +10,7 @@ services:
         USER_GID: ${USER_GID:-1000} # $(id -g)
         DISPLAY: ${DISPLAY}
       dockerfile: Dockerfile
+    image: plt:latest
     # user: $(id -u):$(id -g)
     user: $USER_UID:$USER_GID
     volumes:
