@@ -20,7 +20,9 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 
 # Enable C++17
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+add_compile_options(-Wall -Wextra)
 
 # Enable Debug and Release builds
 if(NOT CMAKE_BUILD_TYPE)
@@ -28,11 +30,6 @@ if(NOT CMAKE_BUILD_TYPE)
     "Build type, Debug or Release" FORCE)
 endif()
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
-IF(CMAKE_COMPILER_IS_GNUCC)
-  SET(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}   -Wall -std=c11   -pthread -g")
-  SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++11 -pthread -g")
-ENDIF(CMAKE_COMPILER_IS_GNUCC)
-
 
 
 # Add code coverage support for Gcov using GCC
@@ -56,24 +53,34 @@ if(BUILD_CODE_COVERAGE)
     "${PROJECT_SOURCE_DIR}/test/*"
     "${PROJECT_SOURCE_DIR}/extern/*"
   )
+
+  message(STATUS "exluded path for coverage: ${COVER_GCOVR_EXCLUDES}")
+
   # Create script to run tests for code coverage
   set(test_runner "${CMAKE_CURRENT_BINARY_DIR}/run_test.sh")
   file(CONFIGURE
           OUTPUT ${test_runner}
           CONTENT
-          "cd \"${CMAKE_CURRENT_BINARY_DIR}/test\" && ${CMAKE_CTEST_COMMAND} --timeout 300 ||/bin/true\n"
+          "#!/bin/sh\n\
+${CMAKE_COMMAND} -E copy \"${CMAKE_CURRENT_BINARY_DIR}/DartConfiguration.tcl\" \
+\"${CMAKE_CURRENT_BINARY_DIR}/test/DartConfiguration.tcl\"\n\
+${CMAKE_CTEST_COMMAND} -j --output-on-failure --timeout 300 \
+--test-dir \"${CMAKE_CURRENT_BINARY_DIR}/test\" || /bin/true\n"
           )
+  file(CHMOD ${test_runner} PERMISSIONS
+    OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+
   # Create target for code coverage
   SETUP_TARGET_FOR_COVERAGE_LCOV(
           NAME code-coverage
-          EXECUTABLE sh ${test_runner}
+          EXECUTABLE ${test_runner}
           DEPENDS ${test_runner}
           EXCLUDE ${COVER_GCOVR_EXCLUDES}
-          LCOV_ARGS "--ignore-errors" "mismatch,mismatch"
+          LCOV_ARGS "--ignore-errors" "mismatch,mismatch,inconsistent"
     )
   SETUP_TARGET_FOR_COVERAGE_GCOVR_XML(
           NAME code-coverage-gcov
-          EXECUTABLE sh ${test_runner}
+          EXECUTABLE ${test_runner}
           DEPENDS ${test_runner}
           EXCLUDE ${COVER_GCOVR_EXCLUDES}
     )
@@ -82,6 +89,12 @@ endif()
 # Build dia2code
 add_subdirectory(extern/dia2code)
 
+# Add PTHREADs Lib
+set(THREADS_PREFER_PTHREAD_FLAG ON)
+find_package(Threads REQUIRED)
+message(STATUS "PThreads library found: ${Threads_FOUND}")
+
+# Add BOOST lib
 find_package(Boost 1.74...1.999 REQUIRED COMPONENTS graph unit_test_framework)
 message(STATUS "Boost libraries: ${Boost_LIBRARIES}")
 message(STATUS "Boost include directory: ${Boost_INCLUDE_DIRS}")
@@ -127,12 +140,12 @@ add_subdirectory(src/client)
 add_subdirectory(rapport)
 
 # Unit tests
+include(CTest)
 # Set BUILD_TESTING to OFF in CMakeCache to disable tests
-set(BUILD_TESTING ON CACHE BOOL
-  "Set BUILD_TESTING to OFF to disable tests")
 if(BUILD_TESTING)
   # Include tests scripts
   add_subdirectory(test)
 endif()
+
 
 # vim: set sw=2 sts=2 et:

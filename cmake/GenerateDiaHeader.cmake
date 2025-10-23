@@ -5,9 +5,11 @@ add_custom_target(generate-headers)
 # Global cmake target responsible for the cleanup of all the cpp headers
 # generated using the "generate-headers" target.
 add_custom_target(clean-headers
-  COMMAND rm -vf ${PROJECT_SOURCE_DIR}/src/*/*.h
-  COMMAND rm -vf ${PROJECT_SOURCE_DIR}/src/*/*/*.h
-  COMMAND rm -f ${PROJECT_BINARY_DIR}/generate_header_*.stamp
+  COMMAND ${CMAKE_COMMAND} -E rm -f ${PROJECT_SOURCE_DIR}/src/*/*.h
+  COMMAND ${CMAKE_COMMAND} -E rm -f ${PROJECT_SOURCE_DIR}/src/*/*/*.h
+  COMMAND ${CMAKE_COMMAND} -E rm -f ${PROJECT_BINARY_DIR}/generate_header_*.stamp
+  COMMAND ${CMAKE_COMMAND} -E echo "Generated header files cleaned"
+  COMMENT "Cleaning *.h files"
   )
 
 # Fonction that generate cpp header files from dia files using dia2code.
@@ -23,6 +25,7 @@ add_custom_target(clean-headers
 function(generate_dia_header dia_file)
   # Path to the .dia file used to generate the cpp headers
   get_filename_component(namespace ${dia_file} NAME_WE)
+  
   # Path to the output directory
   set(output_dir ${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -32,8 +35,8 @@ function(generate_dia_header dia_file)
   # Custom command that generate the cpp headers and create the stamp file
   add_custom_command(
     OUTPUT ${stamp}
-    COMMAND rm -vf ${PROJECT_SOURCE_DIR}/src/*/${namespace}.h
-    COMMAND rm -vf ${PROJECT_SOURCE_DIR}/src/*/${namespace}/*.h
+    COMMAND ${CMAKE_COMMAND} -E rm -f ${PROJECT_SOURCE_DIR}/src/*/${namespace}.h
+    COMMAND ${CMAKE_COMMAND} -E rm -f ${PROJECT_SOURCE_DIR}/src/*/${namespace}/*.h
     COMMAND $<TARGET_FILE:dia2code> --debug 8 -ns ${namespace} -d ${output_dir} -t cpp ${dia_file}
     COMMAND ${CMAKE_COMMAND} -E touch ${stamp}
     DEPENDS ${dia_file}
@@ -42,8 +45,7 @@ function(generate_dia_header dia_file)
   # Create cmake intermediate target to generate the cpp headers
   add_custom_target(generate-header-${namespace} DEPENDS ${stamp})
 
-  # Add the intermediate target as a dependency of the global cmake target for header
-  # generation.
+  # Add the intermediate target as a dependency of the global cmake target for header generation.
   add_dependencies(generate-headers generate-header-${namespace})
 endfunction()
 
