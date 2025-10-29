@@ -354,6 +354,21 @@ gen_class(umlclassnode *node)
         while (parent != NULL)
         {
             emit("public %s", fqname(parent, 0));
+            umltemplatelist templates = parent->key->templates;
+            if(templates!= NULL)
+            {
+                emit("<");
+                while (templates != NULL)
+                {
+                    umltemplate template = templates->key;
+                    emit("%s", template.name);
+                    if(templates->next != NULL)
+                    {
+                        emit(",");
+                    }
+                    templates = templates->next;
+                }
+            }
             parent = parent->next;
             if (parent != NULL)
                 emit(", ");
