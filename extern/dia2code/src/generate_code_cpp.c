@@ -947,7 +947,6 @@ void gen_namespace(batch *b, declaration *nsd)
             if (d->u.this_class->parents != NULL)
             {
                 umlclasslist parent = d->u.this_class->parents;
-                print("// parent classes : %s\n", parent);
                 while (parent != NULL)
                 {
                     print_include_stdlib(&si, fqname(parent, 0));
@@ -990,34 +989,60 @@ void gen_namespace(batch *b, declaration *nsd)
             {
                 umltemplatelist templates = NULL;
                 umlassocnode *associations = d->u.this_class->associations;
-                umlclassnode *dependencies = d->u.this_class->dependencies;
-                
                 while (associations != NULL)
                 {
                     umlclass *association = associations->key;
-                    if(eq(association->name,incfile->name)){
-                        if(association->templates !=NULL){
-                            templates=association->templates;
+                    if (eq(association->name, incfile->name))
+                    {
+                        if (association->templates != NULL)
+                        {
+                            templates = association->templates;
                         }
-                        
                     }
-                    
+                    if (templates != NULL)
+                    {
+                        break;
+                    }
                     associations = associations->next;
                 }
-                while (dependencies != NULL && templates != NULL)
+                umlclassnode *dependencies = d->u.this_class->dependencies;
+                while (d->u.this_class->dependencies != NULL)
                 {
                     umlclass *dependendy = dependencies->key;
-                    if(strcmp(dependendy->name,incfile->name)==1){
-                        if(dependendy->templates !=NULL){
-                            templates=dependendy->templates;
+                    if (eq(dependendy->name, incfile->name))
+                    {
+                        if (dependendy->templates != NULL)
+                        {
+                            templates = dependendy->templates;
                         }
+                    }
+                    if (templates != NULL)
+                    {
+                        break;
                     }
                     dependencies = dependencies->next;
                 }
-                templates=templates; // if I don't do this, the variable is optimized out FIXME
+                umlclassnode *parents = d->u.this_class->parents;
+                while (parents != NULL)
+                {
+                    umlclass *parent = parents->key;
+                    if (eq(parent->name, incfile->name))
+                    {
+                        if (parent->templates != NULL)
+                        {
+                            templates = parent->templates;
+                        }
+                    }
+                    if (templates != NULL)
+                    {
+                        break;
+                    }
+                    parents = parents->next;
+                }
+                templates = templates; // if I don't do this, the variable is optimized out FIXME
                 if (!incfile->package)
                 {
-                    templates=templates; // if I don't do this, the variable is optimized out FIXME
+                    templates = templates; // if I don't do this, the variable is optimized out FIXME
                     if (curnsname)
                     {
                         curnsname = NULL;
@@ -1025,7 +1050,8 @@ void gen_namespace(batch *b, declaration *nsd)
                         print("};\n");
                     }
                     print("// Forward declaration\n");
-                    if(templates!=NULL){
+                    if (templates != NULL)
+                    {
                         print("template <");
                         while (templates != NULL)
                         {
@@ -1053,7 +1079,8 @@ void gen_namespace(batch *b, declaration *nsd)
                         indentlevel++;
                     }
                     print("// Forward declaration\n");
-                    if(templates!=NULL){
+                    if (templates != NULL)
+                    {
                         print("template <");
                         while (templates != NULL)
                         {
