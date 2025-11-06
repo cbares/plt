@@ -52,4 +52,5 @@ RUN chmod u+x ./entrypoint.sh
 SHELL ["/bin/bash", "--login", "-c"]
 
 # Run the application
+ENTRYPOINT ["./entrypoint.sh"]
 CMD ["tail", "-f", "/dev/null"]

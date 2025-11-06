@@ -6,6 +6,7 @@ services:
       context: .
       args:
         USERNAME: ${username:-plt}
+<<<<<<< HEAD
         USER_UID: ${USER_UID:-1000}
         USER_GID: ${USER_GID:-1000}
         WAYLAND_DISPLAY: ${WAYLAND_DISPLAY:-}
@@ -23,6 +24,22 @@ services:
     tty: true
     environment:
       XDG_RUNTIME_DIR: /tmp
+=======
+        USER_UID: ${USER_UID:-1000} # $(id -u)
+        USER_GID: ${USER_GID:-1000} # $(id -g)
+        DISPLAY: ${DISPLAY}
+      dockerfile: Dockerfile
+    # user: $(id -u):$(id -g)
+    user: $USER_UID:$USER_GID
+    volumes:
+      - ./:/app
+      - /tmp/($WAYLAND_DISPLAY-):/tmp/($WAYLAND_DISPLAY-):rw
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      # - /dev/dri:/dev/dri:cached
+    tty: true
+    environment:
+      WAYLAND_DISPLAY: ${WAYLAND_DISPLAY:-}
+>>>>>>> master
     env_file:
       - .env
     stdin_open: true
