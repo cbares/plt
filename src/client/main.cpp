@@ -2,7 +2,7 @@
 
 // The following lines are here to check that SFML is installed and working
 #include <SFML/Graphics.hpp>
-
+// LCOV_EXCL_START
 void testSFML() {
     sf::Texture texture;
 }
@@ -24,3 +24,5 @@ int main(int argc,char* argv[])
 
     return 0;
 }
+
+// LCOV_EXCL_END

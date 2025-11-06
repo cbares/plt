@@ -3,11 +3,11 @@
 
 namespace client {
 
-void Example::setX (int x) {
+void Example::setY (int y) {
     // Create an object from "shared" library
-    state::Example y {};
+    state::Example x {};
 
-    this->x = x;
+    this->y = y;
 }
 
 }
