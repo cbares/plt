@@ -1,5 +1,6 @@
 
 set(lib_client_target client_static)
+set(client_target client)
 
 # Generate header files from dia UML files
 generate_dia_header("${CMAKE_CURRENT_SOURCE_DIR}/../client.dia")
@@ -20,12 +21,27 @@ target_include_directories(${lib_client_target} PUBLIC
 target_link_libraries(${lib_client_target} PUBLIC
   ${SFML_LIBRARIES}
   $<TARGET_NAME:shared_static>
+)
+target_link_libraries(${lib_client_target} PRIVATE
+  Threads::Threads
   )
 
+target_compile_options(${lib_client_target} PUBLIC
+  -Wall -Wextra 
+)
 # Compile "client" executable
-set(client_target client)
 add_executable(${client_target} main.cpp)
-target_link_libraries(${client_target} ${lib_client_target})
+target_link_libraries(${client_target} PUBLIC 
+  ${lib_client_target}
+)
+target_link_libraries(${client_target} PRIVATE
+  Threads::Threads
+)
+
+target_compile_options(${client_target} PUBLIC
+  -Wall -Wextra 
+)
+
 if(BUILD_CODE_COVERAGE)
   add_dependencies(code-coverage ${client_target})
 endif()

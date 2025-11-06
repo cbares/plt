@@ -34,6 +34,17 @@ BOOST_AUTO_TEST_CASE(TestExemple)
     BOOST_CHECK_LE(ex.getA().x, 32); // Less than equal
     BOOST_CHECK_GT(ex.getA().x, 11); // Greater than equal
   }
+
+  {
+    Example ex;
+    ExampleB exB;
+
+    exB.setY(77);
+    ex.setB(exB);
+    BOOST_CHECK_EQUAL(&ex.getB(), &exB);
+
+
+  }
 }
 
 /* vim: set sw=2 sts=2 et : */
