@@ -13,7 +13,7 @@ void testSFML() {
 using namespace std;
 using namespace state;
 
-int main(int argc,char* argv[])
+int main(int /*argc*/, char* /*argv*/[])
 {
     Example example;
     ExampleA exampleA;
@@ -21,6 +21,8 @@ int main(int argc,char* argv[])
     example.setA(exampleA);
 
     cout << "It works !" << endl;
+
+    testSFML();
 
     return 0;
 }

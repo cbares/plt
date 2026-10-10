@@ -27,11 +27,12 @@ target_link_libraries(${lib_client_target} PRIVATE
   )
 
 target_compile_options(${lib_client_target} PUBLIC
-  -Wall -Wextra 
+  -Wall -Wextra
 )
 # Compile "client" executable
+set(client_target client)
 add_executable(${client_target} main.cpp)
-target_link_libraries(${client_target} PUBLIC 
+target_link_libraries(${client_target} PUBLIC
   ${lib_client_target}
 )
 target_link_libraries(${client_target} PRIVATE
@@ -39,7 +40,7 @@ target_link_libraries(${client_target} PRIVATE
 )
 
 target_compile_options(${client_target} PUBLIC
-  -Wall -Wextra 
+  -Wall -Wextra
 )
 
 if(BUILD_CODE_COVERAGE)

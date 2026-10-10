@@ -43,6 +43,7 @@ BOOST_AUTO_TEST_CASE(TestExemple)
     ex.setB(exB);
     BOOST_CHECK_EQUAL(&ex.getB(), &exB);
 
+    BOOST_CHECK_EQUAL(exB.getY(), 77);
 
   }
 }
