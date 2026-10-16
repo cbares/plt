@@ -4,13 +4,13 @@
 
 ## Dépendances:
 
-```consle
+```console
 sudo apt install libboost-all-dev
 ```
 
 ## Mise à jour depuis le template:
 
-* Si votre dépôt ne dépend pas du template:
+* __Si__ votre dépôt __ne dépend pas__ du template:
 ```console
 git remote add template https://github.com/cbares/plt
 ```
@@ -22,5 +22,5 @@ git fetch --all
 
 * puis récupérer les fichiers importants: 
 ```console
-git checkout template/master CMakeLists.txt .github/workflows/main.yml .gitignore cmake extern/dia2code
+git checkout template/master CMakeLists.txt extern/dia2code
 ```
