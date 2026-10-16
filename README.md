@@ -24,3 +24,9 @@ git fetch --all
 ```console
 git checkout template/master CMakeLists.txt extern/dia2code
 ```
+
+## nouveautés
+
+* gère les alias cpp avec `using`:
+
+![exemple de diagramme UML](doc/state.png)
