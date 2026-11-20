@@ -714,7 +714,7 @@ int d2c_backup(char *filename)
      * tag-on four more characters - not DOS-friendly)
      * But I'll admit to being a bit out-of-the loop here.
      */
-    char *backup_filename = my_malloc(strlen(filename) + 4);
+    char *backup_filename = my_malloc(strlen(filename) + 5); // ".bak" + '\0'
     strcpy(backup_filename, filename);
     strcat(backup_filename, ".bak");
 
@@ -899,7 +899,7 @@ void param_list_destroy()
 
 param_list * d2c_parameter_add(char *name, char *value)
 {
-    param_list *entry = my_malloc (sizeof(d2c_parameters));
+    param_list *entry = NEW(param_list);
     entry->name = strdup(name);
     entry->value = value ? strdup(value) : NULL;
     entry->next = d2c_parameters;

@@ -17,11 +17,10 @@
 #include <dirent.h>
 
 #include "dia2code.h"
-#define NEW_KLASS(c) ((c*)malloc(sizeof(c)))
 
 /* Adds an item to a name list */
 namelist name_list_add(namelist l, const char *data) {
-    namenode *n = NEW_KLASS(namenode);
+    namenode *n = NEW(namenode);
     n->name = strdup(data);
     n->next = l;
     return n;

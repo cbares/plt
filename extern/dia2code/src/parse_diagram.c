@@ -32,7 +32,7 @@ static char *sscanfmt()
     return buf;
 }
 
-umlclasslist find(umlclasslist list, char *id ) {
+static umlclasslist find(umlclasslist list, char *id ) {
     if ( id != NULL ) {
         while ( list != NULL ) {
             if ( eq(id, list->key->id) ) {
@@ -45,10 +45,8 @@ umlclasslist find(umlclasslist list, char *id ) {
 }
 
 /* the buffer must have room for SMALL_BUFFER characters */
-void parse_dia_string(xmlNodePtr stringnode, char *buffer) {
-    xmlChar *content;
-
-    content = xmlNodeGetContent(stringnode);
+static void parse_dia_string(xmlNodePtr stringnode, char *buffer) {
+    xmlChar *content = xmlNodeGetContent(stringnode);
     if (sscanf(content, sscanfmt(), buffer) == 0) {
         buffer[0] = 0;
     }
@@ -56,20 +54,18 @@ void parse_dia_string(xmlNodePtr stringnode, char *buffer) {
 }
 
 /* the buffer must have room for LARGE_BUFFER characters */
-void parse_dia_string_large(xmlNodePtr stringnode, char *buffer) {
-    xmlChar *content;
+static void parse_dia_string_large(xmlNodePtr stringnode, char *buffer) {
     char fmt[16];
 
-    content = xmlNodeGetContent(stringnode);
+    xmlChar *content = xmlNodeGetContent(stringnode);
     strncpy (buffer, content + 1, MIN(strlen(content) - 2, LARGE_BUFFER - 1));
     free(content);
 }
 
-int parse_boolean(xmlNodePtr booleannode) {
-    xmlChar *val;
+static int parse_boolean(xmlNodePtr booleannode) {
     int result;
 
-    val = xmlGetProp(booleannode, "val");
+    xmlChar *val = xmlGetProp(booleannode, "val");
     if ( val != NULL && eq(val, "true")) {
         result = 1;
     } else {
@@ -80,9 +76,8 @@ int parse_boolean(xmlNodePtr booleannode) {
 }
 
 
-void addparent(umlclasslist base, umlclasslist derived) {
-    umlclasslist tmp;
-    tmp = NEW (umlclassnode);
+static void addparent(umlclasslist base, umlclasslist derived) {
+    umlclasslist tmp = NEW(umlclassnode);
     tmp->key = base->key;
     tmp->next = derived->parents;
     derived->parents = tmp;
@@ -551,54 +546,46 @@ void lolipop_implementation(umlclasslist classlist, xmlNodePtr object) {
     }
 }
 
-void recursive_search(xmlNodePtr node, xmlNodePtr * object) {
-    xmlNodePtr child;
-    if ( *object != NULL ) {
-        return;
+/* Returns the node following "node" in document order (depth-first).
+   If skip_children is set, the children of "node" are not visited.
+   The walk never goes above "top". */
+static xmlNodePtr nextNodeInDocument(xmlNodePtr node, xmlNodePtr top, int skip_children) {
+    if ( !skip_children && node->xmlChildrenNode != NULL ) {
+        return node->xmlChildrenNode;
     }
-    if ( node != NULL ) {
-        if ( eq(node->name,"object") ){
-            *object = node;
-            return;
+    while ( node != NULL && node != top ) {
+        if ( node->next != NULL ) {
+            return node->next;
         }
-        child = node->xmlChildrenNode;
-        while ( child != NULL ) {
-            recursive_search(child,object);
-            child=child->next;
-        }
-    }
-}
-
-/* Gets the next "object" node. Basically, gets from->next.  When
-   it is null it checks for from->parent->next.
-   FIXME: the code is ugly */
-xmlNodePtr getNextObject(xmlNodePtr from) {
-    xmlNodePtr next = NULL;
-    if ( from->next != NULL ){
-        next = from->next;
-        if ( eq(next->name,"group") ){
-            next = next->xmlChildrenNode;
-            while ( eq(next->name,"group") ){
-                next=next->xmlChildrenNode;
-            }
-        }
-        return next;
-    }
-    next = from->parent->next;
-    if ( next != NULL ){
-        if ( eq(next->name,"group") ){
-            next = next->xmlChildrenNode;
-            while ( eq(next->name,"group") ){
-                next=next->xmlChildrenNode;
-            }
-            return next;
-        }
-        if ( eq(next->name,"layer") ){
-            return next->xmlChildrenNode;
-        }
-        return next;
+        node = node->parent;
     }
     return NULL;
+}
+
+/* Returns the first "object" element found at or after "node" in
+   document order, whatever the layer or group it belongs to. Objects
+   are never searched inside other objects. */
+static xmlNodePtr findObjectFrom(xmlNodePtr node, xmlNodePtr top) {
+    while ( node != NULL ) {
+        if ( node->type == XML_ELEMENT_NODE && eq(node->name,"object") ) {
+            return node;
+        }
+        node = nextNodeInDocument(node, top, 0);
+    }
+    return NULL;
+}
+
+/* Searches the first "object" node of the diagram, scanning every
+   layer (even empty ones such as "Background") and every group. */
+void recursive_search(xmlNodePtr node, xmlNodePtr * object) {
+    *object = (node == NULL) ? NULL : findObjectFrom(node, node);
+}
+
+/* Gets the next "object" node of the diagram, in document order,
+   crossing group and layer boundaries (empty layers are skipped). */
+xmlNodePtr getNextObject(xmlNodePtr from) {
+    xmlNodePtr top = from->doc != NULL ? xmlDocGetRootElement(from->doc) : NULL;
+    return findObjectFrom(nextNodeInDocument(from, top, 1), top);
 }
 
 umlclasslist parse_diagram(char *diafile) {
@@ -618,7 +605,7 @@ umlclasslist parse_diagram(char *diafile) {
     }
 
     /* we search for the first "object" node */
-    recursive_search( ptr->xmlRootNode->xmlChildrenNode->next, &object );
+    recursive_search( xmlDocGetRootElement(ptr), &object );
 
     while (object != NULL) {
         xmlChar *objtype = xmlGetProp(object, "type");
@@ -669,7 +656,7 @@ umlclasslist parse_diagram(char *diafile) {
          THIS STILL SUCKS !!! How soon is now? */
 
     /* we search for the first "object" node */
-    recursive_search( ptr->xmlRootNode->xmlChildrenNode->next, &object );
+    recursive_search( xmlDocGetRootElement(ptr), &object );
 
     while ( object != NULL ) {
         xmlChar *objtype = xmlGetProp(object, "type");
@@ -822,7 +809,7 @@ umlclasslist parse_diagram(char *diafile) {
 
     /* Generalizations: we must put this AFTER all the interface
        implementations. generate_code_java relies on this. */
-    recursive_search( ptr->xmlRootNode->xmlChildrenNode->next, &object );
+    recursive_search( xmlDocGetRootElement(ptr), &object );
     while ( object != NULL ) {
         xmlChar *objtype = xmlGetProp(object, "type");
         if ( eq("UML - Generalization", objtype) ) {
