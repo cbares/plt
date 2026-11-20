@@ -15,7 +15,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -29,13 +29,7 @@ jobs:
       run: |
         set -x
         sudo apt-get update
-        sudo apt-get install -yy libsfml-dev libboost1.74-all-dev libmicrohttpd-dev libxml2-dev xvfb lcov gcovr
-
-    - name: switch to gcc-12 on linux
-      run: |
-        sudo apt install gcc-12 g++-12
-        sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 100 --slave /usr/bin/g++ g++ /usr/bin/g++-12 --slave /usr/bin/gcov gcov /usr/bin/gcov-12
-        sudo update-alternatives --set gcc /usr/bin/gcc-12
+        sudo apt-get install -yy libsfml-dev libboost1.90-all-dev libmicrohttpd-dev libxml2-dev xvfb lcov gcovr
 
     # Run CMake
     - name: Prepare build directory
@@ -43,7 +37,7 @@ jobs:
         set -x
         mkdir build
         cd build
-        cmake -DBOOST_ROOT=$BOOST_ROOT_1_74_0 -DBoost_ARCHITECTURE=-x64 ..
+        cmake -DBOOST_ROOT=$BOOST_ROOT_1_90_0 -DBoost_ARCHITECTURE=-x64 ..
 
     # Compile project
     - name: Compile project
