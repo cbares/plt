@@ -102,3 +102,4 @@ Cette section se concentre sur la répartition des différents modules du jeu da
 ### 6.4 Conception logiciel: client Android
 
 Illustration 4: Diagramme de classes pour la modularisation
+
