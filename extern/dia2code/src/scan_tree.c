@@ -19,7 +19,7 @@
 #include "dia2code.h"
 
 /* Adds an item to a name list */
-namelist name_list_add(namelist l, const char *data) {
+static namelist name_list_add(namelist l, const char *data) {
     namenode *n = NEW(namenode);
     n->name = strdup(data);
     n->next = l;
@@ -27,7 +27,7 @@ namelist name_list_add(namelist l, const char *data) {
 }
 
 /* Returns a list with all the classes declared in the diagram */
-namelist scan_tree_classes(batch *b) {
+static namelist scan_tree_classes(batch *b) {
     umlclasslist tmplist;
     namelist result = NULL;
     tmplist = b->classlist;
@@ -130,7 +130,7 @@ umlclasslist find_by_name(umlclasslist list, const char * name ) {
 
 /* Creates a new umlclassnode with class as the key, then appends it to
   the end of list */
-umlclasslist append ( umlclasslist list, umlclassnode * class ) {
+static umlclasslist append ( umlclasslist list, umlclassnode * class ) {
     umlclasslist tmplist = list;
     umlclassnode *tmpnode = NULL;
 
@@ -152,7 +152,7 @@ umlclasslist append ( umlclasslist list, umlclassnode * class ) {
     }
 }
 
-void simplify_typename(char* out,char* name,int withRef) {
+static void simplify_typename(char* out,char* name,int withRef) {
     strcpy(out,name);
     while(1) {
         size_t n = strlen(out);
@@ -176,7 +176,7 @@ void simplify_typename(char* out,char* name,int withRef) {
     }
 }
 
-int removeTemplate(char* out,char* name,int withRef) {
+static int removeTemplate(char* out,char* name,int withRef) {
     char* inf = strchr(name,'<');
     char* sup = strrchr(name,'>');
     if (inf && sup) {

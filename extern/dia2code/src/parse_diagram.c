@@ -25,7 +25,7 @@
    "unnamed_" followed by the anon_cnt converted to string:  */
 static unsigned anon_cnt = 0;
 
-static char *sscanfmt()
+static char *sscanfmt(void)
 {
     static char buf[16];
     sprintf (buf, "#%%%d[^#]#", SMALL_BUFFER - 1);
@@ -83,7 +83,7 @@ static void addparent(umlclasslist base, umlclasslist derived) {
     derived->parents = tmp;
 }
 
-void adddependency(umlclasslist dependent, umlclasslist dependee) {
+static void adddependency(umlclasslist dependent, umlclasslist dependee) {
     umlclasslist tmp;
     tmp = NEW (umlclassnode);
     tmp->key = dependent->key;
@@ -91,7 +91,7 @@ void adddependency(umlclasslist dependent, umlclasslist dependee) {
     dependee->dependencies = tmp;
 }
 
-void addaggregate(char *name, char composite, umlclasslist base,
+static void addaggregate(char *name, char composite, umlclasslist base,
                   umlclasslist associate, char *multiplicity) {
     umlassoclist tmp;
     tmp = NEW (umlassocnode);
@@ -107,7 +107,7 @@ void addaggregate(char *name, char composite, umlclasslist base,
     associate->associations = tmp;
 }
 
-void inherit_realize ( umlclasslist classlist, char * base, char * derived ) {
+static void inherit_realize ( umlclasslist classlist, char * base, char * derived ) {
     umlclasslist umlbase, umlderived;
     umlbase = find(classlist, base);
     umlderived = find(classlist, derived);
@@ -116,7 +116,7 @@ void inherit_realize ( umlclasslist classlist, char * base, char * derived ) {
     }
 }
 
-void associate ( umlclasslist classlist, char * name, char composite,
+static void associate ( umlclasslist classlist, char * name, char composite,
                  char * base, char * aggregate, char *multiplicity) {
     umlclasslist umlbase, umlaggregate;
     umlbase = find(classlist, base);
@@ -126,7 +126,7 @@ void associate ( umlclasslist classlist, char * name, char composite,
     }
 }
 
-void make_depend ( umlclasslist classlist, char * dependent, char * dependee) {
+static void make_depend ( umlclasslist classlist, char * dependent, char * dependee) {
     umlclasslist umldependent, umldependee;
     umldependent = find(classlist, dependent);
     umldependee = find(classlist, dependee);
@@ -138,7 +138,7 @@ void make_depend ( umlclasslist classlist, char * dependent, char * dependee) {
 /**
   * Inserts "n" into the list "l", in orderly fashion
 */
-umlattrlist insert_attribute(umlattrlist n, umlattrlist l) {
+static umlattrlist insert_attribute(umlattrlist n, umlattrlist l) {
     if ( l != NULL ) {
         if ( l->key.visibility <= n->key.visibility ) {
             l->next = insert_attribute(n, l->next);
@@ -155,7 +155,7 @@ umlattrlist insert_attribute(umlattrlist n, umlattrlist l) {
 /**
   * Inserts "n" into the list "l", in orderly fashion
 */
-umloplist insert_operation(umloplist n, umloplist l) {
+static umloplist insert_operation(umloplist n, umloplist l) {
     if ( l != NULL ) {
         if ( l->key.attr.visibility <= n->key.attr.visibility ) {
             l->next = insert_operation(n, l->next);
@@ -169,7 +169,7 @@ umloplist insert_operation(umloplist n, umloplist l) {
     }
 }
 
-umltemplatelist insert_template(umltemplatelist n, umltemplatelist l) {
+static umltemplatelist insert_template(umltemplatelist n, umltemplatelist l) {
     if ( l != NULL) {
         n->next = l;
         return n;
@@ -178,7 +178,7 @@ umltemplatelist insert_template(umltemplatelist n, umltemplatelist l) {
     }
 }
 
-void parse_attribute(xmlNodePtr node, umlattribute *tmp) {
+static void parse_attribute(xmlNodePtr node, umlattribute *tmp) {
     xmlChar *nodename;
     xmlChar *attrval;
 
@@ -231,7 +231,7 @@ void parse_attribute(xmlNodePtr node, umlattribute *tmp) {
     }
 }
 
-umlattrlist parse_attributes(xmlNodePtr node) {
+static umlattrlist parse_attributes(xmlNodePtr node) {
     umlattrlist list = NULL, an;
     while ( node != NULL ) {
         an = NEW (umlattrnode);
@@ -243,7 +243,7 @@ umlattrlist parse_attributes(xmlNodePtr node) {
     return list;
 }
 
-void parse_operation(xmlNodePtr node, umloperation *tmp) {
+static void parse_operation(xmlNodePtr node, umloperation *tmp) {
     xmlChar *nodename;
     parse_attribute(node, &(tmp->attr));
     while ( node != NULL ) {
@@ -256,7 +256,7 @@ void parse_operation(xmlNodePtr node, umloperation *tmp) {
     }
 }
 
-umloplist parse_operations(xmlNodePtr node) {
+static umloplist parse_operations(xmlNodePtr node) {
     umloplist list = NULL, on;
     while ( node != NULL ) {
         on = NEW (umlopnode);
@@ -269,12 +269,12 @@ umloplist parse_operations(xmlNodePtr node) {
     return list;
 }
 
-void parse_template(xmlNodePtr node, umltemplate *tmp) {
+static void parse_template(xmlNodePtr node, umltemplate *tmp) {
     sscanf(node->xmlChildrenNode->xmlChildrenNode->content, sscanfmt(), tmp->name);
     sscanf(node->next->xmlChildrenNode->xmlChildrenNode->content, sscanfmt(), tmp->type);
 }
 
-umltemplatelist parse_templates(xmlNodePtr node) {
+static umltemplatelist parse_templates(xmlNodePtr node) {
     umltemplatelist list = NULL, tn;
     while ( node != NULL) {
         if ( node->xmlChildrenNode->xmlChildrenNode->xmlChildrenNode != NULL &&
@@ -293,7 +293,7 @@ umltemplatelist parse_templates(xmlNodePtr node) {
   * Adds get() (or is()) and set() methods for each attribute
   * myself MUST be != null
 */
-void make_javabean_methods(umlclass *myself) {
+static void make_javabean_methods(umlclass *myself) {
     char *tmpname;
     umloplist operation;
     umlattrlist attrlist, parameter;
@@ -365,7 +365,7 @@ void make_javabean_methods(umlclass *myself) {
     }
 }
 
-void parse_geom_position(xmlNodePtr attribute, geometry * geom ) {
+static void parse_geom_position(xmlNodePtr attribute, geometry * geom ) {
     xmlChar *val;
     char * token;
     val = xmlGetProp(attribute, "val");
@@ -375,13 +375,13 @@ void parse_geom_position(xmlNodePtr attribute, geometry * geom ) {
     sscanf ( token, "%f", &(geom->pos_y) );
 }
 
-void parse_geom_width(xmlNodePtr attribute, geometry * geom ) {
+static void parse_geom_width(xmlNodePtr attribute, geometry * geom ) {
     xmlChar *val;
     val = xmlGetProp(attribute, "val");
     sscanf ( val, "%f", &(geom->width) );
 }
 
-void parse_geom_height(xmlNodePtr attribute, geometry * geom ) {
+static void parse_geom_height(xmlNodePtr attribute, geometry * geom ) {
     xmlChar *val;
     val = xmlGetProp(attribute, "val");
     sscanf ( val, "%f", &(geom->height) );
@@ -392,13 +392,13 @@ void parse_geom_height(xmlNodePtr attribute, geometry * geom ) {
    returns 1 if the position point of the object with geom2 is inside the object with geom1
            0 otherwise
 */
-int is_inside(const geometry * geom1, const geometry * geom2) {
+static int is_inside(const geometry * geom1, const geometry * geom2) {
     return geom1->pos_x < geom2->pos_x && geom2->pos_x < (geom1->pos_x+geom1->width) &&
            geom1->pos_y < geom2->pos_y && geom2->pos_y < (geom1->pos_y+geom1->height);
 
 }
 
-umlpackagelist parse_package(xmlNodePtr package) {
+static umlpackagelist parse_package(xmlNodePtr package) {
     xmlNodePtr attribute;
     umlpackagelist listmyself;
     umlpackage *myself;
@@ -434,7 +434,7 @@ umlpackagelist parse_package(xmlNodePtr package) {
     return listmyself;
 }
 
-umlclasslist parse_class(xmlNodePtr class) {
+static umlclasslist parse_class(xmlNodePtr class) {
     xmlNodePtr attribute;
     xmlChar *attrname;
     umlclasslist listmyself;
@@ -506,7 +506,7 @@ umlclasslist parse_class(xmlNodePtr class) {
   name, but the interface itself will not be inserted
   into the classlist, so no code can be generated for it.
 */
-void lolipop_implementation(umlclasslist classlist, xmlNodePtr object) {
+static void lolipop_implementation(umlclasslist classlist, xmlNodePtr object) {
     xmlNodePtr attribute;
     xmlChar *id = NULL, *name = NULL;
     xmlChar *attrname;
@@ -577,13 +577,13 @@ static xmlNodePtr findObjectFrom(xmlNodePtr node, xmlNodePtr top) {
 
 /* Searches the first "object" node of the diagram, scanning every
    layer (even empty ones such as "Background") and every group. */
-void recursive_search(xmlNodePtr node, xmlNodePtr * object) {
+static void recursive_search(xmlNodePtr node, xmlNodePtr * object) {
     *object = (node == NULL) ? NULL : findObjectFrom(node, node);
 }
 
 /* Gets the next "object" node of the diagram, in document order,
    crossing group and layer boundaries (empty layers are skipped). */
-xmlNodePtr getNextObject(xmlNodePtr from) {
+static xmlNodePtr getNextObject(xmlNodePtr from) {
     xmlNodePtr top = from->doc != NULL ? xmlDocGetRootElement(from->doc) : NULL;
     return findObjectFrom(nextNodeInDocument(from, top, 1), top);
 }

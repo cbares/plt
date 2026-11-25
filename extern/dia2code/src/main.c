@@ -329,7 +329,7 @@ ini_parse_command ini_parse_commands[] =
     {NULL, -1, NULL}
 };
 
-void parse_command(char *name, char *value)
+static void parse_command(char *name, char *value)
 {
     int i = 0;
     void (*method)(char *, char *);

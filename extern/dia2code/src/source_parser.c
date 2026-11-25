@@ -86,7 +86,7 @@ sourceblock *sourceblock_new( char *spos, size_t len, char *oid, int type )
 * @param the node is added at end of the list
 *@return the newly allocated node
  */ 
-sourceblocknode *sourceblocklist_add( sourceblocknode *list, const sourceblock *blk )
+static sourceblocknode *sourceblocklist_add( sourceblocknode *list, const sourceblock *blk )
 {
     debug( DBG_GENCODE, "sourceblocklist_add( list=%p, blk=%p )", list,blk );
     sourceblocknode *new = NEW(sourceblocknode);

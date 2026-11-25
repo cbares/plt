@@ -29,7 +29,7 @@ int indentlevel = 0;
 static int number_of_spaces_for_one_indentation = 2;
 static int DBG_LEVEL = 4;
 
-void dia2code_initializations()
+void dia2code_initializations(void)
 {
 }
 
@@ -229,7 +229,7 @@ void set_number_of_spaces_for_one_indentation(int n)
     number_of_spaces_for_one_indentation = n;
 }
 
-char *spc()
+char *spc(void)
 {
    static char spcbuf[BIG_BUFFER];
    int n_spaces = number_of_spaces_for_one_indentation * indentlevel;
@@ -298,7 +298,7 @@ void pboth (char *msg, ...)
 char *file_ext = NULL;
 char *body_file_ext = NULL;
 
-void    createDirectories(const char* path) {
+static void    createDirectories(const char* path) {
     if (*path == '\0')
         return;
     struct stat buffer;
@@ -423,7 +423,7 @@ struct endless_string
 };
 typedef struct endless_string endless_string;
 
-void dump_endless_string(FILE *f, endless_string *es)
+static void dump_endless_string(FILE *f, endless_string *es)
 {
     endless_string_buf *esb = es->start;
     while (esb != NULL)
@@ -433,7 +433,7 @@ void dump_endless_string(FILE *f, endless_string *es)
     }
 }
 
-endless_string * new_endless_string()
+static endless_string * new_endless_string(void)
 {
     endless_string *es = NEW (endless_string);
     es->start = NULL;
@@ -441,7 +441,7 @@ endless_string * new_endless_string()
     return es;
 }
 
-void destroy_endless_string(endless_string * es)
+static void destroy_endless_string(endless_string * es)
 {
     endless_string_buf *esb = es->start;
     endless_string_buf *esb_next;
@@ -456,7 +456,7 @@ void destroy_endless_string(endless_string * es)
     free (es);
 }
 
-void append_endless_string(endless_string * es, char *s)
+static void append_endless_string(endless_string * es, char *s)
 {
     endless_string_buf *esb = NEW (endless_string_buf);
     esb->buf = strdup(s);
@@ -480,7 +480,7 @@ struct d2c_impl{
 typedef struct d2c_impl d2c_impl;
 d2c_impl *d2c_impl_list = NULL;
 
-void d2c_impl_list_destroy()
+static void d2c_impl_list_destroy(void)
 {
     d2c_impl *p = d2c_impl_list;
     while (p != NULL)
@@ -493,7 +493,7 @@ void d2c_impl_list_destroy()
     d2c_impl_list = NULL;
 }
 
-d2c_impl * d2c_impl_add(char *name)
+static d2c_impl * d2c_impl_add(char *name)
 {
     d2c_impl *d2ci = NEW (d2c_impl);
     strcpy(d2ci->name, name);
@@ -507,7 +507,7 @@ d2c_impl * d2c_impl_add(char *name)
     return d2ci;
 }
 
-d2c_impl* d2c_impl_find(char *name)
+static d2c_impl* d2c_impl_find(char *name)
 {
     d2c_impl *p = d2c_impl_list;
     while (p != NULL)
@@ -519,7 +519,7 @@ d2c_impl* d2c_impl_find(char *name)
     return NULL;
 }
 
-d2c_impl *d2c_impl_find_or_add(char *name)
+static d2c_impl *d2c_impl_find_or_add(char *name)
 {
     d2c_impl *p = d2c_impl_find(name);
     if (p == NULL)
@@ -530,7 +530,7 @@ d2c_impl *d2c_impl_find_or_add(char *name)
 
 #define IMPLEMENTATION "Implementation"
 
-void d2c_impl_comment(FILE *f, char *nm, char *range, int preserve, char *comment_start, char *comment_end)
+static void d2c_impl_comment(FILE *f, char *nm, char *range, int preserve, char *comment_start, char *comment_end)
 {
     d2c_fprintf(f, "%s ## %s %spreserve %s class %s %s\n",
                    comment_start, IMPLEMENTATION, preserve?"":"no", range, nm, comment_end);
@@ -756,7 +756,7 @@ typedef struct
 D2C_INDENT_STRUCT d2c_files[32];
 int d2c_num_files = 0;
 
-int d2c_indent_offset(FILE *f)
+static int d2c_indent_offset(FILE *f)
 {
     int i;
     for (i = 0; i < d2c_num_files; i++)
@@ -782,7 +782,7 @@ void d2c_outdent(FILE *f)
     d2c_files[d2c_indent_offset(f)].indentation--;
 }
 
-int d2c_fprint_indent(FILE *f)
+static int d2c_fprint_indent(FILE *f)
 {
     int i;
     int indentation;
@@ -883,7 +883,7 @@ void d2c_close_brace(FILE *f, char *suffix)
 
 param_list *d2c_parameters = NULL;
 
-void param_list_destroy()
+void param_list_destroy(void)
 {
     param_list *p = d2c_parameters;
     while (p != NULL)
@@ -956,7 +956,7 @@ void d2c_indentate( FILE *f)
  * increment the tab position 
  * tab position is used in d2c_fprintf and alike
  */
-void d2c_shift_code()
+void d2c_shift_code(void)
 {
     d2c_indentposition ++;   
 }
@@ -966,7 +966,7 @@ void d2c_shift_code()
  * increment the tab position 
  * tab position is used in d2c_fprintf and alike
  */
-void d2c_unshift_code()
+void d2c_unshift_code(void)
 {
     if( d2c_indentposition > 0 )
         d2c_indentposition --;

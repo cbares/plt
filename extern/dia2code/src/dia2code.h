@@ -234,7 +234,7 @@ extern char *body_file_ext;  /* Set by switch "-bext". Language specific
 
 extern int indentlevel;
 void set_number_of_spaces_for_one_indentation(int n);  /* default: 2 spaces */
-char *spc();
+char *spc(void);
 /* Returns a string consisting of (indentlevel *
    number_of_spaces_for_one_indentation) spaces.  */
 void d2c_indentate(FILE *f);
@@ -249,7 +249,7 @@ extern FILE *spec, *body;
 
 extern int d2c_indentposition;
 
-void dia2code_initializations();
+void dia2code_initializations(void);
 
 /* Emitters for file output  */
 void emit  (char *msg, ...);  /* print verbatim to spec */
@@ -276,8 +276,8 @@ FILE * open_outfile (char *filename, batch *b);
 #define d2c_fputc fputc
 #endif
 
-void d2c_indent();
-void d2c_outdent();
+void d2c_indent(FILE *f);
+void d2c_outdent(FILE *f);
 int _d2c_fputs(const char *s, FILE *f);
 int _d2c_fputc(int c, FILE *f);
 int _d2c_fprintf(FILE *f, char *fmt, ...);
@@ -288,8 +288,8 @@ void d2c_parse_impl(FILE *f, char *cmt_start, char *cmt_end);
 void d2c_dump_impl(FILE *f, char *section, char *name);
 void d2c_deprecate_impl(FILE *f, char *comment_start, char *comment_end);
 char *d2c_operation_mangle_name(umloperation *op);
-void d2c_shift_code();
-void d2c_unshift_code();
+void d2c_shift_code(void);
+void d2c_unshift_code(void);
 
 char *find_diaoid( const char *buf, char **newpos  );
 int d2c_backup(char *filename);
@@ -307,7 +307,7 @@ struct param_list
 
 typedef struct param_list param_list;
 
-void param_list_destroy();
+void param_list_destroy(void);
 param_list * d2c_parameter_add(char *name, char *value);
 param_list * d2c_parameter_set(char *name, char *value);
 char * d2c_parameter_value(char *name);

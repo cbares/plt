@@ -23,6 +23,7 @@
 #include "dia2code.h"
 #include "decls.h"
 #include "includes.h"
+#include "code_generators.h"
 
 #define SPEC_EXT "h"
 #define BODY_EXT "cpp"
@@ -40,7 +41,7 @@ static batch *gb; /* The current batch being processed.  */
 
 /* Utilities.  */
 
-int is_scalar_type(char *name)
+static int is_scalar_type(char *name)
 {
     if (strcmp(name, "int") == 0)
     {
@@ -850,7 +851,7 @@ struct stdlib_includes
     int jsoncpp;
 };
 
-void print_include_stdlib(struct stdlib_includes *si, char *name)
+static void print_include_stdlib(struct stdlib_includes *si, char *name)
 {
     if (name[0] != '\0')
     {
@@ -910,7 +911,7 @@ void print_include_stdlib(struct stdlib_includes *si, char *name)
     }
 }
 
-void gen_namespace(batch *b, declaration *nsd)
+static void gen_namespace(batch *b, declaration *nsd)
 {
     char *nsname = nsd->u.this_module->pkg->name;
 
