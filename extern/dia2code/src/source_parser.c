@@ -26,6 +26,7 @@ void source_preserve( batch *b, umlclass *class, const char *filename, sourcecod
     char *diaoid = NULL;
     umloplist umlo;
     sourceblock *srcblock = NULL;
+    (void) b;
     debug( 4, "preserve_source(filename=%s)", filename);
     source = NEW(sourcecode);
     source->buffer = NULL;
@@ -102,7 +103,6 @@ static sourceblocknode *sourceblocklist_add( sourceblocknode *list, const source
 
 sourceblock *sourceblock_find( sourceblocknode *list, const char *oid )
 {
-    sourceblock *blk = NULL;
     sourceblocknode *pt=list;
     if( list == NULL ) {
         debug( DBG_GENCODE, "list should not be null in sourceblock_find" );
@@ -184,16 +184,17 @@ char *source_loadfromfile(const char *filename )
     }
 
     sz = info.st_size;
-    fi = open(filename, O_RDONLY, 0777);
-    if( ! fi  ) {
+    fi = open(filename, O_RDONLY);
+    if( fi < 0 ) {
        return NULL;
     }
     buf = my_malloc(sizeof(char)*sz + 2 );
-    int rz = read( fi, buf, sz );
-    if (rz != sz) {
+    ssize_t rz = read( fi, buf, sz );
+    close(fi);
+    if (rz < 0 || (size_t) rz != sz) {
+        free(buf);
         return NULL;
     }
-    close(fi);
     buf[sz]= '\0';
     return buf;
 }
@@ -240,12 +241,12 @@ int find_more_str( char *buf, char *tofind[], sourceblock pblocks[] )
  */
 sourceblock *find_matching_char( const char *buf, char *oid, char openc, char closec, int maxcars )
 {
-    char *cp, *startpos;
+    const char *cp, *startpos = NULL;
     int len=0, depth = 0;
     sourceblock *srcbk=NULL; // the block returned
-    cp = (char*) buf;
+    cp = buf;
     debug( DBG_GENCODE, "find_matching_char. openc=%c closec=%c oid=%s maxcars=%d", openc, closec, oid, maxcars );
-    while( cp != NULL ) {
+    while( *cp != '\0' ) {
         
         if( *cp == openc ) {
             debug( 7, "openc found" );
@@ -253,13 +254,13 @@ sourceblock *find_matching_char( const char *buf, char *oid, char openc, char cl
                 startpos=cp;
             }
             depth ++;
-        }else if( *cp == closec ) {
+        }else if( *cp == closec && depth > 0 ) {
             debug( 7, "closec found " );
             depth --;
             /* we found the closing char */
             if( depth == 0 ) {
-                size_t bklen = cp - buf +1;
-                srcbk = sourceblock_new( startpos, bklen, oid,  SP_OP_IMPL );
+                size_t bklen = cp - startpos + 1;
+                srcbk = sourceblock_new( (char *) startpos, bklen, oid,  SP_OP_IMPL );
                 debug( 7, "sourceblock returned: spos=%p len=%ld oid=%s", srcbk->spos, srcbk->len, srcbk->oid );
                 break;
             }

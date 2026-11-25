@@ -2,7 +2,7 @@
 set(lib_client_target client_static)
 set(client_target client)
 
-# Generate header files from dia UML files
+# Generate header files from dia UML files
 generate_dia_header("${CMAKE_CURRENT_SOURCE_DIR}/../client.dia")
 #generate_dia_header("${CMAKE_CURRENT_SOURCE_DIR}/../render.dia")
 

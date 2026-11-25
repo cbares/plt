@@ -25,8 +25,7 @@
  */
 void generate_class_comment( FILE *outfile, batch *b, umlclass *class )
 {
-    
-    
+    (void) outfile; (void) b; (void) class; /* not implemented */
 }
 
 /**
@@ -36,6 +35,7 @@ void generate_class_comment( FILE *outfile, batch *b, umlclass *class )
 void generate_operation_comment( FILE *outfile, batch *b, umloperation *ope )
 {
     umlattrlist  tmpa;
+    (void) b;
     d2c_fprintf(outfile, "/**\n");
     d2c_fprintf(outfile, " * Operation %s\n", ope->attr.name );
     if( ope->attr.comment[0] != 0 ) {
@@ -60,6 +60,7 @@ void generate_operation_comment( FILE *outfile, batch *b, umloperation *ope )
  */
 void generate_attribute_comment( FILE *outfile, batch *b, umlattribute *attr )
 {
+    (void) b;
     d2c_fprintf(outfile, "/**\n");
     d2c_fprintf(outfile, " * %s\n", attr->comment );
     d2c_fprintf(outfile, " */\n");

@@ -2,8 +2,8 @@
 # Global cmake target responsible for the generation of all the cpp headers
 add_custom_target(generate-headers)
 
-# Global cmake target responsible for the cleanup of all the cpp headers
-# generated using the "generate-headers" target.
+# Global cmake target responsible for the cleanup of all the cpp headers
+# generated using the "generate-headers" target.
 add_custom_target(clean-headers
   COMMAND ${CMAKE_COMMAND} -E rm -f ${PROJECT_SOURCE_DIR}/src/*/*.h
   COMMAND ${CMAKE_COMMAND} -E rm -f ${PROJECT_SOURCE_DIR}/src/*/*/*.h
@@ -14,13 +14,13 @@ add_custom_target(clean-headers
 
 # Fonction that generate cpp header files from dia files using dia2code.
 # Dia files must contain only one namespace and must be named by this
-# namespace.
+# namespace.
 #
 # Arguments:
 #
 # dia_file
 #   Name of the dia file. Must also be the name of the namespace contained
-#   inside the dia file.
+#   inside the dia file.
 #
 function(generate_dia_header dia_file)
   # Path to the .dia file used to generate the cpp headers

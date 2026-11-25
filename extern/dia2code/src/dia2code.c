@@ -147,7 +147,7 @@ namelist parse_sql_options(const char *s) {
 
 int is_present(namelist list, const char *name) {
     while (list != NULL) {
-        int len;
+        size_t len;
         char* mask;
         if ( ! strcmp(list->name, name) ) {
             return 1;
@@ -233,7 +233,7 @@ char *spc(void)
 {
    static char spcbuf[BIG_BUFFER];
    int n_spaces = number_of_spaces_for_one_indentation * indentlevel;
-   if (n_spaces >= sizeof(spcbuf)) {
+   if (n_spaces < 0 || (size_t) n_spaces >= sizeof(spcbuf)) {
        fprintf (stderr, "spc(): spaces buffer overflow\n");
        exit (1);
    }
@@ -332,23 +332,19 @@ FILE * open_outfile (char *filename, batch *b)
 {
     static char outfilename[BIG_BUFFER];
     FILE *o;
-    int tmpdirlgth, tmpfilelgth;
+    int n;
 
     if (b->outdir == NULL) {
         b->outdir = ".";
     }
 
-    tmpdirlgth = strlen (b->outdir);
-    tmpfilelgth = strlen (filename);
-
     /* This prevents buffer overflows */
-    if (tmpfilelgth + tmpdirlgth > sizeof(outfilename) - 2) {
+    n = snprintf (outfilename, sizeof(outfilename), "%s/%s", b->outdir, filename);
+    if (n < 0 || (size_t) n >= sizeof(outfilename)) {
         fprintf (stderr, "Sorry, name of file too long ...\n"
                     "Try a smaller dir name\n");
         exit (1);
     }
-
-    sprintf (outfilename, "%s/%s", b->outdir, filename);
     char tmp[BIG_BUFFER];
     strcpy(tmp,outfilename);
     char* slash = strrchr(tmp,'/');
@@ -423,6 +419,7 @@ struct endless_string
 };
 typedef struct endless_string endless_string;
 
+#if defined (USE_DUMPIMPL)
 static void dump_endless_string(FILE *f, endless_string *es)
 {
     endless_string_buf *esb = es->start;
@@ -432,6 +429,7 @@ static void dump_endless_string(FILE *f, endless_string *es)
         esb = esb->next;
     }
 }
+#endif
 
 static endless_string * new_endless_string(void)
 {
@@ -554,6 +552,7 @@ void d2c_dump_impl(FILE *f, char *section, char *name)
 #else
 void d2c_dump_impl(FILE *f, char *section, char *name)
 {
+    (void) f; (void) section; (void) name;
 }
 #endif
 
@@ -613,6 +612,8 @@ void d2c_parse_impl(FILE *f, char *cmt_start, char *cmt_end)
          s_preserve[SMALL_BUFFER], s_marker[SMALL_BUFFER], s_class[LARGE_BUFFER], s_name[LARGE_BUFFER];
     int state = IN_SOURCE;
     int count;
+
+    (void) cmt_end; /* only the start marker is needed to recognize comments */
     d2c_impl *d2ci=NULL;
     endless_string *es=NULL;
     long line = 0;
@@ -858,7 +859,7 @@ int d2c_directprintf(FILE *f, char *fmt, ...)
     va_start(argptr, fmt);
     cnt = vfprintf(f, fmt, argptr);
     va_end(argptr);
-    return 0;
+    return cnt;
 }
 
 void d2c_open_brace(FILE *f, char *suffix)
@@ -985,7 +986,7 @@ void d2c_unshift_code(void)
 char *find_diaoid( const char *buf, char **newpos  )
 {
     static const char *oidtag = "@diaoid";
-    char *cp, *ep; // current pos, diaoid ending position
+    const char *cp, *ep; // current pos, diaoid ending position
     char *oidp=NULL;
     debug( DBG_CORE, "find_diaoid()" );
     if( buf == NULL ) {
@@ -1004,7 +1005,7 @@ char *find_diaoid( const char *buf, char **newpos  )
     }
     /* caller want the new position : we set it */
     if( newpos != NULL ) {
-        (*newpos) = cp;
+        (*newpos) = (char *) cp; /* points into the caller's buffer, like strstr() */
     }
     return oidp;
 }

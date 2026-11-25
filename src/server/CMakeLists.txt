@@ -1,7 +1,7 @@
 
 set(lib_server_target server_static)
 
-# Generate header files from dia UML files
+# Generate header files from dia UML files
 #generate_dia_header("${CMAKE_CURRENT_SOURCE_DIR}/../server.dia")
 
 # Find all source files to include in library
