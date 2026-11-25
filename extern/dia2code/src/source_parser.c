@@ -27,7 +27,7 @@ void source_preserve( batch *b, umlclass *class, const char *filename, sourcecod
     umloplist umlo;
     sourceblock *srcblock = NULL;
     debug( 4, "preserve_source(filename=%s)", filename);
-    source = (sourcecode*) my_malloc( sizeof(sourcecode));
+    source = NEW(sourcecode);
     source->buffer = NULL;
     source->blocks = NULL;
     
@@ -73,7 +73,7 @@ sourceblock *sourceblock_new( char *spos, size_t len, char *oid, int type )
     debug( DBG_GENCODE, "sourceblock_new( spos=%p, len=%ld, oid=%s, type=%d )", spos,len,oid,type );
     // TODO : safety checks
     sourceblock *blk;
-    blk = (sourceblock*) malloc( sizeof(sourceblock));
+    blk = NEW(sourceblock);
     blk->spos = spos;
     blk->len = len;
     blk->type = type;
@@ -89,7 +89,7 @@ sourceblock *sourceblock_new( char *spos, size_t len, char *oid, int type )
 sourceblocknode *sourceblocklist_add( sourceblocknode *list, const sourceblock *blk )
 {
     debug( DBG_GENCODE, "sourceblocklist_add( list=%p, blk=%p )", list,blk );
-    sourceblocknode *new =  (sourceblocknode*) malloc( sizeof(sourceblocknode));
+    sourceblocknode *new = NEW(sourceblocknode);
     new->blk = (sourceblock*) blk;
     /* if the list is null, no need to link  */
     if( list == NULL ) {

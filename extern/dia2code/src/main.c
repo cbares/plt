@@ -279,7 +279,7 @@ parameter = -1;   /* error */
         fprintf( stderr,"warning: this generator does not support building tree yet. disabled \n" );
     }
 
-    thisbatch = (batch*)my_malloc(sizeof(batch));
+    thisbatch = NEW(batch);
 
     LIBXML_TEST_VERSION;
     xmlKeepBlanksDefault(0);

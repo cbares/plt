@@ -108,12 +108,12 @@ namelist find_classes(umlclasslist current_class, batch *b) {
 
 umlclasslist find_by_name(umlclasslist list, const char * name ) {
     if ( name != NULL && strlen(name) > 0 ) {
-        char tmp[MAXNAMLEN];
+        char tmp[2 * SMALL_BUFFER + 2]; // "package::name"
         char* dots = strstr(name,"::");
         while ( list != NULL ) {
             if (dots) {
                 if (list->key->package) {
-                    sprintf(tmp,"%s::%s",list->key->package->name,list->key->name);
+                    snprintf(tmp, sizeof(tmp), "%s::%s",list->key->package->name,list->key->name);
                     if (!strcmp(name, tmp)) {
                         return list;
                     }
@@ -134,7 +134,7 @@ umlclasslist append ( umlclasslist list, umlclassnode * class ) {
     umlclasslist tmplist = list;
     umlclassnode *tmpnode = NULL;
 
-    tmpnode = (umlclassnode*) my_malloc ( sizeof(umlclassnode) );
+    tmpnode = NEW(umlclassnode);
     tmpnode->key = class->key;
     tmpnode->parents = class->parents;
     tmpnode->associations = class->associations;
